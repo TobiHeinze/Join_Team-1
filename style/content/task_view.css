@@ -1,0 +1,328 @@
+.add-task {
+    position: relative;
+    width: 320px;
+    height: 100vh;
+    /* overflow-y: scroll; */
+    background: #F6F7F8;
+}
+
+.kanban-tool {
+    /* Kanban Project Management Tool */
+    width: 255px;
+    height: 19px;
+
+    /* Version 2/body */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+
+    color: #000000;
+
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.h2-add-task {
+    /* Add Task */
+width: 214px;
+height: 56px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 47px;
+line-height: 120%;
+/* or 56px */
+
+color: #000000;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.title {
+    /* Title */
+
+
+width: 65px;
+height: 19px;
+
+/* Version 2/body */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.input-title {
+    /* Frame 14 */
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 11px 21px;
+gap: 10px;
+width: 363px;
+height: 41px;
+background: #FFFFFF;
+/* Style */
+
+border: 1px solid #D1D1D1;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.description {
+    /* Description */
+width: 154px;
+height: 19px;
+
+/* Version 2/body */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+color: #000000;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.input-description {
+    /* Frame 17 */
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 18px 21px;
+gap: 10px;
+width: 363px;
+height: 93px;
+background: #FFFFFF;
+/* Style */
+border: 1px solid #D1D1D1;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.prio {
+    /* Prio */
+width: 30px;
+height: 19px;
+
+/* Version 2/body */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 120%;
+/* or 19px */
+
+color: #000000;
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.priority {
+    /* Priority v1 mobile */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+width: 353px;
+height: 51px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.priority-box {
+    /* Frame 14 */
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 18px 10px;
+gap: 10px;
+width: 111px;
+height: 41px;
+
+/* white */
+background: #FFFFFF;
+/* nuevo */
+box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.date-frame {
+    /* Due date v1 mobile */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 8px;
+
+width: 363px;
+height: 68px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;
+}
+
+.input-date {
+    /* Frame 14 */
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 18px 21px;
+gap: 10px;
+isolation: isolate;
+width: 363px;
+height: 41px;
+background: #FFFFFF;
+/* Style */
+border: 1px solid #D1D1D1;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.input-frame {
+    /* Frame 14 */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 18px 21px;
+gap: 10px;
+isolation: isolate;
+
+width: 363px;
+height: 41px;
+
+background: #FFFFFF;
+/* Style */
+
+border: 1px solid #D1D1D1;
+border-radius: 10px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+.calendar-img {
+    /* Vector */
+
+/* 
+position: absolute;
+left: 8.93%;
+right: 8.93%;
+top: 4.17%;
+bottom: 12.5%; */
+
+/* background: #000000; */
+}
+
+.calendar-frame {
+    /* Frame 22 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 10px;
+
+position: absolute;
+width: 56px;
+height: 56px;
+right: 0px;
+top: calc(50% - 56px/2 + 0.5px);
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+}
