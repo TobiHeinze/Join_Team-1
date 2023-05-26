@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="add-task">
+    <div class="content">
         <span class="kanban-tool">
             Kanban Project Management Tool
         </span>
@@ -21,7 +21,9 @@
         <span class="title">
             Title
         </span>
-        <input type="text" class="input-title" placeholder="Enter a title">
+        <div class="input-center">
+            <input type="text" class="input-title" placeholder="Enter a title">
+        </div>
         <span class="description">
             Description
         </span>
@@ -45,12 +47,14 @@
         </div>
         <div class="date-frame">
             <span>Due date</span>
-            <div class="input-frame">
-                <input type="text" class="input-date" placeholder="dd/mm/yyyy">
-                <div class="calendar-frame">
-                    <img class="calendar-img" src="/assets/img/addt-task-calendar.png" alt="calendar-img">
+            <form action="">
+                <div class="input-frame">
+                    <input type="text" class="input-date" placeholder="dd/mm/yyyy">
+                    <div class="calendar-frame">
+                        <img class="calendar-img" src="/assets/img/addt-task-calendar.png" alt="calendar-img">
+                    </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 </body>
