@@ -12,3 +12,10 @@ body {
 .d-none {
     display: none;
 }
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 85vw;
+	min-width: 270px;
+}
