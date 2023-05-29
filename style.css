@@ -8,8 +8,19 @@ body {
     /* jede content-seite / oder footer im mobile sollte margin-top: auto; als classe bekommen, dadurch hat der body immer 100vh da er sich auf 100vh ausstreckt und das andere diesen platz gibt dafür*/
     display: flex;
     flex-direction: column;
+    background: #F6F7F8;
 }
 
 .d-none {
     display: none;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	width: 85vw;
+	/* min-width: 270px; */
+    background: #F6F7F8;
+    margin-left: auto;
+    margin-right: auto;
 }
