@@ -13,68 +13,84 @@
 <body>
     <section class="">
         <section class="content">
-            <span>Kanban Project Management Tool</span>
-            <h2>Add Task</h2>
-            <div class="title">
-                <span>Title</span>
-                <input type="text" placeholder="Enter a Title">
-            </div>
-            <div class="description">
-                <span class="mt-11">Description</span>
-                <input type="text" placeholder="Enter a Description">
-            </div>
-            <div class="prio">
-                <span class="mt-11 mb-11">Prio</span>
-                <div class="prio-row">
-                    <div class="prio-class">
-                        <span>Urgent</span>
-                        <img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
-                    </div>
-                    <div class="prio-class">
-                        <span>Medium</span>
-                        <img src="/assets/img/task-prio-medium.png" alt="medium-img">
-                    </div>
-                    <div class="prio-class">
-                        <span>Low</span>
-                        <img src="/assets/img/task-prio-low.png" alt="low-img">
+            <form action="">
+                <span class="mt-11">Kanban Project Management Tool</span>
+                <h2>Add Task</h2>
+                <div class="title">
+                    <span>Title</span>
+                    <input type="text" placeholder="Enter a Title" required>
+                </div>
+                <div class="description">
+                    <span class="mt-11">Description</span>
+                    <input type="text" placeholder="Enter a Description" required>
+                </div>
+                <div class="prio">
+                    <span class="mt-11 mb-11">Prio</span>
+                    <div class="prio-row">
+                        <div class="prio-class">
+                            <span>Urgent</span>
+                            <img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                        </div>
+                        <div class="prio-class">
+                            <span>Medium</span>
+                            <img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                        </div>
+                        <div class="prio-class">
+                            <span>Low</span>
+                            <img src="/assets/img/task-prio-low.png" alt="low-img">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="date">
-                <span class="mt-11">Due date</span>
-                <input type="text" placeholder="dd/mm/yyyy">
-                <img src="/assets/img/task-calendar.png" alt="calendar-img">
-            </div>
-            <div class="category">
-                <span class="mt-11">Category</span>
-                <select name="category" id="category-task" class="category-select">
-                    <option value="">Select task category</option>
-                    <option value="orange">Orange</option>
-                    <option value="blue">Blue</option>
-                    <option value="red">Red</option>
-                    <option value="green">Green</option>
-                </select>
-            </div>
-            <div class="assigned">
-                <span class="mt-11">Assigned to</span>
-                <select name="assigned" id="assigned-task" class="assigned-select">
-                    <option value="">Select contacts to assign</option>
-                    <option value="orange">name1</option>
-                    <option value="blue">name2</option>
-                </select>
-            </div>
-            <div class="subtask">
-                <span class="mt-11">Subtasks</span>
-                <input type="text" placeholder="Add  new subtask">
-                <img src="/assets/img/task-plus.png" alt="plus-img">
-                <div>
-                    <input type="checkbox">
-                    <span>Subtask 1</span>
+                <div class="date">
+                    <span class="mt-11">Due date</span>
+                    <div class="date-box">
+                        <input class="input-date" type="text" placeholder="dd/mm/yyyy">
+                        <img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                    </div>
                 </div>
-            </div>
-            <div class="task-added">   <!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+                <div class="category">
+                    <span class="mt-11">Category</span>
+                    <select name="category" id="category-task" class="category-select">
+                        <option value="">Select task category</option>
+                        <option value="orange">Orange</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                    </select>
+                </div>
+                <div class="assigned">
+                    <span class="mt-11">Assigned to</span>
+                    <select name="assigned" id="assigned-task" class="assigned-select">
+                        <option value="">Select contacts to assign</option>
+                        <option value="orange">name1</option>
+                        <option value="blue">name2</option>
+                    </select>
+                </div>
+                <div class="subtask">
+                    <span class="mt-11">Subtasks</span>
+                    <div class="subtask-box">
+                        <input class="input-subtask" type="text" placeholder="Add  new subtask">
+                        <img src="/assets/img/task-plus.png" alt="plus-img">
+                    </div>
+                    <div>
+                        <input type="checkbox">
+                        <span>Subtask 1</span>
+                    </div>
+                </div>
+                <button class="mt-11">ADD + just 4 tests</button>
+            </form>
+
+            <!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->
+            <div class="task-added d-none">
+                <!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
                 <span>Task added to board</span>
                 <img src="/assets/img/task-board.png" alt="board-img">
+            </div>
+
+            <!-- task-added-to-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+            <div class="task-added-backlog d-none">
+                <span>Task added to backlog</span>
+                <img src="/assets/img/task-backlog.png" alt="backlog-img">
             </div>
         </section>
     </section>
