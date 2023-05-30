@@ -11,52 +11,73 @@
 </head>
 
 <body>
-    <div class="content">
-        <span class="kanban-tool">
-            Kanban Project Management Tool
-        </span>
-        <h2 class="h2-add-task">
-            Add Task
-        </h2>
-        <span class="title">
-            Title
-        </span>
-        <div class="input-center">
-            <input type="text" class="input-title" placeholder="Enter a title">
-        </div>
-        <span class="description">
-            Description
-        </span>
-        <input type="text" class="input-description" placeholder="Enter a Description">
-        <span class="prio">
-            Prio
-        </span>
-        <div class="priority">
-            <div class="priority-box">
-                <span>Urgent</span>
-                <img src="/assets/img/prio-urgent.png" alt="prio-urgent-img">
+    <section class="">
+        <section class="content">
+            <span>Kanban Project Management Tool</span>
+            <h2>Add Task</h2>
+            <div class="title">
+                <span>Title</span>
+                <input type="text" placeholder="Enter a Title">
             </div>
-            <div class="priority-box">
-                <span>Medium</span>
-                <img src="/assets/img/prio-medium.png" alt="prio-medium-img">
+            <div class="description">
+                <span class="mt-11">Description</span>
+                <input type="text" placeholder="Enter a Description">
             </div>
-            <div class="priority-box">
-                <span>Low</span>
-                <img src="/assets/img/prio-low.png" alt="priolow-img">
-            </div>
-        </div>
-        <div class="date-frame">
-            <span>Due date</span>
-            <form action="">
-                <div class="input-frame">
-                    <input type="text" class="input-date" placeholder="dd/mm/yyyy">
-                    <div class="calendar-frame">
-                        <img class="calendar-img" src="/assets/img/addt-task-calendar.png" alt="calendar-img">
+            <div class="prio">
+                <span class="mt-11 mb-11">Prio</span>
+                <div class="prio-row">
+                    <div class="prio-class">
+                        <span>Urgent</span>
+                        <img src="/assets/img/prio-urgent.png" alt="urgent-img">
+                    </div>
+                    <div class="prio-class">
+                        <span>Medium</span>
+                        <img src="/assets/img/prio-medium.png" alt="medium-img">
+                    </div>
+                    <div class="prio-class">
+                        <span>Low</span>
+                        <img src="/assets/img/prio-low.png" alt="low-img">
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
+            </div>
+            <div class="date">
+                <span class="mt-11">Due date</span>
+                <input type="text" placeholder="dd/mm/yyyy">
+                <img src="/assets/img/addt-task-calendar.png" alt="calendar-img">
+            </div>
+            <div class="category">
+                <span class="mt-11">Category</span>
+                <select name="category" id="category-task" class="category-select">
+                    <option value="">Select task category</option>
+                    <option value="orange">Orange</option>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                </select>
+            </div>
+            <div class="assigned">
+                <span class="mt-11">Assigned to</span>
+                <select name="assigned" id="assigned-task" class="assigned-select">
+                    <option value="">Select contacts to assign</option>
+                    <option value="orange">name1</option>
+                    <option value="blue">name2</option>
+                </select>
+            </div>
+            <div class="subtask">
+                <span class="mt-11">Subtasks</span>
+                <input type="text" placeholder="Add  new subtask">
+                <img src="/assets/img/task-plus.png" alt="plus-img">
+                <div>
+                    <input type="checkbox">
+                    <span>Subtask 1</span>
+                </div>
+            </div>
+            <div class="task-added">   <!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+                <span>Task added to board</span>
+                <img src="/assets/img/task-board.png" alt="board-img">
+            </div>
+        </section>
+    </section>
 </body>
 
 </html>
