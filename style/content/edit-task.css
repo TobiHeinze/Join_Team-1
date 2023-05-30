@@ -1,3 +1,7 @@
+.flex {
+    display: flex;
+}
+
 .mt-11 {
     display: flex;
     margin-top: 11px;
@@ -54,6 +58,14 @@
     gap: 5px;
 }
 
+.prio-urgent {
+    background: #FF3D00;
+    /* stronger */
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
 .prio-row {
     display: flex;
     flex-direction: row;
@@ -61,27 +73,6 @@
     align-items: center;
     width: 100%;
 }
-
-/* .subtask {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.subtask-box {
-    display: flex;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    border-radius: 10px;
-    padding: 11px;
-    justify-content: space-between;
-}
-
-.input-subtask {
-    border: none;
-    outline: none;
-    width: 100%;
-} */
 
 .date {
     display: flex;
@@ -109,25 +100,6 @@
     width: 100%;
 }
 
-.category {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* für weitere anpassungen der untermenüs (select, option)  muss man das über JS oder drop-down plugins probieren */
-.category-select {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    border-radius: 10px;
-    padding: 11px;
-    cursor: pointer;
-}
-
 .assigned {
     display: flex;
     flex-direction: column;
@@ -146,55 +118,47 @@
     padding: 11px;
 }
 
-.subtask {
+.name-border {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 8px;
+    gap: 10px;
+    color: white;
+    width: 45px;
+    height: 45px;
+    background: #9327FF;
+    border: 2px solid #FFFFFF;
+    border-radius: 58px;
 }
 
-.subtask-box {
+.name-border2 {
+    box-sizing: border-box;
     display: flex;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 8px;
+    gap: 10px;
+    color: white;
+    width: 45px;
+    height: 45px;
+    background: #FFA800;
+    border: 2px solid #FFFFFF;
+    border-radius: 58px;
+}
+
+.ok-button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 81%;
+    right: 5%;
+    background: #2A3647;
     border-radius: 10px;
-    padding: 11px;
-    justify-content: space-between;
-}
-
-.input-subtask {
-    border: none;
-    outline: none;
-    width: 100%;
-}
-
-/* task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
-.task-added {
-    display: flex;
-    position: fixed;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 74px;
-    background: #2A3647;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    color: #FFFFFF;
-    top: 200px;
-    z-index: 5;
-    width: 85%;
-}
-
-/* task-added-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
-.task-added-backlog {
-    display: flex;
-    position: fixed;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 74px;
-    background: #2A3647;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    color: #FFFFFF;
-    top: 400px;
-    z-index: 5;
-    width: 85%;
 }
