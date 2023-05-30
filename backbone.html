@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,25 +10,49 @@
 	<link rel="stylesheet" href="style/fonts.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="style/header.css">
+	<link rel="stylesheet" href="style/menu_bar.css">
 
 </head>
+
 <body>
 	<div class="main-container">
 
-		<div class="header">
-			<p class="p">Kanban Project Management Tool</p>
-			<div class="navbar-header">
-				<img src="/assets/img/help-header.png" alt="help">
-				<img class="user-img-header" src="/assets/img/guest-user-header.png" alt="User">
+
+
+		<div class="header-with-content">
+			<div class="header padding">
+				<p class="p-header">Kanban Project Management Tool</p>
+				<div class="navbar-header">
+					<img src="/assets/img/help-header.png" alt="help">
+					<div class="user-img-header">
+						<img id="userImage" src="/assets/img/christina-image.png" alt="User">
+					</div>
+				</div>
 			</div>
+
+			<div id="content" class="padding">
+				<p>Content</p>
+			</div>
+
 		</div>
 
-		<div id="content"></div>
-
-		<div>
-
+		<div class="menu-bar">
 		</div>
 
+
+
+
+	</div>
+
+
+
+
+
+</body>
+
+</html>
+
+<!-- 
 		min-width: 400px;
 		height: 100vh;
 		position: sticky;
@@ -35,9 +60,4 @@
 
 		#content {
 			flex: 1;
-		}
-
-	</div>
-
-</body>
-</html>
+		} -->

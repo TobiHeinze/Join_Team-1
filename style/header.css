@@ -2,26 +2,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
-    width: 100vw;
-    height: 79.02px;
-    left: 0px;
-    top: 0px;
+    height: 89px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
 }
 
 .user-img-header {
-    width: 39px;
-    height: 39px;
-    left: 0px;
-    top: 0px;
-    border: 2px solid #2A3647;
-    border-radius: 50px;
-    margin-right: 25px;
-    margin-left: 20px;
-    padding: 2px;
+    width: 49px;
+    height: 49px;
+    border: 3px solid #2A3647;
+    border-radius: 50%;
+    margin-left: 26px;
 }
+
+#userImage {
+	padding: 1.5px;
+	height: 46px;
+	width: 46px;
+	border-radius: 50%;
+} 
+	 
+
 
 .header-logo {
     height: 45px;
@@ -29,17 +31,23 @@
     margin-left: 25px;
 }
 
-.p {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 348px;
-    font-size: 21px;
+.p-header {
+	font-weight: 400;
+	font-size: 21px;
 }
 
 .navbar-header {
     display: flex;
     align-items: center;
-    margin-right: 2rem;
+}
+
+.padding {
+	padding-left: 5vw;
+	padding-right: 5vw;
+	border: 2px solid black;
+}
+
+.margin {
+	margin-left: 5vw;
+	margin-right: 5vw;
 }
