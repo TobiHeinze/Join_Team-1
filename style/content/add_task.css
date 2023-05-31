@@ -198,3 +198,10 @@
     z-index: 5;
     width: 85%;
 }
+
+.x-position {
+    display: flex;
+    top: 2%;
+    position: absolute;
+    right: 12%;
+}
