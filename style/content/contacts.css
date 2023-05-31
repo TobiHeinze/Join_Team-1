@@ -1,3 +1,24 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    /* jede content-seite / oder footer im mobile sollte margin-top: auto; als classe bekommen, dadurch hat der body immer 100vh da er sich auf 100vh ausstreckt und das andere diesen platz gibt dafür*/
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.content-contact {
+    background-color: white;
+    display: flex;
+	flex-direction: column;
+	width: 85vw;
+	/* min-width: 270px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+/* hier drüber andere globale einstellungen für diese seite.... */
+
+
 .add-new-contact {
     display: flex;
     justify-content: end;
@@ -5,6 +26,7 @@
 
 .add-new-contact img {
     height: 50px;
+    margin-top: 10px;
 }
 
 .contacts-list h3 {
@@ -12,7 +34,7 @@
 }
 
 .line img {
-    width: 100%;
+    width: 90%;
     height: 1px;
 }
 
@@ -77,4 +99,19 @@
     top: 185px;
     z-index: 5;
     width: 85%;
+}
+
+.overflow-scroll {
+    height: 85vh;
+    overflow-y: scroll;
+}
+
+/* CSS für die Scrollbar */
+.overflow-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.overflow-scroll::-webkit-scrollbar-thumb {
+    border: 7px solid #A8A8A8;
+    border-radius: 3px;
 }
