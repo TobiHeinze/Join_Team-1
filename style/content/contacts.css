@@ -7,6 +7,11 @@ body {
     background: white;
 }
 
+span {
+    margin-bottom: 5px;
+    display: flex;
+}
+
 .content-contact {
     background-color: white;
     display: flex;
@@ -27,6 +32,7 @@ body {
 .add-new-contact img {
     height: 50px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .contacts-list h3 {
@@ -96,13 +102,13 @@ body {
     border-radius: 20px;
     color: white;
     position: fixed;
-    top: 185px;
+    top: 800px;
     z-index: 5;
     width: 85%;
 }
 
 .overflow-scroll {
-    height: 85vh;
+    height: 70vh;
     overflow-y: scroll;
 }
 

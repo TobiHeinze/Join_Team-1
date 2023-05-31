@@ -1,3 +1,4 @@
+/* globale einstellungen */
 html {
     scroll-behavior: smooth;
 }
@@ -10,6 +11,15 @@ body {
     display: flex;
     flex-direction: column;
     background: #F6F7F8;
+    font-family: 'Inter', sans-serif;
+}
+
+span {
+    word-break: break-all;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
 }
 
 .d-none {
@@ -25,34 +35,41 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+/* globale einstellungen ende */
 
 
-
-.font-64 {
-    font-size: 64px;
+/* schriftarten einstellungen für mobil-version */
+.font-16 {
+    font-size: 16px;
 }
 
 .font-21 {
     font-size: 21px;
 }
 
-.font-47 {
-    font-size: 47px;
-}
-
-.font-16 {
-    font-size: 16px;
-}
-
 .font-27 {
     font-size: 27px;
 }
 
+<<<<<<< HEAD
 .font-weight-400 {
     font-weight: 400px;
     text-align: center;
 }
 
+=======
+.font-32 {
+    font-size: 32px;
+}
+
+.font-47 {
+    font-size: 47px;
+}
+
+.font-64 {
+    font-size: 64px;
+}
+>>>>>>> f8f9c7875428f56f588b9cf939c3327037a61268
 
 .font-weight-500 {
     font-weight: 500;
@@ -62,3 +79,5 @@ body {
 .font-weight-700 {
     font-weight: 700;
 }
+
+/* schriftarten mobil ende */
