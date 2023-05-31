@@ -62,6 +62,7 @@ span {
     background-color: white;
     border-radius: 30px;
     text-align: center;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -75,6 +76,7 @@ span {
     height: 170px;
     background: white;
     border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -116,6 +118,7 @@ span {
     height: 100px;
     background:white;
     border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 

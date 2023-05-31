@@ -54,8 +54,9 @@ body {
     /* Abrundung der Ecken des Elements */
     font-size: 21px;
     font-weight: 700;
-    transition: background-color 0.125s ease!important;
+    transition: background-color 0.125s ease !important;
     /* Übergangseffekt bei Hover */
+    letter-spacing: 0.3px; /*sieht besser so aus bei den buttons*/
 }
 
 .btn-dark:hover {
@@ -215,6 +216,7 @@ body {
 /* Definiert eine benannte Schlüsselbildanimation mit dem Namen bg-transparent */
 
 @keyframes bg-transparent {
+
     /* Der Anfangszustand der Animation */
     from {
         /* Die Anfangsopazität ist 1, was bedeutet, dass das Element vollständig sichtbar ist */
@@ -222,6 +224,7 @@ body {
         /* Der Anfangswert für den z-Index ist 1, was die Stapelreihenfolge des Elements bestimmt */
         z-index: 1;
     }
+
     /* Der Endzustand der Animation */
     to {
         /* Die Endopazität ist 0, was bedeutet, dass das Element vollständig transparent ist */
@@ -265,6 +268,7 @@ body {
 /* Definiert eine benannte Schlüsselbildanimation mit dem Namen moveJoinLogo */
 
 @keyframes moveJoinLogo {
+
     /* Der Anfangszustand der Animation */
     from {
         /* Die anfängliche Position des Elements basierend auf dem Viewport */
@@ -274,6 +278,7 @@ body {
         width: 202px;
         height: 244px;
     }
+
     /* Der Endzustand der Animation */
     to {
         /* Die endgültige Position des Elements */
@@ -289,6 +294,7 @@ body {
     .login-container {
         width: 80%;
     }
+
     .not-a-join {
         justify-content: center;
         width: 100%;
@@ -305,44 +311,54 @@ body {
         margin-top: -30px;
         width: 80%;
     }
+
     .login-container {
         position: absolute;
         top: 150px;
     }
+
     .check {
         display: flex;
         gap: 20px;
     }
+
     .login-btn {
         width: 180px;
         font-size: 16px;
     }
+
     .login-buttons {
         flex-direction: column;
         height: auto;
         gap: 35px;
         width: unset;
     }
+
     .btn-bright {
         padding: unset;
         width: 180px;
         font-size: 16px;
     }
+
     .moving-logo {
         width: 64px !important;
         height: 78px !important;
         left: 37px !important;
         top: 38px !important;
     }
+
     .input-field {
         width: 80%;
     }
+
     .input-container {
         width: unset;
     }
+
     h1 {
         font-size: 40px;
     }
+
     .not-a-join span {
         font-size: 16px;
     }
