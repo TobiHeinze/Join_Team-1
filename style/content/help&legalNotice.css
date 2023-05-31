@@ -1,0 +1,20 @@
+.go-back {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+
+
+.over-headline {
+ display: flex;
+ justify-content: space-between;
+ margin-top: 20px;
+}
+
+
+
+.main-container {
+    min-width: 200px;
+    margin: 15px;
+}
