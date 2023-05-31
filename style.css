@@ -1,3 +1,4 @@
+/* globale einstellungen */
 html {
     scroll-behavior: smooth;
 }
@@ -24,8 +25,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+/* globale einstellungen ende */
 
 
+/* schriftarten einstellungen für mobil-version */
 
 .font-64 {
     font-size: 64px;
@@ -56,3 +59,5 @@ body {
 .font-weight-700 {
     font-weight: 700;
 }
+
+/* schriftarten mobil ende */
