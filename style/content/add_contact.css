@@ -1,3 +1,11 @@
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-11 {
+    margin-bottom: 11px;
+}
+
 .border {
     display: flex;
     flex-direction: column;
@@ -10,6 +18,8 @@
     border-radius: 30px;
     margin-top: auto;
     margin-bottom: auto;
+    position: relative;
+    overflow: hidden;
 }
 
 .top-bg {
@@ -30,9 +40,10 @@
     justify-content: center;
     align-items: center;
     position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 60px);
     width: 120px;
     height: 120px;
-    top: 21%;
     background: #D1D1D1;
     border: 3px solid #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
@@ -70,6 +81,12 @@
     width: 100%;
 }
 
+.form-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
 .create-contact {
     display: flex;
     justify-content: center;
@@ -77,8 +94,11 @@
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #2A3647;
     border-radius: 10px;
-    padding: 10px 18px;
+    padding: 10px;
     color: white;
+    width: 140px;
+    align-items: center;
+    margin-top: 25px;
 }
 
 .create-contact img {

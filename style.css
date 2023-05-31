@@ -10,6 +10,15 @@ body {
     display: flex;
     flex-direction: column;
     background: #F6F7F8;
+    font-family: 'Inter', sans-serif;
+}
+
+span {
+    word-break: break-all;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
 }
 
 .d-none {
@@ -48,6 +57,10 @@ body {
 
 .font-27 {
     font-size: 27px;
+}
+
+.font-32 {
+    font-size: 32px;
 }
 
 
