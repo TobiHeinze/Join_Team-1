@@ -1,20 +1,150 @@
 .menu-bar {
 	display: flex;
-	min-width: 200px;
+	flex-direction: column;
+	align-items: center;
+	min-width: 232px;
 	width: 15vw;
 	height: 100vh;
 	position: sticky;
 	left: 0;
 	top: 0;
-	background-color: #2A3647;
+	background-color: #2a3647;
+	color: #cdcdcd;
 }
 
 .main-container {
 	width: 100%;
+	height: 100vh;
 	display: flex;
 	flex-direction: row-reverse;
 }
 
 .header-with-content {
- width: 85vw;
+	display: flex;
+	flex-direction: column;
+	/* width: 100%; */
+	height: 100vh;
+	flex: 1;
+}
+
+#content {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	/* width: 85vw; */
+	/* min-width: 270px; */
+    background: #F6F7F8;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.menu-bar img {
+	width: 43%;
+	margin-top: 8vh;
+}
+
+.menu-bar-nav-section {
+	width: 100%;
+	margin-top: 12vh;
+}
+
+.menu-bar-nav-button {
+	min-height: 46px;
+	height: 4.5vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 25%;
+}
+
+.menu-bar-nav-button img {
+	margin: 0;
+	height: 55%;
+	width: auto;
+	aspect-ratio: 1;
+	padding-right: 12%;
+}
+
+.menu-bar-legal-button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	min-height: 46px;
+	height: 4.5vh;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 20%;
+	margin-top: auto;
+	margin-bottom: 5vh;
+}
+
+.menu-bar-legal-button img {
+	margin: 0;
+	height: 40%;
+	width: auto;
+	aspect-ratio: 1;
+	padding-right: 12%;
+}
+
+.appear-mobile {
+	display: none;
+}
+
+
+
+@media (max-width: 800px) {
+	.hide-mobile {
+		display: none;
+	}
+
+	.main-container {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.menu-bar {
+		flex-direction: row;
+		width: 100%;
+		height: 80px;
+		position: sticky;
+		left: 0;
+		bottom: 0;
+	}
+
+	.header {
+		height: 80px;
+	}
+
+	.header-with-content {
+		width: 100%;
+	}
+
+	.menu-bar-nav-section {
+		margin-top: 0;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.menu-bar-nav-button {
+		width: 75px;
+		height: 80px;
+		padding-left: 0;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.menu-bar-nav-button img {
+		margin: 0;
+		height: 30%;
+		padding-right: 0;
+		padding-bottom: 10px;
+	}
+
+	.appear-mobile {
+		display: block;
+	}
 }
