@@ -1,0 +1,92 @@
+.mt-11 {
+    display: flex;
+    margin-top: 11px;
+}
+
+.mb-11 {
+    display: flex;
+    margin-bottom: 11px;
+}
+
+.blue-line {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.go-back {
+    display: flex;
+    justify-content: space-between;
+}
+
+.go-back img {
+    height: 14px;
+    margin-top: 22px;
+}
+
+.mail-mobil div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.mail-mobil a {
+    margin-bottom: 12px;
+}
+
+.initials {
+    width: 80px;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    background: #FF7A00;
+    /* background: #FFFFFF; */
+    border: 3px solid #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 70px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.add-task {
+    display: flex;
+    align-items: center;
+    color: #29ABE2;
+    gap: 5px;
+}
+
+.add-task img {
+    height: 13px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 20px;
+}
+
+.delete-button {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 81%;
+    right: 5%;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+}
+
+.edit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background: #2A3647;
+    top: 90%;
+    right: 5%;
+    border-radius: 10px;
+}
