@@ -14,15 +14,22 @@
     <section class="">
         <section class="content">
             <form action="">
+                <!-- man kommt normal über add-task button auf die seite, 
+                    wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
+                    X darunter taucht auf ! -->
+                <div class="x-position d-none">
+                    <img src="/assets/img/x-button-black.png" alt="x-button-img">
+                </div>
                 <span class="mt-11">Kanban Project Management Tool</span>
-                <h2>Add Task</h2>
+                <!-- hier drüber wird je nach ansicht die span /x-button div ein & ausgeblendet -->
+                <h2 class="font-47">Add Task</h2>
                 <div class="title">
                     <span>Title</span>
                     <input type="text" placeholder="Enter a Title" required>
                 </div>
                 <div class="description">
                     <span class="mt-11">Description</span>
-                    <input type="text" placeholder="Enter a Description" required>
+                    <textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description" required></textarea>
                 </div>
                 <div class="prio">
                     <span class="mt-11 mb-11">Prio</span>
@@ -77,7 +84,7 @@
                         <span>Subtask 1</span>
                     </div>
                 </div>
-                <button class="mt-11">ADD + just 4 tests</button>
+                <button class="mt-11">ADD + just 4 required tests</button>
             </form>
 
             <!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->

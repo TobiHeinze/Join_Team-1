@@ -62,6 +62,7 @@ span {
     background-color: white;
     border-radius: 30px;
     text-align: center;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -75,6 +76,7 @@ span {
     height: 170px;
     background: white;
     border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -116,6 +118,7 @@ span {
     height: 100px;
     background:white;
     border-radius: 30px;
+    box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
 }
 
 
@@ -140,35 +143,6 @@ span {
 }
 
 
-.font-64 {
-    font-size: 64px;
-}
-
-.font-21 {
-    font-size: 21px;
-}
-
-.font-47 {
-    font-size: 47px;
-}
-
-.font-16 {
-    font-size: 16px;
-}
-
-.font-27 {
-    font-size: 27px;
-}
-
-
-.font-weight-500 {
-    font-weight: 500;
-}
-
-
-.font-weight-700 {
-    font-weight: 700;
-}
 
 
 

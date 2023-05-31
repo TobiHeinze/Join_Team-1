@@ -1,10 +1,11 @@
+/* globale einstellungen */
 html {
     scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
-	font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     /* jede content-seite / oder footer im mobile sollte margin-top: auto; als classe bekommen, dadurch hat der body immer 100vh da er sich auf 100vh ausstreckt und das andere diesen platz gibt dafür*/
     display: flex;
@@ -12,16 +13,66 @@ body {
     background: #F6F7F8;
 }
 
+span {
+    word-break: break-all;
+}
+
+
+textarea {
+    font-family: 'Inter', sans-serif;
+}
+
 .d-none {
     display: none;
 }
 
 .content {
-	display: flex;
-	flex-direction: column;
-	width: 85vw;
-	/* min-width: 270px; */
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    /* min-width: 270px; */
     background: #F6F7F8;
     margin-left: auto;
     margin-right: auto;
 }
+/* globale einstellungen ende */
+
+
+/* schriftarten einstellungen für mobil-version */
+.font-16 {
+    font-size: 16px;
+}
+
+.font-21 {
+    font-size: 21px;
+}
+
+.font-27 {
+    font-size: 27px;
+}
+
+.font-32 {
+    font-size: 32px;
+}
+
+.font-47 {
+    font-size: 47px;
+}
+
+.font-64 {
+    font-size: 64px;
+}
+
+.font-weight-400 {
+    font-weight: 400px;
+    text-align: center;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+}
+
+.font-weight-700 {
+    font-weight: 700;
+}
+/* schriftarten mobil ende */
