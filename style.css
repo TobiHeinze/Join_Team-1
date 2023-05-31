@@ -38,21 +38,12 @@ textarea {
 
 
 /* schriftarten einstellungen für mobil-version */
-
-.font-64 {
-    font-size: 64px;
+.font-16 {
+    font-size: 16px;
 }
 
 .font-21 {
     font-size: 21px;
-}
-
-.font-47 {
-    font-size: 47px;
-}
-
-.font-16 {
-    font-size: 16px;
 }
 
 .font-27 {
@@ -63,6 +54,13 @@ textarea {
     font-size: 32px;
 }
 
+.font-47 {
+    font-size: 47px;
+}
+
+.font-64 {
+    font-size: 64px;
+}
 
 .font-weight-500 {
     font-weight: 500;
