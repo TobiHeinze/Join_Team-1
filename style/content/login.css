@@ -1,13 +1,3 @@
-h1 {
-    font-style: normal;
-    font-weight: 700;
-    font-size: clamp(40px, 3.5vw, 61px);
-    text-align: center;
-    margin: 0;
-}
-
-
-
 .login-container {
     position: relative;
     /* Relative Positionierung */
@@ -35,7 +25,7 @@ h1 {
     position: absolute;
     top: 20px;
     left: 20px;
-   
+
 }
 
 .btn-dark {
@@ -57,7 +47,8 @@ h1 {
     font-weight: 700;
     transition: background-color 0.125s ease !important;
     /* Übergangseffekt bei Hover */
-    letter-spacing: 0.3px; /*sieht besser so aus bei den buttons*/
+    letter-spacing: 0.3px;
+    /*sieht besser so aus bei den buttons*/
 }
 
 .btn-dark:hover {

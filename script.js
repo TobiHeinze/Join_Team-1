@@ -1,43 +1,43 @@
 function renderSummary() {
     document.getElementById('content').innerHTML = ``;
     document.getElementById('content').innerHTML = /*html*/`
-    <div class="summary-main-container"> <br>
+    
 
 <span>Kanban Project Management Tool</span>
-<div class="summary-headline">
+
     <h1>Summary</h1>
-</div>
+
 <span class="font-21">Everything in a nutshell!</span> <br>
 <img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
 
 
 <div class="summary-content">
 
-    <div class="summary-content-left">
+    <div class="padding" >
         <div class="row">
-            <div class="card-row-1">
+            <div onclick="renderBoard()" class="card-row-1">
                 <span class="font-64">5</span>
-                <span class="font-21">Tasks in <br> Board</span>
+                <span class="font-16">Tasks in <br> Board</span>
             </div>
-            <div class="card-row-1">
+            <div onclick="renderBoard()" class="card-row-1">
                 <span class="font-64">2</span>
-                <span class="font-21">Tasks in <br> Progress</span>
+                <span class="font-16">Tasks in <br> Progress</span>
             </div>
-            <div class="card-row-1">
+            <div onclick="renderBoard()" class="card-row-1">
                 <span class="font-64">2</span>
-                <span class="font-21">Awaiting Feedback</span>
+                <span class="font-16">Awaiting <br> Feedback</span>
             </div>
         </div>
 
 
         <div class="row">
-            <div class="card-row-2">
+            <div onclick="renderBoard()" class="card-row-2">
                 <div class="card-row-2-left">
                     <div>
-                        <img src="/assets/img/urgent.png" />
+                        <img src="./assets/img/urgent.png" />
                     </div>
                     <div class="amount">
-                        <span class="font-47">1</span>
+                        <span class="font-64">1</span>
                         <span class="font-16">Urgent</span>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ function renderSummary() {
 
 
         <div class="row">
-            <div class="card-row-3">
+            <div onclick="renderBoard()" class="card-row-3">
                 <div>
                     <img src="/assets/img/pen.png" />
                 </div>
@@ -60,7 +60,7 @@ function renderSummary() {
                     <span class="font-21">To-do</span>
                 </div>
             </div>
-            <div class="card-row-3">
+            <div onclick="renderBoard()" class="card-row-3">
                 <div>
                     <img src="/assets/img/check.png" />
                 </div>
@@ -77,7 +77,7 @@ function renderSummary() {
         <h1 class="font-weight-700 font-64"></h1>
     </div>
 </div>
-</div>
+</>
     `;
 }
 
