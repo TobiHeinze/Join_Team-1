@@ -7,7 +7,7 @@ function renderSummary() {
 <div class="summary-headline">
     <h1>Summary</h1>
 </div>
-<span class="font-27">Everything in a nutshell!</span> <br>
+<span class="font-21">Everything in a nutshell!</span> <br>
 <img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
 
 
