@@ -105,7 +105,7 @@ function renderAddTask() {
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
-                <div class="x-position d-none">
+                <div class="add-task-x-position d-none">
                     <img src="/assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <span class="mt-11">Kanban Project Management Tool</span>
@@ -176,22 +176,28 @@ function renderAddTask() {
             </form>
 
             <!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->
-            <div class="task-added">
+            <div class="d-none">
+              <div class="task-added">
                 <!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
-                <span>Task added to board</span>
-                <img src="/assets/img/task-board.png" alt="board-img">
+                  <span>Task added to board</span>
+                  <img src="/assets/img/task-board.png" alt="board-img">
+              </div>
             </div>
 
             <!-- task-added-to-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
-            <div class="task-added-backlog">
-                <span>Task added to backlog</span>
-                <img src="/assets/img/task-backlog.png" alt="backlog-img">
+            <div class="d-none">
+              <div class="task-added-backlog">
+                  <span>Task added to backlog</span>
+                  <img src="/assets/img/task-backlog.png" alt="backlog-img">
+              </div>
             </div>
     `;
 }
 
 
 function renderContacts() {
+    // document.body.style.backgroundColor = "white";
+    // document.getElementById('content').style.backgroundColor = "white";
     document.getElementById('content').innerHTML = ``;
     document.getElementById('content').innerHTML = /*html*/`
     <section class="content-contact">
@@ -259,8 +265,10 @@ function renderContacts() {
                     </div>
                 </div>
                 <!-- versteckt solange kein neuer contakt kreiert ist -->
-                <div class="contact-created">
+                <div class="d-none">
+                  <div class="contact-created">
                     Contact successfully created
+                  </div>
                 </div>
 
 

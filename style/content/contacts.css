@@ -12,10 +12,11 @@
     background-color: white;
     display: flex;
 	flex-direction: column;
-	width: 85vw;
+	/* width: 85vw; */
 	/* min-width: 270px; */
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 /* hier drüber andere globale einstellungen für diese seite.... */
 
@@ -31,9 +32,9 @@
     margin-bottom: 10px;
 }
 
-.contacts-list h3 {
+/* .contacts-list h3 {
     padding-left: 24px;
-}
+} */
 
 .line img {
     width: 90%;
@@ -49,6 +50,8 @@
     align-items: center;
     padding: 10px;
     flex-direction: row;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
 }
 
 .assigned a {

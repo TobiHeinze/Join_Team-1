@@ -179,9 +179,9 @@
     width: 100%;
 }
 
-.x-position {
+.add-task-x-position {
     display: flex;
-    top: 2%;
+    top: 17%;
     position: absolute;
     right: 12%;
 }
