@@ -114,7 +114,7 @@
     width: 100%;
 }
 
-.category {
+.category-select-box {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -133,10 +133,17 @@
     cursor: pointer;
 }
 
-.assigned {
+/* .assigned {
     display: flex;
     flex-direction: column;
     gap: 10px;
+} */
+
+.assigned-add-task {
+    display: flex;
+    /* align-items: center; */
+    /* padding: 10px; */
+    flex-direction: column;
 }
 
 .assigned-select {
