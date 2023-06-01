@@ -1,13 +1,9 @@
+/* body change für weißen hintergrund, wird probleme mit anderen seiten geben wenn überall verlinkt!!! */
 body {
-    margin: 0;
-    min-height: 100vh;
-    /* jede content-seite / oder footer im mobile sollte margin-top: auto; als classe bekommen, dadurch hat der body immer 100vh da er sich auf 100vh ausstreckt und das andere diesen platz gibt dafür*/
-    display: flex;
-    flex-direction: column;
     background: white;
 }
 
-span {
+.contacts-span span {
     margin-bottom: 5px;
     display: flex;
 }
