@@ -22,13 +22,15 @@ textarea {
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    width: 85vw;
-    /* min-width: 270px; */
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	/* width: 85vw; */
+	/* min-width: 270px; */
     background: #F6F7F8;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+	border: 2px solid black;
 }
 /* globale einstellungen ende */
 
@@ -52,6 +54,7 @@ textarea {
 
 .font-47 {
     font-size: 47px;
+	font-weight: bold;
 }
 
 .font-64 {
