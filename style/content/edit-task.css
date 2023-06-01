@@ -100,11 +100,11 @@
     width: 100%;
 }
 
-.assigned {
+/* .assigned {
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
+} */
 
 .assigned-select {
     display: flex;

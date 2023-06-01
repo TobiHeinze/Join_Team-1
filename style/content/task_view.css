@@ -1,6 +1,6 @@
-.mt-11 {
+/* .mt-11 {
     margin-top: 11px;
-}
+} */
 
 .row {
     display: flex;
@@ -43,11 +43,11 @@
     color: white;
 }
 
-.assigned {
+/* .assigned {
     display: flex;
     align-items: center;
     gap: 20px;
-}
+} */
 
 .name-border {
     box-sizing: border-box;

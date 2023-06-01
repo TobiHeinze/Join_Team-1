@@ -143,7 +143,7 @@ function renderAddTask() {
                         <img src="/assets/img/task-calendar.png" alt="calendar-img" required>
                     </div>
                 </div>
-                <div class="category">
+                <div class="category-select-box">
                     <span class="mt-11">Category</span>
                     <select name="category" id="category-task" class="category-select">
                         <option value="">Select task category</option>
@@ -153,7 +153,7 @@ function renderAddTask() {
                         <option value="green">Green</option>
                     </select>
                 </div>
-                <div class="assigned">
+                <div class="assigned-add-task">
                     <span class="mt-11">Assigned to</span>
                     <select name="assigned" id="assigned-task" class="assigned-select">
                         <option value="">Select contacts to assign</option>
@@ -210,7 +210,7 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">AW</div>
                         <div class="left-distance">
                             <div class="font-21 contacts-span">
@@ -219,7 +219,7 @@ function renderContacts() {
                             <a href="#">albert@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">AZ</div>
                         <div class="left-distance">
                             <div class="font-21 contacts-span">
@@ -239,7 +239,7 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">BM</div>
                         <div class="left-distance">
                             <div class="font-21 contacts-span">
@@ -248,7 +248,7 @@ function renderContacts() {
                             <a href="#">bine@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">BB</div>
                         <div class="left-distance">
                             <div class="font-21 contacts-span">
@@ -293,19 +293,19 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">AW</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Albert Wissigkeit</span>
                             </div>
                             <a href="#">albert@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">AZ</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Anja Zabruck</span>
                             </div>
                             <a href="#">anja@gmail.com</a>
@@ -322,19 +322,19 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">BM</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Bine Maja</span>
                             </div>
                             <a href="#">bine@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">BB</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Benjamin Bauer</span>
                             </div>
                             <a href="#">benjamin@gmail.com</a>
@@ -349,19 +349,19 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">AW</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Albert Wissigkeit</span>
                             </div>
                             <a href="#">albert@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">AZ</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Anja Zabruck</span>
                             </div>
                             <a href="#">anja@gmail.com</a>
@@ -378,19 +378,19 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">BM</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Bine Maja</span>
                             </div>
                             <a href="#">bine@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">BB</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Benjamin Bauer</span>
                             </div>
                             <a href="#">benjamin@gmail.com</a>
@@ -405,19 +405,19 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">AW</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Albert Wissigkeit</span>
                             </div>
                             <a href="#">albert@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">AZ</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Anja Zabruck</span>
                             </div>
                             <a href="#">anja@gmail.com</a>
@@ -434,19 +434,131 @@ function renderContacts() {
                     <img src="/assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border">BM</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
                                 <span>Bine Maja</span>
                             </div>
                             <a href="#">bine@gmail.com</a>
                         </div>
                     </div>
-                    <div class="assigned mt-11 row">
+                    <div class="assigned mt-11">
                         <div class="name-border2">BB</div>
                         <div class="left-distance">
-                            <div class="font-21">
+                            <div class="font-21 contacts-span">
+                                <span>Benjamin Bauer</span>
+                            </div>
+                            <a href="#">benjamin@gmail.com</a>
+                        </div>
+                    </div>
+                </div><div class="contacts-list">
+                    <div>
+                        <h3 class="font-21">A</h3>
+                    </div>
+                </div>
+                <div class="line">
+                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                </div>
+                <div>
+                    <div class="assigned mt-11">
+                        <div class="name-border">AW</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Albert Wissigkeit</span>
+                            </div>
+                            <a href="#">albert@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="assigned mt-11">
+                        <div class="name-border2">AZ</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Anja Zabruck</span>
+                            </div>
+                            <a href="#">anja@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts-list">
+                    <div>
+                        <h3 class="font-21">B</h3>
+                    </div>
+                </div>
+                <div class="line">
+                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                </div>
+                <div>
+                    <div class="assigned mt-11">
+                        <div class="name-border">BM</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Bine Maja</span>
+                            </div>
+                            <a href="#">bine@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="assigned mt-11">
+                        <div class="name-border2">BB</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Benjamin Bauer</span>
+                            </div>
+                            <a href="#">benjamin@gmail.com</a>
+                        </div>
+                    </div>
+                </div><div class="contacts-list">
+                    <div>
+                        <h3 class="font-21">A</h3>
+                    </div>
+                </div>
+                <div class="line">
+                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                </div>
+                <div>
+                    <div class="assigned mt-11">
+                        <div class="name-border">AW</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Albert Wissigkeit</span>
+                            </div>
+                            <a href="#">albert@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="assigned mt-11">
+                        <div class="name-border2">AZ</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Anja Zabruck</span>
+                            </div>
+                            <a href="#">anja@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacts-list">
+                    <div>
+                        <h3 class="font-21">B</h3>
+                    </div>
+                </div>
+                <div class="line">
+                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                </div>
+                <div>
+                    <div class="assigned mt-11">
+                        <div class="name-border">BM</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
+                                <span>Bine Maja</span>
+                            </div>
+                            <a href="#">bine@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="assigned mt-11">
+                        <div class="name-border2">BB</div>
+                        <div class="left-distance">
+                            <div class="font-21 contacts-span">
                                 <span>Benjamin Bauer</span>
                             </div>
                             <a href="#">benjamin@gmail.com</a>
