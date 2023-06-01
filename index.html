@@ -7,6 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 
+	<script src="/script.js"></script>
+
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="style/index.css">
 	<link rel="stylesheet" href="style/fonts.css">
@@ -27,7 +29,7 @@
 
 </head>
 
-<body>
+<body onload="renderSummary()">
 	<div class="main-container">
 
 		<div class="header-with-content">
@@ -35,7 +37,7 @@
 				<span class="span-header hide-mobile">Kanban Project Management Tool</span>
 				<img class="appear-mobile" src="/assets/img/logo-header-mobile.svg" alt="help">
 				<div class="navbar-header">
-					<img class="hide-mobile" src="/assets/img/help-header.png" alt="help">
+					<img class="hide-mobile" src="/assets/img/help-header.png" alt="help" onclick="renderHelp()">
 					<div class="user-img-header">
 						<img id="userImage" src="/assets/img/christina-image.png" alt="User">
 					</div>
@@ -44,9 +46,53 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<div id="content" class="content padding">
+				<!-- hier drunter content einfügen -->
+				<!--  -->
+				<!--  -->
 				
+
+
+
+
+
+
+
+
+
+				<!--  -->
+				<!--  -->
+			<!-- hier drüber content einfügen -->
 			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -55,27 +101,27 @@
 		<div class="menu-bar">
 			<img class="hide-mobile" src="/assets/img/logo-menu-bar.svg" alt="help">
 			<div class="menu-bar-nav-section">
-				<div class="menu-bar-nav-button">
+				<div class="menu-bar-nav-button" onclick="renderSummary()">
 					<img src="assets/img/summary-menu-bar.svg" alt="">
 					<span class="p-menu-bar">Summary</span>
 				</div>
 
-				<div class="menu-bar-nav-button">
+				<div class="menu-bar-nav-button" onclick="renderBoard()">
 					<img src="assets/img/board-menu-bar.svg" alt="">
 					<span class="p-menu-bar">Board</span>
 				</div>
 
-				<div class="menu-bar-nav-button">
+				<div class="menu-bar-nav-button" onclick="renderAddTask()">
 					<img src="assets/img/add task-menu-bar.svg" alt="">
 					<span class="p-menu-bar">Add Task</span>
 				</div>
 
-				<div class="menu-bar-nav-button">
+				<div class="menu-bar-nav-button" onclick="renderContacts()">
 					<img src="assets/img/contacts-menu-bar.svg" alt="">
 					<span class="p-menu-bar">Contacts</span>
 				</div>
 
-				<div class="menu-bar-legal-button hide-mobile">
+				<div class="menu-bar-legal-button hide-mobile" onclick="renderLegalNotice()">
 					<img src="assets/img/info-legal-notice.svg" alt="">
 					<span class="p-menu-bar">Legal notice</span>
 				</div>
