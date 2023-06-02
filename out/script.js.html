@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: script.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: script.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This function renders the summary in the content box of the index page
+ * 
+ * @param {string} test This is just a test to show
+ * @param {string} test2 test2 - This is just a test to show
+ */
+function renderSummary() {
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+    &lt;div class="summary-main-container"> &lt;br>
+
+&lt;span>Kanban Project Management Tool&lt;/span>
+&lt;div class="summary-headline">
+    &lt;h1>Summary&lt;/h1>
+&lt;/div>
+&lt;span class="font-21">Everything in a nutshell!&lt;/span> &lt;br>
+&lt;img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
+
+
+&lt;div class="summary-content">
+
+    &lt;div class="summary-content-left">
+        &lt;div class="row">
+            &lt;div class="card-row-1">
+                &lt;span class="font-64">5&lt;/span>
+                &lt;span class="font-21">Tasks in &lt;br> Board&lt;/span>
+            &lt;/div>
+            &lt;div class="card-row-1">
+                &lt;span class="font-64">2&lt;/span>
+                &lt;span class="font-21">Tasks in &lt;br> Progress&lt;/span>
+            &lt;/div>
+            &lt;div class="card-row-1">
+                &lt;span class="font-64">2&lt;/span>
+                &lt;span class="font-21">Awaiting Feedback&lt;/span>
+            &lt;/div>
+        &lt;/div>
+
+
+        &lt;div class="row">
+            &lt;div class="card-row-2">
+                &lt;div class="card-row-2-left">
+                    &lt;div>
+                        &lt;img src="/assets/img/urgent.png" />
+                    &lt;/div>
+                    &lt;div class="amount">
+                        &lt;span class="font-47">1&lt;/span>
+                        &lt;span class="font-16">Urgent&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="card-row-2-middle">&lt;/div>
+                &lt;div class="card-row-2-right">
+                    &lt;span class="font-weight-700 font-16">October 16, 2022&lt;/span> &lt;br>
+                    &lt;span class="font-16">Upcoming Deadline&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+
+
+        &lt;div class="row">
+            &lt;div class="card-row-3">
+                &lt;div>
+                    &lt;img src="/assets/img/pen.png" />
+                &lt;/div>
+                &lt;div class="amount">
+                    &lt;span class="font-64">1&lt;/span>
+                    &lt;span class="font-21">To-do&lt;/span>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="card-row-3">
+                &lt;div>
+                    &lt;img src="/assets/img/check.png" />
+                &lt;/div>
+                &lt;div class="amount">
+                    &lt;span class="font-64">1&lt;/span>
+                    &lt;span class="font-21">Done&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+
+    &lt;div class="summary-content-right">
+        &lt;span class="font-weight-500 font-47">Good morning,&lt;/span>
+        &lt;h1 class="font-weight-700 font-64">&lt;/h1>
+    &lt;/div>
+&lt;/div>
+&lt;/div>
+    `;
+}
+
+/**
+ * This function renders the board in the content box of the index page
+ * 
+ */
+function renderBoard() {
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+    &lt;span class="kanban-tool-text appear-mobile">Kanban Project Management Tool&lt;/span>
+&lt;div class="space-between">
+	&lt;span class="font-47">Board&lt;/span>
+	&lt;img src="assets/img/plus-add-task-mobile.svg" alt="">
+&lt;/div>
+&lt;form action="">
+	&lt;textarea class="textarea-find-task" name="" id="" cols="" rows="1" placeholder="Find Task">&lt;/textarea>
+&lt;/form>
+&lt;p>Content&lt;/p>
+    `;
+}
+
+
+function renderAddTask() {
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+    &lt;form action="">
+                &lt;!-- man kommt normal über add-task button auf die seite, 
+                    wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
+                    X darunter taucht auf ! -->
+                &lt;div class="add-task-x-position d-none">
+                    &lt;img src="/assets/img/x-button-black.png" alt="x-button-img">
+                &lt;/div>
+                &lt;span class="mt-11">Kanban Project Management Tool&lt;/span>
+                &lt;!-- hier drüber wird je nach ansicht die span /x-button div ein &amp; ausgeblendet -->
+                &lt;h2 class="font-47 add-task-h2">Add Task&lt;/h2>
+                &lt;div class="title">
+                    &lt;span>Title&lt;/span>
+                    &lt;input type="text" placeholder="Enter a Title" required>
+                &lt;/div>
+                &lt;div class="description">
+                    &lt;span class="mt-11">Description&lt;/span>
+                    &lt;textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description" required>&lt;/textarea>
+                &lt;/div>
+                &lt;div class="prio">
+                    &lt;span class="mt-11 mb-11">Prio&lt;/span>
+                    &lt;div class="prio-row">
+                        &lt;div class="prio-class">
+                            &lt;span>Urgent&lt;/span>
+                            &lt;img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                        &lt;/div>
+                        &lt;div class="prio-class">
+                            &lt;span>Medium&lt;/span>
+                            &lt;img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                        &lt;/div>
+                        &lt;div class="prio-class">
+                            &lt;span>Low&lt;/span>
+                            &lt;img src="/assets/img/task-prio-low.png" alt="low-img">
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="date">
+                    &lt;span class="mt-11">Due date&lt;/span>
+                    &lt;div class="date-box">
+                        &lt;input class="input-date" type="text" placeholder="dd/mm/yyyy">
+                        &lt;img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="category-select-box">
+                    &lt;span class="mt-11">Category&lt;/span>
+                    &lt;select name="category" id="category-task" class="category-select">
+                        &lt;option value="">Select task category&lt;/option>
+                        &lt;option value="orange">Orange&lt;/option>
+                        &lt;option value="blue">Blue&lt;/option>
+                        &lt;option value="red">Red&lt;/option>
+                        &lt;option value="green">Green&lt;/option>
+                    &lt;/select>
+                &lt;/div>
+                &lt;div class="assigned-add-task">
+                    &lt;span class="mt-11">Assigned to&lt;/span>
+                    &lt;select name="assigned" id="assigned-task" class="assigned-select">
+                        &lt;option value="">Select contacts to assign&lt;/option>
+                        &lt;option value="orange">name1&lt;/option>
+                        &lt;option value="blue">name2&lt;/option>
+                    &lt;/select>
+                &lt;/div>
+                &lt;div class="subtask">
+                    &lt;span class="mt-11">Subtasks&lt;/span>
+                    &lt;div class="subtask-box">
+                        &lt;input class="input-subtask" type="text" placeholder="Add  new subtask">
+                        &lt;img src="/assets/img/task-plus.png" alt="plus-img">
+                    &lt;/div>
+                    &lt;div>
+                        &lt;input type="checkbox">
+                        &lt;span>Subtask 1&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+                &lt;button class="mt-11">ADD + just 4 required tests&lt;/button>
+            &lt;/form>
+
+            &lt;!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->
+            &lt;div class="d-none">
+              &lt;div class="task-added">
+                &lt;!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+                  &lt;span>Task added to board&lt;/span>
+                  &lt;img src="/assets/img/task-board.png" alt="board-img">
+              &lt;/div>
+            &lt;/div>
+
+            &lt;!-- task-added-to-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+            &lt;div class="d-none">
+              &lt;div class="task-added-backlog">
+                  &lt;span>Task added to backlog&lt;/span>
+                  &lt;img src="/assets/img/task-backlog.png" alt="backlog-img">
+              &lt;/div>
+            &lt;/div>
+    `;
+}
+
+
+function renderContacts() {
+    // document.body.style.backgroundColor = "white";
+    // document.getElementById('content').style.backgroundColor = "white";
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+    &lt;section class="content-contact">
+        &lt;section>
+            &lt;div class="add-new-contact">
+                &lt;img src="/assets/img/contact-new.png" alt="new-contact-img">
+            &lt;/div>
+
+            &lt;div class="overflow-scroll">
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;!-- versteckt solange kein neuer contakt kreiert ist -->
+                &lt;div class="d-none">
+                  &lt;div class="contact-created">
+                    Contact successfully created
+                  &lt;/div>
+                &lt;/div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                &lt;!-- hier zwischen nur extra viele kontakte zum scrollen testen!!! -->
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>&lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>&lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>&lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>&lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">A&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">AW&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Albert Wissigkeit&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">albert@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">AZ&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Anja Zabruck&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">anja@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="contacts-list">
+                    &lt;div>
+                        &lt;h3 class="font-21">B&lt;/h3>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="line">
+                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border">BM&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Bine Maja&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">bine@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="assigned mt-11">
+                        &lt;div class="name-border2">BB&lt;/div>
+                        &lt;div class="left-distance">
+                            &lt;div class="font-21 contacts-span">
+                                &lt;span>Benjamin Bauer&lt;/span>
+                            &lt;/div>
+                            &lt;a href="#">benjamin@gmail.com&lt;/a>
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;!-- scroll test kontakte ende -->
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            &lt;/div>
+
+        &lt;/section>
+    &lt;/section>
+    `;
+}
+
+
+function renderLegalNotice() {
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+    &lt;div class="help-container">
+
+&lt;div class="over-headline">
+    &lt;span>Kanban Project Management Tool&lt;/span>
+    &lt;img class="go-back" onclick="history.back()" src="/assets/img/go-back.png"> &lt;!--zur vorherigen Seite zurückkehren-->
+&lt;/div>
+
+&lt;h1 class="headline">Legal Notice&lt;/h1>
+
+
+
+
+&lt;h3 style="margin-bottom: 50px;">&lt;u> This Legal Notice complies with the German laws under § 5 TMG and § 55
+        RStV.&lt;/u>&lt;/h3>
+&lt;b>Responsible for Content:&lt;/b>
+
+&lt;p>Annika Rothe &lt;br>
+    Bei der Kirche, 9 &lt;br>
+    23749 Grube&lt;/p>
+
+
+&lt;p>Tobias Heinze &lt;br>
+    &lt;br>
+&lt;/p>
+
+
+&lt;p>Albert W..hat ever^^ &lt;br>
+    &lt;br>
+&lt;/p>
+
+
+&lt;b>Contact:&lt;/b> &lt;br> &lt;br>
+Phone: &lt;br>
+E-Mail:
+
+
+
+&lt;h2>Liability for Content&lt;/h2>
+
+The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
+contents' accuracy, completeness, or topicality. According to Section 7, paragraph 1 of the TMG &lt;br>
+(Telemediengesetz -
+German Telemedia Act), we as service providers are liable for our content on these pages by general laws.
+However,
+according to Sections 8 to 10 of the TMG, we service providers are not &lt;br> obliged to monitor external
+information
+transmitted or stored or investigate circumstances pointing to illegal activity. Obligations to remove or block
+the
+use
+of information under general laws remain unaffected. &lt;br> However, a liability in this regard is only possible
+from the
+moment of knowledge of a specific infringement. Upon notification of such violations, we will remove the content
+immediately.
+
+&lt;h2>Liability for Links&lt;/h2>
+
+Our website contains links to external websites, over whose contents we have no control. Therefore, we cannot
+accept
+any
+liability for these external contents. The respective provider or operator of the websites &lt;br> is always
+responsible for
+the
+contents of the linked pages. The linked pages were checked for possible legal violations at the time of
+linking.
+Illegal contents were not identified at the time of linking. &lt;br> However, permanent monitoring of the contents
+of the
+linked
+pages is not reasonable without specific indications of a violation. Upon notification of violations, we will
+remove
+such links immediately.
+
+&lt;h2>Copyright&lt;/h2>
+
+The contents and works on these pages created by the site operator are subject to German copyright law. The
+duplication,
+processing, distribution, and any kind of utilization outside the limits of copyright require &lt;br> the written
+consent of
+the
+respective author or creator. Downloads and copies of these pages are only permitted for private, non-commercial
+use. In
+so far as the contents on this site were not created by the operator, &lt;br> the copyrights of third parties are
+respected.
+In
+particular, third-party content is marked as such. Should you become aware of a copyright infringement, please
+inform us
+accordingly. Upon notification of violations, &lt;br> we will remove such contents immediately. &lt;br>
+
+Last Updated: [05/30/2023]
+
+&lt;/div>
+    `;
+}
+
+
+function renderHelp() {
+    document.getElementById('content').innerHTML = ``;
+    document.getElementById('content').innerHTML = /*html*/`
+   &lt;div class="help-container">
+
+&lt;div class="over-headline">
+&lt;span>Kanban Project Management Tool&lt;/span>
+&lt;img class="go-back" onclick="history.back()" src="/assets/img/go-back.png">
+&lt;/div>
+&lt;h1 class="headline">Help&lt;/h1> 
+
+
+&lt;h2>What is Join?&lt;/h2>
+
+&lt;b>Join&lt;/b>  is a project initiated by the &lt;b> Developer Academy&lt;/b>, aimed at providing hands-on experience with Git in the context of a complex project. &lt;br> The "Join" project was collaboratively executed by a team of three individuals over a period of three weeks.
+&lt;br>
+&lt;h3> How to use it:&lt;/h3>
+&lt;b>1.&lt;/b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. &lt;br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. &lt;br> &lt;br>
+&lt;b>2.&lt;/b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. &lt;br> &lt;br>
+&lt;b>3.&lt;/b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
+&lt;/div>
+    `;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#renderBoard">renderBoard</a></li><li><a href="global.html#renderSummary">renderSummary</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 01 2023 16:33:53 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

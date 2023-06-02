@@ -88,7 +88,7 @@
     width: 100%;
 } */
 
-.date {
+.add-task-date {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -216,4 +216,33 @@
     top: 950px;
     z-index: 5;
     width: 85%;
+}
+
+
+/* responsiveness */
+@media (min-width: 951px) {
+    .desktop-size {
+        display: flex;
+    }
+
+    .add-task-line-margin {
+        width: 8%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .add-task-vertical-line {
+        border: 1px solid #D1D1D1;
+        margin: 32px;
+        min-height: 200px;
+        height: 32vh;
+    }
+
+    .add-task-responsive-left {
+        width: 46%;
+    }
+
+    .add-task-responsive-right {
+        width: 46%;
+    }
 }
