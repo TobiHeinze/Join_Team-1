@@ -1,20 +1,22 @@
 function renderSummary() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
     
+<span class="kanban">Kanban Project Management Tool</span>
 
-<span>Kanban Project Management Tool</span>
-
-    <h1>Summary</h1>
-
-<span class="font-21">Everything in a nutshell!</span> <br>
+<div class= "headlines">
+<h1>Summary</h1>
+<img class="blue-line-desktop" src="/assets/img/blue-line-desktop.png">
+<span class="font-21">Everything in a nutshell!</span> 
+</div>
+<br> <br>
 <img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
 
 
 <div class="summary-content">
 
-    <div class="padding" >
-        <div class="row">
+    <div>
+        <section class="row">
             <div onclick="renderBoard()" class="card-row-1">
                 <span class="font-64">5</span>
                 <span class="font-16">Tasks in <br> Board</span>
@@ -27,18 +29,18 @@ function renderSummary() {
                 <span class="font-64">2</span>
                 <span class="font-16">Awaiting <br> Feedback</span>
             </div>
-        </div>
+        </section>
 
 
-        <div class="row">
+        <section class="row">
             <div onclick="renderBoard()" class="card-row-2">
                 <div class="card-row-2-left">
                     <div>
-                        <img src="./assets/img/urgent.png" />
+                        <img style="padding-top: 10px" src="./assets/img/urgent.png" />
                     </div>
                     <div class="amount">
                         <span class="font-64">1</span>
-                        <span class="font-16">Urgent</span>
+                        <span class="font-21">Urgent</span>
                     </div>
                 </div>
                 <div class="card-row-2-middle"></div>
@@ -47,10 +49,10 @@ function renderSummary() {
                     <span class="font-16">Upcoming Deadline</span>
                 </div>
             </div>
-        </div>
+        </section>
 
 
-        <div class="row">
+        <section class="row">
             <div onclick="renderBoard()" class="card-row-3">
                 <div>
                     <img src="/assets/img/pen.png" />
@@ -69,22 +71,20 @@ function renderSummary() {
                     <span class="font-21">Done</span>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <div class="summary-content-right">
+    <aside id="greeting">
         <span class="font-weight-500 font-47">Good morning,</span>
-        <h1 class="font-weight-700 font-64"></h1>
-    </div>
+        <h1 id="userGreetingName" class="font-weight-700 font-64">Guest</h1>
+    </aside>
 </div>
-</>
     `;
 }
 
-
 function renderBoard() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
     <span class="kanban-tool-text appear-mobile">Kanban Project Management Tool</span>
 <div class="space-between">
 	<span class="font-47">Board</span>
@@ -97,10 +97,9 @@ function renderBoard() {
     `;
 }
 
-
 function renderAddTask() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
     <form action="">
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
@@ -205,12 +204,11 @@ function renderAddTask() {
     `;
 }
 
-
 function renderContacts() {
-    // document.body.style.backgroundColor = "white";
-    // document.getElementById('content').style.backgroundColor = "white";
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  // document.body.style.backgroundColor = "white";
+  // document.getElementById('content').style.backgroundColor = "white";
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
     <section class="content-contact">
         <section>
             <div class="add-new-contact">
@@ -608,15 +606,14 @@ function renderContacts() {
     `;
 }
 
-
 function renderLegalNotice() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
     <div class="help-container">
 
 <div class="over-headline">
     <span>Kanban Project Management Tool</span>
-    <img class="go-back" onclick="history.back()" src="/assets/img/go-back.png"> <!--zur vorherigen Seite zurückkehren-->
+    <img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png"> 
 </div>
 
 <h1 class="headline">Legal Notice</h1>
@@ -705,15 +702,14 @@ Last Updated: [05/30/2023]
     `;
 }
 
-
 function renderHelp() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+  document.getElementById("content").innerHTML = ``;
+  document.getElementById("content").innerHTML = /*html*/ `
    <div class="help-container">
 
 <div class="over-headline">
 <span>Kanban Project Management Tool</span>
-<img class="go-back" onclick="history.back()" src="/assets/img/go-back.png">
+<img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png">
 </div>
 <h1 class="headline">Help</h1> 
 

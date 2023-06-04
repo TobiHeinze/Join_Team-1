@@ -2,19 +2,38 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    visibility: visible;
 }
 
 
 
 .over-headline {
- display: flex;
- justify-content: space-between;
- margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    visibility: hidden;          /*in dem Fall besser als display:none, damit sich der Pfeil(go-back) nicht verschiebt*/
 }
+
 
 
 
 .help-container {
     min-width: 200px;
     margin: 15px;
+}
+
+
+@media (max-width: 800px) {
+    .go-back {
+        width: 15px;
+        height: 15px;
+    }
+
+
+
+    .over-headline {
+        font-size: 13px;
+        visibility: visible;
+
+    }
 }
