@@ -58,7 +58,7 @@ function renderLogin() {
 }
 
 function renderSummary() {
-    document.body.innerHTML = ""; // Löscht den gesamten Inhalt des body-Elements
+    // document.body.innerHTML = ""; // Löscht den gesamten Inhalt des body-Elements
     
     document.getElementById("body").innerHTML = /*html*/ `
     <div id="main-container" class="main-container">
