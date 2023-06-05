@@ -106,6 +106,7 @@ function renderBoard() {
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
+    <img class="create-button" src="/assets/img/create-button.png" alt="create task">
     <form action="">
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
