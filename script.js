@@ -44,7 +44,7 @@ function renderSummary() {
                         <img style="padding-top: 10px" src="./assets/img/urgent.png" />
                     </div>
                     <div class="amount">
-                        <span class="font-64">1</span>
+                        <span class="font-47">1</span>
                         <span class="font-21">Urgent</span>
                     </div>
                 </div>
@@ -63,7 +63,7 @@ function renderSummary() {
                     <img src="/assets/img/pen.png" />
                 </div>
                 <div class="amount">
-                    <span class="font-64">1</span>
+                    <span class="font-64 ">1</span>
                     <span class="font-21">To-do</span>
                 </div>
             </div>
@@ -80,7 +80,7 @@ function renderSummary() {
     </div>
 
     <aside id="greeting">
-        <span class="font-weight-500 font-47">Good morning,</span>
+        <span class="font-weight-500 font-47">${getTime()},</span>
         <h1 id="userGreetingName" class="font-weight-700 font-64">Guest</h1>
     </aside>
 </div>
@@ -490,7 +490,7 @@ function renderLegalNotice() {
     <img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png"> 
 </div>
 
-<h1 class="headline">Legal Notice</h1>
+<h1 class="headline font-64">Legal Notice</h1>
 
 
 
@@ -505,8 +505,8 @@ function renderLegalNotice() {
 
 
 <p>Tobias Heinze <br>
-    <br>
-</p>
+   Holzhäuser Straße 65<br>
+   04299 Leipzig</p>
 
 
 <p>Albert W..hat ever^^ <br>
@@ -519,7 +519,7 @@ Phone: <br>
 E-Mail:
 
 
-
+ 
 <h2>Liability for Content</h2>
 
 The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
@@ -571,8 +571,8 @@ inform us
 accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br>
 
 Last Updated: [05/30/2023]
-
 </div>
+
     `;
 }
 
@@ -585,7 +585,7 @@ function renderHelp() {
 <span>Kanban Project Management Tool</span>
 <img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png">
 </div>
-<h1 class="headline">Help</h1> 
+<h1 class="headline font-64">Help</h1> 
 
 
 <h2>What is Join?</h2>
@@ -593,9 +593,9 @@ function renderHelp() {
 <b>Join</b>  is a project initiated by the <b> Developer Academy</b>, aimed at providing hands-on experience with Git in the context of a complex project. <br> The "Join" project was collaboratively executed by a team of three individuals over a period of three weeks.
 <br>
 <h3> How to use it:</h3>
-<b>1.</b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. <br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. <br> <br>
-<b>2.</b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. <br> <br>
-<b>3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
+<b class= "font-27">1.</b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. <br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. <br> <br>
+<b class= "font-27">2.</b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. <br> <br>
+<b class= "font-27">3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
 </div>
     `;
 }
