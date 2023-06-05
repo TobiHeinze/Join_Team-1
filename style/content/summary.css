@@ -12,7 +12,7 @@
 
 
 .headlines {
-    width: 500px;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
 }
@@ -130,6 +130,8 @@ aside {
 
 .card-row-1:hover {
     background-color: #2A3647;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.07);
     color: white;
     cursor: pointer;
 }
@@ -137,6 +139,8 @@ aside {
 
 .card-row-2:hover {
     background-color: #2A3647;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.07);
     color: white;
     cursor: pointer;
 }
@@ -144,11 +148,17 @@ aside {
 
 .card-row-3:hover {
     background-color: #2A3647;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.07);
     color: white;
     cursor: pointer;
 }
 
 
+
+.card-row-3:hover img {
+    filter: invert(100%) brightness(200%); /* damit das Bild beim Hovern Hintergrund und Hauptfarbe ändert (danke ChatGPT)*/
+} 
 
 
 
@@ -158,6 +168,7 @@ aside {
     }
 }
 
+
 @media (max-width: 800px) {
     .summary-main-container {
         display: flex;
@@ -165,6 +176,15 @@ aside {
         justify-content: flex-start;
         margin: 0;
         margin-top: 70px;
+    }
+
+    .summary-headline {
+        justify-content: flex-start;
+        padding-right: 40px;
+    }
+
+    .summary-content {
+        justify-content: center;
     }
 
     .headlines {
@@ -188,20 +208,10 @@ aside {
 }
 
 
+
+
+
 @media (max-width: 750px) {
-    .summary-headline {
-        justify-content: flex-start;
-        padding-right: 40px;
-    }
-
-    .summary-content {
-        justify-content: center;
-    }
-}
-
-
-
-@media (max-width: 600px) {
     .summary-content {
         transform: scale(0.8);
         /*Verkleinerung um 20%*/
@@ -241,7 +251,7 @@ aside {
 
 
     .row {
-        max-width: 520px;
+        max-width: 470px;
         display: flex;
         flex-direction: row;
         width: 500px;

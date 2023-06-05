@@ -94,10 +94,10 @@
 	position: sticky;
 	right: 0;
 	top: 0;
-    height: 89px;
+    min-height: 89px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-	margin-bottom: 4vh;
+	/* margin-bottom: 4vh; */
 }
 
 .user-img-header {
@@ -155,7 +155,7 @@
 	}
 
 	.header {
-		height: 80px;
+		min-height: 80px;
 	}
 
 	.header-with-content {
