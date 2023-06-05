@@ -3,11 +3,6 @@
     margin-bottom: 20px;
 }
 
-.mt-11 {
-    display: flex;
-    margin-top: 11px;
-}
-
 .mb-11 {
     display: flex;
     margin-bottom: 11px;
@@ -41,7 +36,7 @@
 }
 
 .initials {
-    width: 80px;
+    min-width: 80px;
     height: 80px;
     left: 0px;
     top: 0px;
