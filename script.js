@@ -106,12 +106,12 @@ function renderBoard() {
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
-<<<<<<< HEAD
+
     <img class="create-button" src="/assets/img/create-button.png" alt="create task">
     <form action="">
-=======
+
     <form class="add-task-scroll">
->>>>>>> 7e28f675a60b34ef54b425fa8aee7fba782eee4b
+
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
