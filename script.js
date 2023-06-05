@@ -4,9 +4,78 @@ function resetContent() {
     document.getElementById('contacts-content').innerHTML = ``;
 }
 
+
+
+function renderLogin() {
+    
+    document.getElementById("main-container").innerHTML = /*html*/ `
+ <div class="logo-container" id="login-container">
+
+<form class="login-container" >
+    <h1>Log in</h1>
+
+    <!-- Eingabefelder für E-Mail und Passwort -->
+    <div class="input-container">
+        <div class="input-field">
+            <input required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
+            <img src="/assets/img/email-icon.png">
+        </div>
+        
+        <div class="input-field">
+            <input required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
+            <img class="toogleImage"  src="/assets/img/password-icon.png">
+       </div>
+    </div>
+ 
+    <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
+    <div class="remember-check">
+        <div class="check"><img id="loginCheckbox" src="/assets/img/unchecked.png">Remember me</div>
+        <a  href="#">Forgot my password</a>
+    </div>
+    
+    <!-- Buttons für Einloggen und Gast-Einloggen -->
+    <div class="login-buttons">
+        <button class="btn-dark login-btn">Log in</button>
+        <div onclick="renderSummary()" class="btn-bright guest-login">Guest Log in</div>
+    </div>
+  </form>
+  
+</div>
+<div>
+<div id="not-a-join " class="not-a-join ">
+    <span>Not a Join user?</span>
+    <div class="btn-dark ">Sign up</div>
+</div>
+</div>
+<img class="animate-logo moving-logo " src="/assets/img/LogoJoinBig.png ">
+<div class="background animate-background "></div>
+`;
+}
+
 function renderSummary() {
-    resetContent();
-    document.getElementById("content").innerHTML = /*html*/ `
+    document.body.innerHTML = ""; // Löscht den gesamten Inhalt des body-Elements
+    
+    document.getElementById("body").innerHTML = /*html*/ `
+    <div id="main-container" class="main-container">
+
+<div class="header-with-content">
+    <div class="header padding">
+        <span class="span-header hide-mobile">Kanban Project Management Tool</span>
+        <img class="appear-mobile" src="/assets/img/logo-header-mobile.svg" alt="help">
+        <div class="navbar-header">
+            <img class="hide-mobile" src="/assets/img/help-header.png" alt="help" onclick="renderHelp()">
+            <div class="user-img-header">
+                <img id="userImage" src="/assets/img/christina-image.png" alt="User">
+            </div>
+        </div>
+    </div>
+    
+    <div class="contacts-content-box">
+        <div id="contacts-content">
+        </div>
+        <div id="contacts-description-content">
+        </div>
+    </div>
     
 <span class="kanban">Kanban Project Management Tool</span>
 
@@ -85,6 +154,43 @@ function renderSummary() {
         <h1 id="userGreetingName" class="font-weight-700 font-64">Guest</h1>
     </aside>
 </div>
+</div>
+
+		</div>
+
+		<div class="menu-bar">
+			<img class="hide-mobile" src="/assets/img/logo-menu-bar.svg" alt="help">
+			<div class="menu-bar-nav-section">
+				<div class="menu-bar-nav-button" onclick="renderSummary()">
+					<img src="assets/img/summary-menu-bar.svg" alt="">
+					<span class="p-menu-bar">Summary</span>
+				</div>
+
+				<div class="menu-bar-nav-button" onclick="renderBoard()">
+					<img src="assets/img/board-menu-bar.svg" alt="">
+					<span class="p-menu-bar">Board</span>
+				</div>
+
+				<div class="menu-bar-nav-button" onclick="renderAddTask()">
+					<img src="assets/img/add task-menu-bar.svg" alt="">
+					<span class="p-menu-bar">Add Task</span>
+				</div>
+
+				<div class="menu-bar-nav-button" onclick="renderContacts()">
+					<img src="assets/img/contacts-menu-bar.svg" alt="">
+					<span class="p-menu-bar">Contacts</span>
+				</div>
+
+				<div class="menu-bar-legal-button hide-mobile" onclick="renderLegalNotice()">
+					<img src="assets/img/info-legal-notice.svg" alt="">
+					<span class="p-menu-bar">Legal notice</span>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
     `;
 }
 
