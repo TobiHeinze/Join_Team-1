@@ -29,6 +29,7 @@
 
 .summary-content {
     display: flex;
+    max-height: 600px;
 }
 
 
@@ -185,6 +186,7 @@ aside {
 
     .summary-content {
         justify-content: center;
+        max-height: 400px;
     }
 
     .headlines {
@@ -246,7 +248,7 @@ aside {
 
 
     .summary-content {
-        margin-top: -130px;
+        margin-top: -80px;
     }
 
 
