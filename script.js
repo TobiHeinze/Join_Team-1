@@ -645,7 +645,7 @@ Phone: <br>
 E-Mail:
 
 
-
+ 
 <h2>Liability for Content</h2>
 
 The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
@@ -697,8 +697,8 @@ inform us
 accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br>
 
 Last Updated: [05/30/2023]
-
 </div>
+
     `;
 }
 
