@@ -484,6 +484,7 @@ function renderContacts() {
 function renderLegalNotice() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
+     <div class="overflow-scroll">
     <div class="help-container">
 
 <div class="over-headline">
@@ -572,6 +573,7 @@ inform us
 accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br>
 
 Last Updated: [05/30/2023]
+</div>
 </div>
 
     `;
