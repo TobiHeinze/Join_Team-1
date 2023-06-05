@@ -21,6 +21,10 @@ textarea {
     display: none;
 }
 
+.d-flex {
+    display: flex;
+}
+
 .content-box {
     display: flex;
     height: calc(100vh - 89px);
