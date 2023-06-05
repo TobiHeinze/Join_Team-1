@@ -2,6 +2,11 @@ function resetContent() {
     document.getElementById("content").innerHTML = ``;
     document.getElementById('contacts-description-content').innerHTML = ``;
     document.getElementById('contacts-content').innerHTML = ``;
+
+    document.getElementById('popUpDiv').classList.add('d-none');
+    document.getElementById('popUpDiv').classList.remove('d-flex');
+    document.getElementById('popUpDiv').innerHTML = ``;
+
 }
 
 function renderSummary() {
@@ -106,12 +111,8 @@ function renderBoard() {
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
-
     <img class="create-button" src="/assets/img/create-button.png" alt="create task">
-    <form action="">
-
     <form class="add-task-scroll">
-
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
@@ -316,11 +317,11 @@ function renderAddTask() {
 
 function renderContacts() {
     resetContent();
-  document.getElementById("contacts-content").innerHTML = /*html*/ `
+    document.getElementById("contacts-content").innerHTML = /*html*/ `
         <section class="content-contact">
         <section>
             <div class="add-new-contact">
-                <img src="/assets/img/contact-new.png" alt="new-contact-img">
+                <img onclick="addNewContact()" src="/assets/img/contact-new.png" alt="new-contact-img">
             </div>
 
             <div class="overflow-scroll">
@@ -523,7 +524,6 @@ function renderContacts() {
     </section>
     `;
     document.getElementById('contacts-description-content').innerHTML = /*html*/`
-   
     <section class="content">
         <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
@@ -531,12 +531,12 @@ function renderContacts() {
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
                 <span class="font-21">Better with a team</span>
             </div>
-                <img onclick="renderContacts()" src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+                <img src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
         </div>
         <div class="blue-line">
             <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
         </div>
-        <div>
+        <!-- <div>
             <div class="contact-info">
                 <div class="initials font-27">
                     AM
@@ -564,7 +564,9 @@ function renderContacts() {
                     <a href="#">+49 1111 111 11 1</a>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+
         <!-- <div class="delete-button">
             <img src="/assets/img/task-delete-button.png" alt="delete-img">
         </div>
@@ -572,22 +574,89 @@ function renderContacts() {
             <img src="/assets/img/task-edit-button.png" alt="edit-img">
         </div> -->
     </section>
-  
     `;
 }
 
 
 function renderContactDescription() {
-    resetContent();
-    document.getElementById("content").innerHTML = /*html*/ `
-        <section class="content">
+    if (window.innerWidth > 800) {
+        document.getElementById("contacts-description-content").innerHTML = renderContactDescriptionHTML();
+    } else {
+        resetContent();
+        document.getElementById("content").innerHTML = renderContactDescriptionHTML();
+    }
+}
+
+
+function addNewContact() {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+    document.getElementById('popUpDiv').innerHTML = /*html*/`
+        <!-- <section class="content"> -->
+        <div class="border">
+            <div class="top-bg">
+                <div class="x-position">
+                    <img  onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                </div>
+                <div>
+                    <div>
+                        <h2 class="font-32 mt-0 mb-11">Add contact</h2>
+                        <span>Tasks are better with a team!</span>
+                    </div>
+                    <div>
+                        <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    </div>
+                </div>
+            </div>
+            <div class="big-initials">
+                <img src="/assets/img/big-character.png" alt="big-character-img">
+            </div>
+            <form action="" class="form-box">
+                <div class="contact-box">
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="Name" required>
+                            <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="Email" required>
+                            <img src="/assets/img/email-icon.png" alt="email-img">
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="Phone" required>
+                            <img src="/assets/img/phone-icon.png" alt="phone-img">
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="create-contact"> -->
+                    <div class="create-contact">
+                        <b>Create contact</b>
+                        <img src="/assets/img/hook-icon.png" alt="hook-img">
+                    </div>
+                <!-- </div> -->
+                <button class="mt-11">ADD + just 4 required tests</button>
+            </form>
+        </div>
+    <!-- </section> -->
+    `;
+}
+
+function renderContactDescriptionHTML() {
+    return /*html*/`
+    <section class="content">
         <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
             <div>
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
                 <span class="font-21">Better with a team</span>
             </div>
-                <img src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+                <img  onclick="renderContacts()" src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
         </div>
         <div class="blue-line">
             <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
@@ -625,10 +694,78 @@ function renderContactDescription() {
             <img src="/assets/img/task-delete-button.png" alt="delete-img">
         </div>
         <div class="edit-button-contact">
-            <img src="/assets/img/task-edit-button.png" alt="edit-img">
+            <img onclick="editContact()" src="/assets/img/task-edit-button.png" alt="edit-img">
         </div>
     </section>
     `;
+}
+
+
+function editContact() {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+
+  document.getElementById('popUpDiv').innerHTML = /*html*/`
+        <!-- <section class="content"> -->
+        <div class="border">
+            <div class="top-bg">
+                <div class="x-position">
+                    <img onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                </div>
+                <div>
+                    <div>
+                        <h2 class="font-32 mt-0 mb-11">Edit contact</h2>
+                    </div>
+                    <div>
+                        <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    </div>
+                </div>
+            </div>
+            <div class="big-initials font-27">
+                TW
+            </div>
+            <form action="">
+                <div class="contact-box">
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="name muss mit JS eingefügt werden" required>
+                            <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="email muss mit JS eingefügt werden" required>
+                            <img src="/assets/img/email-icon.png" alt="email-img">
+                        </div>
+                    </div>
+
+                    <div class="name">
+                        <div class="name-box">
+                            <input class="input-name" type="text" placeholder="phone Nr muss mit JS eingefügt werden" required>
+                            <img src="/assets/img/phone-icon.png" alt="phone-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="del-save">
+                    <div class="del">
+                        Delete
+                    </div>
+                    <div class="save">
+                        <b>Save</b>
+                    </div>
+                </div>
+                <button class="mt-11">ADD + just 4 required tests</button>
+            </form>
+        </div>
+    <!-- </section> -->
+    `;
+}
+
+function closeEditContact() {
+    document.getElementById('popUpDiv').classList.add('d-none');
+    document.getElementById('popUpDiv').classList.remove('d-flex');
+  document.getElementById('popUpDiv').innerHTML = ``;
 }
 
 function renderLegalNotice() {
