@@ -12,7 +12,7 @@
 
 
 .headlines {
-    width: 500px;
+    max-width: 500px;
     display: flex;
     justify-content: space-between;
 }
