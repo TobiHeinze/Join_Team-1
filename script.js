@@ -1,6 +1,7 @@
 function resetContent() {
     document.getElementById("content").innerHTML = ``;
     document.getElementById('contacts-description-content').innerHTML = ``;
+    document.getElementById('contacts-content').innerHTML = ``;
 }
 
 function renderSummary() {
