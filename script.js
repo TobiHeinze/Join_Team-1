@@ -1,6 +1,11 @@
+function resetContent() {
+    document.getElementById("content").innerHTML = ``;
+    document.getElementById('contacts-description-content').innerHTML = ``;
+}
+
 function renderSummary() {
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
     
 <span class="kanban">Kanban Project Management Tool</span>
 
@@ -83,8 +88,8 @@ function renderSummary() {
 }
 
 function renderBoard() {
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
     <span class="kanban-tool-text appear-mobile">Kanban Project Management Tool</span>
 <div class="space-between">
 	<span class="font-47">Board</span>
@@ -98,8 +103,8 @@ function renderBoard() {
 }
 
 function renderAddTask() {
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
     <form action="">
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
@@ -180,10 +185,20 @@ function renderAddTask() {
                                 <span>Subtask 1</span>
                             </div>
                         </div>
-                        <button class="mt-11">ADD + just 4 required tests</button>
                     </div>
                 </div>
+                <div class="task-button-box">
+              <div class="clear-task-button">
+                <span>Clear</span>
+                <img src="./assets/img/x-button-black.png" alt="x-img">
+              </div>
+              <div class="add-task-button">
+                <span>Create Task</span>
+                <img src="./assets/img/hook.png" alt="haken-img">
+              </div>
+            </div>
             </form>
+            
 
             <!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->
             <div class="d-none">
@@ -205,11 +220,9 @@ function renderAddTask() {
 }
 
 function renderContacts() {
-  // document.body.style.backgroundColor = "white";
-  // document.getElementById('content').style.backgroundColor = "white";
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
-    <section class="content-contact">
+    resetContent();
+  document.getElementById("contacts-content").innerHTML = /*html*/ `
+        <section class="content-contact">
         <section>
             <div class="add-new-contact">
                 <img src="/assets/img/contact-new.png" alt="new-contact-img">
@@ -279,7 +292,6 @@ function renderContacts() {
                     Contact successfully created
                   </div>
                 </div>
-
 
 
 
@@ -386,206 +398,13 @@ function renderContacts() {
                     </div>
                 </div>
 
-                <div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">B</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">BM</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Bine Maja</span>
-                            </div>
-                            <a href="#">bine@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">BB</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Benjamin Bauer</span>
-                            </div>
-                            <a href="#">benjamin@gmail.com</a>
-                        </div>
-                    </div>
-                </div><div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">A</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">AW</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Albert Wissigkeit</span>
-                            </div>
-                            <a href="#">albert@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">AZ</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Anja Zabruck</span>
-                            </div>
-                            <a href="#">anja@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
+           
 
-                <div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">B</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">BM</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Bine Maja</span>
-                            </div>
-                            <a href="#">bine@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">BB</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Benjamin Bauer</span>
-                            </div>
-                            <a href="#">benjamin@gmail.com</a>
-                        </div>
-                    </div>
-                </div><div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">A</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">AW</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Albert Wissigkeit</span>
-                            </div>
-                            <a href="#">albert@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">AZ</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Anja Zabruck</span>
-                            </div>
-                            <a href="#">anja@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">B</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">BM</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Bine Maja</span>
-                            </div>
-                            <a href="#">bine@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">BB</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Benjamin Bauer</span>
-                            </div>
-                            <a href="#">benjamin@gmail.com</a>
-                        </div>
-                    </div>
-                </div><div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">A</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">AW</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Albert Wissigkeit</span>
-                            </div>
-                            <a href="#">albert@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">AZ</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Anja Zabruck</span>
-                            </div>
-                            <a href="#">anja@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contacts-list">
-                    <div>
-                        <h3 class="font-21">B</h3>
-                    </div>
-                </div>
-                <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
-                </div>
-                <div>
-                    <div class="assigned mt-11">
-                        <div class="name-border">BM</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Bine Maja</span>
-                            </div>
-                            <a href="#">bine@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="assigned mt-11">
-                        <div class="name-border2">BB</div>
-                        <div class="left-distance">
-                            <div class="font-21 contacts-span">
-                                <span>Benjamin Bauer</span>
-                            </div>
-                            <a href="#">benjamin@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
+              
 
                 <!-- scroll test kontakte ende -->
             
-
+                
 
 
 
@@ -601,14 +420,69 @@ function renderContacts() {
 
             </div>
 
+
+
+            
         </section>
     </section>
+    `;
+    document.getElementById('contacts-description-content').innerHTML = /*html*/`
+   
+    <section class="content">
+        <span class="mt-11">Kanban Project Management Tool</span>
+        <div class="go-back-contact">
+            <div>
+                <h2 class="font-47 contact-description-h2">Contacts</h2>
+                <span class="font-21">Better with a team</span>
+            </div>
+                <img src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+        </div>
+        <div class="blue-line">
+            <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+        </div>
+        <div>
+            <div class="contact-info">
+                <div class="initials font-27">
+                    AM
+                </div>
+                <div>
+                    <div>
+                        <h3 class="font-27">Anton Mayer</h3>
+                    </div>
+                    <div class="add-task">
+                        <img src="/assets/img/contact-plus.png" alt="plus-img">
+                        <span>Add Task</span>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-11">
+                <h4 class="font-21">Contact Information</h4>
+            </div>
+            <div class="mail-mobil">
+                <div>
+                    <span><b>Email</b></span>
+                    <a href="#">antom@gmail.com</a>
+                </div>
+                <div>
+                    <span><b>Mobil</b></span>
+                    <a href="#">+49 1111 111 11 1</a>
+                </div>
+            </div>
+        </div>
+        <div class="delete-button">
+            <img src="/assets/img/task-delete-button.png" alt="delete-img">
+        </div>
+        <div class="edit-button">
+            <img src="/assets/img/task-edit-button.png" alt="edit-img">
+        </div>
+    </section>
+  
     `;
 }
 
 function renderLegalNotice() {
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
     <div class="help-container">
 
 <div class="over-headline">
@@ -703,8 +577,8 @@ Last Updated: [05/30/2023]
 }
 
 function renderHelp() {
-  document.getElementById("content").innerHTML = ``;
-  document.getElementById("content").innerHTML = /*html*/ `
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
    <div class="help-container">
 
 <div class="over-headline">

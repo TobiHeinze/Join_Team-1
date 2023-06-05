@@ -21,6 +21,11 @@ textarea {
     display: none;
 }
 
+.content-box {
+    display: flex;
+    height: calc(100vh - 89px);
+}
+
 .content {
 	flex: 1;
 	display: flex;
@@ -31,6 +36,22 @@ textarea {
     /* margin-left: auto; */
     /* margin-right: auto; */
 	/* border: 2px solid black; */
+    margin-top: 4vh;
+    margin-bottom: 4vh;
+}
+
+.contacts-content-box {
+    display: flex;
+}
+
+#contacts-content {
+    min-width: 280px;
+    width: 35%;
+}
+
+#contacts-description-content {
+    width: 65%;
+
 }
 /* globale einstellungen ende */
 

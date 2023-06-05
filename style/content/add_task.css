@@ -183,7 +183,41 @@
     display: flex;
     top: 17%;
     position: absolute;
-    right: 12%;
+    right: 5%;
+}
+
+.task-button-box {
+    display: flex;
+    margin-left: auto;
+    gap: 25px;
+    margin-top: auto;
+    justify-content: end;
+}
+
+.add-task-button {
+    justify-content: end;
+    background: #2A3647;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;
+}
+
+.clear-task-button {
+    justify-content: end;
+    margin-top: auto;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80px;
 }
 
 /* task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
@@ -244,5 +278,17 @@
 
     .add-task-responsive-right {
         width: 46%;
+    }
+}
+
+@media (max-width: 800px) {
+    .task-button-box {
+        display: none;
+    }
+}
+
+@media (min-width: 801px) {
+    .add-task-x-position {
+        display: none;
     }
 }

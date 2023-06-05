@@ -108,7 +108,9 @@
 }
 
 .overflow-scroll {
-    height: 70vh;
+    margin-left: 5%;
+    margin-right: 2%;
+    height: 84vh;
     overflow-y: scroll;
 }
 

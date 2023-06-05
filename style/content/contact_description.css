@@ -20,12 +20,12 @@
     margin-bottom: 15px;
 }
 
-.go-back {
+.go-back-contact {
     display: flex;
     justify-content: space-between;
 }
 
-.go-back img {
+.go-back-contact img {
     height: 14px;
     margin-top: 33px;
 }
@@ -95,4 +95,15 @@
     top: 90%;
     right: 5%;
     border-radius: 10px;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+    #contacts-description-content {
+        display: none;
+        width: 0;
+    }
+    #contacts-content {
+        width: 100%;
+    }
 }
