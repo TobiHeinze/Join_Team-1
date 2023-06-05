@@ -4,7 +4,6 @@
 }
 
 .mt-11 {
-    display: flex;
     margin-top: 11px;
 }
 
@@ -252,6 +251,20 @@
     width: 85%;
 }
 
+.add-task-scroll {
+    height: 84vh;
+    overflow-y: scroll;
+}
+
+.add-task-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.add-task-scroll::-webkit-scrollbar-thumb {
+    border: 7px solid #A8A8A8;
+    border-radius: 3px;
+}
+
 
 /* responsiveness */
 @media (min-width: 951px) {
@@ -289,6 +302,9 @@
 
 @media (min-width: 801px) {
     .add-task-x-position {
+        display: none;
+    }
+    .responsive-hide {
         display: none;
     }
 }

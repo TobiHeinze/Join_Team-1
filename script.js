@@ -106,14 +106,16 @@ function renderBoard() {
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
-    <form action="">
+    <form class="add-task-scroll">
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
                 <div class="add-task-x-position d-none">
                     <img src="/assets/img/x-button-black.png" alt="x-button-img">
                 </div>
-                <span class="mt-11">Kanban Project Management Tool</span>
+                <div class="mt-11 responsive-hide">
+                  <span >Kanban Project Management Tool</span>
+                </div>
                 <!-- hier drüber wird je nach ansicht die span /x-button div ein & ausgeblendet -->
                 <h2 class="font-47 add-task-h2">Add Task</h2>
                 <div class="desktop-size">
@@ -185,6 +187,93 @@ function renderAddTask() {
                                 <input type="checkbox">
                                 <span>Subtask 1</span>
                             </div>
+
+
+                            <!-- test zum scrollen -->
+
+                            <!-- <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 5</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div><div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div> <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div><div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div> <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div><div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 1</span>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                                <span>Subtask 10</span>
+                            </div> -->
+
+                            <!-- test zum scrollen ende -->
+
+
                         </div>
                     </div>
                 </div>
@@ -430,7 +519,7 @@ function renderContacts() {
     document.getElementById('contacts-description-content').innerHTML = /*html*/`
    
     <section class="content">
-        <span class="mt-11">Kanban Project Management Tool</span>
+        <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
             <div>
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
