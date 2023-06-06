@@ -1,3 +1,7 @@
+/**
+ * This function resets all divs we fill content in
+ * 
+ */
 function resetContent() {
     document.getElementById("content").innerHTML = ``;
     document.getElementById('contacts-description-content').innerHTML = ``;
@@ -108,6 +112,10 @@ function renderBoard() {
     `;
 }
 
+/**
+ * This function renders the AddTask area
+ * 
+ */
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
@@ -154,8 +162,8 @@ function renderAddTask() {
                         </div>
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
-                            <div class="date-box">
-                                <input class="input-date" type="text" placeholder="dd/mm/yyyy">
+                            <div class="date-box-add-task">
+                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
                                 <img src="/assets/img/task-calendar.png" alt="calendar-img" required>
                             </div>
                         </div>
@@ -587,10 +595,25 @@ function renderContactDescription() {
     }
 }
 
+function slideInPopUp() {
+    return popUpDiv.animate(
+        [
+          { transform: 'translateX(1000px)' }, // Startposition des Popups
+          { transform: 'translateX(0)' } // Endposition des Popups
+        ],
+        {
+          duration: 250, // Animationsdauer in Millisekunden
+          easing: 'ease' // Easing-Funktion für den Übergangseffekt
+        }
+      );
+}
+
 
 function addNewContact() {
     document.getElementById('popUpDiv').classList.remove('d-none');
     document.getElementById('popUpDiv').classList.add('d-flex');
+    document.getElementById('popUpDiv').classList.add('show-popup');
+    slideInPopUp();
     document.getElementById('popUpDiv').innerHTML = /*html*/`
         <!-- <section class="content"> -->
         <div class="border">
@@ -704,7 +727,7 @@ function renderContactDescriptionHTML() {
 function editContact() {
     document.getElementById('popUpDiv').classList.remove('d-none');
     document.getElementById('popUpDiv').classList.add('d-flex');
-
+    slideInPopUp()
   document.getElementById('popUpDiv').innerHTML = /*html*/`
         <!-- <section class="content"> -->
         <div class="border">
