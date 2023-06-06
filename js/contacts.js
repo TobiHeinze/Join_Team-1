@@ -8,7 +8,7 @@ function renderContacts() {
         <section class="content-contact">
         <section>
             <div class="add-new-contact">
-                <img onclick="addNewContact()" src="/assets/img/contact-new.png" alt="new-contact-img">
+                <img onclick="addNewContact()" src="./assets/img/contact-new.png" alt="new-contact-img">
             </div>
 
             <div class="overflow-scroll">
@@ -18,7 +18,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <!-- mit dem onclick kann man zu jedem kontakt kommen später -->
@@ -48,7 +48,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">

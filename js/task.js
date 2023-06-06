@@ -5,10 +5,10 @@
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = /*html*/ `
-    <img class="create-button" src="/assets/img/create-button.png" alt="create task">
+    <img class="create-button" src="./assets/img/create-button.png" alt="create task">
     <form class="add-task-scroll">
                 <div onclick="renderContacts()" class="add-task-x-position d-none">
-                    <img src="/assets/img/x-button-black.png" alt="x-button-img">
+                    <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">
                   <span >Kanban Project Management Tool</span>
@@ -30,15 +30,15 @@ function renderAddTask() {
                             <div class="prio-row">
                                 <div class="prio-class">
                                     <span>Urgent</span>
-                                    <img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                                    <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
                                 <div class="prio-class">
                                     <span>Medium</span>
-                                    <img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                                    <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
                                 <div class="prio-class">
                                     <span>Low</span>
-                                    <img src="/assets/img/task-prio-low.png" alt="low-img">
+                                    <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@ function renderAddTask() {
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
                                 <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
                             </div>
                         </div>
                     </div>
@@ -77,7 +77,7 @@ function renderAddTask() {
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">
                                 <input class="input-subtask" type="text" placeholder="Add  new subtask">
-                                <img src="/assets/img/task-plus.png" alt="plus-img">
+                                <img src="./assets/img/task-plus.png" alt="plus-img">
                             </div>
                             <div>
                                 <input type="checkbox">
@@ -191,7 +191,7 @@ function renderAddTask() {
                 <div class="task-added">
                     <!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
                     <span>Task added to board</span>
-                    <img src="/assets/img/task-board.png" alt="board-img">
+                    <img src="./assets/img/task-board.png" alt="board-img">
                 </div>
             </div>
 
@@ -199,7 +199,7 @@ function renderAddTask() {
             <div class="d-none">
                 <div class="task-added-backlog">
                     <span>Task added to backlog</span>
-                    <img src="/assets/img/task-backlog.png" alt="backlog-img">
+                    <img src="./assets/img/task-backlog.png" alt="backlog-img">
                 </div>
             </div>
     `;
@@ -232,7 +232,7 @@ function addTaskFloat() {
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
                 <div onclick="closeEditContact()" class="add-task-x-position-float">
-                    <img src="/assets/img/x-button-black.png" alt="x-button-img">
+                    <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">
                   <span >Kanban Project Management Tool</span>
@@ -255,15 +255,15 @@ function addTaskFloat() {
                             <div class="prio-row">
                                 <div class="prio-class">
                                     <span>Urgent</span>
-                                    <img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                                    <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
                                 <div class="prio-class">
                                     <span>Medium</span>
-                                    <img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                                    <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
                                 <div class="prio-class">
                                     <span>Low</span>
-                                    <img src="/assets/img/task-prio-low.png" alt="low-img">
+                                    <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>
                             </div>
                         </div>
@@ -271,7 +271,7 @@ function addTaskFloat() {
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
                                 <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
                             </div>
                         </div>
                     </div>
@@ -302,7 +302,7 @@ function addTaskFloat() {
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">
                                 <input class="input-subtask" type="text" placeholder="Add  new subtask">
-                                <img src="/assets/img/task-plus.png" alt="plus-img">
+                                <img src="./assets/img/task-plus.png" alt="plus-img">
                             </div>
                             <div>
                                 <input type="checkbox">

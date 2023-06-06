@@ -6,7 +6,7 @@ function renderLegalNotice() {
 
 <div class="over-headline">
     <span>Kanban Project Management Tool</span>
-    <img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png"> 
+    <img class="go-back" onclick="renderSummary()" src="./assets/img/go-back.png"> 
 </div>
 
 <h1 class="headline font-64">Legal Notice</h1>
@@ -104,7 +104,7 @@ function renderHelp() {
 
 <div class="over-headline">
 <span>Kanban Project Management Tool</span>
-<img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png">
+<img class="go-back" onclick="renderSummary()" src="./assets/img/go-back.png">
 </div>
 <h1 class="headline font-64">Help</h1> 
 

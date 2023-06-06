@@ -31,12 +31,12 @@ function renderLogin() {
     <div class="input-container">
         <div class="input-field">
             <input required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
-            <img src="/assets/img/email-icon.png">
+            <img src="./assets/img/email-icon.png">
         </div>
         
         <div class="input-field">
             <input required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
-            <img class="toogleImage"  src="/assets/img/password-icon.png">
+            <img class="toogleImage"  src="./assets/img/password-icon.png">
        </div>
     </div>
  
@@ -60,7 +60,7 @@ function renderLogin() {
     <div class="btn-dark ">Sign up</div>
 </div>
 </div>
-<img class="animate-logo moving-logo " src="/assets/img/LogoJoinBig.png ">
+<img class="animate-logo moving-logo " src="./assets/img/LogoJoinBig.png ">
 <div class="background animate-background "></div>
     `;
 }
