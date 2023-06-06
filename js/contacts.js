@@ -271,11 +271,32 @@ function renderContacts() {
  */
 function renderContactDescription() {
     if (window.innerWidth > 800) {
+        //die auskommentierten sachen da muss die id mit den - geändert werden und dann könnte der slider gehen
+        // wenn das auskommentiert sit müsste man noch bei rendercontactdescription html den oberen teil wieder einkommentieren.....
+        
+        // document.getElementById("contacts-description-content").innerHTML = ``;
+        // renderContacts();
+        // slideInContact();
+        // document.getElementById("contacts-description-content").innerHTML += renderContactDescriptionHTML();
         document.getElementById("contacts-description-content").innerHTML = renderContactDescriptionHTML();
     } else {
         resetContent();
         document.getElementById("content").innerHTML = renderContactDescriptionHTML();
     }
+}
+
+
+function slideInContact() {
+    return contacts-description-content.animate(
+        [
+          { transform: 'translateX(1000px)' }, // Startposition des Popups
+          { transform: 'translateX(0)' } // Endposition des Popups
+        ],
+        {
+          duration: 250, // Animationsdauer in Millisekunden
+          easing: 'ease' // Easing-Funktion für den Übergangseffekt
+        }
+      );
 }
 
 
@@ -353,7 +374,7 @@ function addNewContact() {
 function renderContactDescriptionHTML() {
     return /*html*/`
     <section class="content">
-        <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
+        <!-- <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
             <div>
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
@@ -363,7 +384,7 @@ function renderContactDescriptionHTML() {
         </div>
         <div class="blue-line">
             <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
-        </div>
+        </div> -->
         <div>
             <div class="contact-info">
                 <div class="initials font-27">
