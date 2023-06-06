@@ -8,7 +8,7 @@ function renderBoard() {
 	<img src="assets/img/plus-add-task-mobile.svg" alt="">
 </div>
 
-<form class="form-find-task" onsubmit="">
+<form class="form-find-task" onsubmit=" ; return false;">
 	<textarea required class="textarea-find-task" minlength="2" name="" id="" cols="" rows="1"
 		placeholder="Find Task"></textarea>
 	<input type="image" src="assets/img/find-task-lens.svg" alt="">
