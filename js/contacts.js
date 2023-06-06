@@ -18,7 +18,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="../assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <!-- mit dem onclick kann man zu jedem kontakt kommen später -->
@@ -48,7 +48,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="../assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">

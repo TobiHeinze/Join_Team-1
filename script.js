@@ -42,7 +42,7 @@ function renderLogin() {
  
     <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
     <div class="remember-check">
-        <div class="check"><img id="loginCheckbox" src="/assets/img/unchecked.png">Remember me</div>
+        <div class="check"><img id="loginCheckbox" src="./assets/img/unchecked.png">Remember me</div>
         <a  href="#">Forgot my password</a>
     </div>
     
