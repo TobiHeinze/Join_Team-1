@@ -67,27 +67,27 @@
     align-items: center;
 }
 
-.delete-button {
+.delete-button-contact {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 81%;
+    top: 78%;
     right: 5%;
     border: 1px solid #2A3647;
     border-radius: 10px;
 }
 
-.edit-button {
+.edit-button-contact {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     position: absolute;
     background: #2A3647;
-    top: 90%;
+    top: 85%;
     right: 5%;
     border-radius: 10px;
 }
@@ -100,5 +100,12 @@
     }
     #contacts-content {
         width: 100%;
+    }
+    
+}
+
+@media (min-width: 801px) {
+    .go-back-contact img {
+        display: none;
     }
 }

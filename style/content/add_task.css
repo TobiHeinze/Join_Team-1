@@ -104,16 +104,27 @@
     gap: 8px;
 }
 
-.date-box {
+.date-box-add-task {
     display: flex;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
     padding: 11px;
     justify-content: space-between;
+    overflow: hidden;
 }
 
-.date-box img {
+.date-box-add-task input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    position: absolute;
+    width: 100%;
+    height: 42px;
+}
+
+.date-box-add-task img {
     height: 18px;
     width: 18px;
 }
@@ -196,6 +207,13 @@
     right: 5%;
 }
 
+.add-task-x-position-float {
+    display: flex;
+    top: 8%;
+    position: absolute;
+    right: 5%;
+}
+
 .task-button-box {
     display: flex;
     margin-left: auto;
@@ -263,7 +281,7 @@
 }
 
 .add-task-scroll {
-    height: 84vh;
+    height: 76vh;
     overflow-y: scroll;
 }
 
