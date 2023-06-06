@@ -114,7 +114,7 @@ function renderBoard() {
 </form action="">
 
 
-<div class="all-task-container">
+<div class="all-task-container overflow-scroll">
 	<div class="task-section-container">
 		<div class="header-task-status">
 			<span class="task-status-description">To do</span>
