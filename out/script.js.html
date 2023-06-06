@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>JSDoc: Source: script.js</title>
@@ -16,64 +15,75 @@
 
 <body>
 
-    <div id="main">
+<div id="main">
 
-        <h1 class="page-title">Source: script.js</h1>
+    <h1 class="page-title">Source: script.js</h1>
 
-
-
-
+    
 
 
-        <section>
-            <article>
-                <pre class="prettyprint source linenums"><code>/**
- * This function renders the summary in the content box of the index page
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This function resets all divs we fill content in
  * 
- * @param {string} test This is just a test to show
- * @param {string} test2 test2 - This is just a test to show
  */
-function renderSummary() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
-    &lt;div class="summary-main-container"> &lt;br>
+function resetContent() {
+    document.getElementById("content").innerHTML = ``;
+    document.getElementById('contacts-description-content').innerHTML = ``;
+    document.getElementById('contacts-content').innerHTML = ``;
 
-&lt;span>Kanban Project Management Tool&lt;/span>
-&lt;div class="summary-headline">
-    &lt;h1>Summary&lt;/h1>
+    document.getElementById('popUpDiv').classList.add('d-none');
+    document.getElementById('popUpDiv').classList.remove('d-flex');
+    document.getElementById('popUpDiv').innerHTML = ``;
+
+}
+
+function renderSummary() {
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
+    
+&lt;span class="kanban">Kanban Project Management Tool&lt;/span>
+
+&lt;div class= "headlines">
+&lt;h1>Summary&lt;/h1>
+&lt;img class="blue-line-desktop" src="/assets/img/blue-line-desktop.png">
+&lt;span class="font-21">Everything in a nutshell!&lt;/span> 
 &lt;/div>
-&lt;span class="font-21">Everything in a nutshell!&lt;/span> &lt;br>
+&lt;br> &lt;br>
 &lt;img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
 
 
 &lt;div class="summary-content">
 
-    &lt;div class="summary-content-left">
-        &lt;div class="row">
-            &lt;div class="card-row-1">
+    &lt;div>
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-1">
                 &lt;span class="font-64">5&lt;/span>
-                &lt;span class="font-21">Tasks in &lt;br> Board&lt;/span>
+                &lt;span class="font-16">Tasks in &lt;br> Board&lt;/span>
             &lt;/div>
-            &lt;div class="card-row-1">
+            &lt;div onclick="renderBoard()" class="card-row-1">
                 &lt;span class="font-64">2&lt;/span>
-                &lt;span class="font-21">Tasks in &lt;br> Progress&lt;/span>
+                &lt;span class="font-16">Tasks in &lt;br> Progress&lt;/span>
             &lt;/div>
-            &lt;div class="card-row-1">
+            &lt;div onclick="renderBoard()" class="card-row-1">
                 &lt;span class="font-64">2&lt;/span>
-                &lt;span class="font-21">Awaiting Feedback&lt;/span>
+                &lt;span class="font-16">Awaiting &lt;br> Feedback&lt;/span>
             &lt;/div>
-        &lt;/div>
+        &lt;/section>
 
 
-        &lt;div class="row">
-            &lt;div class="card-row-2">
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-2">
                 &lt;div class="card-row-2-left">
                     &lt;div>
-                        &lt;img src="/assets/img/urgent.png" />
+                        &lt;img style="padding-top: 10px" src="./assets/img/urgent.png" />
                     &lt;/div>
                     &lt;div class="amount">
                         &lt;span class="font-47">1&lt;/span>
-                        &lt;span class="font-16">Urgent&lt;/span>
+                        &lt;span class="font-21">Urgent&lt;/span>
                     &lt;/div>
                 &lt;/div>
                 &lt;div class="card-row-2-middle">&lt;/div>
@@ -82,20 +92,20 @@ function renderSummary() {
                     &lt;span class="font-16">Upcoming Deadline&lt;/span>
                 &lt;/div>
             &lt;/div>
-        &lt;/div>
+        &lt;/section>
 
 
-        &lt;div class="row">
-            &lt;div class="card-row-3">
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-3">
                 &lt;div>
                     &lt;img src="/assets/img/pen.png" />
                 &lt;/div>
                 &lt;div class="amount">
-                    &lt;span class="font-64">1&lt;/span>
+                    &lt;span class="font-64 ">1&lt;/span>
                     &lt;span class="font-21">To-do&lt;/span>
                 &lt;/div>
             &lt;/div>
-            &lt;div class="card-row-3">
+            &lt;div onclick="renderBoard()" class="card-row-3">
                 &lt;div>
                     &lt;img src="/assets/img/check.png" />
                 &lt;/div>
@@ -104,25 +114,20 @@ function renderSummary() {
                     &lt;span class="font-21">Done&lt;/span>
                 &lt;/div>
             &lt;/div>
-        &lt;/div>
+        &lt;/section>
     &lt;/div>
 
-    &lt;div class="greeting">
-        &lt;span class="font-weight-500 font-47">Good morning,&lt;/span>
-        &lt;h1 class="font-weight-700 font-64">&lt;/h1>
-    &lt;/div>
-&lt;/div>
+    &lt;aside id="greeting">
+        &lt;span class="font-weight-500 font-47">${getTime()},&lt;/span>
+        &lt;h1 id="userGreetingName" class="font-weight-700 font-64">Guest&lt;/h1>
+    &lt;/aside>
 &lt;/div>
     `;
 }
 
-/**
- * This function renders the board in the content box of the index page
- * 
- */
 function renderBoard() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
     &lt;span class="kanban-tool-text appear-mobile">Kanban Project Management Tool&lt;/span>
 &lt;div class="space-between">
 	&lt;span class="font-47">Board&lt;/span>
@@ -135,113 +140,228 @@ function renderBoard() {
     `;
 }
 
-
+/**
+ * This function renders the AddTask area
+ * 
+ */
 function renderAddTask() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
-    &lt;form action="">
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
+    &lt;img class="create-button" src="/assets/img/create-button.png" alt="create task">
+    &lt;form class="add-task-scroll">
                 &lt;!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
                 &lt;div class="add-task-x-position d-none">
                     &lt;img src="/assets/img/x-button-black.png" alt="x-button-img">
                 &lt;/div>
-                &lt;span class="mt-11">Kanban Project Management Tool&lt;/span>
+                &lt;div class="mt-11 responsive-hide">
+                  &lt;span >Kanban Project Management Tool&lt;/span>
+                &lt;/div>
                 &lt;!-- hier drüber wird je nach ansicht die span /x-button div ein &amp; ausgeblendet -->
                 &lt;h2 class="font-47 add-task-h2">Add Task&lt;/h2>
-                &lt;div class="title">
-                    &lt;span>Title&lt;/span>
-                    &lt;input type="text" placeholder="Enter a Title" required>
-                &lt;/div>
-                &lt;div class="description">
-                    &lt;span class="mt-11">Description&lt;/span>
-                    &lt;textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description" required>&lt;/textarea>
-                &lt;/div>
-                &lt;div class="prio">
-                    &lt;span class="mt-11 mb-11">Prio&lt;/span>
-                    &lt;div class="prio-row">
-                        &lt;div class="prio-class">
-                            &lt;span>Urgent&lt;/span>
-                            &lt;img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                &lt;div class="desktop-size">
+                    &lt;div class="add-task-responsive-left">
+                        &lt;div class="title">
+                            &lt;span>Title&lt;/span>
+                            &lt;input type="text" placeholder="Enter a Title" required>
                         &lt;/div>
-                        &lt;div class="prio-class">
-                            &lt;span>Medium&lt;/span>
-                            &lt;img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                        &lt;div class="description">
+                            &lt;span class="mt-11">Description&lt;/span>
+                            &lt;textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description"
+                                required>&lt;/textarea>
                         &lt;/div>
-                        &lt;div class="prio-class">
-                            &lt;span>Low&lt;/span>
-                            &lt;img src="/assets/img/task-prio-low.png" alt="low-img">
+                        &lt;div class="prio">
+                            &lt;span class="mt-11 mb-11">Prio&lt;/span>
+                            &lt;div class="prio-row">
+                                &lt;div class="prio-class">
+                                    &lt;span>Urgent&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                                &lt;/div>
+                                &lt;div class="prio-class">
+                                    &lt;span>Medium&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                                &lt;/div>
+                                &lt;div class="prio-class">
+                                    &lt;span>Low&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-low.png" alt="low-img">
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="add-task-date">
+                            &lt;span class="mt-11">Due date&lt;/span>
+                            &lt;div class="date-box-add-task">
+                                &lt;input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
+                                &lt;img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="add-task-line-margin">
+                    &lt;div class="add-task-vertical-line">
+                    &lt;/div>
+                    &lt;/div>
+                    &lt;div class="add-task-responsive-right">
+                        &lt;div class="category-select-box">
+                            &lt;span>Category&lt;/span>
+                            &lt;select name="category" id="category-task" class="category-select">
+                                &lt;option value="">Select task category&lt;/option>
+                                &lt;option value="orange">Orange&lt;/option>
+                                &lt;option value="blue">Blue&lt;/option>
+                                &lt;option value="red">Red&lt;/option>
+                                &lt;option value="green">Green&lt;/option>
+                            &lt;/select>
+                        &lt;/div>
+                        &lt;div class="assigned-add-task">
+                            &lt;span class="mt-11">Assigned to&lt;/span>
+                            &lt;select name="assigned" id="assigned-task" class="assigned-select">
+                                &lt;option value="">Select contacts to assign&lt;/option>
+                                &lt;option value="orange">name1&lt;/option>
+                                &lt;option value="blue">name2&lt;/option>
+                            &lt;/select>
+                        &lt;/div>
+                        &lt;div class="subtask">
+                            &lt;span class="mt-11">Subtasks&lt;/span>
+                            &lt;div class="subtask-box">
+                                &lt;input class="input-subtask" type="text" placeholder="Add  new subtask">
+                                &lt;img src="/assets/img/task-plus.png" alt="plus-img">
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+
+
+                            &lt;!-- test zum scrollen -->
+
+                            &lt;!-- &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 5&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> -->
+
+                            &lt;!-- test zum scrollen ende -->
+
+
                         &lt;/div>
                     &lt;/div>
                 &lt;/div>
-                &lt;div class="date">
-                    &lt;span class="mt-11">Due date&lt;/span>
-                    &lt;div class="date-box">
-                        &lt;input class="input-date" type="text" placeholder="dd/mm/yyyy">
-                        &lt;img src="/assets/img/task-calendar.png" alt="calendar-img" required>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="category-select-box">
-                    &lt;span class="mt-11">Category&lt;/span>
-                    &lt;select name="category" id="category-task" class="category-select">
-                        &lt;option value="">Select task category&lt;/option>
-                        &lt;option value="orange">Orange&lt;/option>
-                        &lt;option value="blue">Blue&lt;/option>
-                        &lt;option value="red">Red&lt;/option>
-                        &lt;option value="green">Green&lt;/option>
-                    &lt;/select>
-                &lt;/div>
-                &lt;div class="assigned-add-task">
-                    &lt;span class="mt-11">Assigned to&lt;/span>
-                    &lt;select name="assigned" id="assigned-task" class="assigned-select">
-                        &lt;option value="">Select contacts to assign&lt;/option>
-                        &lt;option value="orange">name1&lt;/option>
-                        &lt;option value="blue">name2&lt;/option>
-                    &lt;/select>
-                &lt;/div>
-                &lt;div class="subtask">
-                    &lt;span class="mt-11">Subtasks&lt;/span>
-                    &lt;div class="subtask-box">
-                        &lt;input class="input-subtask" type="text" placeholder="Add  new subtask">
-                        &lt;img src="/assets/img/task-plus.png" alt="plus-img">
-                    &lt;/div>
-                    &lt;div>
-                        &lt;input type="checkbox">
-                        &lt;span>Subtask 1&lt;/span>
-                    &lt;/div>
-                &lt;/div>
-                &lt;button class="mt-11">ADD + just 4 required tests&lt;/button>
+                &lt;div class="task-button-box">
+              &lt;div class="clear-task-button">
+                &lt;span>Clear&lt;/span>
+                &lt;img src="./assets/img/x-button-black.png" alt="x-img">
+              &lt;/div>
+              &lt;div class="add-task-button">
+                &lt;span>Create Task&lt;/span>
+                &lt;img src="./assets/img/hook.png" alt="haken-img">
+              &lt;/div>
+            &lt;/div>
             &lt;/form>
+            
 
             &lt;!-- hier die versionen die ggf. ausgeblendet sind solange nichts hinzugefügt wird: -->
             &lt;div class="d-none">
-              &lt;div class="task-added">
-                &lt;!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
-                  &lt;span>Task added to board&lt;/span>
-                  &lt;img src="/assets/img/task-board.png" alt="board-img">
-              &lt;/div>
+                &lt;div class="task-added">
+                    &lt;!-- task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
+                    &lt;span>Task added to board&lt;/span>
+                    &lt;img src="/assets/img/task-board.png" alt="board-img">
+                &lt;/div>
             &lt;/div>
 
             &lt;!-- task-added-to-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht-->
             &lt;div class="d-none">
-              &lt;div class="task-added-backlog">
-                  &lt;span>Task added to backlog&lt;/span>
-                  &lt;img src="/assets/img/task-backlog.png" alt="backlog-img">
-              &lt;/div>
+                &lt;div class="task-added-backlog">
+                    &lt;span>Task added to backlog&lt;/span>
+                    &lt;img src="/assets/img/task-backlog.png" alt="backlog-img">
+                &lt;/div>
             &lt;/div>
     `;
 }
 
-
+/**
+ * This function renders the contacts area
+ * 
+ */
 function renderContacts() {
-    // document.body.style.backgroundColor = "white";
-    // document.getElementById('content').style.backgroundColor = "white";
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
-    &lt;section class="content-contact">
+    resetContent();
+    document.getElementById("contacts-content").innerHTML = /*html*/ `
+        &lt;section class="content-contact">
         &lt;section>
             &lt;div class="add-new-contact">
-                &lt;img src="/assets/img/contact-new.png" alt="new-contact-img">
+                &lt;img onclick="addNewContact()" src="/assets/img/contact-new.png" alt="new-contact-img">
             &lt;/div>
 
             &lt;div class="overflow-scroll">
@@ -254,7 +374,8 @@ function renderContacts() {
                     &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
                 &lt;/div>
                 &lt;div>
-                    &lt;div class="assigned mt-11">
+                    &lt;!-- mit dem onclick kann man zu jedem kontakt kommen später -->
+                    &lt;div class="assigned mt-11"  onclick="renderContactDescription()">
                         &lt;div class="name-border">AW&lt;/div>
                         &lt;div class="left-distance">
                             &lt;div class="font-21 contacts-span">
@@ -308,7 +429,6 @@ function renderContacts() {
                     Contact successfully created
                   &lt;/div>
                 &lt;/div>
-
 
 
 
@@ -415,206 +535,13 @@ function renderContacts() {
                     &lt;/div>
                 &lt;/div>
 
-                &lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">B&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">BM&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Bine Maja&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">bine@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">BB&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Benjamin Bauer&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">benjamin@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>&lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">A&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">AW&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Albert Wissigkeit&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">albert@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">AZ&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Anja Zabruck&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">anja@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
+           
 
-                &lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">B&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">BM&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Bine Maja&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">bine@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">BB&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Benjamin Bauer&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">benjamin@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>&lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">A&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">AW&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Albert Wissigkeit&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">albert@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">AZ&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Anja Zabruck&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">anja@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
-
-                &lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">B&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">BM&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Bine Maja&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">bine@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">BB&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Benjamin Bauer&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">benjamin@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>&lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">A&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">AW&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Albert Wissigkeit&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">albert@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">AZ&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Anja Zabruck&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">anja@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
-
-                &lt;div class="contacts-list">
-                    &lt;div>
-                        &lt;h3 class="font-21">B&lt;/h3>
-                    &lt;/div>
-                &lt;/div>
-                &lt;div class="line">
-                    &lt;img src="/assets/img/contact-line.png" alt="contact-line-img">
-                &lt;/div>
-                &lt;div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border">BM&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Bine Maja&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">bine@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                    &lt;div class="assigned mt-11">
-                        &lt;div class="name-border2">BB&lt;/div>
-                        &lt;div class="left-distance">
-                            &lt;div class="font-21 contacts-span">
-                                &lt;span>Benjamin Bauer&lt;/span>
-                            &lt;/div>
-                            &lt;a href="#">benjamin@gmail.com&lt;/a>
-                        &lt;/div>
-                    &lt;/div>
-                &lt;/div>
+              
 
                 &lt;!-- scroll test kontakte ende -->
             
-
+                
 
 
 
@@ -630,23 +557,503 @@ function renderContacts() {
 
             &lt;/div>
 
+
+
+            
         &lt;/section>
+    &lt;/section>
+    `;
+    document.getElementById('contacts-description-content').innerHTML = /*html*/`
+    &lt;section class="content">
+        &lt;span class="mt-11 responsive-hide">Kanban Project Management Tool&lt;/span>
+        &lt;div class="go-back-contact">
+            &lt;div>
+                &lt;h2 class="font-47 contact-description-h2">Contacts&lt;/h2>
+                &lt;span class="font-21">Better with a team&lt;/span>
+            &lt;/div>
+                &lt;img src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+        &lt;/div>
+        &lt;div class="blue-line">
+            &lt;img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+        &lt;/div>
+        &lt;!-- &lt;div>
+            &lt;div class="contact-info">
+                &lt;div class="initials font-27">
+                    AM
+                &lt;/div>
+                &lt;div>
+                    &lt;div>
+                        &lt;h3 class="font-27">Anton Mayer&lt;/h3>
+                    &lt;/div>
+                    &lt;div class="add-task">
+                        &lt;img src="/assets/img/contact-plus.png" alt="plus-img">
+                        &lt;span>Add Task&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="mb-11">
+                &lt;h4 class="font-21">Contact Information&lt;/h4>
+            &lt;/div>
+            &lt;div class="mail-mobil">
+                &lt;div>
+                    &lt;span>&lt;b>Email&lt;/b>&lt;/span>
+                    &lt;a href="#">antom@gmail.com&lt;/a>
+                &lt;/div>
+                &lt;div>
+                    &lt;span>&lt;b>Mobil&lt;/b>&lt;/span>
+                    &lt;a href="#">+49 1111 111 11 1&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div> -->
+
+
+        &lt;!-- &lt;div class="delete-button">
+            &lt;img src="/assets/img/task-delete-button.png" alt="delete-img">
+        &lt;/div>
+        &lt;div class="edit-button">
+            &lt;img src="/assets/img/task-edit-button.png" alt="edit-img">
+        &lt;/div> -->
     &lt;/section>
     `;
 }
 
+/**
+ * This function renders the contact decriptions
+ * 
+ */
+function renderContactDescription() {
+    if (window.innerWidth > 800) {
+        document.getElementById("contacts-description-content").innerHTML = renderContactDescriptionHTML();
+    } else {
+        resetContent();
+        document.getElementById("content").innerHTML = renderContactDescriptionHTML();
+    }
+}
+
+/**
+ * This function animate a slide from the right to the left
+ * 
+ * @returns the animation effect
+ */
+function slideInPopUp() {
+    return popUpDiv.animate(
+        [
+          { transform: 'translateX(1000px)' }, // Startposition des Popups
+          { transform: 'translateX(0)' } // Endposition des Popups
+        ],
+        {
+          duration: 250, // Animationsdauer in Millisekunden
+          easing: 'ease' // Easing-Funktion für den Übergangseffekt
+        }
+      );
+}
+
+/**
+ * This function opens the add contact area to add a new contact
+ * 
+ */
+function addNewContact() {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+    document.getElementById('popUpDiv').classList.add('show-popup');
+    slideInPopUp();
+    document.getElementById('popUpDiv').innerHTML = /*html*/`
+        &lt;!-- &lt;section class="content"> -->
+        &lt;div class="border">
+            &lt;div class="top-bg">
+                &lt;div class="x-position">
+                    &lt;img  onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div>
+                        &lt;h2 class="font-32 mt-0 mb-11">Add contact&lt;/h2>
+                        &lt;span>Tasks are better with a team!&lt;/span>
+                    &lt;/div>
+                    &lt;div>
+                        &lt;img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="big-initials">
+                &lt;img src="/assets/img/big-character.png" alt="big-character-img">
+            &lt;/div>
+            &lt;form action="" class="form-box">
+                &lt;div class="contact-box">
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="Name" required>
+                            &lt;img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="Email" required>
+                            &lt;img src="/assets/img/email-icon.png" alt="email-img">
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="Phone" required>
+                            &lt;img src="/assets/img/phone-icon.png" alt="phone-img">
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;!-- &lt;div class="create-contact"> -->
+                    &lt;div class="create-contact">
+                        &lt;b>Create contact&lt;/b>
+                        &lt;img src="/assets/img/hook-icon.png" alt="hook-img">
+                    &lt;/div>
+                &lt;!-- &lt;/div> -->
+                &lt;button class="mt-11">ADD + just 4 required tests&lt;/button>
+            &lt;/form>
+        &lt;/div>
+    &lt;!-- &lt;/section> -->
+    `;
+}
+
+/**
+ * This is a help function thats olny sources out the HTML code to smaller the code
+ * 
+ * @returns html code
+ */
+function renderContactDescriptionHTML() {
+    return /*html*/`
+    &lt;section class="content">
+        &lt;span class="mt-11 responsive-hide">Kanban Project Management Tool&lt;/span>
+        &lt;div class="go-back-contact">
+            &lt;div>
+                &lt;h2 class="font-47 contact-description-h2">Contacts&lt;/h2>
+                &lt;span class="font-21">Better with a team&lt;/span>
+            &lt;/div>
+                &lt;img  onclick="renderContacts()" src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+        &lt;/div>
+        &lt;div class="blue-line">
+            &lt;img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+        &lt;/div>
+        &lt;div>
+            &lt;div class="contact-info">
+                &lt;div class="initials font-27">
+                    AM
+                &lt;/div>
+                &lt;div>
+                    &lt;div>
+                        &lt;h3 class="font-27">Anton Mayer&lt;/h3>
+                    &lt;/div>
+                    &lt;div onclick="addTaskFloat()" class="add-task">
+                        &lt;img src="/assets/img/contact-plus.png" alt="plus-img">
+                        &lt;span>Add Task&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="mb-11">
+                &lt;h4 class="font-21">Contact Information&lt;/h4>
+            &lt;/div>
+            &lt;div class="mail-mobil">
+                &lt;div>
+                    &lt;span>&lt;b>Email&lt;/b>&lt;/span>
+                    &lt;a href="#">antom@gmail.com&lt;/a>
+                &lt;/div>
+                &lt;div>
+                    &lt;span>&lt;b>Mobil&lt;/b>&lt;/span>
+                    &lt;a href="#">+49 1111 111 11 1&lt;/a>
+                &lt;/div>
+            &lt;/div>
+        &lt;/div>
+        &lt;div class="delete-button-contact">
+            &lt;img src="/assets/img/task-delete-button.png" alt="delete-img">
+        &lt;/div>
+        &lt;div class="edit-button-contact">
+            &lt;img onclick="editContact()" src="/assets/img/task-edit-button.png" alt="edit-img">
+        &lt;/div>
+    &lt;/section>
+    `;
+}
+
+/**
+ * This function opens the floating add task editor to add new tasks
+ * 
+ */
+function addTaskFloat() {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+    slideInPopUp();
+    document.getElementById('popUpDiv').innerHTML = /*html*/`
+    &lt;div class="border">
+        &lt;form class="add-task-scroll">
+                &lt;!-- man kommt normal über add-task button auf die seite, 
+                    wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
+                    X darunter taucht auf ! -->
+                &lt;div class="add-task-x-position d-none">
+                    &lt;img src="/assets/img/x-button-black.png" alt="x-button-img">
+                &lt;/div>
+                &lt;div class="mt-11 responsive-hide">
+                  &lt;span >Kanban Project Management Tool&lt;/span>
+                &lt;/div>
+                &lt;!-- hier drüber wird je nach ansicht die span /x-button div ein &amp; ausgeblendet -->
+                &lt;h2 class="font-47 add-task-h2">Add Task&lt;/h2>
+                &lt;div class="desktop-size">
+                    &lt;div class="add-task-responsive-left">
+                        &lt;div class="title">
+                            &lt;span>Title&lt;/span>
+                            &lt;input type="text" placeholder="Enter a Title" required>
+                        &lt;/div>
+                        &lt;div class="description">
+                            &lt;span class="mt-11">Description&lt;/span>
+                            &lt;textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description"
+                                required>&lt;/textarea>
+                        &lt;/div>
+                        &lt;div class="prio">
+                            &lt;span class="mt-11 mb-11">Prio&lt;/span>
+                            &lt;div class="prio-row">
+                                &lt;div class="prio-class">
+                                    &lt;span>Urgent&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-urgent.png" alt="urgent-img">
+                                &lt;/div>
+                                &lt;div class="prio-class">
+                                    &lt;span>Medium&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-medium.png" alt="medium-img">
+                                &lt;/div>
+                                &lt;div class="prio-class">
+                                    &lt;span>Low&lt;/span>
+                                    &lt;img src="/assets/img/task-prio-low.png" alt="low-img">
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="add-task-date">
+                            &lt;span class="mt-11">Due date&lt;/span>
+                            &lt;div class="date-box-add-task">
+                                &lt;input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
+                                &lt;img src="/assets/img/task-calendar.png" alt="calendar-img" required>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/div>
+                    &lt;div class="add-task-line-margin">
+                    &lt;div class="add-task-vertical-line">
+                    &lt;/div>
+                    &lt;/div>
+                    &lt;div class="add-task-responsive-right">
+                        &lt;div class="category-select-box">
+                            &lt;span>Category&lt;/span>
+                            &lt;select name="category" id="category-task" class="category-select">
+                                &lt;option value="">Select task category&lt;/option>
+                                &lt;option value="orange">Orange&lt;/option>
+                                &lt;option value="blue">Blue&lt;/option>
+                                &lt;option value="red">Red&lt;/option>
+                                &lt;option value="green">Green&lt;/option>
+                            &lt;/select>
+                        &lt;/div>
+                        &lt;div class="assigned-add-task">
+                            &lt;span class="mt-11">Assigned to&lt;/span>
+                            &lt;select name="assigned" id="assigned-task" class="assigned-select">
+                                &lt;option value="">Select contacts to assign&lt;/option>
+                                &lt;option value="orange">name1&lt;/option>
+                                &lt;option value="blue">name2&lt;/option>
+                            &lt;/select>
+                        &lt;/div>
+                        &lt;div class="subtask">
+                            &lt;span class="mt-11">Subtasks&lt;/span>
+                            &lt;div class="subtask-box">
+                                &lt;input class="input-subtask" type="text" placeholder="Add  new subtask">
+                                &lt;img src="/assets/img/task-plus.png" alt="plus-img">
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+
+
+                            &lt;!-- test zum scrollen -->
+&lt;!-- 
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 5&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div>&lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 1&lt;/span>
+                            &lt;/div>
+                            &lt;div>
+                                &lt;input type="checkbox">
+                                &lt;span>Subtask 10&lt;/span>
+                            &lt;/div> -->
+
+                            &lt;!-- test zum scrollen ende -->
+
+
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="task-button-box">
+              &lt;div class="clear-task-button">
+                &lt;span>Clear&lt;/span>
+                &lt;img src="./assets/img/x-button-black.png" alt="x-img">
+              &lt;/div>
+              &lt;div class="add-task-button">
+                &lt;span>Create Task&lt;/span>
+                &lt;img src="./assets/img/hook.png" alt="haken-img">
+              &lt;/div>
+            &lt;/div>
+            &lt;/form>
+&lt;/div>
+    `;
+}
+
+/**
+ * This function opens the edit contact area to edit contacts
+ * 
+ */
+function editContact() {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+    slideInPopUp();
+  document.getElementById('popUpDiv').innerHTML = /*html*/`
+        &lt;!-- &lt;section class="content"> -->
+        &lt;div class="border">
+            &lt;div class="top-bg">
+                &lt;div class="x-position">
+                    &lt;img onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                &lt;/div>
+                &lt;div>
+                    &lt;div>
+                        &lt;h2 class="font-32 mt-0 mb-11">Edit contact&lt;/h2>
+                    &lt;/div>
+                    &lt;div>
+                        &lt;img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    &lt;/div>
+                &lt;/div>
+            &lt;/div>
+            &lt;div class="big-initials font-27">
+                TW
+            &lt;/div>
+            &lt;form action="">
+                &lt;div class="contact-box">
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="name muss mit JS eingefügt werden" required>
+                            &lt;img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="email muss mit JS eingefügt werden" required>
+                            &lt;img src="/assets/img/email-icon.png" alt="email-img">
+                        &lt;/div>
+                    &lt;/div>
+
+                    &lt;div class="name">
+                        &lt;div class="name-box">
+                            &lt;input class="input-name" type="text" placeholder="phone Nr muss mit JS eingefügt werden" required>
+                            &lt;img src="/assets/img/phone-icon.png" alt="phone-img">
+                        &lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="del-save">
+                    &lt;div class="del">
+                        Delete
+                    &lt;/div>
+                    &lt;div class="save">
+                        &lt;b>Save&lt;/b>
+                    &lt;/div>
+                &lt;/div>
+                &lt;button class="mt-11">ADD + just 4 required tests&lt;/button>
+            &lt;/form>
+        &lt;/div>
+    &lt;!-- &lt;/section> -->
+    `;
+}
+
+/**
+ * This function close the edit contact window
+ * 
+ */
+function closeEditContact() {
+    document.getElementById('popUpDiv').classList.add('d-none');
+    document.getElementById('popUpDiv').classList.remove('d-flex');
+  document.getElementById('popUpDiv').innerHTML = ``;
+}
 
 function renderLegalNotice() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
+     &lt;div class="overflow-scroll">
     &lt;div class="help-container">
 
 &lt;div class="over-headline">
     &lt;span>Kanban Project Management Tool&lt;/span>
-    &lt;img class="go-back" onclick="history.back()" src="/assets/img/go-back.png"> &lt;!--zur vorherigen Seite zurückkehren-->
+    &lt;img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png"> 
 &lt;/div>
 
-&lt;h1 class="headline">Legal Notice&lt;/h1>
+&lt;h1 class="headline font-64">Legal Notice&lt;/h1>
 
 
 
@@ -661,8 +1068,8 @@ function renderLegalNotice() {
 
 
 &lt;p>Tobias Heinze &lt;br>
-    &lt;br>
-&lt;/p>
+   Holzhäuser Straße 65&lt;br>
+   04299 Leipzig&lt;/p>
 
 
 &lt;p>Albert W..hat ever^^ &lt;br>
@@ -675,7 +1082,7 @@ Phone: &lt;br>
 E-Mail:
 
 
-
+ 
 &lt;h2>Liability for Content&lt;/h2>
 
 The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
@@ -727,22 +1134,22 @@ inform us
 accordingly. Upon notification of violations, &lt;br> we will remove such contents immediately. &lt;br>
 
 Last Updated: [05/30/2023]
-
 &lt;/div>
+&lt;/div>
+
     `;
 }
 
-
 function renderHelp() {
-    document.getElementById('content').innerHTML = ``;
-    document.getElementById('content').innerHTML = /*html*/`
+    resetContent();
+    document.getElementById("content").innerHTML = /*html*/ `
    &lt;div class="help-container">
 
 &lt;div class="over-headline">
 &lt;span>Kanban Project Management Tool&lt;/span>
-&lt;img class="go-back" onclick="history.back()" src="/assets/img/go-back.png">
+&lt;img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png">
 &lt;/div>
-&lt;h1 class="headline">Help&lt;/h1> 
+&lt;h1 class="headline font-64">Help&lt;/h1> 
 
 
 &lt;h2>What is Join?&lt;/h2>
@@ -750,38 +1157,31 @@ function renderHelp() {
 &lt;b>Join&lt;/b>  is a project initiated by the &lt;b> Developer Academy&lt;/b>, aimed at providing hands-on experience with Git in the context of a complex project. &lt;br> The "Join" project was collaboratively executed by a team of three individuals over a period of three weeks.
 &lt;br>
 &lt;h3> How to use it:&lt;/h3>
-&lt;b>1.&lt;/b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. &lt;br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. &lt;br> &lt;br>
-&lt;b>2.&lt;/b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. &lt;br> &lt;br>
-&lt;b>3.&lt;/b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
+&lt;b class= "font-27">1.&lt;/b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. &lt;br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. &lt;br> &lt;br>
+&lt;b class= "font-27">2.&lt;/b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. &lt;br> &lt;br>
+&lt;b class= "font-27">3.&lt;/b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
 &lt;/div>
     `;
 }</code></pre>
-            </article>
-        </section>
+        </article>
+    </section>
 
 
 
 
-    </div>
+</div>
 
-    <nav>
-        <h2><a href="index.html">Home</a></h2>
-        <h3>Global</h3>
-        <ul>
-            <li><a href="global.html#renderBoard">renderBoard</a></li>
-            <li><a href="global.html#renderSummary">renderSummary</a></li>
-        </ul>
-    </nav>
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addTaskFloat">addTaskFloat</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li></ul>
+</nav>
 
-    <br class="clear">
+<br class="clear">
 
-    <footer>
-        Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 01 2023 16:33:53
-        GMT+0200 (Mitteleuropäische Sommerzeit)
-    </footer>
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Jun 06 2023 08:20:29 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
 
-    <script> prettyPrint(); </script>
-    <script src="scripts/linenumber.js"> </script>
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
 </body>
-
 </html>
