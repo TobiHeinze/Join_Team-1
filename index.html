@@ -13,10 +13,15 @@
 
 	<script src="/script.js"></script>
 	<script src="/js/summary.js"></script>
+	<script src="/js/board.js"></script>
+	<script src="/js/contacts.js"></script>
+	<script src="/js/help.js"></script>
+	<script src="/js/task.js"></script>
+	<!-- <script src="/storage.js"></script> -->
+	<script src="/js/content.js"></script>
 
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="style/index.css">
-	<!-- <link rel="stylesheet" href="style/fonts.css"> -->
 	<link rel="stylesheet" href="style/content/add_contact.css">
 	<link rel="stylesheet" href="style/content/add_task.css">
 	<link rel="stylesheet" href="style/content/board.css">
@@ -26,7 +31,6 @@
 	<link rel="stylesheet" href="style/content/edit_contact.css">
 	<link rel="stylesheet" href="style/content/hello.css">
 	<link rel="stylesheet" href="style/content/help&legalNotice.css">
-	<!-- <link rel="stylesheet" href="style/content/legal_notice.css"> -->
 	<link rel="stylesheet" href="style/content/login.css">
 	<link rel="stylesheet" href="style/content/sign_up.css">
 	<link rel="stylesheet" href="style/content/summary.css">
@@ -34,8 +38,10 @@
 
 </head>
 
-<body onload="renderSummary()">
-	<div id="main-container" class="main-container">
+<body onload="renderLogin()">
+	<div id="loginContainer">
+	</div>
+	<div id="mainContainer" class="main-container d-none">
 
 		<div class="header-with-content">
 			<div class="header padding">
