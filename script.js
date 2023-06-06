@@ -149,7 +149,7 @@ function renderBoard() {
 			<span class="task-status-description">In progress</span>
 			<img src="assets/img/add-task-button-mobile.svg" alt="">
 		</div>
-		<div id="taskStatus1" class="task-container-mobile-empty">No Task In progress</div>
+		<div id="taskStatus1" class="task-container-mobile-empty">No task In progress</div>
 	</div>
 
 	<div class="task-section-container">
