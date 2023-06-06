@@ -208,8 +208,8 @@ function renderAddTask() {
 
 function renderFloatAddTask() {
     if (window.innerWidth > 800) {
-        // document.getElementById("content").innerHTML = addTaskFloat();
-        document.getElementById("popUpDiv").innerHTML = renderAddTask();
+        document.getElementById("content").innerHTML = addTaskFloat();
+        // document.getElementById("popUpDiv").innerHTML = renderAddTask();
     } else {
         resetContent();
         document.getElementById("popUpDiv").innerHTML = renderAddTask();
