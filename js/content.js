@@ -1,6 +1,6 @@
-let contentArray = [
+const contentArray = [
 	{
-		'users': [
+		"users": [
 			{
 				'name': ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze"],
 				'email': ["annika@test.de", "albert@test.de", "tobias@test.de"],
@@ -33,7 +33,7 @@ let contentArray = [
 			{
 				'taskStatus': ["0", "1", "2", "2", "3"],
 				'title': ["Website redesign", "Call potential clients", "Accounting invoices", "Video cut", "Social media strategy"],
-				'description': ["Modify the contents of the main website. Adjust the UI to the company's brand design.", "Make the product presentation to prospektive buyers", "Write open invoices for customer", "Edit the new company video", "Develop an ad campaign for brand positioning"],
+				'description': ["Modify the contents of the main website. Adjust the UI to the company s brand design", "Make the product presentation to prospektive buyers", "Write open invoices for customer", "Edit the new company video", "Develop an ad campaign for brand positioning"],
 				'priority': ["low", "urgent", "medium", "medium", "low"],
 				'dueDate': ["05.08.2022", "24.12.2034", "11.06.2023", "09.06.1998", "06.07.2015"],
 				'categoryName': ["Design", "Sales", "Backoffice", "Media", "Marketing"],
@@ -69,7 +69,7 @@ let contentArray = [
 					{
 						'name': ["David Eisenberg", "Bendikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
 						'nameInitials': ["DE", "BZ", "AR", "AW"],
-						'contactImageBgColor': ["#CB02CF", "#FF7A00","#9327FF", "#FFA800"],
+						'contactImageBgColor': ["#CB02CF", "#FF7A00", "#9327FF", "#FFA800"],
 					},
 					{
 						'name': ["Tobias Heinze", "David Eisenberg", "Bendikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
@@ -94,7 +94,33 @@ let contentArray = [
 
 
 
+// let contentArraySaved = [];
 
+
+// async function init(){
+//     loadUsers();
+// }
+
+// async function loadUsers(){
+//     try {
+//         users = JSON.parse(await getItem('users'));
+//     } catch(e){
+//         console.error('Loading error:', e);
+//     }
+// }
+
+
+// async function saveArray() {
+//     contentArraySaved.push(contentArray);
+//     await setItem('contentArraySaved', JSON.stringify(contentArraySaved));
+//     resetForm();
+// }
+
+// function resetForm() {
+//     email.value = '';
+//     password.value = '';
+//     registerBtn.disabled = false;
+// }
 
 
 
