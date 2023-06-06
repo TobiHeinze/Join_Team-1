@@ -1,3 +1,100 @@
+/**
+ * This function renders the summary area
+ * 
+ */
+function renderSummary() {
+  document.getElementById('mainContainer').classList.remove('d-none');
+  resetContent();
+  document.getElementById("content").innerHTML = renderSummaryHTML();
+}
+
+/**
+ * This function returns the html code
+ * 
+ * @returns html code
+ */
+function renderSummaryHTML() {
+  return /*html*/`
+  <span class="kanban">Kanban Project Management Tool</span>
+
+  <div class= "headlines">
+  <h1>Summary</h1>
+  <img class="blue-line-desktop" src="/assets/img/blue-line-desktop.png">
+  <span class="font-21">Everything in a nutshell!</span> 
+  </div>
+  <br> <br>
+  <img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
+  
+  
+  <div class="summary-content">
+  
+    <div>
+        <section class="row">
+            <div onclick="renderBoard()" class="card-row-1">
+                <span class="font-64">5</span>
+                <span class="font-16">Tasks in <br> Board</span>
+            </div>
+            <div onclick="renderBoard()" class="card-row-1">
+                <span class="font-64">2</span>
+                <span class="font-16">Tasks in <br> Progress</span>
+            </div>
+            <div onclick="renderBoard()" class="card-row-1">
+                <span class="font-64">2</span>
+                <span class="font-16">Awaiting <br> Feedback</span>
+            </div>
+        </section>
+  
+  
+        <section class="row">
+            <div onclick="renderBoard()" class="card-row-2">
+                <div class="card-row-2-left">
+                    <div>
+                        <img style="padding-top: 10px" src="./assets/img/urgent.png" />
+                    </div>
+                    <div class="amount">
+                        <span class="font-47">1</span>
+                        <span class="font-21">Urgent</span>
+                    </div>
+                </div>
+                <div class="card-row-2-middle"></div>
+                <div class="card-row-2-right">
+                    <span class="font-weight-700 font-16">October 16, 2022</span> <br>
+                    <span class="font-16">Upcoming Deadline</span>
+                </div>
+            </div>
+        </section>
+  
+  
+        <section class="row">
+            <div onclick="renderBoard()" class="card-row-3">
+                <div>
+                    <img src="/assets/img/pen.png" />
+                </div>
+                <div class="amount">
+                    <span class="font-64 ">1</span>
+                    <span class="font-21">To-do</span>
+                </div>
+            </div>
+            <div onclick="renderBoard()" class="card-row-3">
+                <div>
+                    <img src="/assets/img/check.png" />
+                </div>
+                <div class="amount">
+                    <span class="font-64">1</span>
+                    <span class="font-21">Done</span>
+                </div>
+            </div>
+        </section>
+    </div>
+  
+    <aside id="greeting">
+        <span class="font-weight-500 font-47">${getTime()},</span>
+        <h1 id="userGreetingName" class="font-weight-700 font-64">Guest</h1>
+    </aside>
+  </div>
+    `;
+}
+
 
 /**
  * Returns the current date in the format "DD.MM.YYYY".
@@ -14,6 +111,7 @@ function getDate() {
   // Verwendet die toLocaleDateString-Methode, um das Datum im britischen Format mit Tag, Monat und Jahr zurückzugeben
   return date;
 }
+
 
 /**
  * Returns the current date in the format "YYYYMMDD".
@@ -33,6 +131,7 @@ function getDate1() {
   // Anschließend wird der Bindestrich entfernt, um das gewünschte Format "YYYYMMDD" zu erhalten
   return date;
 }
+
 
 /**
  * Returns a greeting based on the current time of day.
