@@ -121,16 +121,12 @@ function renderAddTask() {
     document.getElementById("content").innerHTML = /*html*/ `
     <img class="create-button" src="/assets/img/create-button.png" alt="create task">
     <form class="add-task-scroll">
-                <!-- man kommt normal über add-task button auf die seite, 
-                    wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
-                    X darunter taucht auf ! -->
-                <div class="add-task-x-position d-none">
+                <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="/assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">
                   <span >Kanban Project Management Tool</span>
                 </div>
-                <!-- hier drüber wird je nach ansicht die span /x-button div ein & ausgeblendet -->
                 <h2 class="font-47 add-task-h2">Add Task</h2>
                 <div class="desktop-size">
                     <div class="add-task-responsive-left">
@@ -713,7 +709,7 @@ function renderContactDescriptionHTML() {
                     <div>
                         <h3 class="font-27">Anton Mayer</h3>
                     </div>
-                    <div onclick="addTaskFloat()" class="add-task">
+                    <div onclick="renderFloatAddTask()" class="add-task">
                         <img src="/assets/img/contact-plus.png" alt="plus-img">
                         <span>Add Task</span>
                     </div>
@@ -743,6 +739,15 @@ function renderContactDescriptionHTML() {
     `;
 }
 
+
+function renderFloatAddTask() {
+    if (window.innerWidth > 800) {
+        document.getElementById("content").innerHTML = addTaskFloat();
+    } else {
+        resetContent();
+        document.getElementById("popUpDiv").innerHTML = renderAddTask();
+    }
+}
 /**
  * This function opens the floating add task editor to add new tasks
  * 
@@ -757,7 +762,7 @@ function addTaskFloat() {
                 <!-- man kommt normal über add-task button auf die seite, 
                     wenn man aber vom board auf + drückt dann verschwindet  die span hier drunter und das 
                     X darunter taucht auf ! -->
-                <div class="add-task-x-position d-none">
+                <div onclick="closeEditContact()" class="add-task-x-position-float">
                     <img src="/assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">

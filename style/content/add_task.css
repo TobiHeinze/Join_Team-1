@@ -207,6 +207,13 @@
     right: 5%;
 }
 
+.add-task-x-position-float {
+    display: flex;
+    top: 8%;
+    position: absolute;
+    right: 5%;
+}
+
 .task-button-box {
     display: flex;
     margin-left: auto;
