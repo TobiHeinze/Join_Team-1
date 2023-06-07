@@ -7,8 +7,8 @@ function renderForgotPassword() {
 function renderForgotPasswordHTML() {
   return /*html*/ `<img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
  <div>
-     <div class="content">
-         <form class="login-container">
+     
+         <form class="password-container">
              <a href="index.html"><img class="go-back-arrow" src="./assets/img/go-back.png"
                      onclick="history.back()"></a>
 
@@ -27,7 +27,7 @@ function renderForgotPasswordHTML() {
                  <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn" type="submit">Send me the email</button>
          </form>
          <img  class="d-none" src="./assets/img/email-sent.png" alt="email sent">
-     </div>
+     
  </div>`;
 }
 
@@ -39,9 +39,9 @@ function renderResetPassword() {
 
 function renderResetPasswordHTML() {
   return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
- <div>
-     <div class="content">
-         <form class="login-container">
+ 
+     
+         <form class="password-container">
              <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                      onclick="renderForgotPassword()"></a>
              <h1 style="font-family:'Inter', sans-serif;">Reset your password</h1>
@@ -58,7 +58,7 @@ function renderResetPasswordHTML() {
              <img class="d-none" src="./assets/img/password-reset.png" alt="reset password">
          </form>
 
-     </div>
+     
  </div>
 `;
 }
