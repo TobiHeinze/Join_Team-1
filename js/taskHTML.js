@@ -22,7 +22,7 @@ function renderAddTaskHTML() {
                         </div>
                         <div class="description">
                             <span class="mt-11">Description</span>
-                            <textarea name="" id="" cols="4" rows="4" placeholder="Enter a Description"
+                            <textarea name="" id="addTaskStatus" cols="4" rows="4" placeholder="Enter a Description"
                                 required></textarea>
                         </div>
                         <div class="prio">

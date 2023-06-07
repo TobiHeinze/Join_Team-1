@@ -1,14 +1,14 @@
-const contentArray = [
+const contentArray = 
 	{
-	  "users": [
+	  "users": 
 		{
 		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze"],
 		  "email": ["annika@test.de", "albert@test.de", "tobias@test.de"],
 		  "password": ["1234", "1234", "1234"],
 		  "photo": ["annika", "albert", "tobias"]
 		}
-	  ],
-	  "settings": [
+	  ,
+	  "settings": 
 		{
 		  "taskStatus": ["0", "1", "2", "3"],
 		  "categoryName": ["Design", "Sales", "Backoffice", "Marketing", "Media"],
@@ -16,8 +16,8 @@ const contentArray = [
 		  "priority": ["low", "medium", "urgent"],
 		  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1", "#0038FF", "#FFC701"]
 		}
-	  ],
-	  "contacts": [
+	  ,
+	  "contacts": 
 		{
 		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze", "David Eisenberg", "Bendikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
 		  "nameInitials": ["AR", "AW", "TH", "DE", "BZ", "MB", "SF"],
@@ -25,8 +25,8 @@ const contentArray = [
 		  "phoneNumber": [190666666, 1111111111, 3411234567, 84949433994, 1424242345, 4242342342, 3112335567],
 		  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 		}
-	  ],
-	  "tasks": [
+	  ,
+	  "tasks": 
 		{
 		  "taskStatus": ["0", "1", "2", "2", "3"],
 		  "title": ["Website redesign", "Call potential clients", "Accounting invoices", "Video cut", "Social media strategy"],
@@ -85,9 +85,8 @@ const contentArray = [
 			}
 		  ]
 		}
-	  ]
 	}
-  ];
+  ;
   
 
 

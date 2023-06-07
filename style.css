@@ -7,15 +7,16 @@ body {
     margin: 0;
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
+	max-height: 100vh;
     display: flex;
     flex-direction: column;
     background: #F6F7F8;
 }
 
 /* hides scrollbar from bottom */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
 textarea {
     font-family: 'Inter', sans-serif;
