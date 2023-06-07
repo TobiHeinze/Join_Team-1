@@ -6,7 +6,7 @@
 function renderAddTaskHTML() {
     return /*html*/ `
     <img class="create-button" src="./assets/img/create-button.png" alt="create task">
-    <form class="add-task-scroll">
+    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
                 <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
@@ -18,12 +18,12 @@ function renderAddTaskHTML() {
                     <div class="add-task-responsive-left">
                         <div class="title">
                             <span>Title</span>
-                            <input type="text" placeholder="Enter a Title" required>
+                            <input id="addTitle" type="text" placeholder="Enter a Title" required>
                         </div>
                         <div class="description">
                             <span class="mt-11">Description</span>
-                            <textarea name="" id="addTaskStatus" cols="4" rows="4" placeholder="Enter a Description"
-                                required></textarea>
+                            <textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description"
+                                ></textarea>
                         </div>
                         <div class="prio">
                             <span class="mt-11 mb-11">Prio</span>
@@ -178,10 +178,10 @@ function renderAddTaskHTML() {
                 <span>Clear</span>
                 <img src="./assets/img/x-button-black.png" alt="x-img">
               </div>
-              <div class="add-task-button">
+              <button class="add-task-button">
                 <span>Create Task</span>
                 <img src="./assets/img/hook.png" alt="haken-img">
-              </div>
+</button>
             </div>
             </form>
             
@@ -258,7 +258,7 @@ function addTaskFloatHTML() {
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
                                 <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
                     </div>

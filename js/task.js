@@ -38,20 +38,13 @@ function addTaskFloat() {
 
 
 function updateTaskArray() {
-    let taskstatus = document.getElementById('addTaskStatus').value;
-    contentArray[0]['tasks'][0]['taskStatus'].push(taskstatus);
+    let addTitle = document.getElementById('addTitle').value;
+    contentArray['tasks']['title'].push(addTitle);
 
+    let addDescription = document.getElementById('addDescription').value;
+    contentArray['tasks']['description'].push(addDescription);
 
-
-
-    for (let i = 0; i < contentArray[0]['tasks'][0]['title'].length + 1; i++) {
-
-        for (let j = 0; j < 4; j++) {
-            if (contentArray[0]['tasks'][0]['taskStatus'][i] == j) {
-                // document.getElementById(taskStatus${j}).innerHTML += generateBoardHTML(i);
-            }
-        }
-    }
+    setItem(key, contentArray);
 }
 
 

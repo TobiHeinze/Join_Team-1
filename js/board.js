@@ -1,9 +1,9 @@
 
 function updateHTML() {
-	for (let i = 0; i < contentArray[0]['tasks'][0]['title'].length + 1; i++) {
+	for (let i = 0; i < contentArray['tasks']['title'].length + 1; i++) {
 
 		for (let j = 0; j < 4; j++) {
-			if (contentArray[0]['tasks'][0]['taskStatus'][i] == j) {
+			if (contentArray['tasks']['taskStatus'][i] == j) {
 				document.getElementById(`taskStatus${j}`).innerHTML += generateBoardHTML(i);
 			}
 		}
@@ -18,9 +18,9 @@ function updateHTML() {
 function generateBoardHTML(index) {
 	return `
 	<div id="taskNumber${index}" class="task-container-mobile">
-		<span id="taskCategoryName${index}" class="task-category-name">${contentArray[0]['tasks'][0]['categoryName'][index]}</span>
-		<span id="taskTitle${index}" class="task-title">${contentArray[0]['tasks'][0]['title'][index]}</span>
-		<span id="taskDescription${index}" class="task-description">${contentArray[0]['tasks'][0]['description'][index]}</span>
+		<span id="taskCategoryName${index}" class="task-category-name">${contentArray['tasks']['categoryName'][index]}</span>
+		<span id="taskTitle${index}" class="task-title">${contentArray['tasks']['title'][index]}</span>
+		<span id="taskDescription${index}" class="task-description">${contentArray['tasks']['description'][index]}</span>
 		<div id="taskProgressBarContainer${index}" class="progress-bar-container-hide">
 			<div class="progress-bar-container">
 				<div id="taskProgressBar${index}" class="taskProgressBar"></div>
