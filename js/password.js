@@ -24,7 +24,7 @@ function renderForgotPasswordHTML() {
                      <input required class="input" type="email" name="email" placeholder="E-Mail">
                      <img src="./assets/img/email-icon.png">
                  </div>
-                 <button onclick="renderResetPassword()" type="submit" class="btn-dark login-btn" type="submit">Send me the email</button>
+                 <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn" type="submit">Send me the email</button>
          </form>
          <img  class="d-none" src="./assets/img/email-sent.png" alt="email sent">
      </div>
@@ -54,7 +54,7 @@ function renderResetPasswordHTML() {
                  <input class="input" type="password" name="password" placeholder="Confirm password" required>
              </div>
 
-             <button type="submit" class="btn-dark login-btn">Continue</button>
+             <button type="submit" class="button-dark login-btn">Continue</button>
              <img class="d-none" src="./assets/img/password-reset.png" alt="reset password">
          </form>
 
