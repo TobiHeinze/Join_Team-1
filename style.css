@@ -13,9 +13,9 @@ body {
 }
 
 /* hides scrollbar from bottom */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
 textarea {
     font-family: 'Inter', sans-serif;
