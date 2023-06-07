@@ -4,7 +4,7 @@
  */
 function renderContacts() {
     resetContent();
-    document.getElementById("contacts-content").innerHTML = /*html*/ `
+    document.getElementById("contactsContent").innerHTML = /*html*/ `
         <section class="content-contact">
         <section>
             <div class="add-new-contact">
@@ -18,7 +18,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="../assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <!-- mit dem onclick kann man zu jedem kontakt kommen später -->
@@ -48,7 +48,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="../assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">
@@ -103,7 +103,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">
@@ -132,7 +132,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">
@@ -159,7 +159,7 @@ function renderContacts() {
                     </div>
                 </div>
                 <div class="line">
-                    <img src="/assets/img/contact-line.png" alt="contact-line-img">
+                    <img src="./assets/img/contact-line.png" alt="contact-line-img">
                 </div>
                 <div>
                     <div class="assigned mt-11">
@@ -210,7 +210,7 @@ function renderContacts() {
         </section>
     </section>
     `;
-    document.getElementById('contacts-description-content').innerHTML = /*html*/`
+    document.getElementById('contactsDescriptionContent').innerHTML = /*html*/`
     <section class="content">
         <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
@@ -218,10 +218,10 @@ function renderContacts() {
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
                 <span class="font-21">Better with a team</span>
             </div>
-                <img src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+                <img src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
         </div>
         <div class="blue-line">
-            <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+            <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
         </div>
         <!-- <div>
             <div class="contact-info">
@@ -233,7 +233,7 @@ function renderContacts() {
                         <h3 class="font-27">Anton Mayer</h3>
                     </div>
                     <div class="add-task">
-                        <img src="/assets/img/contact-plus.png" alt="plus-img">
+                        <img src="./assets/img/contact-plus.png" alt="plus-img">
                         <span>Add Task</span>
                     </div>
                 </div>
@@ -255,15 +255,21 @@ function renderContacts() {
 
 
         <!-- <div class="delete-button">
-            <img src="/assets/img/task-delete-button.png" alt="delete-img">
+            <img src="./assets/img/task-delete-button.png" alt="delete-img">
         </div>
         <div class="edit-button">
-            <img src="/assets/img/task-edit-button.png" alt="edit-img">
+            <img src="./assets/img/task-edit-button.png" alt="edit-img">
         </div> -->
     </section>
     `;
 }
 
+window.addEventListener('resize', function() {
+    if (window.innerWidth < 800) {
+        // Leeren des Elements contactsChangeDescriptionContent
+        document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+    }
+});
 
 /**
  * This function renders the contact decriptions
@@ -271,23 +277,20 @@ function renderContacts() {
  */
 function renderContactDescription() {
     if (window.innerWidth > 800) {
-        //die auskommentierten sachen da muss die id mit den - geändert werden und dann könnte der slider gehen
-        // wenn das auskommentiert sit müsste man noch bei rendercontactdescription html den oberen teil wieder einkommentieren.....
-        
-        // document.getElementById("contacts-description-content").innerHTML = ``;
-        // renderContacts();
-        // slideInContact();
-        // document.getElementById("contacts-description-content").innerHTML += renderContactDescriptionHTML();
-        document.getElementById("contacts-description-content").innerHTML = renderContactDescriptionHTML();
-    } else {
+        document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
+        document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
+        slideInContact();
+        document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML();
+    } else if (window.innerWidth < 800) {
         resetContent();
         document.getElementById("content").innerHTML = renderContactDescriptionHTML();
+        document.getElementById("ContactDescriptionHeader").classList.remove('d-none');
     }
 }
 
 
 function slideInContact() {
-    return contacts-description-content.animate(
+    return contactsChangeDescriptionContent.animate(
         [
           { transform: 'translateX(1000px)' }, // Startposition des Popups
           { transform: 'translateX(0)' } // Endposition des Popups
@@ -314,7 +317,7 @@ function addNewContact() {
         <div class="border">
             <div class="top-bg">
                 <div class="x-position">
-                    <img  onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                    <img  onclick="closeEditContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
                 </div>
                 <div>
                     <div>
@@ -322,40 +325,40 @@ function addNewContact() {
                         <span>Tasks are better with a team!</span>
                     </div>
                     <div>
-                        <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                        <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
                     </div>
                 </div>
             </div>
             <div class="big-initials">
-                <img src="/assets/img/big-character.png" alt="big-character-img">
+                <img src="./assets/img/big-character.png" alt="big-character-img">
             </div>
             <form action="" class="form-box">
                 <div class="contact-box">
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="Name" required>
-                            <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                            <img src="./assets/img/charakter-icon.png" alt="charakter-img">
                         </div>
                     </div>
 
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="Email" required>
-                            <img src="/assets/img/email-icon.png" alt="email-img">
+                            <img src="./assets/img/email-icon.png" alt="email-img">
                         </div>
                     </div>
 
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="Phone" required>
-                            <img src="/assets/img/phone-icon.png" alt="phone-img">
+                            <img src="./assets/img/phone-icon.png" alt="phone-img">
                         </div>
                     </div>
                 </div>
                 <!-- <div class="create-contact"> -->
                     <div class="create-contact">
                         <b>Create contact</b>
-                        <img src="/assets/img/hook-icon.png" alt="hook-img">
+                        <img src="./assets/img/hook-icon.png" alt="hook-img">
                     </div>
                 <!-- </div> -->
                 <button class="mt-11">ADD + just 4 required tests</button>
@@ -373,18 +376,21 @@ function addNewContact() {
  */
 function renderContactDescriptionHTML() {
     return /*html*/`
+    <div id="contactPage"></div>
     <section class="content">
-        <!-- <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
+     <div id="ContactDescriptionHeader" class="d-none">
+        <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
             <div>
                 <h2 class="font-47 contact-description-h2">Contacts</h2>
                 <span class="font-21">Better with a team</span>
             </div>
-                <img  onclick="renderContacts()" src="/assets/img/task-left-arrow.png" alt="left-arrow-img">
+                <img  onclick="renderContacts()" src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
         </div>
         <div class="blue-line">
-            <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
-        </div> -->
+            <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+        </div>
+      </div>
         <div>
             <div class="contact-info">
                 <div class="initials font-27">
@@ -395,7 +401,7 @@ function renderContactDescriptionHTML() {
                         <h3 class="font-27">Anton Mayer</h3>
                     </div>
                     <div onclick="renderFloatAddTask()" class="add-task">
-                        <img src="/assets/img/contact-plus.png" alt="plus-img">
+                        <img src="./assets/img/contact-plus.png" alt="plus-img">
                         <span>Add Task</span>
                     </div>
                 </div>
@@ -415,10 +421,10 @@ function renderContactDescriptionHTML() {
             </div>
         </div>
         <div class="delete-button-contact">
-            <img src="/assets/img/task-delete-button.png" alt="delete-img">
+            <img src="./assets/img/task-delete-button.png" alt="delete-img">
         </div>
         <div class="edit-button-contact">
-            <img onclick="editContact()" src="/assets/img/task-edit-button.png" alt="edit-img">
+            <img onclick="editContact()" src="./assets/img/task-edit-button.png" alt="edit-img">
         </div>
     </section>
     `;
@@ -438,14 +444,14 @@ function editContact() {
         <div class="border">
             <div class="top-bg">
                 <div class="x-position">
-                    <img onclick="closeEditContact()" src="/assets/img/x-button-white.png" alt="x-button-img">
+                    <img onclick="closeEditContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
                 </div>
                 <div>
                     <div>
                         <h2 class="font-32 mt-0 mb-11">Edit contact</h2>
                     </div>
                     <div>
-                        <img src="/assets/img/blue-line-mobile.png" alt="blue-line-img">
+                        <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
                     </div>
                 </div>
             </div>
@@ -457,21 +463,21 @@ function editContact() {
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="name muss mit JS eingefügt werden" required>
-                            <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                            <img src="./assets/img/charakter-icon.png" alt="charakter-img">
                         </div>
                     </div>
 
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="email muss mit JS eingefügt werden" required>
-                            <img src="/assets/img/email-icon.png" alt="email-img">
+                            <img src="./assets/img/email-icon.png" alt="email-img">
                         </div>
                     </div>
 
                     <div class="name">
                         <div class="name-box">
                             <input class="input-name" type="text" placeholder="phone Nr muss mit JS eingefügt werden" required>
-                            <img src="/assets/img/phone-icon.png" alt="phone-img">
+                            <img src="./assets/img/phone-icon.png" alt="phone-img">
                         </div>
                     </div>
                 </div>
@@ -489,6 +495,7 @@ function editContact() {
     <!-- </section> -->
     `;
 }
+
 
 /**
  * This function close the edit contact window
