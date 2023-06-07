@@ -94,11 +94,11 @@
 
 /* responsive */
 @media (max-width: 800px) {
-    #contacts-description-content {
+    #contactsDescriptionContent {
         display: none;
         width: 0;
     }
-    #contacts-content {
+    #contactsContent {
         width: 100%;
     }
     

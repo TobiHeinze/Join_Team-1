@@ -3,15 +3,15 @@
  * 
  */
 function resetContent() {
-    document.getElementById("content").innerHTML = ``;
-    document.getElementById('contacts-description-content').innerHTML = ``;
-    document.getElementById('contacts-content').innerHTML = ``;
-
-    document.getElementById('popUpDiv').classList.add('d-none');
-    document.getElementById('popUpDiv').classList.remove('d-flex');
-    document.getElementById('popUpDiv').innerHTML = ``;
-    document.getElementById('loginContainer').innerHTML = ``;
-
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+    document.getElementById("contactsDescriptionContent").innerHTML = "";
+    document.getElementById("contactsContent").innerHTML = "";
+    document.getElementById("popUpDiv").classList.add("d-none");
+    document.getElementById("popUpDiv").classList.remove("d-flex");
+    document.getElementById("popUpDiv").innerHTML = "";
+    document.getElementById("loginContainer").innerHTML = "";
+    document.getElementById('contactsChangeDescriptionContent').style.display = 'none';
 }
 
 
