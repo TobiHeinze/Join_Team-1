@@ -37,14 +37,32 @@ function addTaskFloat() {
 }
 
 
+/**
+ * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
+ * 
+ */
 function updateTaskArray() {
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
+    console.log(addTitle);
 
     let addDescription = document.getElementById('addDescription').value;
     contentArray['tasks']['description'].push(addDescription);
+    console.log(addDescription);
 
-    setItem(key, contentArray);
+    let addDueDate = document.getElementById('addDueDate').value;
+    contentArray['tasks']['dueDate'].push(addDueDate);
+    console.log(addDueDate);
+
+    let addCategoryName = document.getElementById("addCategoryName").value;
+    contentArray['tasks']['categoryName'].push(addCategoryName);
+    console.log(addCategoryName);
+
+    let addAssignedTo = document.getElementById("addAssignedTo").value;
+    contentArray['tasks']['assignedTo'].push(addAssignedTo);
+    console.log(addAssignedTo);
+
+    // setItem(key, contentArray);
 }
 
 

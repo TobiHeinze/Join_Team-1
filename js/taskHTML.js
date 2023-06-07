@@ -45,8 +45,8 @@ function renderAddTaskHTML() {
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
-                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
+                                <input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,12 @@ function renderAddTaskHTML() {
                     <div class="add-task-vertical-line">
                     </div>
                     </div>
+
                     <div class="add-task-responsive-right">
+
                         <div class="category-select-box">
                             <span>Category</span>
-                            <select name="category" id="category-task" class="category-select">
+                            <select name="category" id="addCategoryName" class="category-select">
                                 <option value="">Select task category</option>
                                 <option value="orange">Orange</option>
                                 <option value="blue">Blue</option>
@@ -65,14 +67,16 @@ function renderAddTaskHTML() {
                                 <option value="green">Green</option>
                             </select>
                         </div>
+
                         <div class="assigned-add-task">
                             <span class="mt-11">Assigned to</span>
-                            <select name="assigned" id="assigned-task" class="assigned-select">
+                            <select name="assigned" id="addAssignedTo" class="assigned-select">
                                 <option value="">Select contacts to assign</option>
-                                <option value="orange">name1</option>
-                                <option value="blue">name2</option>
+                                <option value="name1">name1</option>
+                                <option value="name2">name2</option>
                             </select>
                         </div>
+
                         <div class="subtask">
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">
@@ -80,7 +84,7 @@ function renderAddTaskHTML() {
                                 <img src="./assets/img/task-plus.png" alt="plus-img">
                             </div>
                             <div>
-                                <input type="checkbox">
+                                <input id="" type="checkbox">
                                 <span>Subtask 1</span>
                             </div>
 
