@@ -3,15 +3,15 @@
  * 
  */
 function resetContent() {
-    document.getElementById("content").innerHTML = ``;
-    document.getElementById('contacts-description-content').innerHTML = ``;
-    document.getElementById('contacts-content').innerHTML = ``;
-
-    document.getElementById('popUpDiv').classList.add('d-none');
-    document.getElementById('popUpDiv').classList.remove('d-flex');
-    document.getElementById('popUpDiv').innerHTML = ``;
-    document.getElementById('loginContainer').innerHTML = ``;
-
+    document.getElementById("content").innerHTML = "";
+    document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+    document.getElementById("contactsDescriptionContent").innerHTML = "";
+    document.getElementById("contactsContent").innerHTML = "";
+    document.getElementById("popUpDiv").classList.add("d-none");
+    document.getElementById("popUpDiv").classList.remove("d-flex");
+    document.getElementById("popUpDiv").innerHTML = "";
+    document.getElementById("loginContainer").innerHTML = "";
+    document.getElementById('contactsChangeDescriptionContent').style.display = 'none';
 }
 
 
@@ -31,19 +31,19 @@ function renderLogin() {
     <div class="input-container">
         <div class="input-field">
             <input required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
-            <img src="/assets/img/email-icon.png">
+            <img src="./assets/img/email-icon.png">
         </div>
         
         <div class="input-field">
             <input required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
-            <img class="toogleImage"  src="/assets/img/password-icon.png">
+            <img class="toogleImage"  src="./assets/img/password-icon.png">
        </div>
     </div>
  
     <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
     <div class="remember-check">
-        <div class="check"><img id="loginCheckbox" src="/assets/img/unchecked.png">Remember me</div>
-        <a  href="#">Forgot my password</a>
+        <div class="check"><img id="loginCheckbox" src="./assets/img/unchecked.png">Remember me</div>
+        <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
     </div>
     
     <!-- Buttons für Einloggen und Gast-Einloggen -->
@@ -60,7 +60,7 @@ function renderLogin() {
     <div class="btn-dark ">Sign up</div>
 </div>
 </div>
-<img class="animate-logo moving-logo " src="/assets/img/LogoJoinBig.png ">
+<img class="animate-logo moving-logo " src="./assets/img/LogoJoinBig.png ">
 <div class="background animate-background "></div>
     `;
 }

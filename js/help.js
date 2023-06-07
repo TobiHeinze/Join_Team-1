@@ -1,12 +1,17 @@
 function renderLegalNotice() {
     resetContent();
-    document.getElementById("content").innerHTML = /*html*/ `
-     <div class="overflow-scroll">
-    <div class="help-container">
+    document.getElementById("content").innerHTML = renderLegalNoticeHTML(); 
+}
+
+
+function renderLegalNoticeHTML() {
+    return /*html*/ `
+    <div class="overflow-scroll" style= "margin-left: -10px">
+   <div class="help-container" >
 
 <div class="over-headline">
-    <span>Kanban Project Management Tool</span>
-    <img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png"> 
+   <span>Kanban Project Management Tool</span>
+   <img class="go-back" onclick="renderSummary()" src="./assets/img/go-back.png"> 
 </div>
 
 <h1 class="headline font-64">Legal Notice</h1>
@@ -15,21 +20,21 @@ function renderLegalNotice() {
 
 
 <h3 style="margin-bottom: 50px;"><u> This Legal Notice complies with the German laws under § 5 TMG and § 55
-        RStV.</u></h3>
+       RStV.</u></h3>
 <b>Responsible for Content:</b>
 
 <p>Annika Rothe <br>
-    Bei der Kirche, 9 <br>
-    23749 Grube</p>
+   Bei der Kirche, 9 <br>
+   23749 Grube</p>
 
 
 <p>Tobias Heinze <br>
-   Holzhäuser Straße 65<br>
-   04299 Leipzig</p>
+  Holzhäuser Straße 65<br>
+  04299 Leipzig</p>
 
 
 <p>Albert W..hat ever^^ <br>
-    <br>
+   <br>
 </p>
 
 
@@ -38,7 +43,7 @@ Phone: <br>
 E-Mail:
 
 
- 
+
 <h2>Liability for Content</h2>
 
 The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
@@ -91,32 +96,34 @@ accordingly. Upon notification of violations, <br> we will remove such contents 
 
 Last Updated: [05/30/2023]
 </div>
-</div>
-
-    `;
+</div> `;
 }
 
 
 function renderHelp() {
     resetContent();
-    document.getElementById("content").innerHTML = /*html*/ `
-   <div class="help-container">
-
-<div class="over-headline">
-<span>Kanban Project Management Tool</span>
-<img class="go-back" onclick="renderSummary()" src="/assets/img/go-back.png">
-</div>
-<h1 class="headline font-64">Help</h1> 
+    document.getElementById("content").innerHTML = renderHelpHTML ();
+}
 
 
-<h2>What is Join?</h2>
-
-<b>Join</b>  is a project initiated by the <b> Developer Academy</b>, aimed at providing hands-on experience with Git in the context of a complex project. <br> The "Join" project was collaboratively executed by a team of three individuals over a period of three weeks.
-<br>
-<h3> How to use it:</h3>
-<b class= "font-27">1.</b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. <br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. <br> <br>
-<b class= "font-27">2.</b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. <br> <br>
-<b class= "font-27">3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
-</div>
-    `;
+function renderHelpHTML () {
+    return /*html*/ `
+    <div class="help-container">
+ 
+ <div class="over-headline">
+ <span>Kanban Project Management Tool</span>
+ <img class="go-back" onclick="renderSummary()" src="./assets/img/go-back.png">
+ </div>
+ <h1 class="headline font-64">Help</h1> 
+ 
+ 
+ <h2>What is Join?</h2>
+ 
+ <b>Join</b>  is a project initiated by the <b> Developer Academy</b>, aimed at providing hands-on experience with Git in the context of a complex project. <br> The "Join" project was collaboratively executed by a team of three individuals over a period of three weeks.
+ <br>
+ <h3> How to use it:</h3>
+ <b class= "font-27">1.</b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. <br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. <br> <br>
+ <b class= "font-27">2.</b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. <br> <br>
+ <b class= "font-27">3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
+ </div> `;
 }

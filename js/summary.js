@@ -19,11 +19,11 @@ function renderSummaryHTML() {
 
   <div class= "headlines">
   <h1>Summary</h1>
-  <img class="blue-line-desktop" src="/assets/img/blue-line-desktop.png">
+  <img class="blue-line-desktop" src="./assets/img/blue-line-desktop.png">
   <span class="font-21">Everything in a nutshell!</span> 
   </div>
   <br> <br>
-  <img class="blue-line-mobile" src="/assets/img/blue-line-mobile.png">
+  <img class="blue-line-mobile" src="./assets/img/blue-line-mobile.png">
   
   
   <div class="summary-content">
@@ -68,7 +68,7 @@ function renderSummaryHTML() {
         <section class="row">
             <div onclick="renderBoard()" class="card-row-3">
                 <div>
-                    <img src="/assets/img/pen.png" />
+                    <img src="./assets/img/pen.png" />
                 </div>
                 <div class="amount">
                     <span class="font-64 ">1</span>
@@ -77,7 +77,7 @@ function renderSummaryHTML() {
             </div>
             <div onclick="renderBoard()" class="card-row-3">
                 <div>
-                    <img src="/assets/img/check.png" />
+                    <img src="./assets/img/check.png" />
                 </div>
                 <div class="amount">
                     <span class="font-64">1</span>

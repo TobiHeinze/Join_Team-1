@@ -51,13 +51,13 @@ function renderBoard() {
 
 <div class="board-header-mobile">
 	<span class="font-47">Board</span>
-	<img src="assets/img/plus-add-task-mobile.svg" alt="">
+	<img src="./assets/img/plus-add-task-mobile.svg" alt="">
 </div>
 
 <form class="form-find-task" onsubmit=" ; return false;">
 	<textarea required class="textarea-find-task" minlength="2" name="" id="" cols="" rows="1"
 		placeholder="Find Task"></textarea>
-	<input type="image" src="assets/img/find-task-lens.svg" alt="">
+	<input type="image" src="./assets/img/find-task-lens.svg" alt="">
 </form action="">
 
 
@@ -65,7 +65,7 @@ function renderBoard() {
 	<div class="task-section-container">
 		<div class="header-task-status">
 			<span class="task-status-description">To do</span>
-			<img src="assets/img/add-task-button-mobile.svg" alt="">
+			<img src="./assets/img/add-task-button-mobile.svg" alt="">
 		</div>
 		<div id="taskStatus0"></div>
 		<div id="taskStatusEmpty0" class="task-container-mobile-empty">No tasks To do</div>
@@ -74,7 +74,7 @@ function renderBoard() {
 	<div class="task-section-container">
 		<div class="header-task-status">
 			<span class="task-status-description">In progress</span>
-			<img src="assets/img/add-task-button-mobile.svg" alt="">
+			<img src="./assets/img/add-task-button-mobile.svg" alt="">
 		</div>
 		<div id="taskStatus1"></div>
 		<div id="taskStatusEmpty1" class="task-container-mobile-empty">No tasks In progress</div>
@@ -83,7 +83,7 @@ function renderBoard() {
 	<div class="task-section-container">
 		<div class="header-task-status">
 			<span class="task-status-description">Awaiting feedback</span>
-			<img src="assets/img/add-task-button-mobile.svg" alt="">
+			<img src="./assets/img/add-task-button-mobile.svg" alt="">
 		</div>
 		<div id="taskStatus2"></div>
 		<div id="taskStatusEmpty2" class="task-container-mobile-empty">No tasks Awaiting feedback</div>
@@ -92,7 +92,7 @@ function renderBoard() {
 	<div class="task-section-container">
 		<div class="header-task-status">
 			<span class="task-status-description">Done</span>
-			<img src="assets/img/add-task-button-mobile.svg" alt="">
+			<img src="./assets/img/add-task-button-mobile.svg" alt="">
 		</div>
 		<div id="taskStatus3"></div>
 		<div id="taskStatusEmpty3" class="task-container-mobile-empty">No tasks Done</div>

@@ -14,9 +14,9 @@ body {
 }
 
 /* hides scrollbar from bottom */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-  }
+  } */
 
 textarea {
     font-family: 'Inter', sans-serif;
@@ -33,6 +33,10 @@ textarea {
 .content-box {
     display: flex;
     height: calc(100vh - 89px);
+}
+
+.colum {
+    flex-direction: column;
 }
 
 .content {
@@ -53,7 +57,7 @@ textarea {
     display: flex;
 }
 
-#contacts-content {
+#contactsContent {
     min-width: 280px;
     width: 35%;
 }
@@ -62,6 +66,10 @@ textarea {
     width: 65%;
     margin-left: 4%;
     margin-right: 4%;
+}
+
+#contactsChangeDescriptionContent {
+    width: auto;
 }
 /* globale einstellungen ende */
 
