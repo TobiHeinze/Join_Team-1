@@ -11,7 +11,7 @@ function renderContactsHTML() {
             <img onclick="addNewContact()" src="./assets/img/contact-new.png" alt="new-contact-img">
         </div>
 
-        <div class="overflow-scroll">
+        <div id="contactsList" class="overflow-scroll">
             <div class="contacts-list">
                 <div>
                     <h3 class="font-21">A</h3>

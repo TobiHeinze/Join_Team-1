@@ -114,13 +114,14 @@
     overflow: hidden;
 }
 
+/* man sollte noch im media query ab 800 und kleiner die width erhöhen da sonst der date-picker nur auf der hälfte anklickbar ist */
 .date-box-add-task input[type="date"]::-webkit-calendar-picker-indicator {
     background: transparent;
     color: transparent;
     cursor: pointer;
     height: auto;
     position: absolute;
-    width: 100%;
+    width: 62%;
     height: 42px;
 }
 

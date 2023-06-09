@@ -91,3 +91,28 @@ function closeEditContact() {
     document.getElementById('popUpDiv').classList.remove('d-flex');
     document.getElementById('popUpDiv').innerHTML = ``;
 }
+
+
+// in der console: diese funktion ausführen zum testen obs geht
+function updateContactsHTML() {
+    document.getElementById('contactsList').innerHTML = ``;
+    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+        document.getElementById('contactsList').innerHTML += generateContactsHTML(i);
+    }
+}
+
+
+function generateContactsHTML(i) {
+	return /*html*/`
+    <div class="assigned mt-11"  onclick="renderContactDescription(i)">
+        <div class="name-border">${contentArray['contacts']['nameInitials'][i]}
+        </div>
+        <div class="left-distance">
+            <div class="font-21 contacts-span">
+                <span>${contentArray['contacts']['name'][i]}</span>
+            </div>
+            <a href="#">${contentArray['contacts']['email'][i]}</a>
+        </div>
+    </div>
+    `;
+}
