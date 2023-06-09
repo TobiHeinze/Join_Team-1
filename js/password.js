@@ -6,7 +6,8 @@ function renderForgotPassword() {
 
 function renderForgotPasswordHTML() {
   return /*html*/ `<img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
- <div>
+
+<div class="big-container">
      
          <form class="password-container">
              <a href="index.html"><img class="go-back-arrow" src="./assets/img/go-back.png"
@@ -24,11 +25,12 @@ function renderForgotPasswordHTML() {
                      <input required class="input" type="email" name="email" placeholder="E-Mail">
                      <img src="./assets/img/email-icon.png">
                  </div>
-                 <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn" type="submit">Send me the email</button>
-         </form>
-         <img  class="d-none" src="./assets/img/email-sent.png" alt="email sent">
-     
- </div>`;
+                 <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn">Send me the email</button>
+                 </form>
+</div>
+                 <img class="d-none" src="./assets/img/emailSent.png" alt="email sent">
+            
+ `;
 }
 
 function renderResetPassword() {
@@ -40,7 +42,7 @@ function renderResetPassword() {
 function renderResetPasswordHTML() {
   return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
  
-     
+     <div class="big-container">
          <form class="password-container">
              <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                      onclick="renderForgotPassword()"></a>
@@ -48,17 +50,17 @@ function renderResetPasswordHTML() {
              <img src="./assets/img/blue-line-mobile.png">
              <span class="font-21 font-weight-400">Change your account password here.</span>
              <div class="input-field ">
-                 <input class="input" type="password" name="password" placeholder="New password" required>
+                 <input class="input" type="password" name="password" placeholder="New password">
              </div>
              <div class="input-field ">
-                 <input class="input" type="password" name="password" placeholder="Confirm password" required>
+                 <input class="input" type="password" name="password" placeholder="Confirm password">
              </div>
 
              <button type="submit" class="button-dark login-btn">Continue</button>
-             <img class="d-none" src="./assets/img/password-reset.png" alt="reset password">
+             
          </form>
-
-     
  </div>
+
+ <div id="resetPassword"><img class="d-none"  src="./assets/img/resetPassword.png" alt="reset password"></div>
 `;
 }

@@ -57,7 +57,7 @@ function renderLogin() {
 <div>
 <div id="not-a-join " class="not-a-join ">
     <span>Not a Join user?</span>
-    <div class="btn-dark ">Sign up</div>
+    <div onclick="renderSignUp()" class="btn-dark ">Sign up</div>
 </div>
 </div>
 <img class="animate-logo moving-logo " src="./assets/img/LogoJoinBig.png ">
@@ -65,6 +65,55 @@ function renderLogin() {
     `;
 }
 
+
+function renderSignUp() {
+    resetContent();
+    document.getElementById('loginContainer').innerHTML =/*html*/`
+    <div class="big-container" style="margin-top: 200px;">
+    <div class="password-container">
+        <div class="go-back-sign-up">
+            
+            <img onclick="renderLogin()" class="arrow-left" src="./assets/img/go-back.png" alt="go back">
+        
+            <h1 class="font-47">Sign up</h1>
+        </div>
+        <img src="./assets/img/blue-line-mobile.png">
+        <form action="">
+            <div class="contact-box">
+                <div class="name">
+                    <div class="field">
+                        <input class="input-name" type="text" placeholder="Name" required>
+                        <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                    </div>
+                </div>
+
+                <div class="name">
+                    <div class="field">
+                        <input class="input-name" type="text" placeholder="Email" required>
+                        <img src="/assets/img/email-icon.png" alt="email-img">
+                    </div>
+                </div>
+
+                <div class="name">
+                    <div class="field">
+                        <input class="input-name" type="text" placeholder="Password" required>
+                        <img src="/assets/img/password-icon.png" alt="phone-img">
+                    </div>
+                </div>
+            </div>
+            <div class="sign-up-box">
+                <div class="sign-up">
+                    <b>Sign up</b>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+    </div>
+</body>
+
+    `;
+}
 
 /**
  * This function animate a slide from the right to the left
