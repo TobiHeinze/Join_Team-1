@@ -1,7 +1,8 @@
 
 let currentDraggedElement;
 
-function renderBoardContent() {
+async function renderBoardContent() {
+	await getItem();
 	emptyBordContainer();
 
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
