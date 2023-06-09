@@ -5,6 +5,8 @@
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = renderAddTaskHTML();
+    renderAddTaskCategoryOptions();
+    renderAddTaskAssignedToOptions();
 }
 
 
@@ -38,6 +40,66 @@ function addTaskFloat() {
 
 
 /**
+ * This function shows or hide the dropwdown menus
+ * 
+ */
+let expanded = [false, false];
+
+function showCheckboxes(index) {
+    let checkboxes = document.getElementById("checkboxes" + index);
+    if (!expanded[index - 1]) {
+        checkboxes.style.display = "block";
+        expanded[index - 1] = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded[index - 1] = false;
+    }
+}
+
+
+/**
+ * This function renders the category options inside the drowdown menu
+ * 
+ */
+function renderAddTaskCategoryOptions() {
+    for (let i = 0; i < contentArray['tasks']['categoryName'].length; i++) {
+        // const element = contentArray['tasks']['categoryName'][i];
+        document.getElementById('checkboxes1').innerHTML += /*html*/`
+        <label onclick="categoryOption(${i})">${contentArray['tasks']['categoryName'][i]}</label>
+        `;
+    }
+}
+
+
+/**
+ * This function renders the category in the header of the drowdown menu
+ * 
+ */
+function categoryOption(index) {
+    document.getElementById('categoryOptionShowSelected').innerHTML = `
+      ${contentArray['tasks']['categoryName'][index]}
+    `;
+    document.getElementById('checkboxes1').style.display = "none";
+    expanded[0] = false;
+}
+
+
+/**
+ * This function renders the assigned to options inside the drowdown menu
+ * 
+ */
+function renderAddTaskAssignedToOptions() {
+    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+        // const element = contentArray['tasks']['categoryName'][i];
+        document.getElementById('checkboxes2').innerHTML += /*html*/`
+        <label for="assignedToOptions${i}">
+        <input type="checkbox" id="assignedToOptions${i}" />${contentArray['contacts']['name'][i]}</label>
+        `;
+    }
+}
+
+
+/**
  * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
  * 
  */
@@ -58,21 +120,14 @@ function updateTaskArray() {
     contentArray['tasks']['categoryName'].push(addCategoryName);
     console.log(addCategoryName);
 
-    let addAssignedTo = document.getElementById("addAssignedTo").value;
-    contentArray['tasks']['assignedTo'].push(addAssignedTo);
-    console.log(addAssignedTo);
+    // hier muss jeder angeklickte angezeigt werden
+    // let addAssignedTo = document.getElementById("addAssignedTo").value;
+    // contentArray['tasks']['assignedTo'].push(addAssignedTo);
+    // console.log(addAssignedTo);
+
+    // subtask
+
+    // prio
 
     // setItem(key, contentArray);
 }
-
-
-// function updateTaskHTML() {
-//     for (let i = 0; i < contentArray[0]['tasks'][0]['title'].length + 1; i++) {
-
-//         for (let j = 0; j < 4; j++) {
-//             if (contentArray[0]['tasks'][0]['taskStatus'][i] == j) {
-//                 document.getElementById(taskStatus${j}).innerHTML += generateBoardHTML(i);
-//             }
-//         }
-//     }
-// }

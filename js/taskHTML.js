@@ -57,7 +57,34 @@ function renderAddTaskHTML() {
 
                     <div class="add-task-responsive-right">
 
-                        <div class="category-select-box">
+
+
+
+
+                    <div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(1)">
+    <select>
+      <option id="categoryOptionShowSelected">Select task category</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes1" class="flex-checkboxes">
+  </div>
+</div>
+
+<div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(2)">
+    <select>
+      <option>Select contacts to assign</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes2" class="flex-checkboxes">
+  </div>
+</div>
+
+
+                        <!-- <div class="category-select-box">
                             <span>Category</span>
                             <select name="category" id="addCategoryName" class="category-select">
                                 <option value="">Select task category</option>
@@ -75,8 +102,15 @@ function renderAddTaskHTML() {
                                 <option value="name1">name1</option>
                                 <option value="name2">name2</option>
                             </select>
-                        </div>
+                        </div> -->
 
+
+
+
+
+
+
+                        
                         <div class="subtask">
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">

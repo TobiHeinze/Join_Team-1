@@ -34,11 +34,6 @@ function renderContactsHTML() {
  * @returns  html code
  */
 function renderContactDescriptionHTML(i) {
-    const contactName = contentArray['contacts']['name'][i];
-    const contactInitials = contentArray['contacts']['nameInitials'][i];
-    const contactEmail = contentArray['contacts']['email'][i];
-    const contactPhoneNumber = contentArray['contacts']['phoneNumber'][i];
-
     return /*html*/`
         <div id="contactPage"></div>
         <section class="content">
@@ -58,11 +53,11 @@ function renderContactDescriptionHTML(i) {
             <div>
                 <div class="contact-info">
                     <div class="initials font-27">
-                        ${contactInitials}
+                        ${contentArray['contacts']['nameInitials'][i]}
                     </div>
                     <div>
                         <div>
-                            <h3 class="font-27">${contactName}</h3>
+                            <h3 class="font-27">${contentArray['contacts']['name'][i]}</h3>
                         </div>
                         <div onclick="renderFloatAddTask()" class="add-task">
                             <img src="./assets/img/contact-plus.png" alt="plus-img">
@@ -76,11 +71,11 @@ function renderContactDescriptionHTML(i) {
                 <div class="mail-mobil">
                     <div>
                         <span><b>Email</b></span>
-                        <a href="#">${contactEmail}</a>
+                        <a href="#">${contentArray['contacts']['email'][i]}</a>
                     </div>
                     <div>
                         <span><b>Mobile</b></span>
-                        <a href="#">${contactPhoneNumber}</a>
+                        <a href="#">${contentArray['contacts']['phoneNumber'][i]}</a>
                     </div>
                 </div>
             </div>
