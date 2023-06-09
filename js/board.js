@@ -1,14 +1,14 @@
 
 let currentDraggedElement;
 
-function renderBoardContent() {
+async function renderBoardContent() {
+	contentArray = await getItem(key);
 	emptyBordContainer();
 
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
 
 		for (let j = 0; j < 4; j++) {
 			if (contentArray['tasks']['taskStatus'][i] == j) {
-				if (contentArray['tasks']['taskStatus'][i] == j) {
 					document.getElementById(`taskStatus${j}`).innerHTML += generateBoardHTML(i);
 				}
 				checkForEmptyTaskSection(j);
@@ -19,7 +19,6 @@ function renderBoardContent() {
 			generateSubtaskSection(i);
 		}
 	}
-}
 
 
 function generateBoardHTML(index) {

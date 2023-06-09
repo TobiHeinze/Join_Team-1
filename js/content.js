@@ -1,4 +1,4 @@
-const contentArray = 
+let contentArray = 
 	{
 	  "users": 
 		{
