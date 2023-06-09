@@ -339,6 +339,13 @@
     background-color: #1e90ff;
 }
 
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+  }
 /* dropdown menu end */
 
 /* responsiveness */

@@ -65,7 +65,7 @@ function renderAddTaskCategoryOptions() {
     for (let i = 0; i < contentArray['tasks']['categoryName'].length; i++) {
         // const element = contentArray['tasks']['categoryName'][i];
         document.getElementById('checkboxes1').innerHTML += /*html*/`
-        <label onclick="categoryOption(${i})">${contentArray['tasks']['categoryName'][i]}</label>
+        <label onclick="categoryOption(${i})">${contentArray['tasks']['categoryName'][i]}<div class="circle" style="background-color: ${contentArray['tasks']['categoryBgColor'][i]}"></div></label>
         `;
     }
 }
@@ -90,11 +90,12 @@ function categoryOption(index) {
  */
 function renderAddTaskAssignedToOptions() {
     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
-        // const element = contentArray['tasks']['categoryName'][i];
         document.getElementById('checkboxes2').innerHTML += /*html*/`
         <label for="assignedToOptions${i}">
-        <input type="checkbox" id="assignedToOptions${i}" />${contentArray['contacts']['name'][i]}</label>
-        `;
+        <input type="checkbox" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
+          ${contentArray['contacts']['name'][i]}
+        </label>
+      `;
     }
 }
 
@@ -116,18 +117,74 @@ function updateTaskArray() {
     contentArray['tasks']['dueDate'].push(addDueDate);
     console.log(addDueDate);
 
-    let addCategoryName = document.getElementById("addCategoryName").value;
-    contentArray['tasks']['categoryName'].push(addCategoryName);
-    console.log(addCategoryName);
+    // task category options 
+    let addTaskStatus = document.getElementById('categoryOptionShowSelected').value;
+    contentArray['tasks']['categoryName'].push(addTaskStatus);
+    console.log(addTaskStatus);
 
-    // hier muss jeder angeklickte angezeigt werden
-    // let addAssignedTo = document.getElementById("addAssignedTo").value;
-    // contentArray['tasks']['assignedTo'].push(addAssignedTo);
-    // console.log(addAssignedTo);
+    // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld 1 bzw 0 )
+    contentArray['tasks']['taskStatus'].push('0');
+    
+
+    // assigned to selector 
+    let selectedNames = [];
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+    checkboxes.forEach(checkbox => {
+        let selectedName = checkbox.value;
+        selectedNames.push(selectedName);
+    });
+    contentArray['tasks']['assignedTo'].push({
+        "name": selectedNames,
+        "nameInitials": [], // Hier kannst du weitere entsprechende Werte hinzufügen
+        "contactImageBgColor": [] // Hier kannst du weitere entsprechende Werte hinzufügen
+      });
+    console.log(selectedNames);
 
     // subtask
+    contentArray['tasks']['subtasks'].push({
+        "subtask": currentSubtasks,
+        "subtaskStatus": currentSubtaskStatus, //automatisch auf open bei hinzufügen
+      });
+      console.log(currentSubtasks);
+      console.log(currentSubtaskStatus);
 
     // prio
+    contentArray['tasks']['priority'].push(addPriority);
+    console.log(addPriority);
 
-    // setItem(key, contentArray);
+    setItem(key, contentArray);
+}
+
+
+/**
+ * This function added subtasks to the subtask add area
+ * 
+ */
+currentSubtasks = [];
+currentSubtaskStatus = [];
+function addSubtask() {
+    let subtask = document.getElementById('inputAddSubtaskContent').value;
+    document.getElementById('addSubtaskContent').innerHTML = ``;
+    document.getElementById('inputAddSubtaskContent').value = ``;
+    currentSubtasks.push(subtask);
+    currentSubtaskStatus.push('open');
+    for (let i = 0; i < currentSubtasks.length; i++) {
+        document.getElementById('addSubtaskContent').innerHTML += /*html*/`
+        <div id="addedCurrentSubtask${i}">
+            - ${currentSubtasks[i]}
+        </div>
+    `;
+    } 
+}
+
+
+let addPriority = [];
+/**
+ * This function select the choosen priority status to the addPriority array
+ * 
+ * @param {*} priority this parameter comes from the three diffrent priority types when klick on them to select
+ */
+function addPrio(priority) {
+    addPriority = [priority];
+    console.log(addPriority);
 }
