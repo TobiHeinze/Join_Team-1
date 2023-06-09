@@ -1,22 +1,25 @@
 
 let currentDraggedElement;
 
-function renderBoardContent() {
+async function renderBoardContent() {
+	contentArray = await getItem(key);
 	emptyBordContainer();
 
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
 
 		for (let j = 0; j < 4; j++) {
 			if (contentArray['tasks']['taskStatus'][i] == j) {
-				
+				document.getElementById(`taskStatus${j}`).innerHTML += generateBoardHTML(i);
 			}
-			changeStyleOfTask(i);
-			renderAssignedToAtTasks(i);
-			checkForLengthOfAssignedToAtTasks(i);
-			generateSubtaskSection(i);
+			checkForEmptyTaskSection(j);
 		}
+		changeStyleOfTask(i);
+		renderAssignedToAtTasks(i);
+		checkForLengthOfAssignedToAtTasks(i);
+		generateSubtaskSection(i);
 	}
 }
+
 
 
 function generateBoardHTML(index) {
@@ -106,10 +109,9 @@ function allowDrop(event) {
 
 function moveTo(taskStatus) {
 	contentArray['tasks']['taskStatus'][currentDraggedElement] = taskStatus;
+	setItem(key, contentArray);
 	renderBoard();
 }
-
-
 
 
 
