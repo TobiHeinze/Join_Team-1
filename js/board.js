@@ -2,7 +2,11 @@
 let currentDraggedElement;
 
 async function renderBoardContent() {
+<<<<<<< HEAD
 	await getItem();
+=======
+	contentArray = await getItem(key);
+>>>>>>> eac4c9942e16c99ee3b2643bb5f141601a88567c
 	emptyBordContainer();
 
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
