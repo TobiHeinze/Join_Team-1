@@ -8,10 +8,7 @@ function renderBoardContent() {
 
 		for (let j = 0; j < 4; j++) {
 			if (contentArray['tasks']['taskStatus'][i] == j) {
-				if (contentArray['tasks']['taskStatus'][i] == j) {
-					document.getElementById(`taskStatus${j}`).innerHTML += generateBoardHTML(i);
-				}
-				checkForEmptyTaskSection(j);
+				
 			}
 			changeStyleOfTask(i);
 			renderAssignedToAtTasks(i);

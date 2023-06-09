@@ -1,10 +1,10 @@
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
- * 
+ *
  * @returns html code
  */
 function renderContactsHTML() {
-    return /*html*/ `
+  return /*html*/ `
     <section class="content-contact">
     <section>
         <div class="add-new-contact">
@@ -26,15 +26,14 @@ function renderContactsHTML() {
 `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
- * 
+ *
  * @param {*} i gives the i as the position for every contact to this function
  * @returns  html code
  */
 function renderContactDescriptionHTML(i) {
-    return /*html*/`
+  return /*html*/ `
         <div id="contactPage"></div>
         <section class="content">
             <div id="ContactDescriptionHeader" class="d-none">
@@ -47,17 +46,17 @@ function renderContactDescriptionHTML(i) {
                     <img onclick="renderContacts()" src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
                 </div>
                 <div class="blue-line">
-                    <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
                 </div>
             </div>
             <div>
                 <div class="contact-info">
                     <div class="initials font-27">
-                        ${contentArray['contacts']['nameInitials'][i]}
+                        ${contentArray["contacts"]["nameInitials"][i]}
                     </div>
                     <div>
                         <div>
-                            <h3 class="font-27">${contentArray['contacts']['name'][i]}</h3>
+                            <h3 class="font-27">${contentArray["contacts"]["name"][i]}</h3>
                         </div>
                         <div onclick="renderFloatAddTask()" class="add-task">
                             <img src="./assets/img/contact-plus.png" alt="plus-img">
@@ -71,11 +70,11 @@ function renderContactDescriptionHTML(i) {
                 <div class="mail-mobil">
                     <div>
                         <span><b>Email</b></span>
-                        <a href="#">${contentArray['contacts']['email'][i]}</a>
+                        <a href="#">${contentArray["contacts"]["email"][i]}</a>
                     </div>
                     <div>
                         <span><b>Mobile</b></span>
-                        <a href="#">${contentArray['contacts']['phoneNumber'][i]}</a>
+                        <a href="#">${contentArray["contacts"]["phoneNumber"][i]}</a>
                     </div>
                 </div>
             </div>
@@ -89,14 +88,13 @@ function renderContactDescriptionHTML(i) {
     `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
- * 
+ *
  * @returns html code
  */
 function addNewContactHTML() {
-    return /*html*/`
+  return /*html*/ `
     <!-- <section class="content"> -->
     <div class="border">
         <div class="top-bg">
@@ -109,7 +107,7 @@ function addNewContactHTML() {
                     <span>Tasks are better with a team!</span>
                 </div>
                 <div>
-                    <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
                 </div>
             </div>
         </div>
@@ -152,14 +150,13 @@ function addNewContactHTML() {
 `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
- * 
+ *
  * @returns html code
  */
 function editContactHTML() {
-    return /*html*/`
+  return /*html*/ `
     <!-- <section class="content"> -->
     <div class="border">
         <div class="top-bg">
@@ -171,7 +168,7 @@ function editContactHTML() {
                     <h2 class="font-32 mt-0 mb-11">Edit contact</h2>
                 </div>
                 <div>
-                    <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+                    <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
                 </div>
             </div>
         </div>
@@ -216,14 +213,13 @@ function editContactHTML() {
 `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
- * 
+ *
  * @returns html code
  */
 function renderContactDescriptionHTMLHeader() {
-    return /*html*/`
+  return /*html*/ `
     <section class="content">
         <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
@@ -234,7 +230,7 @@ function renderContactDescriptionHTMLHeader() {
                 <img src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
         </div>
         <div class="blue-line">
-            <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+            <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
         </div>
     </section>
     `;

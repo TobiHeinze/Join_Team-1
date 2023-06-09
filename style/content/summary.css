@@ -1,10 +1,21 @@
-.blue-line-mobile {
+.summary-blue-line-horizontal {
+    width: 200px;
+    height: 3px;
     margin-bottom: 42px;
     margin-top: 15px;
     display: none;
+    
 }
 
-.blue-line-desktop {
+.blue-line-horizontal {
+    width: 200px;
+    height: 3px;
+    margin-bottom: 42px;
+    margin-top: 15px;
+    
+}
+
+.blue-line-vertical {
     padding-top: 10px;
     height: 59px;
     width: 3px;
@@ -158,8 +169,9 @@ aside {
 
 
 .card-row-3:hover img {
-    filter: invert(100%) brightness(200%); /* damit das Bild beim Hovern Hintergrund und Hauptfarbe ändert (danke ChatGPT)*/
-} 
+    filter: invert(100%) brightness(200%);
+    /* damit das Bild beim Hovern Hintergrund und Hauptfarbe ändert (danke ChatGPT)*/
+}
 
 
 
@@ -198,15 +210,21 @@ aside {
         display: block;
     }
 
-    .blue-line-mobile {
+    .summary-blue-line-horizontal {
         width: 100px;
         height: auto;
         display: block;
     }
 
-    .blue-line-desktop {
+    .blue-line-vertical {
         display: none;
     }
+
+    .blue-line-horizontal {
+        display: none;
+        
+    }
+    
 }
 
 

@@ -15,7 +15,7 @@ function renderForgotPasswordHTML() {
 
              <h1 class="font-61">I forgot my password</h1>
 
-             <img src="./assets/img/blue-line-mobile.png">
+             <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
              <span class="font-21 font-weight-400">
                  Don't worry! We will send you an email with the instructions to
                  reset your password.
@@ -47,7 +47,7 @@ function renderResetPasswordHTML() {
              <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                      onclick="renderForgotPassword()"></a>
              <h1 class="font-61">Reset your password</h1>
-             <img src="./assets/img/blue-line-mobile.png">
+             <img src="./assets/img/blue-line-horizontal.png">
              <span class="font-21 font-weight-400">Change your account password here.</span>
              <div class="input-field ">
                  <input class="input" type="password" name="password" placeholder="New password">

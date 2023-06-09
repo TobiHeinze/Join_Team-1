@@ -1,29 +1,29 @@
 /**
  * This function renders the summary area
- * 
+ *
  */
 function renderSummary() {
-  document.getElementById('mainContainer').classList.remove('d-none');
+  document.getElementById("mainContainer").classList.remove("d-none");
   resetContent();
   document.getElementById("content").innerHTML = renderSummaryHTML();
 }
 
 /**
  * This function returns the html code
- * 
+ *
  * @returns html code
  */
 function renderSummaryHTML() {
-  return /*html*/`
+  return /*html*/ `
   <span class="kanban">Kanban Project Management Tool</span>
 
   <div class= "headlines">
   <h1>Summary</h1>
-  <img class="blue-line-desktop" src="./assets/img/blue-line-desktop.png">
+  <img class="summary-blue-line-vertical" src="./assets/img/blue-line-vertical.png">
   <span class="font-21">Everything in a nutshell!</span> 
   </div>
   <br> <br>
-  <img class="blue-line-mobile" src="./assets/img/blue-line-mobile.png">
+  <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
   
   
   <div class="summary-content">
@@ -95,7 +95,6 @@ function renderSummaryHTML() {
     `;
 }
 
-
 /**
  * Returns the current date in the format "DD.MM.YYYY".
  *
@@ -111,7 +110,6 @@ function getDate() {
   // Verwendet die toLocaleDateString-Methode, um das Datum im britischen Format mit Tag, Monat und Jahr zurückzugeben
   return date;
 }
-
 
 /**
  * Returns the current date in the format "YYYYMMDD".
@@ -131,7 +129,6 @@ function getDate1() {
   // Anschließend wird der Bindestrich entfernt, um das gewünschte Format "YYYYMMDD" zu erhalten
   return date;
 }
-
 
 /**
  * Returns a greeting based on the current time of day.

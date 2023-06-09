@@ -1,32 +1,32 @@
 /**
  * This function resets all divs we fill content in
- * 
+ *
  */
 function resetContent() {
-    document.getElementById("content").innerHTML = "";
-    document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
-    document.getElementById("contactsDescriptionContent").innerHTML = "";
-    document.getElementById("contactsContent").innerHTML = "";
-    document.getElementById("popUpDiv").classList.add("d-none");
-    document.getElementById("popUpDiv").classList.remove("d-flex");
-    document.getElementById("popUpDiv").innerHTML = "";
-    document.getElementById("loginContainer").innerHTML = "";
-    document.getElementById('contactsChangeDescriptionContent').style.display = 'none';
+  document.getElementById("content").innerHTML = "";
+  document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+  document.getElementById("contactsDescriptionContent").innerHTML = "";
+  document.getElementById("contactsContent").innerHTML = "";
+  document.getElementById("popUpDiv").classList.add("d-none");
+  document.getElementById("popUpDiv").classList.remove("d-flex");
+  document.getElementById("popUpDiv").innerHTML = "";
+  document.getElementById("loginContainer").innerHTML = "";
+  document.getElementById("contactsChangeDescriptionContent").style.display =
+    "none";
 }
-
 
 /**
  * This function loads the login page
- * 
+ *
  */
 function renderLogin() {
-    resetContent();
-    document.getElementById('loginContainer').innerHTML = /*html*/`
+  resetContent();
+  document.getElementById("loginContainer").innerHTML = /*html*/ `
     <div class="logo-container" id="login-container">
 
 <form class="login-container" >
     <h1 class="font-61">Log in</h1>
-    <img src="./assets/img/blue-line-mobile.png">
+    <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
     <!-- Eingabefelder für E-Mail und Passwort -->
     <div class="input-container">
         <div class="input-field">
@@ -65,23 +65,20 @@ function renderLogin() {
     `;
 }
 
- 
-
 function renderSignUp() {
-    resetContent();
-    document.getElementById("loginContainer").innerHTML =
-      renderSignUpHTML();
-  }
-  
-  function renderSignUpHTML() {
-    return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
+  resetContent();
+  document.getElementById("loginContainer").innerHTML = renderSignUpHTML();
+}
+
+function renderSignUpHTML() {
+  return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
    
        <div class="big-container">
            <form class="password-container">
                <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                        onclick="renderLogin()"></a>
                <h1 class="font-61">Sign Up</h1>
-               <img blue-line-desktop  src="./assets/img/blue-line-mobile.png">
+               <img class="blue-line-horizontal"  src="./assets/img/blue-line-horizontal.png">
                <div class="input-container">
                <div class="name">
                         <div class="input-field">
@@ -107,24 +104,24 @@ function renderSignUp() {
   
    <div id="resetPassword"><img class="d-none"  src="./assets/img/resetPassword.png" alt="reset password"></div>
   `;
-  }
-  
+}
+
 /**
- * 
- * 
+ *
+ *
  * This function animate a slide from the right to the left
- * 
+ *
  * @returns the animation effect
  */
 function slideInPopUp() {
-    return popUpDiv.animate(
-        [
-          { transform: 'translateX(1000px)' }, // Startposition des Popups
-          { transform: 'translateX(0)' } // Endposition des Popups
-        ],
-        {
-          duration: 250, // Animationsdauer in Millisekunden
-          easing: 'ease' // Easing-Funktion für den Übergangseffekt
-        }
-      );
+  return popUpDiv.animate(
+    [
+      { transform: "translateX(1000px)" }, // Startposition des Popups
+      { transform: "translateX(0)" }, // Endposition des Popups
+    ],
+    {
+      duration: 250, // Animationsdauer in Millisekunden
+      easing: "ease", // Easing-Funktion für den Übergangseffekt
+    }
+  );
 }
