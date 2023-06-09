@@ -28,7 +28,7 @@ const contentArray =
 	  ,
 	  "tasks": 
 		{
-		  "taskStatus": ["0", "1", "2", "2", "3"],
+		  "taskStatus": ["0", "2", "2", "2", "3"],
 		  "title": ["Website redesign", "Call potential clients", "Accounting invoices", "Video cut", "Social media strategy"],
 		  "description": ["Modify the contents of the main website. Adjust the UI to the companys brand design.", "Make the product presentation to prospective buyers", "Write open invoices for customer", "Edit the new company video", "Develop an ad campaign for brand positioning"],
 		  "priority": ["low", "urgent", "medium", "medium", "low"],
