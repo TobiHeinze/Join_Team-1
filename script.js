@@ -25,8 +25,8 @@ function renderLogin() {
     <div class="logo-container" id="login-container">
 
 <form class="login-container" >
-    <h1>Log in</h1>
-
+    <h1 class="font-61">Log in</h1>
+    <img src="./assets/img/blue-line-mobile.png">
     <!-- Eingabefelder für E-Mail und Passwort -->
     <div class="input-container">
         <div class="input-field">
@@ -65,57 +65,53 @@ function renderLogin() {
     `;
 }
 
+ 
 
 function renderSignUp() {
     resetContent();
-    document.getElementById('loginContainer').innerHTML =/*html*/`
-    <div class="big-container" style="margin-top: 200px;">
-    <div class="password-container">
-        <div class="go-back-sign-up">
-            
-            <img onclick="renderLogin()" class="arrow-left" src="./assets/img/go-back.png" alt="go back">
-        
-            <h1 class="font-47">Sign up</h1>
+    document.getElementById("loginContainer").innerHTML =
+      renderSignUpHTML();
+  }
+  
+  function renderSignUpHTML() {
+    return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
+   
+       <div class="big-container">
+           <form class="password-container">
+               <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
+                       onclick="renderLogin()"></a>
+               <h1 class="font-61">Sign Up</h1>
+               <img blue-line-desktop  src="./assets/img/blue-line-mobile.png">
+               <div class="input-container">
+               <div class="name">
+                        <div class="input-field">
+                            <input class="input" type="text" placeholder="Name" required>
+                            <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        </div>
+
+        <div class="input-field">
+            <input required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
+            <img src="./assets/img/email-icon.png">
         </div>
-        <img src="./assets/img/blue-line-mobile.png">
-        <form action="">
-            <div class="contact-box">
-                <div class="name">
-                    <div class="field">
-                        <input class="input-name" type="text" placeholder="Name" required>
-                        <img src="/assets/img/charakter-icon.png" alt="charakter-img">
-                    </div>
-                </div>
-
-                <div class="name">
-                    <div class="field">
-                        <input class="input-name" type="text" placeholder="Email" required>
-                        <img src="/assets/img/email-icon.png" alt="email-img">
-                    </div>
-                </div>
-
-                <div class="name">
-                    <div class="field">
-                        <input class="input-name" type="text" placeholder="Password" required>
-                        <img src="/assets/img/password-icon.png" alt="phone-img">
-                    </div>
-                </div>
-            </div>
-            <div class="sign-up-box">
-                <div class="sign-up">
-                    <b>Sign up</b>
-                </div>
-            </div>
-            
-        </form>
-    </div>
-    </div>
-</body>
-
-    `;
-}
-
+               
+               
+        <div class="input-field">
+            <input required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
+            <img class="toogleImage"  src="./assets/img/password-icon.png">
+       </div>
+  
+               <button type="submit" class="button-dark login-btn">Sign Up</button>
+               
+           </form>
+   </div>
+  
+   <div id="resetPassword"><img class="d-none"  src="./assets/img/resetPassword.png" alt="reset password"></div>
+  `;
+  }
+  
 /**
+ * 
+ * 
  * This function animate a slide from the right to the left
  * 
  * @returns the animation effect

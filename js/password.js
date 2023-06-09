@@ -13,7 +13,7 @@ function renderForgotPasswordHTML() {
              <a href="index.html"><img class="go-back-arrow" src="./assets/img/go-back.png"
                      onclick="history.back()"></a>
 
-             <h1 style=" font-family: 'Inter', sans-serif;">I forgot my password</h1>
+             <h1 class="font-61">I forgot my password</h1>
 
              <img src="./assets/img/blue-line-mobile.png">
              <span class="font-21 font-weight-400">
@@ -46,7 +46,7 @@ function renderResetPasswordHTML() {
          <form class="password-container">
              <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                      onclick="renderForgotPassword()"></a>
-             <h1 style="font-family:'Inter', sans-serif;">Reset your password</h1>
+             <h1 class="font-61">Reset your password</h1>
              <img src="./assets/img/blue-line-mobile.png">
              <span class="font-21 font-weight-400">Change your account password here.</span>
              <div class="input-field ">
