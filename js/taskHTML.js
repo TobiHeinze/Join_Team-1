@@ -26,17 +26,17 @@ function renderAddTaskHTML() {
                                 ></textarea>
                         </div>
                         <div class="prio">
-                            <span class="mt-11 mb-11">Prio</span>
+                            <span class="mt-11 mb-11">Priority</span>
                             <div class="prio-row">
-                                <div class="prio-class">
-                                    <span>Urgent</span>
+                                <div onclick="addPrio('Urgent')" class="prio-class">
+                                    <span id="addPrioUrgent">Urgent</span>
                                     <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
-                                <div class="prio-class">
+                                <div onclick="addPrio('Medium')" class="prio-class">
                                     <span>Medium</span>
                                     <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
-                                <div class="prio-class">
+                                <div onclick="addPrio('Low')" class="prio-class">
                                     <span>Low</span>
                                     <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>
@@ -57,7 +57,34 @@ function renderAddTaskHTML() {
 
                     <div class="add-task-responsive-right">
 
-                        <div class="category-select-box">
+
+
+
+
+                    <div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(1)">
+    <select>
+      <option id="categoryOptionShowSelected">Select task category</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes1" class="flex-checkboxes">
+  </div>
+</div>
+
+<div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(2)">
+    <select>
+      <option>Select contacts to assign</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes2" class="flex-checkboxes">
+  </div>
+</div>
+
+
+                        <!-- <div class="category-select-box">
                             <span>Category</span>
                             <select name="category" id="addCategoryName" class="category-select">
                                 <option value="">Select task category</option>
@@ -75,18 +102,32 @@ function renderAddTaskHTML() {
                                 <option value="name1">name1</option>
                                 <option value="name2">name2</option>
                             </select>
-                        </div>
+                        </div> -->
 
+
+
+
+
+
+
+                        
                         <div class="subtask">
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">
-                                <input class="input-subtask" type="text" placeholder="Add  new subtask">
-                                <img src="./assets/img/task-plus.png" alt="plus-img">
+                                <input id="inputAddSubtaskContent" class="input-subtask" type="text" placeholder="Add new subtask">
+                                <img src="./assets/img/task-plus.png" alt="plus-img" onclick="addSubtask()">
                             </div>
-                            <div>
+                            <div id="addSubtaskContent">
+
+                            </div>
+
+
+
+
+                            <!-- <div>
                                 <input id="" type="checkbox">
                                 <span>Subtask 1</span>
-                            </div>
+                            </div> -->
 
 
                             <!-- test zum scrollen -->
@@ -242,17 +283,17 @@ function addTaskFloatHTML() {
                                 required></textarea>
                         </div>
                         <div class="prio">
-                            <span class="mt-11 mb-11">Prio</span>
+                            <span class="mt-11 mb-11">Priority</span>
                             <div class="prio-row">
-                                <div class="prio-class">
-                                    <span>Urgent</span>
+                                <div onclick="addPrioUrgent('Urgent')" class="prio-class">
+                                    <span id="addPrioUrgent">Urgent</span>
                                     <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
-                                <div class="prio-class">
+                                <div onclick="addPrioUrgent('Medium')" class="prio-class">
                                     <span>Medium</span>
                                     <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
-                                <div class="prio-class">
+                                <div onclick="addPrioUrgent('Low')" class="prio-class">
                                     <span>Low</span>
                                     <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>

@@ -12,195 +12,13 @@ function renderContactsHTML() {
         </div>
 
         <div id="contactsList" class="overflow-scroll">
-            <div class="contacts-list">
-                <div>
-                    <h3 class="font-21">A</h3>
-                </div>
-            </div>
-            <div class="line">
-                <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-            <div>
-                <!-- mit dem onclick kann man zu jedem kontakt kommen später -->
-                <div class="assigned mt-11"  onclick="renderContactDescription()">
-                    <div class="name-border">AW</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Albert Wissigkeit</span>
-                        </div>
-                        <a href="#">albert@gmail.com</a>
-                    </div>
-                </div>
-                <div class="assigned mt-11">
-                    <div class="name-border2">AZ</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Anja Zabruck</span>
-                        </div>
-                        <a href="#">anja@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contacts-list">
-                <div>
-                    <h3 class="font-21">B</h3>
-                </div>
-            </div>
-            <div class="line">
-                <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-            <div>
-                <div class="assigned mt-11">
-                    <div class="name-border">BM</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Bine Maja</span>
-                        </div>
-                        <a href="#">bine@gmail.com</a>
-                    </div>
-                </div>
-                <div class="assigned mt-11">
-                    <div class="name-border2">BB</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Benjamin Bauer</span>
-                        </div>
-                        <a href="#">benjamin@gmail.com</a>
-                    </div>
-                </div>
-            </div>
+          
             <!-- versteckt solange kein neuer contakt kreiert ist -->
             <div class="d-none">
               <div class="contact-created">
                 Contact successfully created
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!-- hier zwischen nur extra viele kontakte zum scrollen testen!!! -->
-
-            <div class="contacts-list">
-                <div>
-                    <h3 class="font-21">A</h3>
-                </div>
-            </div>
-            <div class="line">
-                <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-            <div>
-                <div class="assigned mt-11">
-                    <div class="name-border">AW</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Albert Wissigkeit</span>
-                        </div>
-                        <a href="#">albert@gmail.com</a>
-                    </div>
-                </div>
-                <div class="assigned mt-11">
-                    <div class="name-border2">AZ</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Anja Zabruck</span>
-                        </div>
-                        <a href="#">anja@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contacts-list">
-                <div>
-                    <h3 class="font-21">B</h3>
-                </div>
-            </div>
-            <div class="line">
-                <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-            <div>
-                <div class="assigned mt-11">
-                    <div class="name-border">BM</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Bine Maja</span>
-                        </div>
-                        <a href="#">bine@gmail.com</a>
-                    </div>
-                </div>
-                <div class="assigned mt-11">
-                    <div class="name-border2">BB</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Benjamin Bauer</span>
-                        </div>
-                        <a href="#">benjamin@gmail.com</a>
-                    </div>
-                </div>
-            </div><div class="contacts-list">
-                <div>
-                    <h3 class="font-21">A</h3>
-                </div>
-            </div>
-            <div class="line">
-                <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-            <div>
-                <div class="assigned mt-11">
-                    <div class="name-border">AW</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Albert Wissigkeit</span>
-                        </div>
-                        <a href="#">albert@gmail.com</a>
-                    </div>
-                </div>
-                <div class="assigned mt-11">
-                    <div class="name-border2">AZ</div>
-                    <div class="left-distance">
-                        <div class="font-21 contacts-span">
-                            <span>Anja Zabruck</span>
-                        </div>
-                        <a href="#">anja@gmail.com</a>
-                    </div>
-                </div>
-            </div>
-
-       
-
-          
-
-            <!-- scroll test kontakte ende -->
-        
-            
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </section>
@@ -212,61 +30,62 @@ function renderContactsHTML() {
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  * 
- * @returns html code
+ * @param {*} i gives the i as the position for every contact to this function
+ * @returns  html code
  */
-function renderContactDescriptionHTML() {
+function renderContactDescriptionHTML(i) {
     return /*html*/`
-    <div id="contactPage"></div>
-    <section class="content">
-     <div id="ContactDescriptionHeader" class="d-none">
-        <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
-        <div class="go-back-contact">
-            <div>
-                <h2 class="font-47 contact-description-h2">Contacts</h2>
-                <span class="font-21">Better with a team</span>
-            </div>
-                <img  onclick="renderContacts()" src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
-        </div>
-        <div class="blue-line">
-            <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
-        </div>
-      </div>
-        <div>
-            <div class="contact-info">
-                <div class="initials font-27">
-                    AM
-                </div>
-                <div>
+        <div id="contactPage"></div>
+        <section class="content">
+            <div id="ContactDescriptionHeader" class="d-none">
+                <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
+                <div class="go-back-contact">
                     <div>
-                        <h3 class="font-27">Anton Mayer</h3>
+                        <h2 class="font-47 contact-description-h2">Contacts</h2>
+                        <span class="font-21">Better with a team</span>
                     </div>
-                    <div onclick="renderFloatAddTask()" class="add-task">
-                        <img src="./assets/img/contact-plus.png" alt="plus-img">
-                        <span>Add Task</span>
+                    <img onclick="renderContacts()" src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
+                </div>
+                <div class="blue-line">
+                    <img src="./assets/img/blue-line-mobile.png" alt="blue-line-img">
+                </div>
+            </div>
+            <div>
+                <div class="contact-info">
+                    <div class="initials font-27">
+                        ${contentArray['contacts']['nameInitials'][i]}
+                    </div>
+                    <div>
+                        <div>
+                            <h3 class="font-27">${contentArray['contacts']['name'][i]}</h3>
+                        </div>
+                        <div onclick="renderFloatAddTask()" class="add-task">
+                            <img src="./assets/img/contact-plus.png" alt="plus-img">
+                            <span>Add Task</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-11">
+                    <h4 class="font-21">Contact Information</h4>
+                </div>
+                <div class="mail-mobil">
+                    <div>
+                        <span><b>Email</b></span>
+                        <a href="#">${contentArray['contacts']['email'][i]}</a>
+                    </div>
+                    <div>
+                        <span><b>Mobile</b></span>
+                        <a href="#">${contentArray['contacts']['phoneNumber'][i]}</a>
                     </div>
                 </div>
             </div>
-            <div class="mb-11">
-                <h4 class="font-21">Contact Information</h4>
+            <div class="delete-button-contact">
+                <img src="./assets/img/task-delete-button.png" alt="delete-img">
             </div>
-            <div class="mail-mobil">
-                <div>
-                    <span><b>Email</b></span>
-                    <a href="#">antom@gmail.com</a>
-                </div>
-                <div>
-                    <span><b>Mobil</b></span>
-                    <a href="#">+49 1111 111 11 1</a>
-                </div>
+            <div class="edit-button-contact">
+                <img onclick="editContact()" src="./assets/img/task-edit-button.png" alt="edit-img">
             </div>
-        </div>
-        <div class="delete-button-contact">
-            <img src="./assets/img/task-delete-button.png" alt="delete-img">
-        </div>
-        <div class="edit-button-contact">
-            <img onclick="editContact()" src="./assets/img/task-edit-button.png" alt="edit-img">
-        </div>
-    </section>
+        </section>
     `;
 }
 

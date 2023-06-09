@@ -79,7 +79,6 @@
 	padding: 4px 25px;
 	border-radius: 8px;
 	color: white;
-	background-color: #ff7a00;
 }
 
 .task-title {
@@ -106,8 +105,15 @@
 
 .taskProgressBar {
 	width: 90%;
+	border-radius: 2px;
 	height: 0.8vh;
 	background: #F4F4F4;
+}
+
+.task-progress-bar-done {
+	border-radius: 2px;
+	height: 0.8vh;
+	background-color: #29ABE2;
 }
 
 .taskProgressBarCounter {
@@ -115,10 +121,6 @@
 	font-weight: 400;
 	min-width: 50px;
 	padding-left: 5%;
-}
-
-.progress-bar-container-hide {
-	width: 100%;
 }
 
 .task-assigned-to-icon {
@@ -132,10 +134,10 @@
     color: white;
     width: 3.5vh;
     height: 3.5vh;
-    background: #9327FF;
     border: 1px solid #FFFFFF;
     border-radius: 50%;
 	margin-right: -5%;
+	background-color: #2A3647;
 }
 
 .task-assigned-to-prio-image {
@@ -155,6 +157,7 @@
 .all-task-container {
 	display: flex;
 	flex-direction: row;
+	/* flex-wrap: wrap; */
 	justify-content: space-between;
 	height: 70vh;
     overflow-y: scroll;
@@ -166,6 +169,8 @@
 	flex-direction: column;
 	width: 23%;
 }
+
+
 
 
 

@@ -5,6 +5,7 @@
 function renderContacts() {
     resetContent();
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
+    updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
 }
 
@@ -24,15 +25,15 @@ window.addEventListener('resize', function () {
  * This function renders the contact decriptions
  * 
  */
-function renderContactDescription() {
+function renderContactDescription(i) {
     if (window.innerWidth > 800) {
         document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
         document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
         slideInContact();
-        document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML();
+        document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML(i);
     } else if (window.innerWidth < 800) {
         resetContent();
-        document.getElementById("content").innerHTML = renderContactDescriptionHTML();
+        document.getElementById("content").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById("ContactDescriptionHeader").classList.remove('d-none');
     }
 }
@@ -93,26 +94,88 @@ function closeEditContact() {
 }
 
 
-// in der console: diese funktion ausführen zum testen obs geht
 function updateContactsHTML() {
     document.getElementById('contactsList').innerHTML = ``;
+
+    // Erstelle ein leeres Objekt zur Gruppierung der Kontakte nach dem Anfangsbuchstaben
+    const contactsByInitial = {};
+
+    // Gruppiere die Kontakte nach dem Anfangsbuchstaben
     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
-        document.getElementById('contactsList').innerHTML += generateContactsHTML(i);
+        const name = contentArray['contacts']['name'][i];
+        const initial = name.charAt(0).toUpperCase();
+
+        if (!contactsByInitial[initial]) {
+            contactsByInitial[initial] = [];
+        }
+
+        contactsByInitial[initial].push(i);
+    }
+
+    // Iteriere über das Alphabet und render die Kontakte für jeden Buchstaben
+    for (let letter = 65; letter <= 90; letter++) {
+        const initial = String.fromCharCode(letter);
+
+        if (contactsByInitial[initial]) {
+            // Füge den HTML-Code für den Buchstaben hinzu
+            document.getElementById('contactsList').innerHTML += generateHeaderHTML(initial);
+
+            // Füge die Kontakt-HTML für jeden Kontakt unter dem Buchstaben hinzu
+            contactsByInitial[initial].forEach(contactIndex => {
+                document.getElementById('contactsList').innerHTML += generateContactsHTML(contactIndex);
+            });
+        }
     }
 }
 
-
-function generateContactsHTML(i) {
-	return /*html*/`
-    <div class="assigned mt-11"  onclick="renderContactDescription(i)">
-        <div class="name-border">${contentArray['contacts']['nameInitials'][i]}
-        </div>
-        <div class="left-distance">
-            <div class="font-21 contacts-span">
-                <span>${contentArray['contacts']['name'][i]}</span>
+function generateHeaderHTML(initial) {
+    return /*html*/`
+        <div>
+            <h3 class="font-21">${initial}</h3>
+            <div class="line">
+              <img src="./assets/img/contact-line.png" alt="contact-line-img">
             </div>
-            <a href="#">${contentArray['contacts']['email'][i]}</a>
         </div>
-    </div>
     `;
 }
+
+function generateContactsHTML(i) {
+    return /*html*/`
+        <div class="assigned mt-11" onclick="renderContactDescription(${i})">
+            <div class="name-border">${contentArray['contacts']['nameInitials'][i]}</div>
+            <div class="left-distance">
+                <div class="font-21 contacts-span">
+                    <span>${contentArray['contacts']['name'][i]}</span>
+                </div>
+                <a href="#">${contentArray['contacts']['email'][i]}</a>
+            </div>
+        </div>
+    `;
+}
+
+
+
+
+// // in der console: diese funktion ausführen zum testen obs geht
+// function updateContactsHTML() {
+//     document.getElementById('contactsList').innerHTML = ``;
+//     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+//         document.getElementById('contactsList').innerHTML += generateContactsHTML(i);
+//     }
+// }
+
+
+// function generateContactsHTML(i) {
+// 	return /*html*/`
+//     <div class="assigned mt-11"  onclick="renderContactDescription(i)">
+//         <div class="name-border">${contentArray['contacts']['nameInitials'][i]}
+//         </div>
+//         <div class="left-distance">
+//             <div class="font-21 contacts-span">
+//                 <span>${contentArray['contacts']['name'][i]}</span>
+//             </div>
+//             <a href="#">${contentArray['contacts']['email'][i]}</a>
+//         </div>
+//     </div>
+//     `;
+// }
