@@ -113,7 +113,7 @@
     padding: 11px;
 }
 
-.name-border {
+/* .name-border {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@
     background: #9327FF;
     border: 2px solid #FFFFFF;
     border-radius: 58px;
-}
+} */
 
 .name-border2 {
     box-sizing: border-box;

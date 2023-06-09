@@ -5,6 +5,8 @@
 function renderAddTask() {
     resetContent();
     document.getElementById("content").innerHTML = renderAddTaskHTML();
+    renderAddTaskCategoryOptions();
+    renderAddTaskAssignedToOptions();
 }
 
 
@@ -37,31 +39,95 @@ function addTaskFloat() {
 }
 
 
-function updateTaskArray() {
-    let taskstatus = document.getElementById('addTaskStatus').value;
-    contentArray[0]['tasks'][0]['taskStatus'].push(taskstatus);
+/**
+ * This function shows or hide the dropwdown menus
+ * 
+ */
+let expanded = [false, false];
 
-
-
-
-    for (let i = 0; i < contentArray[0]['tasks'][0]['title'].length + 1; i++) {
-
-        for (let j = 0; j < 4; j++) {
-            if (contentArray[0]['tasks'][0]['taskStatus'][i] == j) {
-                // document.getElementById(taskStatus${j}).innerHTML += generateBoardHTML(i);
-            }
-        }
+function showCheckboxes(index) {
+    let checkboxes = document.getElementById("checkboxes" + index);
+    if (!expanded[index - 1]) {
+        checkboxes.style.display = "block";
+        expanded[index - 1] = true;
+    } else {
+        checkboxes.style.display = "none";
+        expanded[index - 1] = false;
     }
 }
 
 
-// function updateTaskHTML() {
-//     for (let i = 0; i < contentArray[0]['tasks'][0]['title'].length + 1; i++) {
+/**
+ * This function renders the category options inside the drowdown menu
+ * 
+ */
+function renderAddTaskCategoryOptions() {
+    for (let i = 0; i < contentArray['tasks']['categoryName'].length; i++) {
+        // const element = contentArray['tasks']['categoryName'][i];
+        document.getElementById('checkboxes1').innerHTML += /*html*/`
+        <label onclick="categoryOption(${i})">${contentArray['tasks']['categoryName'][i]}</label>
+        `;
+    }
+}
 
-//         for (let j = 0; j < 4; j++) {
-//             if (contentArray[0]['tasks'][0]['taskStatus'][i] == j) {
-//                 document.getElementById(taskStatus${j}).innerHTML += generateBoardHTML(i);
-//             }
-//         }
-//     }
-// }
+
+/**
+ * This function renders the category in the header of the drowdown menu
+ * 
+ */
+function categoryOption(index) {
+    document.getElementById('categoryOptionShowSelected').innerHTML = `
+      ${contentArray['tasks']['categoryName'][index]}
+    `;
+    document.getElementById('checkboxes1').style.display = "none";
+    expanded[0] = false;
+}
+
+
+/**
+ * This function renders the assigned to options inside the drowdown menu
+ * 
+ */
+function renderAddTaskAssignedToOptions() {
+    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+        // const element = contentArray['tasks']['categoryName'][i];
+        document.getElementById('checkboxes2').innerHTML += /*html*/`
+        <label for="assignedToOptions${i}">
+        <input type="checkbox" id="assignedToOptions${i}" />${contentArray['contacts']['name'][i]}</label>
+        `;
+    }
+}
+
+
+/**
+ * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
+ * 
+ */
+function updateTaskArray() {
+    let addTitle = document.getElementById('addTitle').value;
+    contentArray['tasks']['title'].push(addTitle);
+    console.log(addTitle);
+
+    let addDescription = document.getElementById('addDescription').value;
+    contentArray['tasks']['description'].push(addDescription);
+    console.log(addDescription);
+
+    let addDueDate = document.getElementById('addDueDate').value;
+    contentArray['tasks']['dueDate'].push(addDueDate);
+    console.log(addDueDate);
+
+    let addCategoryName = document.getElementById("addCategoryName").value;
+    contentArray['tasks']['categoryName'].push(addCategoryName);
+    console.log(addCategoryName);
+
+    // hier muss jeder angeklickte angezeigt werden
+    // let addAssignedTo = document.getElementById("addAssignedTo").value;
+    // contentArray['tasks']['assignedTo'].push(addAssignedTo);
+    // console.log(addAssignedTo);
+
+    // subtask
+
+    // prio
+
+    // setItem(key, contentArray);
+}

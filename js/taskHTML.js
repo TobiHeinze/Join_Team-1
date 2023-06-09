@@ -6,7 +6,7 @@
 function renderAddTaskHTML() {
     return /*html*/ `
     <img class="create-button" src="./assets/img/create-button.png" alt="create task">
-    <form class="add-task-scroll">
+    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
                 <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
@@ -18,12 +18,12 @@ function renderAddTaskHTML() {
                     <div class="add-task-responsive-left">
                         <div class="title">
                             <span>Title</span>
-                            <input type="text" placeholder="Enter a Title" required>
+                            <input id="addTitle" type="text" placeholder="Enter a Title" required>
                         </div>
                         <div class="description">
                             <span class="mt-11">Description</span>
-                            <textarea name="" id="addTaskStatus" cols="4" rows="4" placeholder="Enter a Description"
-                                required></textarea>
+                            <textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description"
+                                ></textarea>
                         </div>
                         <div class="prio">
                             <span class="mt-11 mb-11">Prio</span>
@@ -45,8 +45,8 @@ function renderAddTaskHTML() {
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
-                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
+                                <input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,39 @@ function renderAddTaskHTML() {
                     <div class="add-task-vertical-line">
                     </div>
                     </div>
+
                     <div class="add-task-responsive-right">
-                        <div class="category-select-box">
+
+
+
+
+
+                    <div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(1)">
+    <select>
+      <option id="categoryOptionShowSelected">Select task category</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes1" class="flex-checkboxes">
+  </div>
+</div>
+
+<div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(2)">
+    <select>
+      <option>Select contacts to assign</option>
+    </select>
+    <div class="overSelect"></div>
+  </div>
+  <div id="checkboxes2" class="flex-checkboxes">
+  </div>
+</div>
+
+
+                        <!-- <div class="category-select-box">
                             <span>Category</span>
-                            <select name="category" id="category-task" class="category-select">
+                            <select name="category" id="addCategoryName" class="category-select">
                                 <option value="">Select task category</option>
                                 <option value="orange">Orange</option>
                                 <option value="blue">Blue</option>
@@ -65,14 +94,23 @@ function renderAddTaskHTML() {
                                 <option value="green">Green</option>
                             </select>
                         </div>
+
                         <div class="assigned-add-task">
                             <span class="mt-11">Assigned to</span>
-                            <select name="assigned" id="assigned-task" class="assigned-select">
+                            <select name="assigned" id="addAssignedTo" class="assigned-select">
                                 <option value="">Select contacts to assign</option>
-                                <option value="orange">name1</option>
-                                <option value="blue">name2</option>
+                                <option value="name1">name1</option>
+                                <option value="name2">name2</option>
                             </select>
-                        </div>
+                        </div> -->
+
+
+
+
+
+
+
+                        
                         <div class="subtask">
                             <span class="mt-11">Subtasks</span>
                             <div class="subtask-box">
@@ -80,7 +118,7 @@ function renderAddTaskHTML() {
                                 <img src="./assets/img/task-plus.png" alt="plus-img">
                             </div>
                             <div>
-                                <input type="checkbox">
+                                <input id="" type="checkbox">
                                 <span>Subtask 1</span>
                             </div>
 
@@ -178,10 +216,10 @@ function renderAddTaskHTML() {
                 <span>Clear</span>
                 <img src="./assets/img/x-button-black.png" alt="x-img">
               </div>
-              <div class="add-task-button">
+              <button class="add-task-button">
                 <span>Create Task</span>
                 <img src="./assets/img/hook.png" alt="haken-img">
-              </div>
+</button>
             </div>
             </form>
             
@@ -258,7 +296,7 @@ function addTaskFloatHTML() {
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
                                 <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
-                                <img src="./assets/img/task-calendar.png" alt="calendar-img" required>
+                                <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
                     </div>
