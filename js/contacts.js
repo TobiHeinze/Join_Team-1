@@ -27,14 +27,17 @@ window.addEventListener('resize', function () {
  * 
  */
 function renderContactDescription(i) {
+
     if (window.innerWidth > 800) {
         document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
         document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
         slideInContact();
         document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML(i);
+        document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
     } else if (window.innerWidth < 800) {
         resetContent();
         document.getElementById("content").innerHTML = renderContactDescriptionHTML(i);
+        document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
         document.getElementById("ContactDescriptionHeader").classList.remove('d-none');
     }
 }
@@ -101,27 +104,84 @@ async function updateNewContact() {
 }
 
 
+async function editContact(index) {
+    document.getElementById('popUpDiv').classList.remove('d-none');
+    document.getElementById('popUpDiv').classList.add('d-flex');
+    slideInPopUp();
+    document.getElementById('popUpDiv').innerHTML = editContactHTML(index);
+    document.getElementById('editContactName').value = contentArray['contacts']['name'][index];
+    document.getElementById('editContactEmail').value = contentArray['contacts']['email'][index];
+    document.getElementById('editContactPhone').value = contentArray['contacts']['phoneNumber'][index];
+
+
+}
+
+
+async function updateEditedContact(index) {
+    let updatedContactName = document.getElementById('editContactName').value;
+    contentArray['contacts']['name'][index] = updatedContactName;
+
+    let nameArray = updatedContactName.split(" ");
+    let firstName = nameArray[0];
+    let secondName = nameArray[1];
+    let initials = firstName.substring(0, 1) + secondName.substring(0, 1);
+    contentArray['contacts']['nameInitials'][index] = initials;
+
+    let updatedContactEmail = document.getElementById('editContactEmail').value;
+    contentArray['contacts']['email'][index] = updatedContactEmail;
+
+    let updatedContactPhone = document.getElementById('editContactPhone').value;
+    contentArray['contacts']['phoneNumber'][index] = updatedContactPhone;
+
+    await setItem(key, contentArray);
+    await renderContacts();
+    // showContactUpdatedMessage();
+    showContactCreatedMessage();
+}
+
+
+async function deleteContact(index) {
+    if (confirm('Delete This Contact?') == true) {
+        contentArray['contacts']['name'].splice(index, 1);
+        contentArray['contacts']['nameInitials'].splice(index, 1);
+        contentArray['contacts']['email'].splice(index, 1);
+        contentArray['contacts']['phoneNumber'].splice(index, 1);
+        contentArray['contacts']['contactImageBgColor'].splice(index, 1);
+        await setItem(key, contentArray);
+        await renderContacts();
+        // showContactDeletedMessage();
+        text = "Contact Deleted!";
+        showContactCreatedMessage();
+    } 
+}
+
+function editContactResetInputs() {
+    document.getElementById('editContactName').value = "";
+    document.getElementById('editContactEmail').value = "";
+    document.getElementById('editContactPhone').value = "";
+}
+
+
 /**
  * This function shows a message in the middle of the window to show the sucessfull creation of the new contact
  * 
  */
 function showContactCreatedMessage() {
     document.getElementById("contactCreatedDiv").classList.add("show");
-  
-    setTimeout(function() {
+
+    setTimeout(function () {
         document.getElementById("contactCreatedDiv").classList.remove("show");
     }, 2000);
-  }
+}
 
 
 /**
  * This function gives back a random color from the given colors
  * 
  */
-let contactBackgroundColor = ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 function getRandomBackgroundColor() {
-    let randomColor = Math.floor(Math.random() * contactBackgroundColor.length);
-    return contactBackgroundColor[randomColor];
+    let randomColor = Math.floor(Math.random() * contentArray['settings']['contactImageBgColor'].length);
+    return contentArray['settings']['contactImageBgColor'][randomColor];
 }
 
 
@@ -129,12 +189,12 @@ function getRandomBackgroundColor() {
  * This function opens the edit contact area to edit contacts
  * 
  */
-function editContact() {
-    document.getElementById('popUpDiv').classList.remove('d-none');
-    document.getElementById('popUpDiv').classList.add('d-flex');
-    slideInPopUp();
-    document.getElementById('popUpDiv').innerHTML = editContactHTML();
-}
+// function editContact() {
+// document.getElementById('popUpDiv').classList.remove('d-none');
+// document.getElementById('popUpDiv').classList.add('d-flex');
+// slideInPopUp();
+// document.getElementById('popUpDiv').innerHTML = editContactHTML();
+// }
 
 
 /**
@@ -177,10 +237,12 @@ function updateContactsHTML() {
             // Füge die Kontakt-HTML für jeden Kontakt unter dem Buchstaben hinzu
             contactsByInitial[initial].forEach(contactIndex => {
                 document.getElementById('contactsList').innerHTML += generateContactsHTML(contactIndex);
+                document.getElementById(`contactBgColor${contactIndex}`).style.backgroundColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
             });
         }
     }
 }
+
 
 function generateHeaderHTML(initial) {
     return /*html*/`
@@ -193,10 +255,11 @@ function generateHeaderHTML(initial) {
     `;
 }
 
+
 function generateContactsHTML(i) {
     return /*html*/`
         <div class="assigned mt-11" onclick="renderContactDescription(${i})">
-            <div class="name-border">${contentArray['contacts']['nameInitials'][i]}</div>
+            <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
             <div class="left-distance">
                 <div class="font-21 contacts-span">
                     <span>${contentArray['contacts']['name'][i]}</span>
@@ -206,30 +269,3 @@ function generateContactsHTML(i) {
         </div>
     `;
 }
-
-
-
-
-// // in der console: diese funktion ausführen zum testen obs geht
-// function updateContactsHTML() {
-//     document.getElementById('contactsList').innerHTML = ``;
-//     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
-//         document.getElementById('contactsList').innerHTML += generateContactsHTML(i);
-//     }
-// }
-
-
-// function generateContactsHTML(i) {
-// 	return /*html*/`
-//     <div class="assigned mt-11"  onclick="renderContactDescription(i)">
-//         <div class="name-border">${contentArray['contacts']['nameInitials'][i]}
-//         </div>
-//         <div class="left-distance">
-//             <div class="font-21 contacts-span">
-//                 <span>${contentArray['contacts']['name'][i]}</span>
-//             </div>
-//             <a href="#">${contentArray['contacts']['email'][i]}</a>
-//         </div>
-//     </div>
-//     `;
-// }
