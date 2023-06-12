@@ -6,14 +6,15 @@
 function renderAddTaskHTML() {
     return /*html*/ `
     <img class="create-button" src="./assets/img/create-button.png" alt="create task">
-    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
-                <div onclick="renderContacts()" class="add-task-x-position d-none">
+    <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">
                   <span >Kanban Project Management Tool</span>
                 </div>
                 <h2 class="font-47 add-task-h2">Add Task</h2>
+    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
+                
                 <div class="desktop-size">
                     <div class="add-task-responsive-left">
                         <div class="title">

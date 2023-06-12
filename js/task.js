@@ -82,6 +82,7 @@ function renderAddTaskCategoryOptions() {
     }
 }
 
+// die farbpunkte auswählbar machen mit onclick oder so
 function addNewCategory() {
     document.getElementById('selectBox1').classList.add('d-none');
     document.getElementById('checkboxes1').classList.add('d-none');
