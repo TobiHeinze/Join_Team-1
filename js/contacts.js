@@ -104,6 +104,11 @@ async function updateNewContact() {
 }
 
 
+/**
+ * This function opens the edit contact menu and pushes the value of the name e-mail and phone number in the input fields
+ * 
+ * @param {*} index this is the position in the array from the specific contact
+ */
 async function editContact(index) {
     document.getElementById('popUpDiv').classList.remove('d-none');
     document.getElementById('popUpDiv').classList.add('d-flex');
@@ -112,11 +117,14 @@ async function editContact(index) {
     document.getElementById('editContactName').value = contentArray['contacts']['name'][index];
     document.getElementById('editContactEmail').value = contentArray['contacts']['email'][index];
     document.getElementById('editContactPhone').value = contentArray['contacts']['phoneNumber'][index];
-
-
 }
 
 
+/**
+ * This function update the edited contact when clicking on the save button
+ * 
+ * @param {*} index this is the position in the array from the specific contact
+ */
 async function updateEditedContact(index) {
     let updatedContactName = document.getElementById('editContactName').value;
     contentArray['contacts']['name'][index] = updatedContactName;
@@ -140,6 +148,11 @@ async function updateEditedContact(index) {
 }
 
 
+/**
+ * This function deletes the contact after confirm from the array
+ * 
+ * @param {*} index this is the position of the specific contact in the array
+ */
 async function deleteContact(index) {
     if (confirm('Delete This Contact?') == true) {
         contentArray['contacts']['name'].splice(index, 1);
@@ -155,6 +168,11 @@ async function deleteContact(index) {
     } 
 }
 
+
+/**
+ * This function resets the input fields when editing a contact
+ * 
+ */
 function editContactResetInputs() {
     document.getElementById('editContactName').value = "";
     document.getElementById('editContactEmail').value = "";
@@ -176,25 +194,13 @@ function showContactCreatedMessage() {
 
 
 /**
- * This function gives back a random color from the given colors
+ * This function gives back a random color from the given colors in the array
  * 
  */
 function getRandomBackgroundColor() {
     let randomColor = Math.floor(Math.random() * contentArray['settings']['contactImageBgColor'].length);
     return contentArray['settings']['contactImageBgColor'][randomColor];
 }
-
-
-/**
- * This function opens the edit contact area to edit contacts
- * 
- */
-// function editContact() {
-// document.getElementById('popUpDiv').classList.remove('d-none');
-// document.getElementById('popUpDiv').classList.add('d-flex');
-// slideInPopUp();
-// document.getElementById('popUpDiv').innerHTML = editContactHTML();
-// }
 
 
 /**
@@ -208,6 +214,10 @@ function closeEditContact() {
 }
 
 
+/**
+ * This function filters the names with the same beginning letter and then shows them together in the specific groups for letters
+ * 
+ */
 function updateContactsHTML() {
     document.getElementById('contactsList').innerHTML = ``;
 
@@ -241,31 +251,4 @@ function updateContactsHTML() {
             });
         }
     }
-}
-
-
-function generateHeaderHTML(initial) {
-    return /*html*/`
-        <div>
-            <h3 class="font-21">${initial}</h3>
-            <div class="line">
-              <img src="./assets/img/contact-line.png" alt="contact-line-img">
-            </div>
-        </div>
-    `;
-}
-
-
-function generateContactsHTML(i) {
-    return /*html*/`
-        <div class="assigned mt-11" onclick="renderContactDescription(${i})">
-            <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
-            <div class="left-distance">
-                <div class="font-21 contacts-span">
-                    <span>${contentArray['contacts']['name'][i]}</span>
-                </div>
-                <a href="#">${contentArray['contacts']['email'][i]}</a>
-            </div>
-        </div>
-    `;
 }

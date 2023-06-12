@@ -232,3 +232,42 @@ function renderContactDescriptionHTMLHeader() {
     </section>
     `;
 }
+
+
+/**
+ * This function generates the header for the Letters where all contacts are listed under
+ * 
+ * @param {*} initial this are the two initials from the name of the persons
+ * @returns a html code to smaller the code
+ */
+function generateHeaderHTML(initial) {
+    return /*html*/`
+        <div>
+            <h3 class="font-21">${initial}</h3>
+            <div class="line">
+              <img src="./assets/img/contact-line.png" alt="contact-line-img">
+            </div>
+        </div>
+    `;
+}
+
+
+/**
+ * This function is rendering the contact information from the specific contacts into the list from the letters
+ * 
+ * @param {*} i is the number of the contact, the specific position in the array
+ * @returns a html code to smaller the code
+ */
+function generateContactsHTML(i) {
+    return /*html*/`
+        <div class="assigned mt-11" onclick="renderContactDescription(${i})">
+            <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
+            <div class="left-distance">
+                <div class="font-21 contacts-span">
+                    <span>${contentArray['contacts']['name'][i]}</span>
+                </div>
+                <a href="#">${contentArray['contacts']['email'][i]}</a>
+            </div>
+        </div>
+    `;
+}
