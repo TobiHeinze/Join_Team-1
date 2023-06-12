@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: task.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: task.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
  * This function renders the AddTask area
  * 
  */
@@ -18,7 +46,6 @@ async function renderAddTask() {
 function renderFloatAddTask() {
     if (window.innerWidth > 800) {
         document.getElementById("content").innerHTML = addTaskFloat();
-        // hier sollte am besten auch renderaddtask gerendert werden und nicht extra der floating style!
         // document.getElementById("popUpDiv").innerHTML = renderAddTask();
     } else {
         resetContent();
@@ -49,13 +76,10 @@ let expanded = [false, false];
 
 function showCheckboxes(index) {
     let checkboxes = document.getElementById("checkboxes" + index);
-    document.getElementById(`selectBox${index}`).style.borderBottomLeftRadius = "0";
-    document.getElementById(`selectBox${index}`).style.borderBottomRightRadius = "0";
     if (!expanded[index - 1]) {
         checkboxes.style.display = "block";
         expanded[index - 1] = true;
     } else {
-        document.getElementById(`selectBox${index}`).style.borderRadius = "10px";
         checkboxes.style.display = "none";
         expanded[index - 1] = false;
     }
@@ -67,55 +91,11 @@ function showCheckboxes(index) {
  * 
  */
 function renderAddTaskCategoryOptions() {
-    document.getElementById('checkboxes1').innerHTML += /*html*/`
-    <div onclick="addNewCategory()" class="option flex">
-      <div class="width-100">New category</div>
-    </div>
-  `;
-    for (let i = 0; i < contentArray['settings']['categoryName'].length; i++) {
+    for (let i = 0; i &lt; contentArray['settings']['categoryName'].length; i++) {
         document.getElementById('checkboxes1').innerHTML += /*html*/`
-        <div class="option" onclick="categoryOption(${i})">${contentArray['settings']['categoryName'][i]}
-          <div class="circle" style="background-color: ${contentArray['settings']['categoryBgColor'][i]}">
-          </div>
-        </div>
+        &lt;label onclick="categoryOption(${i})">${contentArray['settings']['categoryName'][i]}&lt;div class="circle" style="background-color: ${contentArray['settings']['categoryBgColor'][i]}">&lt;/div>&lt;/label>
         `;
     }
-}
-
-function addNewCategory() {
-    document.getElementById('selectBox1').classList.add('d-none');
-    document.getElementById('checkboxes1').classList.add('d-none');
-    document.getElementById('renderAddNewCategory').innerHTML = /*html*/`
-    <div class="new-category">
-    <input id="newCategoryValue" type="text" placeholder="New category name">
-    <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
-    <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
-    </div>
-    `;
-    for (let i = 0; i < contentArray['settings']['categoryBgColor'].length; i++) {
-        document.getElementById('addColorToNewCategory').innerHTML += /*html*/`
-        <div onclick="" class="circle" style="background-color: ${contentArray['settings']['categoryBgColor'][i]}">
-    `;   
-    }
-}
-
-function closeNewCategory() {
-    document.getElementById('renderAddNewCategory').innerHTML = ``;
-    document.getElementById('selectBox1').classList.remove('d-none');
-    document.getElementById('checkboxes1').classList.remove('d-none');
-    document.getElementById('addColorToNewCategory').innerHTML = ``;
-}
-
-function addNewCategoryToArray() {
-    let category = document.getElementById('newCategoryValue').value;
-    contentArray['settings']['categoryName'].push(category);
-    // category color auch hinzufügen !
-    document.getElementById('renderAddNewCategory').innerHTML = ``;
-    document.getElementById('selectBox1').classList.remove('d-none');
-    document.getElementById('checkboxes1').classList.remove('d-none');
-    document.getElementById('addColorToNewCategory').innerHTML = ``;
-    console.log('das ist die neue kategorie:', category);
-    categoryOption(contentArray['settings']['categoryName'].length -1);
 }
 
 
@@ -124,14 +104,10 @@ function addNewCategoryToArray() {
  * 
  */
 function categoryOption(index) {
-    document.getElementById('categoryOptionShowSelected').innerHTML = /*html*/`
-      <div>${contentArray['settings']['categoryName'][index]}
-          <div class="circle" style="background-color: ${contentArray['settings']['categoryBgColor'][index]}">
-          </div>
-      </div>
+    document.getElementById('categoryOptionShowSelected').innerHTML = `
+      ${contentArray['settings']['categoryName'][index]}
     `;
     document.getElementById('checkboxes1').style.display = "none";
-    document.getElementById('selectBox1').style.borderRadius = "10px";
     expanded[0] = false;
 }
 
@@ -141,29 +117,15 @@ function categoryOption(index) {
  * 
  */
 function renderAddTaskAssignedToOptions() {
-    document.getElementById('checkboxes2').innerHTML += /*html*/`
-    <div onclick="addNewContact()" class="option flex">
-      <div class="width-100">Invite new Contact</div>
-    </div>
-  `;
-    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+    for (let i = 0; i &lt; contentArray['contacts']['name'].length; i++) {
         document.getElementById('checkboxes2').innerHTML += /*html*/`
-        <div class="option flex">
-        <input type="checkbox" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
-        <div onclick="toggleCheckbox(${i})" class="width-100">
-        ${contentArray['contacts']['name'][i]}
-      </div>
-      </div>
+        &lt;label for="assignedToOptions${i}">
+        &lt;input type="checkbox" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
+          ${contentArray['contacts']['name'][i]}
+        &lt;/label>
       `;
     }
-    
 }
-
-
-function toggleCheckbox(index) {
-    let checkbox = document.getElementById(`assignedToOptions${index}`);
-    checkbox.checked = !checkbox.checked;
-  }
 
 
 /**
@@ -234,11 +196,11 @@ function addSubtask() {
     document.getElementById('inputAddSubtaskContent').value = ``;
     currentSubtasks.push(subtask);
     currentSubtaskStatus.push('open');
-    for (let i = 0; i < currentSubtasks.length; i++) {
+    for (let i = 0; i &lt; currentSubtasks.length; i++) {
         document.getElementById('addSubtaskContent').innerHTML += /*html*/`
-        <div id="addedCurrentSubtask${i}">
+        &lt;div id="addedCurrentSubtask${i}">
             - ${currentSubtasks[i]}
-        </div>
+        &lt;/div>
     `;
     } 
 }
@@ -253,4 +215,26 @@ let addPriority = [];
 function addPrio(priority) {
     addPriority = [priority];
     console.log(addPriority);
-}
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addTaskFloat">addTaskFloat</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#currentSubtasks">currentSubtasks</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactResetInputs">editContactResetInputs</a></li><li><a href="global.html#expanded">expanded</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Jun 12 2023 11:31:17 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
