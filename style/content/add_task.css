@@ -282,7 +282,7 @@
 }
 
 .add-task-scroll {
-    height: 76vh;
+    height: 62vh;
     overflow-y: scroll;
 }
 
@@ -296,18 +296,54 @@
 }
 
 /* dropdown menu */
+.width-100 {
+    width: 100%;
+}
+
+.option {
+    padding: 5px;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    /* width: 97%; */
+    /* text-align: end; */
+    flex-direction: row-reverse;
+  }
+
+.option input {
+    cursor: pointer;
+}
+  
+  .option:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .option:hover {
+    background-color: rgb(207, 209, 210);
+  }
 
 .multiselect {
-    width: 200px;
+    width: auto;
 }
 
 .selectBox {
     position: relative;
+    background: #FFFFFF;
+    border-bottom: 1px solid #D1D1D1;
+    /* border-top-left-radius: 10px;
+    border-top-right-radius: 10px; */
+    border-radius: 10px;
+    padding: 11px;
 }
+
+.arrow {
+    margin-left: auto;
+  }
 
 .selectBox select {
     width: 100%;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .overSelect {
@@ -322,13 +358,13 @@
 #checkboxes1,
 #checkboxes2 {
     display: none;
-    border: 1px #dadada solid;
+    /* border: 1px #dadada solid; */
 }
 
 .flex-checkboxes {
     display: flex;
     flex-direction: column;
-    border: 1px #dadada solid;
+    /* border: 1px #dadada solid; */
 }
 
 .flex-checkboxes label {
@@ -345,6 +381,25 @@
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
+  }
+
+  .new-category {
+    border-radius: 10px;
+    background-color: white;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .new-category input {
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+  .new-category img {
+    margin-left: 5px;
   }
 /* dropdown menu end */
 

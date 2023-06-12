@@ -4,7 +4,7 @@
  * @returns html code
  */
 function renderContactsHTML() {
-  return /*html*/ `
+    return /*html*/ `
     <section class="content-contact">
     <section>
         <div class="add-new-contact">
@@ -31,7 +31,7 @@ function renderContactsHTML() {
  * @returns  html code
  */
 function renderContactDescriptionHTML(i) {
-  return /*html*/ `
+    return /*html*/ `
         <div id="contactPage"></div>
         <section class="content">
             <div id="ContactDescriptionHeader" class="d-none">
@@ -49,7 +49,7 @@ function renderContactDescriptionHTML(i) {
             </div>
             <div>
                 <div class="contact-info">
-                    <div class="initials font-27">
+                    <div class="initials font-27" id="clickedContactBgColor${i}">
                         ${contentArray["contacts"]["nameInitials"][i]}
                     </div>
                     <div>
@@ -77,10 +77,10 @@ function renderContactDescriptionHTML(i) {
                 </div>
             </div>
             <div class="delete-button-contact">
-                <img src="./assets/img/task-delete-button.png" alt="delete-img">
+                <img onclick="deleteContact(${i})" src="./assets/img/task-delete-button.png" alt="delete-img">
             </div>
             <div class="edit-button-contact">
-                <img onclick="editContact()" src="./assets/img/task-edit-button.png" alt="edit-img">
+                <img onclick="editContact(${i})" src="./assets/img/task-edit-button.png" alt="edit-img">
             </div>
         </section>
     `;
@@ -92,7 +92,7 @@ function renderContactDescriptionHTML(i) {
  * @returns html code
  */
 function addNewContactHTML() {
-  return /*html*/ `
+    return /*html*/ `
     <!-- <section class="content"> -->
     <div class="border">
         <div class="top-bg">
@@ -152,63 +152,63 @@ function addNewContactHTML() {
  *
  * @returns html code
  */
-function editContactHTML() {
-  return /*html*/ `
-    <!-- <section class="content"> -->
-    <div class="border">
-        <div class="top-bg">
-            <div class="x-position">
-                <img onclick="closeEditContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
-            </div>
-            <div>
-                <div>
-                    <h2 class="font-32 mt-0 mb-11">Edit contact</h2>
-                </div>
-                <div>
-                    <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
-                </div>
-            </div>
-        </div>
-        <div class="big-initials font-27">
-            TW
-        </div>
-        <form action="">
-            <div class="contact-box">
-                <div class="name">
-                    <div class="name-box">
-                        <input class="input-name" type="text" placeholder="name muss mit JS eingefügt werden" required>
-                        <img src="./assets/img/charakter-icon.png" alt="charakter-img">
-                    </div>
-                </div>
-
-                <div class="name">
-                    <div class="name-box">
-                        <input class="input-name" type="text" placeholder="email muss mit JS eingefügt werden" required>
-                        <img src="./assets/img/email-icon.png" alt="email-img">
-                    </div>
-                </div>
-
-                <div class="name">
-                    <div class="name-box">
-                        <input class="input-name" type="text" placeholder="phone Nr muss mit JS eingefügt werden" required>
-                        <img src="./assets/img/phone-icon.png" alt="phone-img">
-                    </div>
-                </div>
-            </div>
-            <div class="del-save">
-                <div class="del">
-                    Delete
-                </div>
-                <div class="save">
-                    <b>Save</b>
-                </div>
-            </div>
-            <button class="mt-11">ADD + just 4 required tests</button>
-        </form>
-    </div>
-<!-- </section> -->
-`;
+function editContactHTML(index) {
+    return /*html*/ `
+      <!-- <section class="content"> -->
+      <div class="border">
+          <div class="top-bg">
+              <div class="x-position">
+                  <img onclick="closeEditContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
+              </div>
+              <div>
+                  <div>
+                      <h2 class="font-32 mt-0 mb-11">Edit contact</h2>
+                  </div>
+                  <div>
+                      <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
+                  </div>
+              </div>
+          </div>
+          <div class="big-initials font-27" id="editContactInitials">
+          ${contentArray['contacts']['nameInitials'][index]}
+          </div>
+          <form onsubmit="updateEditedContact(${index}); return false;">
+              <div class="contact-box">
+                  <div class="name">
+                      <div class="name-box">
+                          <input id="editContactName" class="input-name" type="text" placeholder="Name" required>
+                          <img src="./assets/img/charakter-icon.png" alt="charakter-img">
+                      </div>
+                  </div>
+  
+                  <div class="name">
+                      <div class="name-box">
+                          <input id="editContactEmail" class="input-name" type="text" placeholder="Email" required>
+                          <img src="./assets/img/email-icon.png" alt="email-img">
+                      </div>
+                  </div>
+  
+                  <div class="name">
+                      <div class="name-box">
+                          <input id="editContactPhone" class="input-name" type="text" placeholder="Phone" required>
+                          <img src="./assets/img/phone-icon.png" alt="phone-img">
+                      </div>
+                  </div>
+              </div>
+              <div class="del-save">
+                  <div class="del" onclick="editContactResetInputs()">
+                      Delete
+                  </div>
+                  <button class="save">
+                      <b>Save</b>
+</button>
+              </div>
+          </form>
+      </div>
+  <!-- </section> -->
+  `;
 }
+
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -216,7 +216,7 @@ function editContactHTML() {
  * @returns html code
  */
 function renderContactDescriptionHTMLHeader() {
-  return /*html*/ `
+    return /*html*/ `
     <section class="content">
         <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
         <div class="go-back-contact">
@@ -230,5 +230,44 @@ function renderContactDescriptionHTMLHeader() {
             <img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
         </div>
     </section>
+    `;
+}
+
+
+/**
+ * This function generates the header for the Letters where all contacts are listed under
+ * 
+ * @param {*} initial this are the two initials from the name of the persons
+ * @returns a html code to smaller the code
+ */
+function generateHeaderHTML(initial) {
+    return /*html*/`
+        <div>
+            <h3 class="font-21">${initial}</h3>
+            <div class="line">
+              <img src="./assets/img/contact-line.png" alt="contact-line-img">
+            </div>
+        </div>
+    `;
+}
+
+
+/**
+ * This function is rendering the contact information from the specific contacts into the list from the letters
+ * 
+ * @param {*} i is the number of the contact, the specific position in the array
+ * @returns a html code to smaller the code
+ */
+function generateContactsHTML(i) {
+    return /*html*/`
+        <div class="assigned mt-11" onclick="renderContactDescription(${i})">
+            <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
+            <div class="left-distance">
+                <div class="font-21 contacts-span">
+                    <span>${contentArray['contacts']['name'][i]}</span>
+                </div>
+                <a href="#">${contentArray['contacts']['email'][i]}</a>
+            </div>
+        </div>
     `;
 }
