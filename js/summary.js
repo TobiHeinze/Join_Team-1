@@ -19,11 +19,11 @@ function renderSummaryHTML() {
 
   <div class= "headlines">
   <h1>Summary</h1>
-  <img class="summary-blue-line-vertical" src="./assets/img/blue-line-vertical.png">
+  <img class="blue-line-vertical" src="./assets/img/blue-line-vertical.png">
   <span class="font-21">Everything in a nutshell!</span> 
   </div>
   <br> <br>
-  <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+  <img class="summary-line-horizontal" src="./assets/img/blue-line-horizontal.png">
   
   
   <div class="summary-content">

@@ -1,4 +1,4 @@
-.summary-blue-line-horizontal {
+.summary-line-horizontal {
     width: 200px;
     height: 3px;
     margin-bottom: 42px;
@@ -210,7 +210,7 @@ aside {
         display: block;
     }
 
-    .summary-blue-line-horizontal {
+    .summary-line-horizontal {
         width: 100px;
         height: auto;
         display: block;
