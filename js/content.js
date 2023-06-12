@@ -34,7 +34,6 @@ let contentArray =
 		  "priority": ["low", "urgent", "medium", "medium", "low"],
 		  "dueDate": ["05.08.2022", "24.12.2034", "11.06.2023", "09.06.1998", "06.07.2015"],
 		  "categoryName": ["Design", "Sales", "Backoffice", "Media", "Marketing"],
-		  "choosenCategoryName": ["Design", "Sales", "Backoffice", "Media", "Marketing", "Design", "Sales"],
 		  "categoryBgColor": ["#FF7A00", "#FC71FF", "#1FD7C1", "#FFC701", "#0038FF"],
 		  "subtasks": [
 			{

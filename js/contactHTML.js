@@ -13,14 +13,12 @@ function renderContactsHTML() {
 
         <div id="contactsList" class="overflow-scroll">
           
-            <!-- versteckt solange kein neuer contakt kreiert ist -->
-            <div class="d-none">
-              <div class="contact-created">
-                Contact successfully created
-              </div>
-            </div>
+            
 
         </div>
+            <div id="contactCreatedDiv" class="contact-created">
+                Contact successfully created
+            </div>
     </section>
 </section>
 `;
@@ -114,36 +112,35 @@ function addNewContactHTML() {
         <div class="big-initials">
             <img src="./assets/img/big-character.png" alt="big-character-img">
         </div>
-        <form action="" class="form-box">
+        <form class="form-box" onsubmit="updateNewContact(); return false;">
             <div class="contact-box">
                 <div class="name">
                     <div class="name-box">
-                        <input class="input-name" type="text" placeholder="Name" required>
+                        <input id="addNewContactName" class="input-name" type="text" placeholder="Name" required>
                         <img src="./assets/img/charakter-icon.png" alt="charakter-img">
                     </div>
                 </div>
 
                 <div class="name">
                     <div class="name-box">
-                        <input class="input-name" type="text" placeholder="Email" required>
+                        <input id="addNewContactEmail" class="input-name" type="email" placeholder="Email" required>
                         <img src="./assets/img/email-icon.png" alt="email-img">
                     </div>
                 </div>
 
                 <div class="name">
                     <div class="name-box">
-                        <input class="input-name" type="text" placeholder="Phone" required>
+                        <input id="addNewContactPhone" class="input-name" type="tel" placeholder="Phone" required>
                         <img src="./assets/img/phone-icon.png" alt="phone-img">
                     </div>
                 </div>
             </div>
             <!-- <div class="create-contact"> -->
-                <div class="create-contact">
+                <button class="create-contact">
                     <b>Create contact</b>
                     <img src="./assets/img/hook-icon.png" alt="hook-img">
-                </div>
+                </button>
             <!-- </div> -->
-            <button class="mt-11">ADD + just 4 required tests</button>
         </form>
     </div>
 <!-- </section> -->
