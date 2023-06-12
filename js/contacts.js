@@ -2,7 +2,8 @@
  * This function renders the contacts area
  * 
  */
-function renderContacts() {
+async function renderContacts() {
+    contentArray = await getItem(key);
     resetContent();
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();

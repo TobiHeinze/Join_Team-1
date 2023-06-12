@@ -2,7 +2,8 @@
  * This function renders the AddTask area
  * 
  */
-function renderAddTask() {
+async function renderAddTask() {
+    contentArray = await getItem(key);
     resetContent();
     document.getElementById("content").innerHTML = renderAddTaskHTML();
     renderAddTaskCategoryOptions();
@@ -119,7 +120,7 @@ function updateTaskArray() {
 
     // task category options 
     let addTaskStatus = document.getElementById('categoryOptionShowSelected').value;
-    contentArray['tasks']['categoryName'].push(addTaskStatus);
+    contentArray['tasks']['choosenCategoryName'].push(addTaskStatus);
     console.log(addTaskStatus);
 
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld 1 bzw 0 )
