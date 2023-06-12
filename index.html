@@ -9,7 +9,7 @@
 	<!--favicon-->
 	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
 
-	<title>Join</title> 
+	<title>Join</title>
 
 	<script src="./script.js"></script>
 	<script src="./js/summary.js"></script>
@@ -20,9 +20,10 @@
 	<script src="./js/password.js"></script>
 	<!-- <script src="./storage.js"></script> -->
 	<script src="./js/content.js"></script>
-
+	<script src="./js/signUp.js"></script>
 	<script src="./js/contactHTML.js"></script>
 	<script src="./js/taskHTML.js"></script>
+	<script src="./js/login.js"></script>
 
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="style/index.css">
@@ -41,14 +42,15 @@
 	<link rel="stylesheet" href="style/content/task_view.css">
 	<link rel="stylesheet" href="style/content/password.css">
 
+
 </head>
 
 
-<body onload="renderAddTask()">
+<body onload="renderLogin()">
 
 	<div id="loginContainer">
 	</div>
-	<div id="mainContainer" class="main-container">
+	<div id="mainContainer" class="main-container d-none">
 
 		<div class="header-with-content">
 			<div class="header padding">
@@ -76,7 +78,7 @@
 
 			<div id="content" class="content padding">
 			</div>
-			
+
 			<div id="popUpDiv" class="d-none">
 			</div>
 
@@ -115,7 +117,7 @@
 		</div>
 
 	</div>
-	<script src="storage.js"></script>
+	<script src="./storage.js"></script>
 </body>
 
 </html>

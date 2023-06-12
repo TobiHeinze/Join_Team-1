@@ -6,7 +6,21 @@ function renderSummary() {
   document.getElementById("mainContainer").classList.remove("d-none");
   resetContent();
   document.getElementById("content").innerHTML = renderSummaryHTML();
+  updateGreetingName();
 }
+
+
+function updateGreetingName() {
+  var greetingElement = document.getElementById('greeting');
+  var h1Element = greetingElement.querySelector('#userGreetingName');
+
+  var loggedInName = loggedInUserName || "Guest"; // Standardmäßig "Guest", wenn kein Benutzer eingeloggt ist
+
+  h1Element.innerText = loggedInName;
+}
+
+
+
 
 /**
  * This function returns the html code
@@ -151,4 +165,21 @@ function getTime() {
   }
 
   return greeting;
+}
+
+function updateGreetingName() {
+  const h1Element = document.getElementById("userGreetingName");
+  const loggedInEmail = localStorage.getItem("loggedInEmail");
+
+  if (loggedInEmail) {
+    const users = contentArray.users;
+    const index = users.email.indexOf(loggedInEmail);
+
+    if (index !== -1) {
+      const loggedInName = users.name[index];
+      h1Element.innerHTML = loggedInName;
+    }
+  } else {
+    h1Element.innerHTML = "Guest";
+  }
 }
