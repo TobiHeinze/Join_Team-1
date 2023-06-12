@@ -63,10 +63,9 @@ function showCheckboxes(index) {
  * 
  */
 function renderAddTaskCategoryOptions() {
-    for (let i = 0; i < contentArray['tasks']['categoryName'].length; i++) {
-        // const element = contentArray['tasks']['categoryName'][i];
+    for (let i = 0; i < contentArray['settings']['categoryName'].length; i++) {
         document.getElementById('checkboxes1').innerHTML += /*html*/`
-        <label onclick="categoryOption(${i})">${contentArray['tasks']['categoryName'][i]}<div class="circle" style="background-color: ${contentArray['tasks']['categoryBgColor'][i]}"></div></label>
+        <label onclick="categoryOption(${i})">${contentArray['settings']['categoryName'][i]}<div class="circle" style="background-color: ${contentArray['settings']['categoryBgColor'][i]}"></div></label>
         `;
     }
 }
@@ -78,7 +77,7 @@ function renderAddTaskCategoryOptions() {
  */
 function categoryOption(index) {
     document.getElementById('categoryOptionShowSelected').innerHTML = `
-      ${contentArray['tasks']['categoryName'][index]}
+      ${contentArray['settings']['categoryName'][index]}
     `;
     document.getElementById('checkboxes1').style.display = "none";
     expanded[0] = false;
@@ -120,7 +119,7 @@ function updateTaskArray() {
 
     // task category options 
     let addTaskStatus = document.getElementById('categoryOptionShowSelected').value;
-    contentArray['tasks']['choosenCategoryName'].push(addTaskStatus);
+    contentArray['tasks']['categoryName'].push(addTaskStatus);
     console.log(addTaskStatus);
 
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld 1 bzw 0 )

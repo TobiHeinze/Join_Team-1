@@ -73,6 +73,59 @@ function addNewContact() {
 
 
 /**
+ * This function can add a new contact to the contact list
+ * 
+ */
+async function updateNewContact() {
+    let addNewContactName = document.getElementById('addNewContactName').value;
+    contentArray['contacts']['name'].push(addNewContactName);
+
+    let nameArray = addNewContactName.split(" ");
+    let firstName = nameArray[0];
+    let secondName = nameArray[1];
+    let initials = firstName.substring(0, 1) + secondName.substring(0, 1);
+    contentArray['contacts']['nameInitials'].push(initials);
+
+    let addNewContactEmail = document.getElementById('addNewContactEmail').value;
+    contentArray['contacts']['email'].push(addNewContactEmail);
+
+    let addNewContactPhone = document.getElementById('addNewContactPhone').value;
+    contentArray['contacts']['phoneNumber'].push(addNewContactPhone);
+
+    let contactImageBgColor = getRandomBackgroundColor();
+    contentArray['contacts']['contactImageBgColor'].push(contactImageBgColor);
+
+    await setItem(key, contentArray);
+    await renderContacts();
+    showContactCreatedMessage();
+}
+
+
+/**
+ * This function shows a message in the middle of the window to show the sucessfull creation of the new contact
+ * 
+ */
+function showContactCreatedMessage() {
+    document.getElementById("contactCreatedDiv").classList.add("show");
+  
+    setTimeout(function() {
+        document.getElementById("contactCreatedDiv").classList.remove("show");
+    }, 2000);
+  }
+
+
+/**
+ * This function gives back a random color from the given colors
+ * 
+ */
+let contactBackgroundColor = ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
+function getRandomBackgroundColor() {
+    let randomColor = Math.floor(Math.random() * contactBackgroundColor.length);
+    return contactBackgroundColor[randomColor];
+}
+
+
+/**
  * This function opens the edit contact area to edit contacts
  * 
  */
