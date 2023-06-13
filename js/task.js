@@ -107,9 +107,10 @@ function closeNewCategory() {
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
 }
-
+let category = [];
 function addNewCategoryToArray() {
-    let category = document.getElementById('newCategoryValue').value;
+    category = [];
+    category = document.getElementById('newCategoryValue').value;
     // contentArray['settings']['categoryName'].push(category);
     // category color auch hinzufügen !
     document.getElementById('renderAddNewCategory').innerHTML = ``;
@@ -117,7 +118,7 @@ function addNewCategoryToArray() {
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
     console.log('das ist die neue kategorie:', category);
-    categoryOption2(category);
+    categoryOption2();
 }
 
 
@@ -141,7 +142,7 @@ function categoryOption(index) {
 }
 
 let randomBgColor = [];
-function categoryOption2(category) {
+function categoryOption2() {
     randomBgColor = addRandomBackgroundColorToNewCategory();
     console.log('hier wird die randombg color gespcihert categoryoption2 function:', randomBgColor);
     document.getElementById('categoryOptionShowSelected').innerHTML = ``;
