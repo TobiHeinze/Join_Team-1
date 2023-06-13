@@ -6,17 +6,27 @@
 	display: flex;
 }
 
+.board-header-section {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .board-header-mobile {
 	display: flex;
 	justify-content: space-between;
 }
 
+.board-header-mobile img {
+	display: none;
+}
+
 .textarea-find-task {
 	font-size: 16px;
 	min-height: 41px;
-	height: 4vh;
+	height: 5vh;
 	width: 100%;
-	padding: 10px 21px;
+	padding: 16px 21px 10px 21px;
 	margin-right: 8px;
 	box-sizing: border-box;
 	border-radius: 10px;
@@ -29,12 +39,42 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 2.5vh;
+	margin-top: 3vh;
 	margin-bottom: 3vh;
 	border: 1px solid #a8a8a8;
-	width: 60%;
+	min-width: 230px;
 	border-radius: 10px;
 	background-color: #ffffff;
+}
+
+.board-find-section {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+}
+
+#boardFindSectionImage {
+	display: flex;
+	align-items: center;
+	padding: 10px 15px;
+	border-radius: 10px;
+	height: 4vh;
+	margin-left: 4vw;
+	max-height: 55px;
+	background-color: #2A3647;
+	color: white;
+	font-weight: 700;
+	font-size: 21px;
+}
+
+#boardFindSectionImage:hover {
+	cursor: pointer;
+	background-color: #29ABE2;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#boardFindSectionImage img {
+	padding-left: 10px;
 }
 
 .header-task-status {
@@ -59,6 +99,14 @@
 	margin-bottom: 3vh;
 }
 
+.task-container-animation {
+	transition: 80ms;
+	box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
+	transform: rotate(2.5deg);
+	background-color: white;
+	opacity: 0;
+}
+
 .task-container-mobile-empty {
 	font-size: 16px;
 	background-color: #D1D1D1;
@@ -67,6 +115,7 @@
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
 	color: #A8A8A8;
 	height: 5vh;
+	min-height: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -178,13 +227,45 @@
 /* -----------RESPONSIVE----------------- */
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1350px) {
 	.all-task-container {
 		flex-direction: column;
-	
 	}
 
 	.task-section-container {
 		width: 100%;
 	}
+
+	.board-header-section {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	
+	.board-header-mobile {
+		width: 100%;
+	}
+
+	.board-header-mobile img {
+		display: flex;
+	}
+	
+	.textarea-find-task {
+		padding: 10px 21px 10px 21px;
+	}
+	
+	.form-find-task {
+		width: 100%;
+	}
+	
+	.board-find-section {
+		justify-content: left;
+	}
+	
+	#boardFindSectionImage {
+		display: none;
+	}
 }
+
+
+
+

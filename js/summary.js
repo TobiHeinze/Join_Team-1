@@ -2,24 +2,23 @@
  * This function renders the summary area
  *
  */
-function renderSummary() {
+function renderSummary(i) {
   document.getElementById("mainContainer").classList.remove("d-none");
   resetContent();
   document.getElementById("content").innerHTML = renderSummaryHTML();
-  updateGreetingName();
+  updateGreetingName(i);
 }
 
 
-function updateGreetingName() {
-  var greetingElement = document.getElementById('greeting');
-  var h1Element = greetingElement.querySelector('#userGreetingName');
-
-  var loggedInName = loggedInUserName || "Guest"; // Standardmäßig "Guest", wenn kein Benutzer eingeloggt ist
-
-  h1Element.innerText = loggedInName;
-}
-
-
+function updateGreetingName(i) {
+	var loggedInName = contentArray['users']['name'][i];
+	if (contentArray['users']['name'].includes(loggedInName)) {
+		document.getElementById('userGreetingName').innerHTML = ``;
+		document.getElementById('userGreetingName').innerHTML = `${loggedInName}`;
+	  } else {
+		document.getElementById('userGreetingName').innerHTML = `Guest`;
+	   }
+	}
 
 
 /**
@@ -103,7 +102,7 @@ function renderSummaryHTML() {
   
     <aside id="greeting">
         <span class="font-weight-500 font-47">${getTime()},</span>
-        <h1 id="userGreetingName" class="font-weight-700 font-64">Guest</h1>
+        <h1 id="userGreetingName" class="font-weight-700 font-64"></h1>
     </aside>
   </div>
     `;
@@ -167,19 +166,4 @@ function getTime() {
   return greeting;
 }
 
-function updateGreetingName() {
-  const h1Element = document.getElementById("userGreetingName");
-  const loggedInEmail = localStorage.getItem("loggedInEmail");
 
-  if (loggedInEmail) {
-    const users = contentArray.users;
-    const index = users.email.indexOf(loggedInEmail);
-
-    if (index !== -1) {
-      const loggedInName = users.name[index];
-      h1Element.innerHTML = loggedInName;
-    }
-  } else {
-    h1Element.innerHTML = "Guest";
-  }
-}
