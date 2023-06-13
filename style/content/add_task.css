@@ -112,28 +112,25 @@
     padding: 11px;
     justify-content: space-between;
     overflow: hidden;
+    /* cursor: pointer; */
 }
 
-/* man sollte noch im media query ab 800 und kleiner die width erhöhen da sonst der date-picker nur auf der hälfte anklickbar ist */
 .date-box-add-task input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    color: transparent;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
-    height: auto;
-    position: absolute;
-    width: 62%;
-    height: 42px;
 }
 
 .date-box-add-task img {
-    height: 18px;
-    width: 18px;
+    height: 0px;
+    width: 0px;
 }
 
 .input-date {
     border: none;
     outline: none;
     width: 100%;
+    cursor: pointer;
 }
 
 .category-select-box {
@@ -234,6 +231,7 @@
     justify-content: space-between;
     align-items: center;
     width: 120px;
+    cursor: pointer;
 }
 
 .clear-task-button {
@@ -247,6 +245,7 @@
     justify-content: space-between;
     align-items: center;
     width: 80px;
+    cursor: pointer;
 }
 
 /* task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
@@ -352,6 +351,7 @@
     right: 0;
     top: 0;
     bottom: 0;
+    cursor: pointer;
 }
 
 #checkboxes,
@@ -381,6 +381,7 @@
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
+    margin-left: 5px;
   }
 
   .new-category {

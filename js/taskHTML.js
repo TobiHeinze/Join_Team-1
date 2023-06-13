@@ -23,7 +23,7 @@ function renderAddTaskHTML() {
                         </div>
                         <div class="description">
                             <span class="mt-11">Description</span>
-                            <textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description"
+                            <textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description" required
                                 ></textarea>
                         </div>
                         <div class="prio">
@@ -46,7 +46,7 @@ function renderAddTaskHTML() {
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
-                                <input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()" required>
+                                <input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy"  required>
                                 <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
@@ -71,6 +71,8 @@ function renderAddTaskHTML() {
     </select> -->
     <div class="flex">
     <div id="categoryOptionShowSelected" >Select task category</div>
+    <div id="addNewCategoryOption">
+    </div>
     <div class="arrow">&#9660;</div>
     </div>
     <div class="overSelect"></div>
