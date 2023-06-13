@@ -30,6 +30,10 @@ textarea {
     display: flex;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .content-box {
     display: flex;
     height: calc(100vh - 89px);
