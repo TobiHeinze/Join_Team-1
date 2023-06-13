@@ -41,47 +41,73 @@ async function login() {
       alert("Fehler beim Login. Bitte überprüfe deine Eingaben.");
     }
   }
+
+
   
-  function showSuccessMessage(name) {
-    const messageContainer = document.createElement("div");
-    messageContainer.style.position = "fixed";
-    messageContainer.style.top = "0";
-    messageContainer.style.left = "0";
-    messageContainer.style.width = "100%";
-    messageContainer.style.height = "100vh";
-    messageContainer.style.backgroundColor = "white";
-    messageContainer.style.display = "flex";
-    messageContainer.style.justifyContent = "center";
-    messageContainer.style.alignItems = "center";
-    messageContainer.style.zIndex = "9999";
-  
-    const messageText = document.createElement("div");
-    messageText.style.display = "flex";
-    messageText.style.flexDirection = "column";
-    messageText.style.alignItems = "center";
-  
-    const greetingText = document.createElement("span");
-    greetingText.innerText = getTime() + ",";
-    greetingText.style.fontWeight = "700";
-    greetingText.style.fontSize = "45px";
-  
-    const nameText = document.createElement("span");
-    nameText.innerText = name;
-    nameText.style.color = "rgb(41, 171, 226)";
-    nameText.style.fontWeight = "700";
-    nameText.style.fontSize = "64px";
-  
-    messageText.appendChild(greetingText);
-    messageText.appendChild(nameText);
-  
-    messageContainer.appendChild(messageText);
-    document.body.appendChild(messageContainer);
-  
-    setTimeout(() => {
-      document.body.removeChild(messageContainer);
-    }, 2000);
-  }
-  
+  /**
+ * Creates the message container element.
+ * @returns {HTMLDivElement} The created message container element.
+ */
+function createMessageContainer() {
+  const messageContainer = document.createElement("div");
+  messageContainer.style.position = "fixed";
+  messageContainer.style.top = "0";
+  messageContainer.style.left = "0";
+  messageContainer.style.width = "100%";
+  messageContainer.style.height = "100vh";
+  messageContainer.style.backgroundColor = "white";
+  messageContainer.style.display = "flex";
+  messageContainer.style.justifyContent = "center";
+  messageContainer.style.alignItems = "center";
+  messageContainer.style.zIndex = "9999";
+
+  return messageContainer;
+}
+
+/**
+ * Creates and returns the message text element.
+ * @param {string} name - The name to be displayed in the message.
+ * @returns {HTMLDivElement} The created message text element.
+ */
+function showMessageText(name) {
+  const messageText = document.createElement("div");
+  messageText.style.display = "flex";
+  messageText.style.flexDirection = "column";
+  messageText.style.alignItems = "center";
+
+  const greetingText = document.createElement("span");
+  greetingText.innerText = getTime() + ",";
+  greetingText.style.fontWeight = "700";
+  greetingText.style.fontSize = "45px";
+
+  const nameText = document.createElement("span");
+  nameText.innerText = name;
+  nameText.style.color = "rgb(41, 171, 226)";
+  nameText.style.fontWeight = "700";
+  nameText.style.fontSize = "64px";
+
+  messageText.appendChild(greetingText);
+  messageText.appendChild(nameText);
+
+  return messageText;
+}
+
+/**
+ * Shows a success message with the given name.
+ * @param {string} name - The name to be displayed in the success message.
+ */
+function showSuccessMessage(name) {
+  const messageContainer = createMessageContainer();
+  const messageText = showMessageText(name);
+
+  messageContainer.appendChild(messageText);
+  document.body.appendChild(messageContainer);
+
+  setTimeout(() => {
+    document.body.removeChild(messageContainer);
+  }, 3000);
+}
+
   
 
 function renderLoginHTML() {
