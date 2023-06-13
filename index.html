@@ -46,11 +46,11 @@
 </head>
 
 
-<body onload="renderLogin()">
+<body onload="renderAddTask(); setItem(key, contentArray)">
 
 	<div id="loginContainer">
 	</div>
-	<div id="mainContainer" class="main-container  d-none ">
+	<div id="mainContainer" class="main-container  ">
 
 		<div class="header-with-content">
 			<div class="header padding">
@@ -63,6 +63,22 @@
 					</div>
 				</div>
 			</div>
+
+
+
+
+			<div id="taskViewContainer" onclick="clickToClose()">
+
+				<div class="task-background">
+
+
+
+				</div>
+			</div>
+
+
+
+
 
 			<div class="contacts-content-box">
 				<div id="contactsContent">
