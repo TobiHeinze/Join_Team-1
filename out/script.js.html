@@ -28,33 +28,35 @@
         <article>
             <pre class="prettyprint source linenums"><code>/**
  * This function resets all divs we fill content in
- * 
+ *
  */
 function resetContent() {
-    document.getElementById("content").innerHTML = "";
-    document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
-    document.getElementById("contactsDescriptionContent").innerHTML = "";
-    document.getElementById("contactsContent").innerHTML = "";
-    document.getElementById("popUpDiv").classList.add("d-none");
-    document.getElementById("popUpDiv").classList.remove("d-flex");
-    document.getElementById("popUpDiv").innerHTML = "";
-    document.getElementById("loginContainer").innerHTML = "";
-    document.getElementById('contactsChangeDescriptionContent').style.display = 'none';
+  document.getElementById("content").innerHTML = "";
+  document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+  document.getElementById("contactsDescriptionContent").innerHTML = "";
+  document.getElementById("contactsContent").innerHTML = "";
+  document.getElementById("popUpDiv").classList.add("d-none");
+  document.getElementById("popUpDiv").classList.remove("d-flex");
+  document.getElementById("popUpDiv").innerHTML = "";
+  document.getElementById("loginContainer").innerHTML = "";
+  document.getElementById("contactsChangeDescriptionContent").style.display =
+    "none";
 }
 
-
+<<<<<<< HEAD
+=======
 /**
  * This function loads the login page
- * 
+ *
  */
 function renderLogin() {
-    resetContent();
-    document.getElementById('loginContainer').innerHTML = /*html*/`
+  resetContent();
+  document.getElementById("loginContainer").innerHTML = /*html*/ `
     &lt;div class="logo-container" id="login-container">
 
 &lt;form class="login-container" >
-    &lt;h1>Log in&lt;/h1>
-
+    &lt;h1 class="font-61">Log in&lt;/h1>
+    &lt;img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
     &lt;!-- Eingabefelder für E-Mail und Passwort -->
     &lt;div class="input-container">
         &lt;div class="input-field">
@@ -71,7 +73,7 @@ function renderLogin() {
     &lt;!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
     &lt;div class="remember-check">
         &lt;div class="check">&lt;img id="loginCheckbox" src="./assets/img/unchecked.png">Remember me&lt;/div>
-        &lt;a  href="#">Forgot my password&lt;/a>
+        &lt;a onclick="renderForgotPassword()"  href="#">Forgot my password&lt;/a>
     &lt;/div>
     
     &lt;!-- Buttons für Einloggen und Gast-Einloggen -->
@@ -85,7 +87,7 @@ function renderLogin() {
 &lt;div>
 &lt;div id="not-a-join " class="not-a-join ">
     &lt;span>Not a Join user?&lt;/span>
-    &lt;div class="btn-dark ">Sign up&lt;/div>
+    &lt;div onclick="renderSignUp()" class="btn-dark ">Sign up&lt;/div>
 &lt;/div>
 &lt;/div>
 &lt;img class="animate-logo moving-logo " src="./assets/img/LogoJoinBig.png ">
@@ -93,24 +95,68 @@ function renderLogin() {
     `;
 }
 
+function renderSignUp() {
+  resetContent();
+  document.getElementById("loginContainer").innerHTML = renderSignUpHTML();
+}
 
+function renderSignUpHTML() {
+  return /*html*/ ` &lt;img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
+   
+       &lt;div class="big-container">
+           &lt;form class="password-container">
+               &lt;a href="#">&lt;img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
+                       onclick="renderLogin()">&lt;/a>
+               &lt;h1 class="font-61">Sign Up&lt;/h1>
+               &lt;img class="blue-line-horizontal"  src="./assets/img/blue-line-horizontal.png">
+               &lt;div class="input-container">
+               &lt;div class="name">
+                        &lt;div class="input-field">
+                            &lt;input class="input" type="text" placeholder="Name" required>
+                            &lt;img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                        &lt;/div>
+
+        &lt;div class="input-field">
+            &lt;input required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
+            &lt;img src="./assets/img/email-icon.png">
+        &lt;/div>
+               
+               
+        &lt;div class="input-field">
+            &lt;input required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
+            &lt;img class="toogleImage"  src="./assets/img/password-icon.png">
+       &lt;/div>
+  
+               &lt;button type="submit" style="margin-left:40px" class="button-dark login-btn">Sign Up&lt;/button>
+               
+           &lt;/form>
+   &lt;/div>
+  
+   &lt;div id="resetPassword">&lt;img class="d-none"  src="./assets/img/resetPassword.png" alt="reset password">&lt;/div>
+  `;
+}
+
+>>>>>>> 7930aa339842630eea8cc4c624e723809ee1e011
 /**
+ *
+ *
  * This function animate a slide from the right to the left
- * 
+ *
  * @returns the animation effect
  */
 function slideInPopUp() {
-    return popUpDiv.animate(
-        [
-          { transform: 'translateX(1000px)' }, // Startposition des Popups
-          { transform: 'translateX(0)' } // Endposition des Popups
-        ],
-        {
-          duration: 250, // Animationsdauer in Millisekunden
-          easing: 'ease' // Easing-Funktion für den Übergangseffekt
-        }
-      );
-}</code></pre>
+  return popUpDiv.animate(
+    [
+      { transform: "translateX(1000px)" }, // Startposition des Popups
+      { transform: "translateX(0)" }, // Endposition des Popups
+    ],
+    {
+      duration: 250, // Animationsdauer in Millisekunden
+      easing: "ease", // Easing-Funktion für den Übergangseffekt
+    }
+  );
+}
+</code></pre>
         </article>
     </section>
 
@@ -120,13 +166,17 @@ function slideInPopUp() {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Wed Jun 07 2023 08:36:41 GMT+0200 (Mitteleuropäische Sommerzeit)
+<<<<<<< HEAD
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Jun 12 2023 11:25:16 GMT+0200 (Mitteleuropäische Sommerzeit)
+=======
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Jun 12 2023 11:31:44 GMT+0200 (Mitteleuropäische Sommerzeit)
+>>>>>>> 7930aa339842630eea8cc4c624e723809ee1e011
 </footer>
 
 <script> prettyPrint(); </script>

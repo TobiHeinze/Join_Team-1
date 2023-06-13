@@ -6,14 +6,15 @@
 function renderAddTaskHTML() {
     return /*html*/ `
     <img class="create-button" src="./assets/img/create-button.png" alt="create task">
-    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
-                <div onclick="renderContacts()" class="add-task-x-position d-none">
+    <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
                 <div class="mt-11 responsive-hide">
                   <span >Kanban Project Management Tool</span>
                 </div>
                 <h2 class="font-47 add-task-h2">Add Task</h2>
+    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
+                
                 <div class="desktop-size">
                     <div class="add-task-responsive-left">
                         <div class="title">
@@ -60,23 +61,34 @@ function renderAddTaskHTML() {
 
 
 
-
-                    <div class="multiselect">
-  <div class="selectBox" onclick="showCheckboxes(1)">
-    <select>
+<div class="mb-11">Category</div>
+<div id="renderAddNewCategory">
+</div>
+   <div class="multiselect">
+  <div class="selectBox" onclick="showCheckboxes(1)" id="selectBox1">
+    <!-- <select>
       <option id="categoryOptionShowSelected">Select task category</option>
-    </select>
+    </select> -->
+    <div class="flex">
+    <div id="categoryOptionShowSelected" >Select task category</div>
+    <div class="arrow">&#9660;</div>
+    </div>
     <div class="overSelect"></div>
   </div>
   <div id="checkboxes1" class="flex-checkboxes">
   </div>
 </div>
+<div id="addColorToNewCategory">
+</div>
 
+
+<div class="mb-11 mt-11">Assigned to</div>
 <div class="multiselect">
-  <div class="selectBox" onclick="showCheckboxes(2)">
-    <select>
-      <option>Select contacts to assign</option>
-    </select>
+  <div class="selectBox" onclick="showCheckboxes(2)" id="selectBox2">
+    <div class="flex">
+      <div>Select contacts to assign</div>
+      <div class="arrow">&#9660;</div>
+    </div>
     <div class="overSelect"></div>
   </div>
   <div id="checkboxes2" class="flex-checkboxes">
@@ -219,7 +231,7 @@ function renderAddTaskHTML() {
                     </div>
                 </div>
                 <div class="task-button-box">
-              <div class="clear-task-button">
+              <div onclick="renderAddTask()" class="clear-task-button">
                 <span>Clear</span>
                 <img src="./assets/img/x-button-black.png" alt="x-img">
               </div>

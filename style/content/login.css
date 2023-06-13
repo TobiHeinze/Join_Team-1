@@ -285,6 +285,25 @@
     }
 }
 
+/*Begrüßung*/
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 70px;
+}
+
+#userGreetingName {
+    color: rgb(41, 171, 226);
+}
+
+
+
+
+
+/*responsive*/
+
 @media(max-width:600px) {
     .login-container {
         width: 80%;
