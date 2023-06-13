@@ -15,11 +15,14 @@ function renderSummary(i) {
  */
 function updateGreetingName(i) {
 	var loggedInName = contentArray['users']['name'][i];
+	var loggedInPhoto = contentArray['users']['photo'][i];
 	if (contentArray['users']['name'].includes(loggedInName)) {
 		document.getElementById('userGreetingName').innerHTML = ``;
 		document.getElementById('userGreetingName').innerHTML = `${loggedInName}`;
+		document.getElementById('userImage').src = `./assets/img/${loggedInPhoto}-image-header.png`;
 	  } else {
 		document.getElementById('userGreetingName').innerHTML = `Guest`;
+		document.getElementById('userImage').src = "./assets/img/guest-image-header.png";
 	   }
 	}
 
