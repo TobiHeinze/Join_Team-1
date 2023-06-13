@@ -34,3 +34,32 @@ function slideInPopUp() {
     }
   );
 }
+
+
+let isMiniMenuOpen = false;
+
+/**
+ * open Tooltip 'Log Out' by Click on Image Profile
+ */
+function openMiniMenu(clickedMiniMenu) {
+  if (!isMiniMenuOpen) {
+    let miniMenu = clickedMiniMenu.closest('body').querySelector('.mini-menu');
+    miniMenu.classList.add('mini-menu-toggle');
+    miniMenu.style.display = 'flex';
+    isMiniMenuOpen = true;
+  } else {
+    closeMiniMenu(clickedMiniMenu);
+  }
+}
+
+
+
+/**
+* close Tooltip 'Log Out' by Click on Image Profile
+* 
+*/
+function closeMiniMenu(clickedMiniMenu) {
+  miniMenu.closest('body').querySelector('.mini-menu').classList.remove('mini-menu-toggle');
+  miniMenu.style.display = 'none';
+  isMiniMenuOpen = false;
+}

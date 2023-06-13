@@ -9,7 +9,10 @@ function renderSummary(i) {
   updateGreetingName(i);
 }
 
-
+/**
+ * This function greets the logged in person or guest on the summary page
+ *
+ */
 function updateGreetingName(i) {
 	var loggedInName = contentArray['users']['name'][i];
 	if (contentArray['users']['name'].includes(loggedInName)) {

@@ -26,9 +26,11 @@ function renderForgotPasswordHTML() {
                      <img src="./assets/img/email-icon.png">
                  </div>
                  <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn">Send me the email</button>
-                 </form>
-</div>
-                 <img class="d-none" src="./assets/img/emailSent.png" alt="email sent">
+                 </form></div>
+
+                         
+                 <img class="email-sent" src="./assets/img/emailSent.png" alt="email sent">
+                
             
  `;
 }

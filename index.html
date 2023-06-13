@@ -59,7 +59,16 @@
 				<div class="navbar-header">
 					<img class="hide-mobile" src="./assets/img/help-header.png" alt="help" onclick="renderHelp()">
 					<div class="user-img-header">
-						<img id="userImage" src="./assets/img/guest-image-header.png" alt="User">
+						<div onclick="openMiniMenu(this)">
+							<img id="userImage" src="./assets/img/guest-image-header.png" alt="User">
+						</div>
+
+						<div id="miniMenu" class="mini-menu mini-menu-toggle">
+							<a onclick="renderHelp()" class="help-mini" href="#">Help</a>
+							<a onclick="renderLegalNotice()" class="legal-notice-mini" href="#">Legal Notice</a>
+							<a href="index.html"><span class="mini-menu-text">Log out</span></a>
+
+						</div>
 					</div>
 				</div>
 			</div>
