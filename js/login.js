@@ -28,7 +28,7 @@ async function login() {
   
           // Rufe die renderSummary-Funktion auf
           setTimeout(() => {
-            renderSummary();
+            renderSummary(userIndex);
           }, 2000);
         } else {
           throw new Error("Ungültige E-Mail-Adresse oder Passwort.");
