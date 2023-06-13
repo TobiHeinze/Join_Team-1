@@ -24,7 +24,7 @@ async function renderBoardContent() {
 
 function generateBoardHTML(index) {
 	return `
-	<div id="taskNumber${index}" class="task-container-mobile" draggable="true" ondragstart="startDragging(${index})">
+	<div id="taskNumber${index}" class="task-container-mobile" draggable="true" ondrag="animateDraggedElement(${index})" ondragstart="startDragging(${index})">
 		<span id="taskCategoryName${index}" class="task-category-name">${contentArray['tasks']['categoryName'][index]}</span>
 		<span id="taskTitle${index}" class="task-title">${contentArray['tasks']['title'][index]}</span>
 		<span id="taskDescription${index}" class="task-description">${contentArray['tasks']['description'][index]}</span>
@@ -113,6 +113,25 @@ function moveTo(taskStatus) {
 	renderBoard();
 }
 
+function animateDraggedElement(id) {
+	document.getElementById(`taskNumber${id}`).classList.add('task-container-animation');
+}
+
+
+function searchTasks() {
+	let searchTerm = document.getElementById('searchField').value.toLowerCase();
+	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
+		document.getElementById(`taskNumber${i}`).classList.add('d-none');
+		let titleOfTask = contentArray['tasks']['title'][i].toLowerCase();
+		let descriptionOfTask = contentArray['tasks']['description'][i].toLowerCase();
+
+		if (titleOfTask.includes(searchTerm) || descriptionOfTask.includes(searchTerm)) {
+			document.getElementById(`taskNumber${i}`).classList.remove('d-none');
+		}
+	}
+	document.getElementById('searchField').value = ``;
+}
+
 
 
 
@@ -122,17 +141,24 @@ function renderBoard() {
 
 <span class="kanban-tool-text appear-mobile">Kanban Project Management Tool</span>
 
-<div class="board-header-mobile">
-	<span class="font-47">Board</span>
-	<img src="./assets/img/plus-add-task-mobile.svg" alt="">
+<div class="board-header-section">
+	<div class="board-header-mobile">
+		<span class="font-47">Board</span>
+		<img src="./assets/img/plus-add-task-mobile.svg" alt="" onclick="">
+	</div>
+
+	<div class="board-find-section">
+		<form class="form-find-task" onsubmit="searchTasks(); return false;"  action="">
+			<textarea id="searchField" required class="textarea-find-task" minlength="2" name="" id="" cols="" rows="1"
+			placeholder="Find Task"></textarea>
+			<input type="image" src="./assets/img/find-task-lens.svg" alt="">
+		</form>
+		<div id="boardFindSectionImage" onclick="">
+			<span>Add task</span>
+			<img src="./assets/img/add-task-btn-white.svg" alt="">
+		</div>
+	</div>
 </div>
-
-<form class="form-find-task" onsubmit=" ; return false;">
-	<textarea required class="textarea-find-task" minlength="2" name="" id="" cols="" rows="1"
-		placeholder="Find Task"></textarea>
-	<input type="image" src="./assets/img/find-task-lens.svg" alt="">
-</form action="">
-
 
 <div class="all-task-container">
 	<div class="task-section-container" ondrop="moveTo('0')" ondragover="allowDrop(event)">
