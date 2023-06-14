@@ -328,9 +328,9 @@ let addPriority = [];
 /**
  * This function select the choosen priority status to the addPriority array
  * 
- * @param {*} priority this parameter comes from the three diffrent priority types when klick on them to select
+ * @param {string} priority this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low
  */
 function addPrio(priority) {
-    addPriority = [priority];
+    addPriority = priority;
     console.log(addPriority);
 }
