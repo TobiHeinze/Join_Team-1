@@ -5,6 +5,8 @@
 async function renderAddTask() {
     contentArray = await getItem(key);
     resetContent();
+    currentSubtasks = [];
+    currentSubtaskStatus = [];
     document.getElementById("content").innerHTML = renderAddTaskHTML();
     renderAddTaskCategoryOptions();
     renderAddTaskAssignedToOptions();
@@ -205,7 +207,8 @@ function addRandomBackgroundColorToNewCategory() {
  * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
  * 
  */
-function updateTaskArray() {
+async function updateTaskArray() {
+    // await getItem(key);
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
     console.log(addTitle);
@@ -221,16 +224,16 @@ function updateTaskArray() {
     //  zur add new category wird eine random color hinzugefügt noch!
     if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
         //add new category to settings and push to category task 
-        let addNewCategory1 = document.getElementById('newCategoryName').innerHTML;
-        let addNewCategory = addNewCategory1.trim();
-        contentArray['tasks']['categoryName'].push(addNewCategory);
-        contentArray['settings']['categoryName'].push(addNewCategory);
+        let addNewCategory = document.getElementById('newCategoryName').innerHTML;
+        // let addNewCategory = addNewCategory1.trim();
+        contentArray['tasks']['categoryName'].push(addNewCategory.trim());
+        contentArray['settings']['categoryName'].push(addNewCategory.trim());
         contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
         console.log('add new category name:', addNewCategory);
     } else {
         //add only task category option from given options
         let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
-        contentArray['tasks']['categoryName'].push(addTaskStatus);
+        contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
         console.log('add given category:', addTaskStatus);
         // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
     }
@@ -293,7 +296,7 @@ function updateTaskArray() {
     contentArray['tasks']['priority'].push(addPriority);
     console.log(addPriority);
 
-    setItem(key, contentArray);
+    await setItem(key, contentArray);
     renderBoardContent();
     renderBoard();
 }
