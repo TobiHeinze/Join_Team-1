@@ -23,8 +23,8 @@
 .go-back-arrow {
     height: 16px;
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 50px;
 
 }
 
@@ -188,12 +188,52 @@
 }
 
 .check {
-    width: 145px;
+    width: 135px;
     height: 20px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
 }
+
+
+.checkbox {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+  }
+  
+  .checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .checkbox label {
+    position: absolute;
+    top: -7px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1.5px solid #000;
+    border-radius: 5px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 80%; /* Passe die Größe des Häkchens an */
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkbox input[type="checkbox"]:checked + label {
+    background-image: url("/assets/img/black-hook.png"); /* Passe den Pfad zur SVG-Datei an */
+  }
+  
+  
+  
+
 
 
 /* Definiert eine Klasse mit dem Namen .animate-background */

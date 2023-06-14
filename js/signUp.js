@@ -76,7 +76,7 @@ function renderSignUpHTML() {
                  <div class="name">
                           <div class="input-field">
                               <input id="registerName" class="input" type="text" placeholder="Name" required>
-                              <img src="/assets/img/charakter-icon.png" alt="charakter-img">
+                              <img src="./assets/img/charakter-icon.png" alt="charakter-img">
                           </div>
   
           <div class="input-field">
@@ -90,11 +90,11 @@ function renderSignUpHTML() {
               <img class="toogleImage"  src="./assets/img/password-icon.png">
          </div>
     
-                 <button id="registerButton" type="submit" style="margin-left:40px" class="button-dark login-btn">Sign Up</button>
+                 <button id="registerButton" type="submit" style="margin-left:50px" class="button-dark login-btn">Sign Up</button>
                  
              </form>
      </div>
     
-     <div id="resetPassword"><img class="d-none"  src="./assets/img/resetPassword.png" alt="reset password"></div>
+     
     `;
 }

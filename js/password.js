@@ -28,7 +28,7 @@ function renderForgotPasswordHTML() {
                  <button onclick="renderResetPassword()" type="submit" class="button-dark login-btn">Send me the email</button>
                  </form></div>
 
-                         <div class="email-sent" >
+                         <div class="email-sent d-none" >
                  <img src="./assets/img/emailSent.png" alt="email sent">
                  </div>
                 
@@ -50,13 +50,13 @@ function renderResetPasswordHTML() {
              <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
                      onclick="renderForgotPassword()"></a>
              <h1 class="font-61">Reset your password</h1>
-             <img src="./assets/img/blue-line-horizontal.png">
-             <span class="font-21 font-weight-400">Change your account password here.</span>
-             <div class="input-field ">
+             <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+             <span class="font-21 font-weight-400">Change your account password here.</span> <br>
+             <div style=" width: 80% "  class="input-field ">
                  <input class="input" type="password" name="password" placeholder="New password">
              </div>
-             <div class="input-field ">
-                 <input class="input" type="password" name="password" placeholder="Confirm password">
+             <div style="margin-top: -20px; width: 80% " class="input-field ">
+                 <input  class="input" type="password" name="password" placeholder="Confirm password">
              </div>
 
              <button type="submit" class="button-dark login-btn">Continue</button>
