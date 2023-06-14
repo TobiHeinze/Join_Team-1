@@ -246,7 +246,7 @@ async function updateTaskArray() {
         console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
 
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
-    contentArray['tasks']['taskStatus'].push(0);
+    contentArray['tasks']['taskStatus'].push('0');
 
     // assigned to selector 
     let selectedNames = [];
