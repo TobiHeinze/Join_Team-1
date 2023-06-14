@@ -1,24 +1,27 @@
 /**
- * This function renders the contacts area
- * 
- 
-async function renderUsers() {
-    contentArray = await getItem(key);
-    resetContent();
-    document.getElementById("contactsContent").innerHTML = renderContactsHTML();
-    updateContactsHTML();
-    document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
-}
-*/
-
-/**
  * This function renders the sign up area
  *
  */
 function renderSignUp() {
   resetContent();
   document.getElementById("loginContainer").innerHTML = renderSignUpHTML();
+  updateGoBackArrow();
 }
+
+// Function to update the "Go Back" arrow image
+function updateGoBackArrow() {
+  const goBackArrow = document.getElementById("goBackArrow");
+
+  // Check the screen width
+  if (window.innerWidth < 800) {
+    goBackArrow.src = "./assets/img/go-back.png";
+  } else {
+    goBackArrow.src = "./assets/img/go-back-arrow-blue.png";
+  }
+}
+
+// Event listener for window resize
+window.addEventListener("resize", updateGoBackArrow);
 
 async function loadUsers() {
     try {
@@ -27,7 +30,6 @@ async function loadUsers() {
         console.error('Loading error:', e);
     }
 }
-  
 
 /**
  * This function adds a new user
@@ -40,61 +42,62 @@ async function register() {
   let email = document.getElementById("registerEmail").value;
   let password = document.getElementById("registerPassword").value;
 
-  // Fügt den neuen Benutzer zum contentArray hinzu
+  // Add the new user to the contentArray
   contentArray.users.name.push(name);
   contentArray.users.email.push(email);
   contentArray.users.password.push(password);
 
   try {
-    // Speichert das aktualisierte contentArray auf dem Server
-    await setItem(key,contentArray);
+    // Save the updated contentArray to the server
+    await setItem(key, contentArray);
 
-    //Zeigt eine Erfolgsmeldung an
-    alert("Registrierung erfolgreich!");
+    // Show a success message
+    alert("Registration successful!");
 
-    // Ruft die renderLogin-Funktion auf
+    // Call the renderLogin function
     renderLogin();
   } catch (error) {
-    // Wenn Fehler, zeige eine Fehlermeldung an
-    console.error("Fehler bei der Registrierung:", error);
-    alert("Fehler bei der Registrierung. Bitte versuche es erneut.");
+    // If there is an error, show an error message
+    console.error("Error registering:", error);
+    alert("Error registering. Please try again.");
   }
 
   registerButton.disabled = false;
 }
 
 function renderSignUpHTML() {
-  return /*html*/ ` <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
-     
-         <div class="big-container">
-             <form onsubmit= "register(); return false;" class="password-container">
-                 <a href="#"><img class="go-back-arrow" src="./assets/img/go-back.png" alt="go back"
-                         onclick="renderLogin()"></a>
-                 <h1 class="font-61">Sign Up</h1>
-                 <img class="blue-line-horizontal"  src="./assets/img/blue-line-horizontal.png">
-                 <div class="input-container">
-                 <div class="name">
-                          <div class="input-field">
-                              <input id="registerName" class="input" type="text" placeholder="Name" required>
-                              <img src="./assets/img/charakter-icon.png" alt="charakter-img">
-                          </div>
-  
-          <div class="input-field">
-              <input id="registerEmail" required class="input" type="email" name="email" placeholder="E-Mail">
-              <img src="./assets/img/email-icon.png">
-          </div>
-                 
-                 
-          <div class="input-field">
-              <input id="registerPassword" required class="input togglePassword" type="password" name="password" placeholder="Password">
-              <img class="toogleImage"  src="./assets/img/password-icon.png">
-         </div>
-    
-                 <button id="registerButton" type="submit" style="margin-left:50px" class="button-dark login-btn">Sign Up</button>
-                 
-             </form>
-     </div>
-    
-     
-    `;
+  return /*html*/ `
+    <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
+
+    <div class="big-container">
+        <form onsubmit="register(); return false;" class="password-container">
+            <a href="#"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" alt="go back"
+                    onclick="renderLogin()"></a>
+            <h1 class="font-61">Sign Up</h1>
+            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+            <div class="input-container">
+                <div class="name">
+                    <div class="input-field">
+                        <input id="registerName" class="input" type="text" placeholder="Name" required>
+                        <img src="./assets/img/charakter-icon.png" alt="character-img">
+                    </div>
+
+                    <div class="input-field">
+                        <input id="registerEmail" required class="input" type="email" name="email" placeholder="E-Mail">
+                        <img src="./assets/img/email-icon.png">
+                    </div>
+
+                    <div class="input-field">
+                        <input id="registerPassword" required class="input togglePassword" type="password"
+                            name="password" placeholder="Password">
+                        <img class="toggleImage" src="./assets/img/password-icon.png">
+                    </div>
+
+                    <button id="registerButton" type="submit" 
+                        class="button-dark login-button">Sign Up</button>
+                </div>
+            </div>
+        </form>
+    </div>
+`;
 }
