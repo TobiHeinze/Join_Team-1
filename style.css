@@ -59,6 +59,7 @@ textarea {
 
 .contacts-content-box {
     display: flex;
+    word-break: break-word;
 }
 
 #contactsContent {

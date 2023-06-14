@@ -3,6 +3,7 @@
  *
  */
 function resetContent() {
+  document.getElementById('content').classList.remove('d-none');
   document.getElementById("content").innerHTML = "";
   document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
   document.getElementById("contactsDescriptionContent").innerHTML = "";
@@ -11,8 +12,7 @@ function resetContent() {
   document.getElementById("popUpDiv").classList.remove("d-flex");
   document.getElementById("popUpDiv").innerHTML = "";
   document.getElementById("loginContainer").innerHTML = "";
-  document.getElementById("contactsChangeDescriptionContent").style.display =
-    "none";
+  document.getElementById("contactsChangeDescriptionContent").style.display = "none";
 }
 
 /**
