@@ -93,8 +93,8 @@ function renderSignUpHTML() {
                         <img class="toggleImage" src="./assets/img/password-icon.png">
                     </div>
 
-                    <button id="registerButton" type="submit" style="margin-left:50px"
-                        class="button-dark login-btn">Sign Up</button>
+                    <button id="registerButton" type="submit" 
+                        class="button-dark login-button">Sign Up</button>
                 </div>
             </div>
         </form>

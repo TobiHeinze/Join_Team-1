@@ -36,7 +36,7 @@ function renderForgotPasswordHTML() {
    </div>
 
    <div id="emailSentDiv" class="email-sent d-none">
-       <img src="./assets/img/emailSent.png" alt="email sent">
+       <img class="slide-in-responsive" src="./assets/img/emailSent.png" alt="email sent">
    </div>`;
 }
 
@@ -103,7 +103,7 @@ function renderResetPasswordHTML() {
        </form>
    </div>
    <div id="resetPasswordDiv" class="email-sent d-none">
-      <img src="./assets/img/resetPassword.png" alt="reset password">
+      <img  class="slide-in-responsive"src="./assets/img/resetPassword.png" alt="reset password">
    </div>`;
 }
 
