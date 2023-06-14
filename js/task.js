@@ -221,7 +221,14 @@ async function updateTaskArray() {
     contentArray['tasks']['dueDate'].push(addDueDate);
     console.log(addDueDate);
 
+
+
+
     //  zur add new category wird eine random color hinzugefügt noch!
+    if (document.getElementById('categoryOptionShowSelected').textContent.trim() === "Select task category") {
+        contentArray['tasks']['categoryName'].push(""); // Leerer String übergeben für keine kategorie
+        contentArray['tasks']['categoryBgColor'].push(""); //leerer string für keine farbe übergeben
+    } else {
     if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
         //add new category to settings and push to category task 
         let addNewCategory = document.getElementById('newCategoryName').innerHTML;
@@ -237,16 +244,23 @@ async function updateTaskArray() {
         console.log('add given category:', addTaskStatus);
         // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
     }
+     // zieht die farbe der kategorie raus
+     let colorId = document.getElementById('addNewCategoryColor');
+     let styleColor = window.getComputedStyle(colorId);
+     let backgroundColor = styleColor.getPropertyValue('background-color');
+     contentArray['tasks']['categoryBgColor'].push(backgroundColor);
+     console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
+}
 
-    // zieht die farbe der kategorie raus
-    let colorId = document.getElementById('addNewCategoryColor');
-        let styleColor = window.getComputedStyle(colorId);
-        let backgroundColor = styleColor.getPropertyValue('background-color');
-        contentArray['tasks']['categoryBgColor'].push(backgroundColor);
-        console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
+
+
 
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
     contentArray['tasks']['taskStatus'].push('0');
+
+
+
+
 
     // assigned to selector 
     let selectedNames = [];
@@ -259,6 +273,7 @@ async function updateTaskArray() {
     let nameInitials = [];
     let contactImageBgColor = [];
 
+    if (selectedNames.length > 0) {
     selectedNames.forEach(selectedName => {
         let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
         let initials = contentArray['contacts']['nameInitials'][contactIndex];
@@ -267,15 +282,27 @@ async function updateTaskArray() {
         nameInitials.push(initials);
         contactImageBgColor.push(bgColor);
     });
-
+    
     contentArray['tasks']['assignedTo'].push({
         "name": selectedNames,
         "nameInitials": nameInitials,
         "contactImageBgColor": contactImageBgColor
     });
+} else {
+    contentArray['tasks']['assignedTo'].push({
+        "name": [],
+        "nameInitials": [],
+        "contactImageBgColor": [],
+    });
+}
     console.log(selectedNames);
     console.log(nameInitials);
     console.log(contactImageBgColor);
+
+
+
+
+
 
     // subtask
     if (currentSubtasks.length > 0) {
@@ -288,13 +315,20 @@ async function updateTaskArray() {
     } else {
         contentArray['tasks']['subtasks'].push({
             "subtask": [],
-            "subtaskStatus": [], 
+            "subtaskStatus": [],
         });
     }
 
     // prio
-    contentArray['tasks']['priority'].push(addPriority);
-    console.log(addPriority);
+    if (addPriority.length === 0) {
+        addPriority = "low";
+        contentArray['tasks']['priority'].push(addPriority);
+        console.log("ohne ausgewählte prio immer low: ", addPriority);
+    } else {
+        contentArray['tasks']['priority'].push(addPriority);
+        console.log("standart mit ausgewählert prio: ", addPriority);
+    }
+
 
     await setItem(key, contentArray);
     renderBoardContent();

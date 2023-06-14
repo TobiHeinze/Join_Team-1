@@ -316,7 +316,7 @@ function addTaskFloatHTML() {
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
-                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
+                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()" required>
                                 <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>
