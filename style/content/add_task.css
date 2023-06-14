@@ -2,11 +2,24 @@
     width: 110px;
     height: 60px;
     position: absolute;
-    top: 13px;
-    right: 15px;
+    top: 1%;
+    right: 5%;
     cursor: pointer;
     display: none;
 }
+
+.create-button2 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    cursor: pointer;
+    background: none;
+  border: none;
+  padding: 0;
+}
+
 
 
 .add-task-h2 {
@@ -230,9 +243,13 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 120px;
+    width: 140px;
     cursor: pointer;
 }
+
+/* .add-task-button img {
+    margin-left: 10px;
+} */
 
 .clear-task-button {
     justify-content: end;

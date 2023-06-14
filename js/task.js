@@ -202,6 +202,46 @@ function addRandomBackgroundColorToNewCategory() {
     return contentArray['settings']['categoryBgColor'][random];
 }
 
+// enter in form validation verhindern
+
+// const formAddTask = document.getElementById('myForm');
+// formAddTask.addEventListener('keydown', function (e) {
+//     if (e.key === 'Enter') {
+//         e.preventDefault();
+//     }
+// });
+
+// document.getElementById("myForm").addEventListener("submit", function(event) {
+//     event.preventDefault(); // Verhindert das Standardverhalten des Formulars, also das Absenden per Enter
+//     console.log("Enter-Taste gedrückt");
+//   });
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var form = document.getElementById("myAddForm");
+//     if (form) {
+//       form.addEventListener("submit", function(event) {
+//         event.preventDefault();
+//         console.log("Enter-Taste gedrückt");
+//       });
+//     } else {
+//       console.log("Das Formular mit der ID 'myAddForm' wurde nicht gefunden.");
+//     }
+//   });
+
+// function handleInputKeyDown(event) {
+//     if (event.key === "Enter") {
+//       event.preventDefault();
+//       // Hier können Sie den gewünschten Code ausführen, der bei Drücken der Eingabetaste im Input-Feld ausgeführt werden soll
+//       // Zum Beispiel:
+//       console.log("Enter-Taste gedrückt im Input-Feld mit ID:", event.target.id);
+//     }
+//   }
+  
+//   // Input-Felder auswählen und Event-Listener hinzufügen
+//   var inputFields = document.querySelectorAll("input");
+//   inputFields.forEach(function(input) {
+//     input.addEventListener("keydown", handleInputKeyDown);
+//   });
 
 /**
  * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
@@ -229,28 +269,28 @@ async function updateTaskArray() {
         contentArray['tasks']['categoryName'].push(""); // Leerer String übergeben für keine kategorie
         contentArray['tasks']['categoryBgColor'].push(""); //leerer string für keine farbe übergeben
     } else {
-    if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
-        //add new category to settings and push to category task 
-        let addNewCategory = document.getElementById('newCategoryName').innerHTML;
-        // let addNewCategory = addNewCategory1.trim();
-        contentArray['tasks']['categoryName'].push(addNewCategory.trim());
-        contentArray['settings']['categoryName'].push(addNewCategory.trim());
-        contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
-        console.log('add new category name:', addNewCategory);
-    } else {
-        //add only task category option from given options
-        let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
-        contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
-        console.log('add given category:', addTaskStatus);
-        // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
+        if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
+            //add new category to settings and push to category task 
+            let addNewCategory = document.getElementById('newCategoryName').innerHTML;
+            // let addNewCategory = addNewCategory1.trim();
+            contentArray['tasks']['categoryName'].push(addNewCategory.trim());
+            contentArray['settings']['categoryName'].push(addNewCategory.trim());
+            contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
+            console.log('add new category name:', addNewCategory);
+        } else {
+            //add only task category option from given options
+            let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
+            contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
+            console.log('add given category:', addTaskStatus);
+            // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
+        }
+        // zieht die farbe der kategorie raus
+        let colorId = document.getElementById('addNewCategoryColor');
+        let styleColor = window.getComputedStyle(colorId);
+        let backgroundColor = styleColor.getPropertyValue('background-color');
+        contentArray['tasks']['categoryBgColor'].push(backgroundColor);
+        console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
     }
-     // zieht die farbe der kategorie raus
-     let colorId = document.getElementById('addNewCategoryColor');
-     let styleColor = window.getComputedStyle(colorId);
-     let backgroundColor = styleColor.getPropertyValue('background-color');
-     contentArray['tasks']['categoryBgColor'].push(backgroundColor);
-     console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
-}
 
 
 
@@ -274,27 +314,27 @@ async function updateTaskArray() {
     let contactImageBgColor = [];
 
     if (selectedNames.length > 0) {
-    selectedNames.forEach(selectedName => {
-        let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
-        let initials = contentArray['contacts']['nameInitials'][contactIndex];
-        let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
+        selectedNames.forEach(selectedName => {
+            let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
+            let initials = contentArray['contacts']['nameInitials'][contactIndex];
+            let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
 
-        nameInitials.push(initials);
-        contactImageBgColor.push(bgColor);
-    });
-    
-    contentArray['tasks']['assignedTo'].push({
-        "name": selectedNames,
-        "nameInitials": nameInitials,
-        "contactImageBgColor": contactImageBgColor
-    });
-} else {
-    contentArray['tasks']['assignedTo'].push({
-        "name": [],
-        "nameInitials": [],
-        "contactImageBgColor": [],
-    });
-}
+            nameInitials.push(initials);
+            contactImageBgColor.push(bgColor);
+        });
+
+        contentArray['tasks']['assignedTo'].push({
+            "name": selectedNames,
+            "nameInitials": nameInitials,
+            "contactImageBgColor": contactImageBgColor
+        });
+    } else {
+        contentArray['tasks']['assignedTo'].push({
+            "name": [],
+            "nameInitials": [],
+            "contactImageBgColor": [],
+        });
+    }
     console.log(selectedNames);
     console.log(nameInitials);
     console.log(contactImageBgColor);

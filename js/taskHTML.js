@@ -5,7 +5,7 @@
  */
 function renderAddTaskHTML() {
     return /*html*/ `
-    <img class="create-button" src="./assets/img/create-button.png" alt="create task">
+    
     <div onclick="renderContacts()" class="add-task-x-position d-none">
                     <img src="./assets/img/x-button-black.png" alt="x-button-img">
                 </div>
@@ -13,8 +13,8 @@ function renderAddTaskHTML() {
                   <span >Kanban Project Management Tool</span>
                 </div>
                 <h2 class="font-47 add-task-h2">Add Task</h2>
-    <form class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
-                
+    <form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;" >
+    <button class="create-button2"><img class="create-button" src="./assets/img/create-button.png" alt="create task"></button>
                 <div class="desktop-size">
                     <div class="add-task-responsive-left">
                         <div class="title">
@@ -98,26 +98,6 @@ function renderAddTaskHTML() {
 </div>
 
 
-                        <!-- <div class="category-select-box">
-                            <span>Category</span>
-                            <select name="category" id="addCategoryName" class="category-select">
-                                <option value="">Select task category</option>
-                                <option value="orange">Orange</option>
-                                <option value="blue">Blue</option>
-                                <option value="red">Red</option>
-                                <option value="green">Green</option>
-                            </select>
-                        </div>
-
-                        <div class="assigned-add-task">
-                            <span class="mt-11">Assigned to</span>
-                            <select name="assigned" id="addAssignedTo" class="assigned-select">
-                                <option value="">Select contacts to assign</option>
-                                <option value="name1">name1</option>
-                                <option value="name2">name2</option>
-                            </select>
-                        </div> -->
-
 
 
 
@@ -134,99 +114,6 @@ function renderAddTaskHTML() {
                             <div id="addSubtaskContent">
 
                             </div>
-
-
-
-
-                            <!-- <div>
-                                <input id="" type="checkbox">
-                                <span>Subtask 1</span>
-                            </div> -->
-
-
-                            <!-- test zum scrollen -->
-
-                            <!-- <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 5</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div><div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div> <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div><div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div> <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div><div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 1</span>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                                <span>Subtask 10</span>
-                            </div> -->
-
-                            <!-- test zum scrollen ende -->
 
 
                         </div>
@@ -263,6 +150,13 @@ function renderAddTaskHTML() {
             </div>
     `;
 }
+
+
+
+
+
+
+
 
 
 /**

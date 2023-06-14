@@ -196,7 +196,7 @@ function editContactHTML(index) {
                   </div>
               </div>
               <div class="del-save">
-                  <div class="del" onclick="editContactResetInputs()">
+                  <div class="del" onclick="deleteContact(${index})">
                       Delete
                   </div>
                   <button class="save">

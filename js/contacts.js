@@ -29,16 +29,20 @@ window.addEventListener('resize', function () {
 function renderContactDescription(i) {
 
     if (window.innerWidth > 800) {
+        
         document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
         document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
         slideInContact();
         document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
+
     } else if (window.innerWidth < 800) {
         resetContent();
+        
         document.getElementById("content").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
         document.getElementById("ContactDescriptionHeader").classList.remove('d-none');
+
     }
 }
 
