@@ -5,6 +5,8 @@
 async function renderAddTask() {
     contentArray = await getItem(key);
     resetContent();
+    currentSubtasks = [];
+    currentSubtaskStatus = [];
     document.getElementById("content").innerHTML = renderAddTaskHTML();
     renderAddTaskCategoryOptions();
     renderAddTaskAssignedToOptions();
@@ -205,7 +207,8 @@ function addRandomBackgroundColorToNewCategory() {
  * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
  * 
  */
-function updateTaskArray() {
+async function updateTaskArray() {
+    // await getItem(key);
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
     console.log(addTitle);
@@ -218,32 +221,46 @@ function updateTaskArray() {
     contentArray['tasks']['dueDate'].push(addDueDate);
     console.log(addDueDate);
 
+
+
+
     //  zur add new category wird eine random color hinzugefügt noch!
+    if (document.getElementById('categoryOptionShowSelected').textContent.trim() === "Select task category") {
+        contentArray['tasks']['categoryName'].push(""); // Leerer String übergeben für keine kategorie
+        contentArray['tasks']['categoryBgColor'].push(""); //leerer string für keine farbe übergeben
+    } else {
     if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
         //add new category to settings and push to category task 
-        let addNewCategory1 = document.getElementById('newCategoryName').innerHTML;
-        let addNewCategory = addNewCategory1.trim();
-        contentArray['tasks']['categoryName'].push(addNewCategory);
-        contentArray['settings']['categoryName'].push(addNewCategory);
+        let addNewCategory = document.getElementById('newCategoryName').innerHTML;
+        // let addNewCategory = addNewCategory1.trim();
+        contentArray['tasks']['categoryName'].push(addNewCategory.trim());
+        contentArray['settings']['categoryName'].push(addNewCategory.trim());
         contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
         console.log('add new category name:', addNewCategory);
     } else {
         //add only task category option from given options
         let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
-        contentArray['tasks']['categoryName'].push(addTaskStatus);
+        contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
         console.log('add given category:', addTaskStatus);
         // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
     }
+     // zieht die farbe der kategorie raus
+     let colorId = document.getElementById('addNewCategoryColor');
+     let styleColor = window.getComputedStyle(colorId);
+     let backgroundColor = styleColor.getPropertyValue('background-color');
+     contentArray['tasks']['categoryBgColor'].push(backgroundColor);
+     console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
+}
 
-    // zieht die farbe der kategorie raus
-    let colorId = document.getElementById('addNewCategoryColor');
-        let styleColor = window.getComputedStyle(colorId);
-        let backgroundColor = styleColor.getPropertyValue('background-color');
-        contentArray['tasks']['categoryBgColor'].push(backgroundColor);
-        console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
+
+
 
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
-    contentArray['tasks']['taskStatus'].push(0);
+    contentArray['tasks']['taskStatus'].push('0');
+
+
+
+
 
     // assigned to selector 
     let selectedNames = [];
@@ -256,6 +273,7 @@ function updateTaskArray() {
     let nameInitials = [];
     let contactImageBgColor = [];
 
+    if (selectedNames.length > 0) {
     selectedNames.forEach(selectedName => {
         let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
         let initials = contentArray['contacts']['nameInitials'][contactIndex];
@@ -264,15 +282,27 @@ function updateTaskArray() {
         nameInitials.push(initials);
         contactImageBgColor.push(bgColor);
     });
-
+    
     contentArray['tasks']['assignedTo'].push({
         "name": selectedNames,
         "nameInitials": nameInitials,
         "contactImageBgColor": contactImageBgColor
     });
+} else {
+    contentArray['tasks']['assignedTo'].push({
+        "name": [],
+        "nameInitials": [],
+        "contactImageBgColor": [],
+    });
+}
     console.log(selectedNames);
     console.log(nameInitials);
     console.log(contactImageBgColor);
+
+
+
+
+
 
     // subtask
     if (currentSubtasks.length > 0) {
@@ -285,15 +315,22 @@ function updateTaskArray() {
     } else {
         contentArray['tasks']['subtasks'].push({
             "subtask": [],
-            "subtaskStatus": [], 
+            "subtaskStatus": [],
         });
     }
 
     // prio
-    contentArray['tasks']['priority'].push(addPriority);
-    console.log(addPriority);
+    if (addPriority.length === 0) {
+        addPriority = "low";
+        contentArray['tasks']['priority'].push(addPriority);
+        console.log("ohne ausgewählte prio immer low: ", addPriority);
+    } else {
+        contentArray['tasks']['priority'].push(addPriority);
+        console.log("standart mit ausgewählert prio: ", addPriority);
+    }
 
-    setItem(key, contentArray);
+
+    await setItem(key, contentArray);
     renderBoardContent();
     renderBoard();
 }
@@ -325,9 +362,9 @@ let addPriority = [];
 /**
  * This function select the choosen priority status to the addPriority array
  * 
- * @param {*} priority this parameter comes from the three diffrent priority types when klick on them to select
+ * @param {string} priority this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low
  */
 function addPrio(priority) {
-    addPriority = [priority];
+    addPriority = priority;
     console.log(addPriority);
 }

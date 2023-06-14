@@ -29,15 +29,15 @@ function renderAddTaskHTML() {
                         <div class="prio">
                             <span class="mt-11 mb-11">Priority</span>
                             <div class="prio-row">
-                                <div onclick="addPrio('Urgent')" class="prio-class">
+                                <div onclick="addPrio('urgent')" class="prio-class">
                                     <span id="addPrioUrgent">Urgent</span>
                                     <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
-                                <div onclick="addPrio('Medium')" class="prio-class">
+                                <div onclick="addPrio('medium')" class="prio-class">
                                     <span>Medium</span>
                                     <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
-                                <div onclick="addPrio('Low')" class="prio-class">
+                                <div onclick="addPrio('low')" class="prio-class">
                                     <span>Low</span>
                                     <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>
@@ -299,15 +299,15 @@ function addTaskFloatHTML() {
                         <div class="prio">
                             <span class="mt-11 mb-11">Priority</span>
                             <div class="prio-row">
-                                <div onclick="addPrioUrgent('Urgent')" class="prio-class">
+                                <div onclick="addPrioUrgent('urgent')" class="prio-class">
                                     <span id="addPrioUrgent">Urgent</span>
                                     <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
                                 </div>
-                                <div onclick="addPrioUrgent('Medium')" class="prio-class">
+                                <div onclick="addPrioUrgent('medium')" class="prio-class">
                                     <span>Medium</span>
                                     <img src="./assets/img/task-prio-medium.png" alt="medium-img">
                                 </div>
-                                <div onclick="addPrioUrgent('Low')" class="prio-class">
+                                <div onclick="addPrioUrgent('low')" class="prio-class">
                                     <span>Low</span>
                                     <img src="./assets/img/task-prio-low.png" alt="low-img">
                                 </div>
@@ -316,7 +316,7 @@ function addTaskFloatHTML() {
                         <div class="add-task-date">
                             <span class="mt-11">Due date</span>
                             <div class="date-box-add-task">
-                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()">
+                                <input class="input-date" type="date" placeholder="dd/mm/yyyy" onmousedown="this.click()" required>
                                 <img src="./assets/img/task-calendar.png" alt="calendar-img">
                             </div>
                         </div>

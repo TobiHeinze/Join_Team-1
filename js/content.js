@@ -32,7 +32,7 @@ let contentArray =
 		  "title": ["Website redesign", "Call potential clients", "Accounting invoices", "Video cut", "Social media strategy"],
 		  "description": ["Modify the contents of the main website. Adjust the UI to the companys brand design.", "Make the product presentation to prospective buyers", "Write open invoices for customer", "Edit the new company video", "Develop an ad campaign for brand positioning"],
 		  "priority": ["low", "urgent", "medium", "medium", "low"],
-		  "dueDate": ["05.08.2022", "24.12.2034", "11.06.2023", "09.06.1998", "06.07.2015"],
+		  "dueDate": ["2023-05-20", "2025-06-10", "2023-08-25", "2024-10-01", "2023-09-02"],
 		  "categoryName": ["Design", "Sales", "Backoffice", "Media", "Marketing"],
 		  "categoryBgColor": ["#FF7A00", "#FC71FF", "#1FD7C1", "#FFC701", "#0038FF"],
 		  "subtasks": [
