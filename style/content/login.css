@@ -356,6 +356,14 @@ aside {
         top: 775px;
         padding-bottom: 20px;
     }
+
+    .check {
+        font-size: 14px;
+    }
+
+    .font-61 {
+        font-size: 47px;
+    }
 }
 
 @media(max-width:450px) {
