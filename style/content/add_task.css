@@ -2,12 +2,23 @@
     width: 110px;
     height: 60px;
     position: absolute;
-    top: 13px;
-    right: 15px;
+    top: 1%;
+    right: 5%;
     cursor: pointer;
     display: none;
 }
 
+.create-button2 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
 
 .add-task-h2 {
     margin-top: 20px;
@@ -77,27 +88,6 @@
     width: 100%;
 }
 
-/* .subtask {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.subtask-box {
-    display: flex;
-    background: #FFFFFF;
-    border: 1px solid #D1D1D1;
-    border-radius: 10px;
-    padding: 11px;
-    justify-content: space-between;
-}
-
-.input-subtask {
-    border: none;
-    outline: none;
-    width: 100%;
-} */
-
 .add-task-date {
     display: flex;
     flex-direction: column;
@@ -112,7 +102,6 @@
     padding: 11px;
     justify-content: space-between;
     overflow: hidden;
-    /* cursor: pointer; */
 }
 
 .date-box-add-task input[type="date"]::-webkit-calendar-picker-indicator {
@@ -139,7 +128,6 @@
     gap: 10px;
 }
 
-/* für weitere anpassungen der untermenüs (select, option)  muss man das über JS oder drop-down plugins probieren */
 .category-select {
     display: flex;
     flex-direction: row;
@@ -152,16 +140,8 @@
     cursor: pointer;
 }
 
-/* .assigned {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-} */
-
 .assigned-add-task {
     display: flex;
-    /* align-items: center; */
-    /* padding: 10px; */
     flex-direction: column;
 }
 
@@ -230,7 +210,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 120px;
+    width: 140px;
     cursor: pointer;
 }
 
@@ -264,36 +244,6 @@
     width: 85%;
 }
 
-/* task-added-backlog wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
-.task-added-backlog {
-    display: flex;
-    position: fixed;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 74px;
-    background: #2A3647;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 20px;
-    color: #FFFFFF;
-    top: 950px;
-    z-index: 5;
-    width: 85%;
-}
-
-.add-task-scroll {
-    height: 62vh;
-    overflow-y: scroll;
-}
-
-.add-task-scroll::-webkit-scrollbar {
-    width: 5px;
-}
-
-.add-task-scroll::-webkit-scrollbar-thumb {
-    border: 7px solid #A8A8A8;
-    border-radius: 3px;
-}
-
 /* dropdown menu */
 .width-100 {
     width: 100%;
@@ -304,23 +254,21 @@
     cursor: pointer;
     background-color: white;
     border: none;
-    /* width: 97%; */
-    /* text-align: end; */
     flex-direction: row-reverse;
-  }
+}
 
 .option input {
     cursor: pointer;
 }
-  
-  .option:last-child {
+
+.option:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-  }
-  
-  .option:hover {
+}
+
+.option:hover {
     background-color: rgb(207, 209, 210);
-  }
+}
 
 .multiselect {
     width: auto;
@@ -330,19 +278,24 @@
     position: relative;
     background: #FFFFFF;
     border-bottom: 1px solid #D1D1D1;
-    /* border-top-left-radius: 10px;
-    border-top-right-radius: 10px; */
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.selectBoxFloat {
+    position: relative;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
     border-radius: 10px;
     padding: 11px;
 }
 
 .arrow {
     margin-left: auto;
-  }
+}
 
 .selectBox select {
     width: 100%;
-    /* font-weight: bold; */
 }
 
 .overSelect {
@@ -358,13 +311,18 @@
 #checkboxes1,
 #checkboxes2 {
     display: none;
-    /* border: 1px #dadada solid; */
 }
 
 .flex-checkboxes {
     display: flex;
     flex-direction: column;
-    /* border: 1px #dadada solid; */
+}
+
+.flex-checkboxes-float {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid #dadada;
+    border-top: none;
 }
 
 .flex-checkboxes label {
@@ -382,29 +340,47 @@
     display: inline-block;
     margin-right: 5px;
     margin-left: 5px;
-  }
+}
 
-  .new-category {
+.new-category {
     border-radius: 10px;
     background-color: white;
     padding: 11px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
 
-  .new-category input {
+.new-category input {
     width: 100%;
     border: none;
     outline: none;
-  }
+}
 
-  .new-category img {
+.new-category img {
     margin-left: 5px;
-  }
-/* dropdown menu end */
+}
 
-/* responsiveness */
+.new-category-float {
+    border-radius: 10px;
+    background-color: white;
+    padding: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.new-category-float input {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.new-category-float img {
+    margin-left: 5px;
+}
+
 @media (min-width: 951px) {
     .desktop-size {
         display: flex;
@@ -450,4 +426,42 @@
     .responsive-hide {
         display: none;
     }
+}
+
+/* css scrollbar für add task page */
+.add-task-scroll {
+    height: 72vh;
+    overflow-y: scroll;
+    padding-right: 5px;
+}
+
+@media (max-width: 800px) {
+    .add-task-scroll {
+        height: 63vh;
+        overflow-y: scroll;
+        padding-right: 3px;
+    }
+}
+
+@media (max-width: 800px) and (max-height: 650px) {
+    .add-task-scroll {
+        height: 44vh;
+    }
+
+    .create-button2 {
+        top: 2%;
+    }
+
+    .add-task-x-position {
+        top: 26%;
+    }
+}
+
+.add-task-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.add-task-scroll::-webkit-scrollbar-thumb {
+    border: 7px solid #A8A8A8;
+    border-radius: 3px;
 }

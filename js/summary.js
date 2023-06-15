@@ -2,29 +2,86 @@
  * This function renders the summary area
  *
  */
-function renderSummary(i) {
+async function renderSummary(i) {
+  contentArray = await getItem(key);
   document.getElementById("mainContainer").classList.remove("d-none");
   resetContent();
+  searchUrgendDate();
+  countTasks();
   document.getElementById("content").innerHTML = renderSummaryHTML();
   updateGreetingName(i);
 }
+
 
 /**
  * This function greets the logged in person or guest on the summary page
  *
  */
 function updateGreetingName(i) {
-	var loggedInName = contentArray['users']['name'][i];
-	var loggedInPhoto = contentArray['users']['photo'][i];
-	if (contentArray['users']['name'].includes(loggedInName)) {
-		document.getElementById('userGreetingName').innerHTML = ``;
-		document.getElementById('userGreetingName').innerHTML = `${loggedInName}`;
-		document.getElementById('userImage').src = `./assets/img/${loggedInPhoto}-image-header.png`;
-	  } else {
-		document.getElementById('userGreetingName').innerHTML = `Guest`;
-		document.getElementById('userImage').src = "./assets/img/guest-image-header.png";
-	   }
-	}
+  var loggedInName = contentArray['users']['name'][i];
+  var loggedInPhoto = contentArray['users']['photo'][i];
+  if (contentArray['users']['name'].includes(loggedInName)) {
+    document.getElementById('userGreetingName').innerHTML = ``;
+    document.getElementById('userGreetingName').innerHTML = `${loggedInName}`;
+    document.getElementById('userImage').src = `./assets/img/${loggedInPhoto}-image-header.png`;
+  } else {
+    document.getElementById('userGreetingName').innerHTML = `Guest`;
+    document.getElementById('userImage').src = "./assets/img/guest-image-header.png";
+  }
+}
+
+
+let numberOfTasksToDo = [];
+let numberOfTasksInProgress = [];
+let numberOfTasksAwaiting = [];
+let numberOfTasksDone = [];
+
+function countTasks() {
+  numberOfTasksToDo = [];
+  numberOfTasksInProgress = [];
+  numberOfTasksAwaiting = [];
+  numberOfTasksDone = [];
+  for (let i = 0; i < contentArray['tasks']['taskStatus'].length; i++) {
+    let taskStatus = contentArray['tasks']['taskStatus'][i];
+
+    if (taskStatus === '0') {
+      numberOfTasksToDo.push(taskStatus);
+    } else if (taskStatus === '1') {
+      numberOfTasksInProgress.push(taskStatus);
+    } else if (taskStatus === '2') {
+      numberOfTasksAwaiting.push(taskStatus);
+    } else if (taskStatus === '3') {
+      numberOfTasksDone.push(taskStatus);
+    }
+  }
+}
+
+
+let closestUrgentDate;
+let urgentCounter = [];
+let closestUrgentDateString;
+
+function searchUrgendDate() {
+  urgentCounter = [];
+  const today = new Date();
+  let closestUrgentDiff = Infinity;
+
+  for (let i = 0; i < contentArray['tasks']['priority'].length; i++) {
+    if (contentArray['tasks']['priority'][i] === 'urgent') {
+      const dueDate = new Date(contentArray['tasks']['dueDate'][i]);
+      const timeDiff = dueDate.getTime() - today.getTime();
+
+      if (timeDiff >= 0 && timeDiff < closestUrgentDiff) {
+        closestUrgentDiff = timeDiff;
+        closestUrgentDate = dueDate;
+      }
+      urgentCounter.push(dueDate);
+    }
+  }
+  closestUrgentDateString = closestUrgentDate ? closestUrgentDate.toLocaleDateString('en-EN', { month: 'long', day: '2-digit', year: 'numeric' }) : 'No date available';
+  console.log(`Das nächste Datum mit der Priorität "urgent" ist: ${closestUrgentDate}`);
+  console.log(`Anzahl der Vorkommen von "urgent": ${urgentCounter.length}`);
+}
 
 
 /**
@@ -50,15 +107,15 @@ function renderSummaryHTML() {
     <div>
         <section class="row">
             <div onclick="renderBoard()" class="card-row-1">
-                <span class="font-64">5</span>
+                <span class="font-64">${contentArray['tasks']['title'].length}</span>
                 <span class="font-16">Tasks in <br> Board</span>
             </div>
             <div onclick="renderBoard()" class="card-row-1">
-                <span class="font-64">2</span>
+                <span class="font-64">${numberOfTasksInProgress.length}</span>
                 <span class="font-16">Tasks in <br> Progress</span>
             </div>
             <div onclick="renderBoard()" class="card-row-1">
-                <span class="font-64">2</span>
+                <span class="font-64">${numberOfTasksAwaiting.length}</span>
                 <span class="font-16">Awaiting <br> Feedback</span>
             </div>
         </section>
@@ -71,13 +128,13 @@ function renderSummaryHTML() {
                         <img style="padding-top: 10px" src="./assets/img/urgent.png" />
                     </div>
                     <div class="amount">
-                        <span class="font-47">1</span>
+                        <span class="font-47">${urgentCounter.length}</span>
                         <span class="font-21">Urgent</span>
                     </div>
                 </div>
                 <div class="card-row-2-middle"></div>
                 <div class="card-row-2-right">
-                    <span class="font-weight-700 font-16">October 16, 2022</span> <br>
+                    <span class="font-weight-700 font-16">${closestUrgentDateString}</span> <br>
                     <span class="font-16">Upcoming Deadline</span>
                 </div>
             </div>
@@ -90,7 +147,7 @@ function renderSummaryHTML() {
                     <img src="./assets/img/pen.png" />
                 </div>
                 <div class="amount">
-                    <span class="font-64 ">1</span>
+                    <span class="font-64 ">${numberOfTasksToDo.length}</span>
                     <span class="font-21">To-do</span>
                 </div>
             </div>
@@ -99,7 +156,7 @@ function renderSummaryHTML() {
                     <img src="./assets/img/check.png" />
                 </div>
                 <div class="amount">
-                    <span class="font-64">1</span>
+                    <span class="font-64">${numberOfTasksDone.length}</span>
                     <span class="font-21">Done</span>
                 </div>
             </div>

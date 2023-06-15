@@ -35,7 +35,7 @@ function generateBoardHTML(index) {
 		</div>
 		<div class="task-assigned-to-prio-image">
 			<div id="taskAssignedTo${index}" class="display"></div>
-			<img id="taskPrioImage${index}" class="task-prio-image" src="assets/img/task-prio-${contentArray['tasks']['priority'][index]}.png" alt="">
+			<img id="taskPrioImage${index}" class="task-prio-image" src="./assets/img/task-prio-${contentArray['tasks']['priority'][index]}.png" alt="">
 		</div>
 	</div>
 	`;

@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!--favicon-->
-	<link rel="icon" type="image/png" href="/assets/img/favicon.png">
+	<link rel="icon" type="image/png" href="./assets/img/favicon.png">
 
 	<title>Join</title>
 
@@ -78,11 +78,38 @@
 
 
 
+<!--          ; setItem(key, contentArray)          -->
+<body onload="renderAddTask()">
+
+	<div id="loginContainer">
+	</div>
+	<div id="mainContainer" class="main-container d-none">
+
+		<div class="header-with-content">
+			<div class="header padding">
+				<span class="span-header hide-mobile">Kanban Project Management Tool</span>
+				<img class="appear-mobile" src="./assets/img/logo-header-mobile.svg" alt="help">
+				<div class="navbar-header">
+					<img class="hide-mobile" style="cursor:pointer;" src="./assets/img/help-header.png" alt="help" onclick="renderHelp()">
+					<div class="user-img-header">
+						<div onclick="openMiniMenu(this)">
+							<img id="userImage" src="./assets/img/guest-image-header.png" alt="User">
+						</div>
+
+						<div id="miniMenu" class="mini-menu mini-menu-toggle">
+							<a onclick="renderHelp()" class="help-mini" href="#">Help</a>
+							<a onclick="renderLegalNotice()" class="legal-notice-mini" href="#">Legal Notice</a>
+							<a href="index.html"><span class="mini-menu-text">Log out</span></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<div class="contacts-content-box">
 				<div id="contactsContent">
 				</div>
-				<div class="flex colum">
+				<div id="marginLeftContact" class="flex colum">
 					<div id="contactsDescriptionContent">
 					</div>
 					<div id="contactsChangeDescriptionContent">
@@ -102,30 +129,32 @@
 		<div class="menu-bar">
 			<img class="hide-mobile" src="./assets/img/logo-menu-bar.svg" alt="help">
 			<div class="menu-bar-nav-section">
-				<div class="menu-bar-nav-button" onclick="renderSummary()">
+				<div class="menu-bar-nav-button" onclick="handleClick(this); renderSummary()">
 					<img src="./assets/img/summary-menu-bar.svg" alt="summary">
 					<span class="p-menu-bar">Summary</span>
-				</div>
-
-				<div class="menu-bar-nav-button" onclick="renderBoard()">
+				  </div>
+				  
+				  <div class="menu-bar-nav-button" onclick="handleClick(this); renderBoard()">
 					<img src="./assets/img/board-menu-bar.svg" alt="board">
 					<span class="p-menu-bar">Board</span>
-				</div>
-
-				<div class="menu-bar-nav-button" onclick="renderAddTask()">
+				  </div>
+				  
+				  <div class="menu-bar-nav-button" onclick="handleClick(this); renderAddTask()">
 					<img src="./assets/img/add task-menu-bar.svg" alt="add task">
 					<span class="p-menu-bar">Add Task</span>
-				</div>
-
-				<div class="menu-bar-nav-button" onclick="renderContacts()">
+				  </div>
+				  
+				  <div class="menu-bar-nav-button" onclick="handleClick(this); renderContacts()">
 					<img src="./assets/img/contacts-menu-bar.svg" alt="contacts">
 					<span class="p-menu-bar">Contacts</span>
-				</div>
-
-				<div class="menu-bar-legal-button hide-mobile" onclick="renderLegalNotice()">
+				  </div>
+				  
+				  <div class="menu-bar-nav-button menu-bar-legal-button hide-mobile" onclick="handleClick(this); renderLegalNotice()">
 					<img src="./assets/img/info-legal-notice.svg" alt="legal notice">
 					<span class="p-menu-bar">Legal notice</span>
-				</div>
+				  </div>
+				  
+				  
 
 			</div>
 
@@ -136,7 +165,3 @@
 </body>
 
 </html>
-
-
-
-

@@ -5,9 +5,11 @@
 async function renderContacts() {
     contentArray = await getItem(key);
     resetContent();
+    document.getElementById('content').classList.add('d-none');
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
+    resizeFunction();
 }
 
 
@@ -15,11 +17,17 @@ async function renderContacts() {
  * This function is checking if the window size is smaller than 800px, then it clears a div from the contact description area
  * 
  */
-window.addEventListener('resize', function () {
-    if (window.innerWidth < 800) {
+window.addEventListener('resize', resizeFunction);
+function resizeFunction() {
+    if (window.innerWidth <= 800) {
+        document.getElementById('marginLeftContact').style.marginLeft = '0';
+        document.getElementById('marginLeftContact').style.marginRight = '0';
         document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+    } else {
+        document.getElementById('marginLeftContact').style.marginLeft = '3%';
+        document.getElementById('marginLeftContact').style.marginRight = '1%';
     }
-});
+}
 
 
 /**
@@ -27,7 +35,6 @@ window.addEventListener('resize', function () {
  * 
  */
 function renderContactDescription(i) {
-
     if (window.innerWidth > 800) {
         document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
         document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
@@ -75,11 +82,8 @@ function addNewContact() {
 }
 
 
-/**
- * This function can add a new contact to the contact list
- * 
- */
-async function updateNewContact() {
+// ausgelagerte funktionen für updatenewcontact funktion
+function processContactName() {
     let addNewContactName = document.getElementById('addNewContactName').value;
     contentArray['contacts']['name'].push(addNewContactName);
 
@@ -88,7 +92,10 @@ async function updateNewContact() {
     let secondName = nameArray[1];
     let initials = firstName.substring(0, 1) + secondName.substring(0, 1);
     contentArray['contacts']['nameInitials'].push(initials);
+}
 
+
+function processContactEmailPhoneBgColor() {
     let addNewContactEmail = document.getElementById('addNewContactEmail').value;
     contentArray['contacts']['email'].push(addNewContactEmail);
 
@@ -97,7 +104,17 @@ async function updateNewContact() {
 
     let contactImageBgColor = getRandomBackgroundColor();
     contentArray['contacts']['contactImageBgColor'].push(contactImageBgColor);
+}
 
+
+/**
+ * This function can add a new contact to the contact list
+ * 
+ */
+async function updateNewContact() {
+    await getItem(key);
+    processContactName();
+    processContactEmailPhoneBgColor();
     await setItem(key, contentArray);
     await renderContacts();
     showContactCreatedMessage();
@@ -120,30 +137,36 @@ async function editContact(index) {
 }
 
 
+// hier sind die ausgelagerten funktionen für die updateeditedcontact funktion
+function processEditedContactName(index) {
+    let updatedContactName = document.getElementById('editContactName').value;
+    contentArray['contacts']['name'][index] = updatedContactName;
+    let nameArray = updatedContactName.split(" ");
+    let firstName = nameArray[0];
+    let secondName = nameArray[1];
+    let initials = firstName.substring(0, 1) + secondName.substring(0, 1);
+    contentArray['contacts']['nameInitials'][index] = initials;
+}
+
+
+function processEditedContactEmailPhone(index) {
+    let updatedContactEmail = document.getElementById('editContactEmail').value;
+    contentArray['contacts']['email'][index] = updatedContactEmail;
+    let updatedContactPhone = document.getElementById('editContactPhone').value;
+    contentArray['contacts']['phoneNumber'][index] = updatedContactPhone;
+}
+
+
 /**
  * This function update the edited contact when clicking on the save button
  * 
  * @param {*} index this is the position in the array from the specific contact
  */
 async function updateEditedContact(index) {
-    let updatedContactName = document.getElementById('editContactName').value;
-    contentArray['contacts']['name'][index] = updatedContactName;
-
-    let nameArray = updatedContactName.split(" ");
-    let firstName = nameArray[0];
-    let secondName = nameArray[1];
-    let initials = firstName.substring(0, 1) + secondName.substring(0, 1);
-    contentArray['contacts']['nameInitials'][index] = initials;
-
-    let updatedContactEmail = document.getElementById('editContactEmail').value;
-    contentArray['contacts']['email'][index] = updatedContactEmail;
-
-    let updatedContactPhone = document.getElementById('editContactPhone').value;
-    contentArray['contacts']['phoneNumber'][index] = updatedContactPhone;
-
+    processEditedContactName(index);
+    processEditedContactEmailPhone(index);
     await setItem(key, contentArray);
     await renderContacts();
-    // showContactUpdatedMessage();
     showContactCreatedMessage();
 }
 
@@ -162,21 +185,7 @@ async function deleteContact(index) {
         contentArray['contacts']['contactImageBgColor'].splice(index, 1);
         await setItem(key, contentArray);
         await renderContacts();
-        // showContactDeletedMessage();
-        text = "Contact Deleted!";
-        showContactCreatedMessage();
-    } 
-}
-
-
-/**
- * This function resets the input fields when editing a contact
- * 
- */
-function editContactResetInputs() {
-    document.getElementById('editContactName').value = "";
-    document.getElementById('editContactEmail').value = "";
-    document.getElementById('editContactPhone').value = "";
+    }
 }
 
 
@@ -219,36 +228,30 @@ function closeEditContact() {
  * 
  */
 function updateContactsHTML() {
-    document.getElementById('contactsList').innerHTML = ``;
-
-    // Erstelle ein leeres Objekt zur Gruppierung der Kontakte nach dem Anfangsbuchstaben
-    const contactsByInitial = {};
-
-    // Gruppiere die Kontakte nach dem Anfangsbuchstaben
-    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
-        const name = contentArray['contacts']['name'][i];
-        const initial = name.charAt(0).toUpperCase();
-
-        if (!contactsByInitial[initial]) {
-            contactsByInitial[initial] = [];
-        }
-
-        contactsByInitial[initial].push(i);
-    }
-
-    // Iteriere über das Alphabet und render die Kontakte für jeden Buchstaben
+    document.getElementById('contactsList').innerHTML = '';
+    const contactsByInitial = groupContactsByInitial();
     for (let letter = 65; letter <= 90; letter++) {
         const initial = String.fromCharCode(letter);
-
         if (contactsByInitial[initial]) {
-            // Füge den HTML-Code für den Buchstaben hinzu
             document.getElementById('contactsList').innerHTML += generateHeaderHTML(initial);
-
-            // Füge die Kontakt-HTML für jeden Kontakt unter dem Buchstaben hinzu
             contactsByInitial[initial].forEach(contactIndex => {
                 document.getElementById('contactsList').innerHTML += generateContactsHTML(contactIndex);
                 document.getElementById(`contactBgColor${contactIndex}`).style.backgroundColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
             });
         }
     }
+}
+
+
+function groupContactsByInitial() {
+    const contactsByInitial = {};
+    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+        const name = contentArray['contacts']['name'][i];
+        const initial = name.charAt(0).toUpperCase();
+        if (!contactsByInitial[initial]) {
+            contactsByInitial[initial] = [];
+        }
+        contactsByInitial[initial].push(i);
+    }
+    return contactsByInitial;
 }

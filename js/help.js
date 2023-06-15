@@ -127,3 +127,6 @@ function renderHelpHTML () {
  <b class= "font-27">3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
  </div> `;
 }
+
+
+

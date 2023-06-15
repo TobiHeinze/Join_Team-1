@@ -9,42 +9,42 @@ function renderLogin() {
 }
 
 async function login() {
-    try {
-      let email = document.getElementById("loginEmail").value;
-      let password = document.getElementById("loginPassword").value;
-      let contentArray = await getItem(key);
-  
-      // Überprüfe, ob das contentArray und die users-Eigenschaft vorhanden sind
-      if (contentArray && contentArray.users) {
-        let users = contentArray.users;
-  
-        // Finde den Index der E-Mail-Adresse im users-Array
-        let userIndex = users.email.indexOf(email);
-  
-        // Überprüfe, ob die E-Mail-Adresse im users-Array vorhanden ist und das Passwort übereinstimmt
-        if (userIndex !== -1 && users.password[userIndex] === password) {
-          // Zeige eine Erfolgsmeldung an
-          showSuccessMessage(users.name[userIndex]);
-  
-          // Rufe die renderSummary-Funktion auf
-          setTimeout(() => {
-            renderSummary(userIndex);
-          }, 2000);
-        } else {
-          throw new Error("Ungültige E-Mail-Adresse oder Passwort.");
-        }
+  try {
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+    let contentArray = await getItem(key);
+
+    // Überprüfe, ob das contentArray und die users-Eigenschaft vorhanden sind
+    if (contentArray && contentArray.users) {
+      let users = contentArray.users;
+
+      // Finde den Index der E-Mail-Adresse im users-Array
+      let userIndex = users.email.indexOf(email);
+
+      // Überprüfe, ob die E-Mail-Adresse im users-Array vorhanden ist und das Passwort übereinstimmt
+      if (userIndex !== -1 && users.password[userIndex] === password) {
+        // Zeige eine Erfolgsmeldung an
+        showSuccessMessage(users.name[userIndex]);
+
+        // Rufe die renderSummary-Funktion auf
+        setTimeout(() => {
+          renderSummary(userIndex);
+        }, 2000);
       } else {
-        throw new Error("Das contentArray oder die users-Eigenschaft ist nicht definiert.");
+        throw new Error("Ungültige E-Mail-Adresse oder Passwort.");
       }
-    } catch (error) {
-      console.error("Fehler beim Login:", error);
-      alert("Fehler beim Login. Bitte überprüfe deine Eingaben.");
+    } else {
+      throw new Error(
+        "Das contentArray oder die users-Eigenschaft ist nicht definiert."
+      );
     }
+  } catch (error) {
+    console.error("Fehler beim Login:", error);
+    alert("Fehler beim Login. Bitte überprüfe deine Eingaben.");
   }
+}
 
-
-  
-  /**
+/**
  * Creates the message container element.
  * @returns {HTMLDivElement} The created message container element.
  */
@@ -108,8 +108,6 @@ function showSuccessMessage(name) {
   }, 3000);
 }
 
-  
-
 function renderLoginHTML() {
   return /*html*/ `
  <div class="logo-container" id="login-container">
@@ -132,7 +130,11 @@ function renderLoginHTML() {
 
  <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
  <div class="remember-check">
-     <div class="check"><img id="loginCheckbox" src="./assets/img/unchecked.png">Remember me</div>
+     <div class="check"><div class="checkbox">
+  <input type="checkbox" id="myCheckbox">
+  <label for="myCheckbox"></label>
+</div>
+  Remember me</div>
      <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
  </div>
  

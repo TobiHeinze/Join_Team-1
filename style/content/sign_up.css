@@ -1,10 +1,3 @@
-.arrow-left {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-
 
 .sign-in-box {
     background: #FFFFFF;
@@ -24,9 +17,26 @@
 
 .name {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     gap: 8px;
     margin-bottom: 16px;
+}
+
+
+.sign-up-input-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 21px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    width: 130%;
+    height: 51px;
+    margin-bottom: 50px;
+    cursor: pointer;
 }
 
 .name-box {
@@ -58,7 +68,7 @@
 .sign-up {
     width: 100px;
     height: 30px;
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 50px;
     text-align: center;
     background: #2A3647;
@@ -84,4 +94,14 @@
     display: flex;
     position: absolute;
     left: calc(50% - 115px);
+}
+
+
+
+
+
+@media (max-width: 800px) {
+.sign-up-input-field {
+    width: 80%;
+}
 }
