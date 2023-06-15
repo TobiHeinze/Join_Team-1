@@ -11,9 +11,9 @@ function renderForgotPassword() {
  * @returns {string} The HTML content.
  */
 function renderForgotPasswordHTML() {
-  const isSmall = isSmallScreen();
-  const imageClass = isSmall ? "logo smaller" : "logo";
-  const titleClass = isSmall ? "font-61 larger" : "font-61";
+  let isSmall = isSmallScreen();
+  let imageClass = isSmall ? "logo smaller" : "logo";
+  let titleClass = isSmall ? "font-61 larger" : "font-61";
 
   return /*html*/ `<img class="${imageClass}" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
@@ -44,7 +44,7 @@ function renderForgotPasswordHTML() {
  * Shows the email sent message.
  */
 function showEmailSentMessage() {
-  const emailSentDiv = document.getElementById("emailSentDiv");
+  let emailSentDiv = document.getElementById("emailSentDiv");
   emailSentDiv.classList.remove("d-none");
 
   if (isSmallScreen()) {
@@ -80,9 +80,9 @@ function renderResetPassword() {
  * @returns {string} The HTML content.
  */
 function renderResetPasswordHTML() {
-  const isSmall = isSmallScreen();
-  const imageClass = isSmall ? "logo smaller" : "logo";
-  const titleClass = isSmall ? "font-61 larger" : "font-61";
+  let isSmall = isSmallScreen();
+  let imageClass = isSmall ? "logo smaller" : "logo";
+  let titleClass = isSmall ? "font-61 larger" : "font-61";
 
   return /*html*/ `<img class="${imageClass}" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
@@ -111,7 +111,7 @@ function renderResetPasswordHTML() {
  * Shows the reset password message.
  */
 function showResetPasswordMessage() {
-  const resetPasswordDiv = document.getElementById("resetPasswordDiv");
+  let resetPasswordDiv = document.getElementById("resetPasswordDiv");
   resetPasswordDiv.classList.remove("d-none");
 
   if (isSmallScreen()) {
@@ -145,8 +145,8 @@ function isSmallScreen() {
 
 // Function to update the "Go Back" arrow image
 function updateGoBackArrow() {
-    const goBackArrow = document.getElementById("goBackArrow");
-  
+    let goBackArrow = document.getElementById("goBackArrow");
+  if (goBackArrow) {
     // Check the screen width
     if (window.innerWidth < 800) {
       goBackArrow.src = "./assets/img/go-back.png";
@@ -154,6 +154,7 @@ function updateGoBackArrow() {
       goBackArrow.src = "./assets/img/go-back-arrow-blue.png";
     }
   }
+}
   
   // Event listener for window resize
   window.addEventListener("resize", updateGoBackArrow);

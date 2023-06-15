@@ -8,18 +8,6 @@ function renderSignUp() {
   updateGoBackArrow();
 }
 
-// Function to update the "Go Back" arrow image
-function updateGoBackArrow() {
-  const goBackArrow = document.getElementById("goBackArrow");
-
-  // Check the screen width
-  if (window.innerWidth < 800) {
-    goBackArrow.src = "./assets/img/go-back.png";
-  } else {
-    goBackArrow.src = "./assets/img/go-back-arrow-blue.png";
-  }
-}
-
 // Event listener for window resize
 window.addEventListener("resize", updateGoBackArrow);
 
