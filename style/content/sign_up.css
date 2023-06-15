@@ -24,6 +24,21 @@
     margin-bottom: 16px;
 }
 
+
+.sign-up-input-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 21px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    width: 130%;
+    height: 51px;
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
 .name-box {
     display: flex;
     background: #FFFFFF;
@@ -79,4 +94,14 @@
     display: flex;
     position: absolute;
     left: calc(50% - 115px);
+}
+
+
+
+
+
+@media (max-width: 800px) {
+.sign-up-input-field {
+    width: 80%;
+}
 }

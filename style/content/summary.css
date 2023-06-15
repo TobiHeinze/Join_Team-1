@@ -10,7 +10,7 @@
 .blue-line-horizontal {
     width: 200px;
     height: 3px;
-    margin-bottom: 42px;
+    margin-bottom: 15px;
     margin-top: 15px;
     
 }
@@ -221,7 +221,7 @@ aside {
     }
 
     .blue-line-horizontal {
-        display: none;
+        width: 35%;
         
     }
     
