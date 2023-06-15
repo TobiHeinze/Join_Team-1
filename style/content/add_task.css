@@ -520,6 +520,12 @@
     .add-task-scroll {
         height: 44vh;
     }
+    .create-button2 {
+    top: 2%;
+    }
+    .add-task-x-position {
+        top: 26%;
+    }
 }
 
 .add-task-scroll::-webkit-scrollbar {
