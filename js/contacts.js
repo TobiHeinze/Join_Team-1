@@ -9,6 +9,7 @@ async function renderContacts() {
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
+    resizeFunction();
 }
 
 
@@ -22,8 +23,8 @@ async function renderContacts() {
 //         document.getElementById('marginLeftContact').style.marginLeft = '0';
 //     }
 // });
-
-window.addEventListener('resize', function () {
+window.addEventListener('resize', resizeFunction);
+function resizeFunction() {
     if (window.innerWidth <= 800) {
         document.getElementById('marginLeftContact').style.marginLeft = '0';
         document.getElementById('marginLeftContact').style.marginRight = '0';
@@ -33,7 +34,7 @@ window.addEventListener('resize', function () {
         document.getElementById('marginLeftContact').style.marginRight = '1%';
 
     }
-});
+}
 
 
 /**
