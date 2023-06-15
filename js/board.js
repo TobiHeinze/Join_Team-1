@@ -21,10 +21,9 @@ async function renderBoardContent() {
 }
 
 
-
 function generateBoardHTML(index) {
 	return `
-	<div id="taskNumber${index}" class="task-container-mobile" draggable="true" ondrag="animateDraggedElement(${index})" ondragstart="startDragging(${index})">
+	<div id="taskNumber${index}" onclick="openTaskView(${index})" class="task-container-mobile hover" draggable="true" ondrag="animateDraggedElement(${index})" ondragstart="startDragging(${index})">
 		<span id="taskCategoryName${index}" class="task-category-name">${contentArray['tasks']['categoryName'][index]}</span>
 		<span id="taskTitle${index}" class="task-title">${contentArray['tasks']['title'][index]}</span>
 		<span id="taskDescription${index}" class="task-description">${contentArray['tasks']['description'][index]}</span>
@@ -131,8 +130,6 @@ function searchTasks() {
 	}
 	document.getElementById('searchField').value = ``;
 }
-
-
 
 
 function renderBoard() {

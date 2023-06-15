@@ -53,8 +53,8 @@ textarea {
     /* margin-left: auto; */
     /* margin-right: auto; */
     /* border: 2px solid black; */
-    margin-top: 4vh;
-    margin-bottom: 4vh;
+    padding-top: 30px;
+    /* padding-bottom: 45px; */
 }
 
 .contacts-content-box {

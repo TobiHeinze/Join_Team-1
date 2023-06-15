@@ -105,3 +105,142 @@
     right: 5%;
     border-radius: 10px;
 }
+
+
+
+
+/* -------------ab hier von Tobi--------------- */
+
+
+.task-background {
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 300;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.task-view-container {
+	background-color: white;
+	border-radius: 30px;
+	padding: 3%;
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	margin: 3%;
+	max-width: 620px;
+}
+
+.task-view-category-name {
+	font-size: 27px;
+	font-weight: 400;
+	padding: 4px 37px;
+	border-radius: 8px;
+	color: white;
+}
+
+.task-view-title {
+	font-size: 36px;
+	font-weight: 700;
+	color: #2a3647;
+	padding: 3% 0;
+}
+
+.task-view-description {
+	font-size: 16px;
+	font-weight: 400;
+	color: black;
+	padding-bottom: 2%;
+	word-break: keep-all;
+}
+
+.task-view-due-date {
+	padding: 2% 0;
+}
+
+.assigned-to-task-view {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 1% 0;
+	margin-top: 4%;
+	font-weight: 400;
+}
+
+.task-view-priority {
+	padding: 2% 0;
+	display: flex;
+	align-items: center;
+	margin-bottom: 1vh;
+}
+
+.task-view-priority img {
+	padding-left: 16px;
+}
+
+.task-view-icon {
+	margin-right: 3vw;
+	font-size: 16px;
+	width: 3.5vh;
+	height: 3.5vh;
+	max-width: 40px;
+	max-height: 40px;
+}
+
+.task-view-prio-image {
+	height: 35px;
+}
+
+.subtask-task-view {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 1vh 0;
+	padding-right: 3vw;
+}
+
+.subtask-task-view img {
+	padding-right: 1vw;
+}
+
+.task-view-subtask-container {
+	display: flex;
+	font-weight: 400;
+	flex-wrap: wrap;
+	margin-bottom: 2vh;
+}
+
+.task-view-space-between {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.task-view-space-between img:hover {
+	cursor: pointer;
+}
+
+.task-view-change-section {
+	display: flex;
+	align-items: end;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.task-view-change-img {
+	display: flex;
+	justify-content: center;
+	padding-left: 20px;
+}
+
+.task-view-change-img img:hover {
+	cursor: pointer;
+}
+
