@@ -23,12 +23,6 @@
     margin-bottom: 10px;
 }
 
-
-
-/* .contacts-list h3 {
-    padding-left: 24px;
-} */
-
 .line img {
     width: 90%;
     height: 1px;
@@ -95,6 +89,17 @@
     opacity: 1;
 }
 
+/* CSS für die Scrollbar contact page */
+.overflow-scroll {
+    margin-left: 5%;
+    margin-right: 2%;
+    height: 77vh;
+    overflow-y: scroll;
+}
+
+.overflow-scroll::-webkit-scrollbar {
+    width: 5px;
+}
 
 .overflow-scroll::-webkit-scrollbar-thumb {
     border: 7px solid #A8A8A8;
