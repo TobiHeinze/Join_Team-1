@@ -11,7 +11,9 @@
             "./js/summary.js",
             "./js/task_view.js",
             "./js/task.js",
-            "./js/taskHTML.js"
+            "./js/taskHTML.js",
+            "./storage.js",
+            "./script.js"
         ]
     },
     "opts": {
