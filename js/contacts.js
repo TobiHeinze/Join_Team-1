@@ -84,7 +84,7 @@ function addNewContact() {
 
 // ausgelagerte funktionen für updatenewcontact funktion
 function processContactName() {
-    let addNewContactName = document.getElementById('addNewContactName').value;
+    let addNewContactName = document.getElementById('addNewContactName').value.trim().replace(/\s+/g, ' ');;
     contentArray['contacts']['name'].push(addNewContactName);
 
     let nameArray = addNewContactName.split(" ");
