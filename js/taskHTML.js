@@ -123,7 +123,7 @@ function renderAddTaskHTML() {
 function addTaskFloatHTML() {
     return /*html*/`
 <div id="hideFloatAddTask" class="border">
-  <div onclick="renderContacts()" class="add-task-x-position-float">
+  <div onclick="goBackToPreviousPage()" class="add-task-x-position-float">
     <img src="./assets/img/x-button-black.png" alt="x-button-img">
   </div>
   <div class="mt-11 responsive-hide">

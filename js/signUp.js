@@ -34,6 +34,7 @@ async function register() {
   contentArray.users.name.push(name);
   contentArray.users.email.push(email);
   contentArray.users.password.push(password);
+  contentArray.users.photo.push('guest');
 
   try {
     // Save the updated contentArray to the server

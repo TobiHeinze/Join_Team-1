@@ -52,7 +52,7 @@ function renderContactDescriptionHTML(i) {
         <div>
           <h3 class="font-27">${contentArray["contacts"]["name"][i]}</h3>
         </div>
-        <div onclick="renderFloatAddTask()" class="add-task">
+        <div onclick="renderFloatAddTask('contacts')" class="add-task">
           <img src="./assets/img/contact-plus.png" alt="plus-img">
           <span>Add Task</span>
         </div>

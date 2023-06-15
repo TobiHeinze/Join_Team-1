@@ -17,7 +17,8 @@ async function renderAddTask() {
  * This function renders the add task popup when klick in the contact area to give a special contact a task
  * 
  */
-async function renderFloatAddTask() {
+async function renderFloatAddTask(page) {
+    previousPage = page;
     contentArray = await getItem(key);
     if (window.innerWidth > 800) {
         document.getElementById('popUpDiv').classList.remove('d-none');
@@ -32,6 +33,18 @@ async function renderFloatAddTask() {
         document.getElementById("popUpDiv").innerHTML = await renderAddTask();
         document.getElementById('addXButtonTask').classList.remove('d-none');
     }
+}
+
+
+let previousPage; // Variable zum Speichern der vorherigen Seite wird in render float task gemacht
+// Funktion, um beim abbrechen von add task zur vorherigen Seite zurückzugehen
+function goBackToPreviousPage() {
+  // Hier kannst du basierend auf dem Wert von previousPage zur entsprechenden Seite navigieren
+  if (previousPage === 'contacts') {
+    renderContacts(); // Beispiel: Zurück zur Kontakte-Seite
+  } else if (previousPage === 'board') {
+    renderBoard(); // Beispiel: Zurück zur Board-Seite
+  }
 }
 
 
