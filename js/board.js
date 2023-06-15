@@ -4,7 +4,6 @@ let currentDraggedElement;
 async function renderBoardContent() {
 	contentArray = await getItem(key);
 	emptyBordContainer();
-
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
 
 		for (let j = 0; j < 4; j++) {
