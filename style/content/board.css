@@ -26,7 +26,7 @@
 	min-height: 41px;
 	height: 5vh;
 	width: 100%;
-	padding: 16px 21px 10px 21px;
+	padding: 12px 21px 10px 21px;
 	margin-right: 8px;
 	box-sizing: border-box;
 	border-radius: 10px;
@@ -61,7 +61,7 @@
 	height: 4vh;
 	margin-left: 4vw;
 	max-height: 55px;
-	background-color: #2A3647;
+	background-color: #2a3647;
 	color: white;
 	font-weight: 700;
 	font-size: 21px;
@@ -69,7 +69,7 @@
 
 #boardFindSectionImage:hover {
 	cursor: pointer;
-	background-color: #29ABE2;
+	background-color: #29abe2;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -99,6 +99,10 @@
 	margin-bottom: 3vh;
 }
 
+.hover:hover {
+	cursor: pointer;
+}
+
 .task-container-animation {
 	transition: 80ms;
 	box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
@@ -109,11 +113,11 @@
 
 .task-container-mobile-empty {
 	font-size: 16px;
-	background-color: #D1D1D1;
-	border: 1px dashed #A8A8A8;
+	background-color: #d1d1d1;
+	border: 1px dashed #a8a8a8;
 	border-radius: 10px;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-	color: #A8A8A8;
+	color: #a8a8a8;
 	height: 5vh;
 	min-height: 50px;
 	display: flex;
@@ -133,14 +137,14 @@
 .task-title {
 	font-size: 16px;
 	font-weight: 700;
-	color: #2A3647;
+	color: #2a3647;
 	padding: 5% 0;
 }
 
 .task-description {
 	font-size: 16px;
 	font-weight: 400;
-	color: #A8A8A8;
+	color: #a8a8a8;
 }
 
 .progress-bar-container {
@@ -156,13 +160,13 @@
 	width: 90%;
 	border-radius: 2px;
 	height: 0.8vh;
-	background: #F4F4F4;
+	background: #f4f4f4;
 }
 
 .task-progress-bar-done {
 	border-radius: 2px;
 	height: 0.8vh;
-	background-color: #29ABE2;
+	background-color: #29abe2;
 }
 
 .taskProgressBarCounter {
@@ -175,18 +179,20 @@
 .task-assigned-to-icon {
 	font-size: 12px;
 	font-weight: 400;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 8px;
-    color: white;
-    width: 3.5vh;
-    height: 3.5vh;
-    border: 1px solid #FFFFFF;
-    border-radius: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 8px 8px;
+	color: white;
+	max-width: 35px;
+	max-height: 35px;
+	width: 3.5vh;
+	height: 3.5vh;
+	border: 1px solid #ffffff;
+	border-radius: 50%;
 	margin-right: -5%;
-	background-color: #2A3647;
+	background-color: #2a3647;
 }
 
 .task-assigned-to-prio-image {
@@ -206,11 +212,12 @@
 .all-task-container {
 	display: flex;
 	flex-direction: row;
-	/* flex-wrap: wrap; */
 	justify-content: space-between;
-	height: 70vh;
-    overflow-y: scroll;
-	/* flex: 1; */
+	height: calc(100vh - 305px);
+	overflow-y: scroll;
+	border-radius: 30px;
+	padding-top: 15px;
+	padding-right: 15px;
 }
 
 .task-section-container {
@@ -220,34 +227,12 @@
 }
 
 
-
-/* .task-background {
-    background-color: rgba(0, 0, 0, 0.3);
-    z-index: 300;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-} */
-
-
-
-
-
-
-
-
-
-
 /* -----------RESPONSIVE----------------- */
-
 
 @media (max-width: 1350px) {
 	.all-task-container {
 		flex-direction: column;
+		height: calc(100vh - 355px);
 	}
 
 	.task-section-container {
@@ -258,7 +243,7 @@
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.board-header-mobile {
 		width: 100%;
 	}
@@ -266,24 +251,28 @@
 	.board-header-mobile img {
 		display: flex;
 	}
-	
-	.textarea-find-task {
-		padding: 16px 21px 10px 21px;
-	}
-	
+
 	.form-find-task {
 		width: 100%;
 	}
-	
+
 	.board-find-section {
 		justify-content: left;
 	}
-	
+
 	#boardFindSectionImage {
 		display: none;
 	}
 }
 
+@media (max-width: 800px) {
+	.all-task-container {
+		height: calc(100vh - 460px);
+	}
+}
 
-
-
+@media (max-width: 360px) {
+	.all-task-container {
+		height: calc(100vh - 395px);
+	}
+}
