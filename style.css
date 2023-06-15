@@ -27,7 +27,7 @@ textarea {
 }
 
 .d-flex {
-    display: flex;
+    display: flex ;
 }
 
 .align-center {
@@ -59,7 +59,9 @@ textarea {
 
 .contacts-content-box {
     display: flex;
+    word-break: break-word;
 }
+
 
 #contactsContent {
     min-width: 280px;

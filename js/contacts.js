@@ -5,9 +5,11 @@
 async function renderContacts() {
     contentArray = await getItem(key);
     resetContent();
+    document.getElementById('content').classList.add('d-none');
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
+    resizeFunction();
 }
 
 
@@ -15,11 +17,24 @@ async function renderContacts() {
  * This function is checking if the window size is smaller than 800px, then it clears a div from the contact description area
  * 
  */
-window.addEventListener('resize', function () {
-    if (window.innerWidth < 800) {
+// window.addEventListener('resize', function () {
+//     if (window.innerWidth < 800) {
+//         document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+//         document.getElementById('marginLeftContact').style.marginLeft = '0';
+//     }
+// });
+window.addEventListener('resize', resizeFunction);
+function resizeFunction() {
+    if (window.innerWidth <= 800) {
+        document.getElementById('marginLeftContact').style.marginLeft = '0';
+        document.getElementById('marginLeftContact').style.marginRight = '0';
         document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
+    } else {
+        document.getElementById('marginLeftContact').style.marginLeft = '3%';
+        document.getElementById('marginLeftContact').style.marginRight = '1%';
+
     }
-});
+}
 
 
 /**
@@ -27,22 +42,17 @@ window.addEventListener('resize', function () {
  * 
  */
 function renderContactDescription(i) {
-
     if (window.innerWidth > 800) {
-        
         document.getElementById("contactsChangeDescriptionContent").innerHTML = ``;
         document.getElementById('contactsChangeDescriptionContent').style.display = 'flex';
         slideInContact();
         document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
-
     } else if (window.innerWidth < 800) {
         resetContent();
-        
         document.getElementById("content").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
         document.getElementById("ContactDescriptionHeader").classList.remove('d-none');
-
     }
 }
 

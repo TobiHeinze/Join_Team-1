@@ -21,6 +21,7 @@
     position: relative;
     overflow: hidden;
     width: 90vw;
+    z-index: 110;
 }
 
 .top-bg {

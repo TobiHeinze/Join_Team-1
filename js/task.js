@@ -17,30 +17,54 @@ async function renderAddTask() {
  * This function renders the add task popup when klick in the contact area to give a special contact a task
  * 
  */
-function renderFloatAddTask() {
+async function renderFloatAddTask() {
+    contentArray = await getItem(key);
     if (window.innerWidth > 800) {
-        document.getElementById("content").innerHTML = addTaskFloat();
-        // hier sollte am besten auch renderaddtask gerendert werden und nicht extra der floating style!
-        // document.getElementById("popUpDiv").innerHTML = renderAddTask();
+        document.getElementById('popUpDiv').classList.remove('d-none');
+        document.getElementById('popUpDiv').classList.add('d-flex');
+        slideInPopUp();
+        currentSubtasks = [];
+    currentSubtaskStatus = [];
+        document.getElementById('popUpDiv').innerHTML = addTaskFloatHTML();
+        renderAddTaskCategoryOptions();
+    renderAddTaskAssignedToOptions();
     } else {
-        resetContent();
-        document.getElementById("popUpDiv").innerHTML = renderAddTask();
+        document.getElementById("popUpDiv").innerHTML = await renderAddTask();
+        document.getElementById('addXButtonTask').classList.remove('d-none');
     }
 }
 
 
-/**
- * This function opens the floating add task editor to add new tasks
- * 
- */
-function addTaskFloat() {
-    document.getElementById('popUpDiv').classList.remove('d-none');
-    document.getElementById('popUpDiv').classList.add('d-flex');
-    slideInPopUp();
-    // hier könnten wir vllt noch den selben addtask einbauen wir  normal nur den mit media query 
-    // verändern dann müsste man ids nicht doppelt vergeben
-    document.getElementById('popUpDiv').innerHTML = addTaskFloatHTML();
-}
+
+// alte version zum aufrufen des add task im contacts bereich
+// /**
+//  * This function renders the add task popup when klick in the contact area to give a special contact a task
+//  * 
+//  */
+// function renderFloatAddTask() {
+//     if (window.innerWidth > 800) {
+//         document.getElementById("content").innerHTML = addTaskFloat();
+//         // hier sollte am besten auch renderaddtask gerendert werden und nicht extra der floating style!
+//         // document.getElementById("popUpDiv").innerHTML = renderAddTask();
+//     } else {
+//         resetContent();
+//         document.getElementById("popUpDiv").innerHTML = renderAddTask();
+//     }
+// }
+
+
+// /**
+//  * This function opens the floating add task editor to add new tasks
+//  * 
+//  */
+// function addTaskFloat() {
+//     document.getElementById('popUpDiv').classList.remove('d-none');
+//     document.getElementById('popUpDiv').classList.add('d-flex');
+//     slideInPopUp();
+//     // hier könnten wir vllt noch den selben addtask einbauen wir  normal nur den mit media query 
+//     // verändern dann müsste man ids nicht doppelt vergeben
+//     document.getElementById('popUpDiv').innerHTML = renderAddTask();
+// }
 
 
 /**
@@ -88,13 +112,25 @@ function renderAddTaskCategoryOptions() {
 function addNewCategory() {
     document.getElementById('selectBox1').classList.add('d-none');
     document.getElementById('checkboxes1').classList.add('d-none');
-    document.getElementById('renderAddNewCategory').innerHTML = /*html*/`
-    <div class="new-category">
-    <input id="newCategoryValue" type="text" placeholder="New category name">
-    <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
-    <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
-    </div>
-    `;
+    if (document.getElementById('renderAddNewCategory') !== null) {
+        document.getElementById('renderAddNewCategory').innerHTML = /*html*/`
+          <div class="new-category">
+            <input id="newCategoryValue" type="text" placeholder="New category name">
+            <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
+            <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+          </div>
+        `;
+      }
+      
+      if (document.getElementById('renderAddNewCategoryFloat') !== null) {
+        document.getElementById('renderAddNewCategoryFloat').innerHTML = /*html*/`
+          <div class="new-category-float">
+            <input id="newCategoryValue" type="text" placeholder="New category name">
+            <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
+            <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+          </div>
+        `;
+      }
     // war mal dafür da color in kategorien auszuwählen, aber das passiert nun random
     // for (let i = 0; i < contentArray['settings']['categoryBgColor'].length; i++) {
     //     document.getElementById('addColorToNewCategory').innerHTML += /*html*/`
@@ -105,6 +141,7 @@ function addNewCategory() {
 
 function closeNewCategory() {
     document.getElementById('renderAddNewCategory').innerHTML = ``;
+    document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
     document.getElementById('selectBox1').classList.remove('d-none');
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
@@ -115,7 +152,12 @@ function addNewCategoryToArray() {
     category = document.getElementById('newCategoryValue').value;
     // contentArray['settings']['categoryName'].push(category);
     // category color auch hinzufügen !
+    if (document.getElementById('renderAddNewCategory') !== null) {
     document.getElementById('renderAddNewCategory').innerHTML = ``;
+    }
+    if (document.getElementById('renderAddNewCategoryFloat') !== null) {
+    document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
+    }
     document.getElementById('selectBox1').classList.remove('d-none');
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
@@ -236,7 +278,7 @@ function addRandomBackgroundColorToNewCategory() {
 //       console.log("Enter-Taste gedrückt im Input-Feld mit ID:", event.target.id);
 //     }
 //   }
-  
+
 //   // Input-Felder auswählen und Event-Listener hinzufügen
 //   var inputFields = document.querySelectorAll("input");
 //   inputFields.forEach(function(input) {
@@ -384,6 +426,9 @@ currentSubtasks = [];
 currentSubtaskStatus = [];
 function addSubtask() {
     let subtask = document.getElementById('inputAddSubtaskContent').value;
+    if (subtask === '') {
+        return console.log('gib einen subtask ein'); // Beendet die Funktion, wenn der Wert leer ist
+    }
     document.getElementById('addSubtaskContent').innerHTML = ``;
     document.getElementById('inputAddSubtaskContent').value = ``;
     currentSubtasks.push(subtask);
