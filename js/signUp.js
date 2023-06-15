@@ -65,17 +65,17 @@ function renderSignUpHTML() {
             <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
             <div class="input-container">
                 <div class="name">
-                    <div class="input-field">
+                    <div class="sign-up-input-field">
                         <input id="registerName" class="input" type="text" placeholder="Name" required>
                         <img src="./assets/img/charakter-icon.png" alt="character-img">
                     </div>
 
-                    <div class="input-field">
+                    <div class="sign-up-input-field">
                         <input id="registerEmail" required class="input" type="email" name="email" placeholder="E-Mail">
                         <img src="./assets/img/email-icon.png">
                     </div>
 
-                    <div class="input-field">
+                    <div class="sign-up-input-field">
                         <input id="registerPassword" required class="input togglePassword" type="password"
                             name="password" placeholder="Password">
                         <img class="toggleImage" src="./assets/img/password-icon.png">
