@@ -131,8 +131,8 @@ function renderLoginHTML() {
  <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
  <div class="remember-check">
      <div class="check"><div class="checkbox">
-  <input type="checkbox" id="myCheckbox">
-  <label for="myCheckbox"></label>
+  <input  type="checkbox" id="myCheckbox">
+  <label  for="myCheckbox"></label>
 </div>
   Remember me</div>
      <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>

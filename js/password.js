@@ -22,7 +22,7 @@ function renderForgotPasswordHTML() {
            <a href="index.html"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" onclick="history.back()"></a>
            <h1 class="${titleClass}">I forgot my password</h1>
            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
-           <span class="font-21 font-weight-400">
+           <span class="font-21 font-weight-400" style="margin-bottom: 20px">
                Don't worry! We will send you an email with the instructions to reset your password.
            </span>
            <div class="input-container">
