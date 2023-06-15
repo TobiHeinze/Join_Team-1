@@ -208,12 +208,13 @@ function addRandomBackgroundColorToNewCategory() {
 }
 
 
-// ausgelagerte funktionen von der updatetaskarray funktion um die klein zu halten
+// ausgelagerte funktionen von der updatetaskarray funktion um diese klein zu halten
 function processTitle() {
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
     console.log(addTitle);
 }
+
 
 function processDescription() {
     let addDescription = document.getElementById('addDescription').value;
@@ -221,11 +222,13 @@ function processDescription() {
     console.log(addDescription);
 }
 
+
 function processDueDate() {
     let addDueDate = document.getElementById('addDueDate').value;
     contentArray['tasks']['dueDate'].push(addDueDate);
     console.log(addDueDate);
 }
+
 
 function processCategory() {
     //  zur add new category wird eine random color hinzugefügt noch!
@@ -257,10 +260,12 @@ function processCategory() {
     }
 }
 
+
 function processTaskOption() {
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
     contentArray['tasks']['taskStatus'].push('0');
 }
+
 
 function processAssignedTo() {
     // assigned to selector 
@@ -298,6 +303,7 @@ function processAssignedTo() {
     console.log(contactImageBgColor);
 }
 
+
 function processSubtasks() {
     // subtask
     if (currentSubtasks.length > 0) {
@@ -315,6 +321,7 @@ function processSubtasks() {
     }
 }
 
+
 function processPriority() {
     // prio
     if (addPriority.length === 0) {
@@ -328,14 +335,17 @@ function processPriority() {
 }
 
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 /**
  * This function saves onclick when everything in the form is required in the renderAddTaskHTML function
  * 
  */
 async function updateTaskArray() {
-    // await getItem(key);
-
+    await getItem(key);
     processTitle();
     processDescription();
     processDueDate();
@@ -344,128 +354,9 @@ async function updateTaskArray() {
     processAssignedTo();
     processSubtasks();
     processPriority();
-
-    // let addTitle = document.getElementById('addTitle').value;
-    // contentArray['tasks']['title'].push(addTitle);
-    // console.log(addTitle);
-
-    // let addDescription = document.getElementById('addDescription').value;
-    // contentArray['tasks']['description'].push(addDescription);
-    // console.log(addDescription);
-
-    // let addDueDate = document.getElementById('addDueDate').value;
-    // contentArray['tasks']['dueDate'].push(addDueDate);
-    // console.log(addDueDate);
-
-
-
-
-    //  zur add new category wird eine random color hinzugefügt noch!
-    // if (document.getElementById('categoryOptionShowSelected').textContent.trim() === "Select task category") {
-    //     contentArray['tasks']['categoryName'].push(""); // Leerer String übergeben für keine kategorie
-    //     contentArray['tasks']['categoryBgColor'].push(""); //leerer string für keine farbe übergeben
-    // } else {
-    //     if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
-    //         //add new category to settings and push to category task 
-    //         let addNewCategory = document.getElementById('newCategoryName').innerHTML;
-    //         // let addNewCategory = addNewCategory1.trim();
-    //         contentArray['tasks']['categoryName'].push(addNewCategory.trim());
-    //         contentArray['settings']['categoryName'].push(addNewCategory.trim());
-    //         contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
-    //         console.log('add new category name:', addNewCategory);
-    //     } else {
-    //         //add only task category option from given options
-    //         let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
-    //         contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
-    //         console.log('add given category:', addTaskStatus);
-    //         // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
-    //     }
-    //     // zieht die farbe der kategorie raus
-    //     let colorId = document.getElementById('addNewCategoryColor');
-    //     let styleColor = window.getComputedStyle(colorId);
-    //     let backgroundColor = styleColor.getPropertyValue('background-color');
-    //     contentArray['tasks']['categoryBgColor'].push(backgroundColor);
-    //     console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
-    // }
-
-
-
-
-    // // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
-    // contentArray['tasks']['taskStatus'].push('0');
-
-
-
-
-
-    // // assigned to selector 
-    // let selectedNames = [];
-    // let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    // checkboxes.forEach(checkbox => {
-    //     let selectedName = checkbox.value;
-    //     selectedNames.push(selectedName);
-    // });
-
-    // let nameInitials = [];
-    // let contactImageBgColor = [];
-
-    // if (selectedNames.length > 0) {
-    //     selectedNames.forEach(selectedName => {
-    //         let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
-    //         let initials = contentArray['contacts']['nameInitials'][contactIndex];
-    //         let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
-
-    //         nameInitials.push(initials);
-    //         contactImageBgColor.push(bgColor);
-    //     });
-
-    //     contentArray['tasks']['assignedTo'].push({
-    //         "name": selectedNames,
-    //         "nameInitials": nameInitials,
-    //         "contactImageBgColor": contactImageBgColor
-    //     });
-    // } else {
-    //     contentArray['tasks']['assignedTo'].push({
-    //         "name": [],
-    //         "nameInitials": [],
-    //         "contactImageBgColor": [],
-    //     });
-    // }
-    // console.log(selectedNames);
-    // console.log(nameInitials);
-    // console.log(contactImageBgColor);
-
-
-
-
-
-
-    // // subtask
-    // if (currentSubtasks.length > 0) {
-    //     contentArray['tasks']['subtasks'].push({
-    //         "subtask": currentSubtasks,
-    //         "subtaskStatus": currentSubtaskStatus, //automatisch auf open bei hinzufügen
-    //     });
-    //     console.log(currentSubtasks);
-    //     console.log(currentSubtaskStatus);
-    // } else {
-    //     contentArray['tasks']['subtasks'].push({
-    //         "subtask": [],
-    //         "subtaskStatus": [],
-    //     });
-    // }
-
-    // // prio
-    // if (addPriority.length === 0) {
-    //     addPriority = "low";
-    //     contentArray['tasks']['priority'].push(addPriority);
-    //     console.log("ohne ausgewählte prio immer low: ", addPriority);
-    // } else {
-    //     contentArray['tasks']['priority'].push(addPriority);
-    //     console.log("standart mit ausgewählert prio: ", addPriority);
-    // }
-
-
+    document.getElementById("addTaskCreatedDiv").classList.add("show");
+    await delay(2000);
+    document.getElementById("addTaskCreatedDiv").classList.remove("show");
     await setItem(key, contentArray);
     renderBoardContent();
     renderBoard();
