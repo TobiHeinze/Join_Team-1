@@ -85,6 +85,7 @@ function renderAddTaskHTML() {
         <div id="checkboxes2" class="flex-checkboxes">
         </div>
       </div>
+      <div id="renderAddContactInitials"></div>
       <div class="subtask">
         <span class="mt-11">Subtasks</span>
         <div class="subtask-box">
@@ -156,10 +157,10 @@ function addTaskFloatHTML() {
             </div>
             <div id="changePrioColorlow" onclick="addPrio('low')" class="prio-class">
               <span>Low</span>
-              <img src="./assets/img/task-prio-low.png" alt="low-img">
-            </div>
+            <img src="./assets/img/task-prio-low.png" alt="low-img">
           </div>
         </div>
+      </div>
         <div class="add-task-date">
           <span class="mt-11">Due date</span>
           <div class="date-box-add-task">

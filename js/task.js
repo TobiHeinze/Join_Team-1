@@ -207,6 +207,21 @@ function renderAddTaskAssignedToOptions() {
 function toggleCheckbox(index) {
     let checkbox = document.getElementById(`assignedToOptions${index}`);
     checkbox.checked = !checkbox.checked;
+    toggleCheckboxColor(index);
+}
+
+
+function toggleCheckboxColor(index) {
+
+    if (!document.getElementById(`colorAlreadyAdded${index}`)) {
+    document.getElementById('renderAddContactInitials').innerHTML += /*html*/`
+    <div id="clearColorAlreadyAdded${index}">
+    <div id="colorAlreadyAdded${index}" class="circle" style="background-color: ${contentArray['contacts']['contactImageBgColor'][index]}">
+    </div>
+    `;
+    } else if (document.getElementById(`clearColorAlreadyAdded${index}`)) {
+        document.getElementById(`clearColorAlreadyAdded${index}`).innerHTML = ``;
+    }
 }
 
 
