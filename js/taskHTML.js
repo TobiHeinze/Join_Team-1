@@ -28,16 +28,16 @@ function renderAddTaskHTML() {
       <div class="prio">
         <span class="mt-11 mb-11">Priority</span>
         <div class="prio-row">
-          <div onclick="addPrio('urgent')" class="prio-class">
-            <span id="addPrioUrgent">Urgent</span>
-            <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
-          </div>
-          <div onclick="addPrio('medium')" class="prio-class">
-            <span>Medium</span>
-            <img src="./assets/img/task-prio-medium.png" alt="medium-img">
-          </div>
-          <div onclick="addPrio('low')" class="prio-class">
-            <span>Low</span>
+            <div id="changePrioColorurgent" onclick="addPrio('urgent')" class="prio-class">
+              <span id="addPrioUrgent">Urgent</span>
+              <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
+            </div>
+            <div id="changePrioColormedium" onclick="addPrio('medium')" class="prio-class">
+              <span>Medium</span>
+              <img src="./assets/img/task-prio-medium.png" alt="medium-img">
+            </div>
+            <div id="changePrioColorlow" onclick="addPrio('low')" class="prio-class">
+              <span>Low</span>
             <img src="./assets/img/task-prio-low.png" alt="low-img">
           </div>
         </div>
@@ -146,15 +146,15 @@ function addTaskFloatHTML() {
         <div class="prio">
           <span class="mt-11 mb-11">Priority</span>
           <div class="prio-row">
-            <div onclick="addPrio('urgent')" class="prio-class">
+            <div id="changePrioColorurgent" onclick="addPrio('urgent')" class="prio-class">
               <span id="addPrioUrgent">Urgent</span>
               <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
             </div>
-            <div onclick="addPrio('medium')" class="prio-class">
+            <div id="changePrioColormedium" onclick="addPrio('medium')" class="prio-class">
               <span>Medium</span>
               <img src="./assets/img/task-prio-medium.png" alt="medium-img">
             </div>
-            <div onclick="addPrio('low')" class="prio-class">
+            <div id="changePrioColorlow" onclick="addPrio('low')" class="prio-class">
               <span>Low</span>
               <img src="./assets/img/task-prio-low.png" alt="low-img">
             </div>
