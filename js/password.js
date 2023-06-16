@@ -19,7 +19,7 @@ function renderForgotPasswordHTML() {
   return /*html*/ `<img class="${imageClass}" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
   <div class="big-container">
-       <form class="password-container">
+       <form onsubmit="showEmailSentMessage(); return false"  class="password-container" >
            <a href="index.html"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" onclick="history.back()"></a>
            <h1 class="${titleClass}">I forgot my password</h1>
            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
@@ -28,10 +28,10 @@ function renderForgotPasswordHTML() {
            </span>
            <div class="input-container">
                <div class="input-field">
-                   <input required class="input" type="email" name="email" placeholder="E-Mail">
+                   <input  class="input" type="email" name="email" placeholder="E-Mail" required>
                    <img src="./assets/img/email-icon.png">
                </div>
-               <button onclick="showEmailSentMessage()" type="button" class="button-dark login-btn">Send me the email</button>
+               <button type="submit" class="button-dark login-btn">Send me the email</button>
            </div>
        </form>
    </div>
@@ -95,10 +95,10 @@ function renderResetPasswordHTML() {
            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
            <span class="font-21 font-weight-400">Change your account password here.</span> <br>
            <div style="width: 80%" class="input-field">
-               <input class="input" type="password" name="password" placeholder="New password">
+               <input class="input" type="password" name="password" placeholder="New password" minlength="3"  required>
            </div>
            <div style="margin-top: -20px; width: 80%" class="input-field">
-               <input class="input" type="password" name="password" placeholder="Confirm password">
+               <input class="input" type="password" name="password" placeholder="Confirm password" minlength="3"  required>
            </div>
 
            <button type="submit" class="button-dark login-btn">Continue</button>

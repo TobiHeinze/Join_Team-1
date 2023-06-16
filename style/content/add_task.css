@@ -217,9 +217,14 @@
     justify-content: space-between;
     align-items: center;
     width: 140px;
+    font-size: 16px;
     cursor: pointer;
     z-index: 1;
     height: 53px;
+}
+
+.add-task-button img{
+    margin-right: -5px;
 }
 
 
