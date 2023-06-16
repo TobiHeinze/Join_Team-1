@@ -2,10 +2,6 @@
     margin-top: 0;
 }
 
-.mb-11 {
-    margin-bottom: 11px;
-}
-
 .border {
     display: flex;
     flex-direction: column;

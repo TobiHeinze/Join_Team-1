@@ -17,7 +17,8 @@ async function renderAddTask() {
  * This function renders the add task popup when klick in the contact area to give a special contact a task
  * 
  */
-async function renderFloatAddTask() {
+async function renderFloatAddTask(page) {
+    previousPage = page;
     contentArray = await getItem(key);
     if (window.innerWidth > 800) {
         document.getElementById('popUpDiv').classList.remove('d-none');
@@ -32,6 +33,18 @@ async function renderFloatAddTask() {
         document.getElementById("popUpDiv").innerHTML = await renderAddTask();
         document.getElementById('addXButtonTask').classList.remove('d-none');
     }
+}
+
+
+let previousPage; // Variable zum Speichern der vorherigen Seite wird in render float task gemacht
+// Funktion, um beim abbrechen von add task zur vorherigen Seite zurückzugehen
+function goBackToPreviousPage() {
+  // Hier kannst du basierend auf dem Wert von previousPage zur entsprechenden Seite navigieren
+  if (previousPage === 'contacts') {
+    renderContacts(); // Beispiel: Zurück zur Kontakte-Seite
+  } else if (previousPage === 'board') {
+    renderBoard(); // Beispiel: Zurück zur Board-Seite
+  }
 }
 
 
@@ -396,5 +409,36 @@ let addPriority = [];
  */
 function addPrio(priority) {
     addPriority = priority;
+    resetPrioColor();
+    if (addPriority == 'urgent') {
+        document.getElementById(`changePrioColor${priority}`).style.background = '#FF3D00';
+        document.getElementById(`changePrioColor${priority}`).style.color = 'white';
+        document.querySelector(`#changePrioColor${priority} img`).src = './assets/img/task-prio-urgent-white.png';
+    }
+    if (addPriority == 'medium') {
+        document.getElementById(`changePrioColor${priority}`).style.background = '#FFA800';
+        document.getElementById(`changePrioColor${priority}`).style.color = 'white';
+        document.querySelector(`#changePrioColor${priority} img`).src = './assets/img/add-task-prio-medium-white.png';
+    }
+    if (addPriority == 'low') {
+        document.getElementById(`changePrioColor${priority}`).style.background = '#7AE229';
+        document.getElementById(`changePrioColor${priority}`).style.color = 'white';
+        document.querySelector(`#changePrioColor${priority} img`).src = './assets/img/add-task-prio-low-white.png';
+    }    
     console.log(addPriority);
+}
+
+
+function resetPrioColor() {
+    document.getElementById(`changePrioColorurgent`).style.background = 'white';
+    document.getElementById(`changePrioColorurgent`).style.color = 'black';
+    document.querySelector(`#changePrioColorurgent img`).src = './assets/img/task-prio-urgent.png';
+
+    document.getElementById(`changePrioColormedium`).style.background = 'white';
+    document.getElementById(`changePrioColormedium`).style.color = 'black';
+    document.querySelector(`#changePrioColormedium img`).src = './assets/img/task-prio-medium.png';
+
+    document.getElementById(`changePrioColorlow`).style.background = 'white';
+    document.getElementById(`changePrioColorlow`).style.color = 'black';
+    document.querySelector(`#changePrioColorlow img`).src = './assets/img/task-prio-low.png';
 }

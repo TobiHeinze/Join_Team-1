@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: taskHTML.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: taskHTML.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This is a help function thats olny sources out the HTML code to smaller the code
+ * 
+ * @returns html code
+ */
+function renderAddTaskHTML() {
+    return /*html*/ `
+&lt;div onclick="renderContacts()" id="addXButtonTask" class="add-task-x-position d-none">
+  &lt;img src="./assets/img/x-button-black.png" alt="x-button-img">
+&lt;/div>
+&lt;div class="mt-11 responsive-hide">
+  &lt;span>Kanban Project Management Tool&lt;/span>
+&lt;/div>
+&lt;h2 class="font-47 add-task-h2">Add Task&lt;/h2>
+&lt;form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;">
+  &lt;button class="create-button2">&lt;img class="create-button" src="./assets/img/create-button.png"
+      alt="create task">&lt;/button>
+  &lt;div class="desktop-size">
+    &lt;div class="add-task-responsive-left">
+      &lt;div class="title">
+        &lt;span>Title&lt;/span>
+        &lt;input id="addTitle" type="text" placeholder="Enter a Title" required>
+      &lt;/div>
+      &lt;div class="description">
+        &lt;span class="mt-11">Description&lt;/span>
+        &lt;textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description" required>&lt;/textarea>
+      &lt;/div>
+      &lt;div class="prio">
+        &lt;span class="mt-11 mb-11">Priority&lt;/span>
+        &lt;div class="prio-row">
+          &lt;div onclick="addPrio('urgent')" class="prio-class">
+            &lt;span id="addPrioUrgent">Urgent&lt;/span>
+            &lt;img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
+          &lt;/div>
+          &lt;div onclick="addPrio('medium')" class="prio-class">
+            &lt;span>Medium&lt;/span>
+            &lt;img src="./assets/img/task-prio-medium.png" alt="medium-img">
+          &lt;/div>
+          &lt;div onclick="addPrio('low')" class="prio-class">
+            &lt;span>Low&lt;/span>
+            &lt;img src="./assets/img/task-prio-low.png" alt="low-img">
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="add-task-date">
+        &lt;span class="mt-11">Due date&lt;/span>
+        &lt;div class="date-box-add-task">
+          &lt;input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy" required>
+          &lt;img src="./assets/img/task-calendar.png" alt="calendar-img">
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div class="add-task-line-margin">
+      &lt;div class="add-task-vertical-line">
+      &lt;/div>
+    &lt;/div>
+    &lt;div class="add-task-responsive-right">
+      &lt;div class="mb-11">Category&lt;/div>
+      &lt;div id="renderAddNewCategory">
+      &lt;/div>
+      &lt;div class="multiselect">
+        &lt;div class="selectBox" onclick="showCheckboxes(1)" id="selectBox1">
+          &lt;div class="flex">
+            &lt;div id="categoryOptionShowSelected">Select task category&lt;/div>
+            &lt;div id="addNewCategoryOption">
+            &lt;/div>
+            &lt;div class="arrow">&amp;#9660;&lt;/div>
+          &lt;/div>
+          &lt;div class="overSelect">&lt;/div>
+        &lt;/div>
+        &lt;div id="checkboxes1" class="flex-checkboxes">
+        &lt;/div>
+      &lt;/div>
+      &lt;div id="addColorToNewCategory">
+      &lt;/div>
+      &lt;div class="mb-11 mt-11">Assigned to&lt;/div>
+      &lt;div class="multiselect">
+        &lt;div class="selectBox" onclick="showCheckboxes(2)" id="selectBox2">
+          &lt;div class="flex">
+            &lt;div>Select contacts to assign&lt;/div>
+            &lt;div class="arrow">&amp;#9660;&lt;/div>
+          &lt;/div>
+          &lt;div class="overSelect">&lt;/div>
+        &lt;/div>
+        &lt;div id="checkboxes2" class="flex-checkboxes">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="subtask">
+        &lt;span class="mt-11">Subtasks&lt;/span>
+        &lt;div class="subtask-box">
+          &lt;input id="inputAddSubtaskContent" class="input-subtask" type="text" placeholder="Add new subtask">
+          &lt;img src="./assets/img/task-plus.png" alt="plus-img" onclick="addSubtask()">
+        &lt;/div>
+        &lt;div id="addSubtaskContent">
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="task-button-box">
+    &lt;div onclick="renderAddTask()" class="clear-task-button">
+      &lt;span>Clear&lt;/span>
+      &lt;img src="./assets/img/x-button-black.png" alt="x-img">
+    &lt;/div>
+    &lt;button class="add-task-button">
+      &lt;span>Create Task&lt;/span>
+      &lt;img src="./assets/img/hook.png" alt="haken-img">
+    &lt;/button>
+  &lt;/div>
+&lt;/form>
+&lt;div id="addTaskCreatedDiv" class="contact-created">
+  &lt;span>Task added to board&lt;/span>
+  &lt;img src="./assets/img/task-board.png" alt="board-img">
+&lt;/div>
+    `;
+}
+
+
+/**
+ * This is a help function thats olny sources out the HTML code to smaller the code
+ * 
+ * @returns html code
+ */
+function addTaskFloatHTML() {
+    return /*html*/`
+&lt;div id="hideFloatAddTask" class="border">
+  &lt;div onclick="goBackToPreviousPage()" class="add-task-x-position-float">
+    &lt;img src="./assets/img/x-button-black.png" alt="x-button-img">
+  &lt;/div>
+  &lt;div class="mt-11 responsive-hide">
+    &lt;span>Kanban Project Management Tool&lt;/span>
+  &lt;/div>
+  &lt;h2 class="font-47 add-task-h2">Add Task&lt;/h2>
+  &lt;form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;">
+    &lt;button class="create-button2">&lt;img class="create-button" src="./assets/img/create-button.png"
+        alt="create task">&lt;/button>
+    &lt;div class="desktop-size">
+      &lt;div class="add-task-responsive-left">
+        &lt;div class="title">
+          &lt;span>Title&lt;/span>
+          &lt;input id="addTitle" type="text" placeholder="Enter a Title" required>
+        &lt;/div>
+        &lt;div class="description">
+          &lt;span class="mt-11">Description&lt;/span>
+          &lt;textarea name="" id="addDescription" cols="4" rows="4" placeholder="Enter a Description" required>&lt;/textarea>
+        &lt;/div>
+        &lt;div class="prio">
+          &lt;span class="mt-11 mb-11">Priority&lt;/span>
+          &lt;div class="prio-row">
+            &lt;div onclick="addPrio('urgent')" class="prio-class">
+              &lt;span id="addPrioUrgent">Urgent&lt;/span>
+              &lt;img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
+            &lt;/div>
+            &lt;div onclick="addPrio('medium')" class="prio-class">
+              &lt;span>Medium&lt;/span>
+              &lt;img src="./assets/img/task-prio-medium.png" alt="medium-img">
+            &lt;/div>
+            &lt;div onclick="addPrio('low')" class="prio-class">
+              &lt;span>Low&lt;/span>
+              &lt;img src="./assets/img/task-prio-low.png" alt="low-img">
+            &lt;/div>
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="add-task-date">
+          &lt;span class="mt-11">Due date&lt;/span>
+          &lt;div class="date-box-add-task">
+            &lt;input id="addDueDate" class="input-date" type="date" placeholder="dd/mm/yyyy" required>
+            &lt;img src="./assets/img/task-calendar.png" alt="calendar-img">
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="add-task-line-margin">
+        &lt;div class="add-task-vertical-line">
+        &lt;/div>
+      &lt;/div>
+      &lt;div class="add-task-responsive-right">
+        &lt;div class="mb-11">Category&lt;/div>
+        &lt;div id="renderAddNewCategoryFloat">
+        &lt;/div>
+        &lt;div class="multiselect">
+          &lt;div class="selectBoxFloat" onclick="showCheckboxes(1)" id="selectBox1">
+            &lt;div class="flex">
+              &lt;div id="categoryOptionShowSelected">Select task category&lt;/div>
+              &lt;div id="addNewCategoryOption">
+              &lt;/div>
+              &lt;div class="arrow">&amp;#9660;&lt;/div>
+            &lt;/div>
+            &lt;div class="overSelect">&lt;/div>
+          &lt;/div>
+          &lt;div id="checkboxes1" class="flex-checkboxes-float">
+          &lt;/div>
+        &lt;/div>
+        &lt;div id="addColorToNewCategory">
+        &lt;/div>
+        &lt;div class="mb-11 mt-11">Assigned to&lt;/div>
+        &lt;div class="multiselect">
+          &lt;div class="selectBoxFloat" onclick="showCheckboxes(2)" id="selectBox2">
+            &lt;div class="flex">
+              &lt;div>Select contacts to assign&lt;/div>
+              &lt;div class="arrow">&amp;#9660;&lt;/div>
+            &lt;/div>
+            &lt;div class="overSelect">&lt;/div>
+          &lt;/div>
+          &lt;div id="checkboxes2" class="flex-checkboxes-float">
+          &lt;/div>
+        &lt;/div>
+        &lt;div class="subtask">
+          &lt;span class="mt-11">Subtasks&lt;/span>
+          &lt;div class="subtask-box">
+            &lt;input id="inputAddSubtaskContent" class="input-subtask" type="text" placeholder="Add new subtask">
+            &lt;img src="./assets/img/task-plus.png" alt="plus-img" onclick="addSubtask()">
+          &lt;/div>
+          &lt;div id="addSubtaskContent">
+          &lt;/div>
+        &lt;/div>
+      &lt;/div>
+    &lt;/div>
+    &lt;div class="task-button-box">
+      &lt;div onclick="renderFloatAddTask()" class="clear-task-button">
+        &lt;span>Clear&lt;/span>
+        &lt;img src="./assets/img/x-button-black.png" alt="x-img">
+      &lt;/div>
+      &lt;button class="add-task-button">
+        &lt;span>Create Task&lt;/span>
+        &lt;img src="./assets/img/hook.png" alt="haken-img">
+      &lt;/button>
+    &lt;/div>
+  &lt;/form>
+  &lt;div id="addTaskCreatedDiv" class="contact-created">
+    &lt;span>Task added to board&lt;/span>
+    &lt;img src="./assets/img/task-board.png" alt="board-img">
+  &lt;/div>
+&lt;/div>
+    `;
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#currentSubtasks">currentSubtasks</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#expanded">expanded</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 15 2023 16:38:27 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

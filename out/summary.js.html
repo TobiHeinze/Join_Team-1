@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: summary.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: summary.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * This function renders the summary area
+ *
+ */
+async function renderSummary(i) {
+  contentArray = await getItem(key);
+  document.getElementById("mainContainer").classList.remove("d-none");
+  resetContent();
+  searchUrgendDate();
+  countTasks();
+  document.getElementById("content").innerHTML = renderSummaryHTML();
+  updateGreetingName(i);
+}
+
+
+/**
+ * This function greets the logged in person or guest on the summary page
+ *
+ */
+function updateGreetingName(i) {
+  var loggedInName = contentArray['users']['name'][i];
+  var loggedInPhoto = contentArray['users']['photo'][i];
+  if (contentArray['users']['name'].includes(loggedInName)) {
+    document.getElementById('userGreetingName').innerHTML = ``;
+    document.getElementById('userGreetingName').innerHTML = `${loggedInName}`;
+    document.getElementById('userImage').src = `./assets/img/${loggedInPhoto}-image-header.png`;
+  } else {
+    document.getElementById('userGreetingName').innerHTML = `Guest`;
+    document.getElementById('userImage').src = "./assets/img/guest-image-header.png";
+  }
+}
+
+
+let numberOfTasksToDo = [];
+let numberOfTasksInProgress = [];
+let numberOfTasksAwaiting = [];
+let numberOfTasksDone = [];
+
+function countTasks() {
+  numberOfTasksToDo = [];
+  numberOfTasksInProgress = [];
+  numberOfTasksAwaiting = [];
+  numberOfTasksDone = [];
+  for (let i = 0; i &lt; contentArray['tasks']['taskStatus'].length; i++) {
+    let taskStatus = contentArray['tasks']['taskStatus'][i];
+
+    if (taskStatus === '0') {
+      numberOfTasksToDo.push(taskStatus);
+    } else if (taskStatus === '1') {
+      numberOfTasksInProgress.push(taskStatus);
+    } else if (taskStatus === '2') {
+      numberOfTasksAwaiting.push(taskStatus);
+    } else if (taskStatus === '3') {
+      numberOfTasksDone.push(taskStatus);
+    }
+  }
+}
+
+
+let closestUrgentDate;
+let urgentCounter = [];
+let closestUrgentDateString;
+
+function searchUrgendDate() {
+  urgentCounter = [];
+  const today = new Date();
+  let closestUrgentDiff = Infinity;
+
+  for (let i = 0; i &lt; contentArray['tasks']['priority'].length; i++) {
+    if (contentArray['tasks']['priority'][i] === 'urgent') {
+      const dueDate = new Date(contentArray['tasks']['dueDate'][i]);
+      const timeDiff = dueDate.getTime() - today.getTime();
+
+      if (timeDiff >= 0 &amp;&amp; timeDiff &lt; closestUrgentDiff) {
+        closestUrgentDiff = timeDiff;
+        closestUrgentDate = dueDate;
+      }
+      urgentCounter.push(dueDate);
+    }
+  }
+  closestUrgentDateString = closestUrgentDate ? closestUrgentDate.toLocaleDateString('en-EN', { month: 'long', day: '2-digit', year: 'numeric' }) : 'No date available';
+  console.log(`Das nächste Datum mit der Priorität "urgent" ist: ${closestUrgentDate}`);
+  console.log(`Anzahl der Vorkommen von "urgent": ${urgentCounter.length}`);
+}
+
+
+/**
+ * This function returns the html code
+ *
+ * @returns html code
+ */
+function renderSummaryHTML() {
+  return /*html*/ `
+  &lt;span class="kanban">Kanban Project Management Tool&lt;/span>
+
+  &lt;div class= "headlines">
+  &lt;h1>Summary&lt;/h1>
+  &lt;img class="blue-line-vertical" src="./assets/img/blue-line-vertical.png">
+  &lt;span class="font-21">Everything in a nutshell!&lt;/span> 
+  &lt;/div>
+  &lt;br> &lt;br>
+  &lt;img class="summary-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+  
+  
+  &lt;div class="summary-content">
+  
+    &lt;div>
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-1">
+                &lt;span class="font-64">${contentArray['tasks']['title'].length}&lt;/span>
+                &lt;span class="font-16">Tasks in &lt;br> Board&lt;/span>
+            &lt;/div>
+            &lt;div onclick="renderBoard()" class="card-row-1">
+                &lt;span class="font-64">${numberOfTasksInProgress.length}&lt;/span>
+                &lt;span class="font-16">Tasks in &lt;br> Progress&lt;/span>
+            &lt;/div>
+            &lt;div onclick="renderBoard()" class="card-row-1">
+                &lt;span class="font-64">${numberOfTasksAwaiting.length}&lt;/span>
+                &lt;span class="font-16">Awaiting &lt;br> Feedback&lt;/span>
+            &lt;/div>
+        &lt;/section>
+  
+  
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-2">
+                &lt;div class="card-row-2-left">
+                    &lt;div>
+                        &lt;img style="padding-top: 10px" src="./assets/img/urgent.png" />
+                    &lt;/div>
+                    &lt;div class="amount">
+                        &lt;span class="font-47">${urgentCounter.length}&lt;/span>
+                        &lt;span class="font-21">Urgent&lt;/span>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="card-row-2-middle">&lt;/div>
+                &lt;div class="card-row-2-right">
+                    &lt;span class="font-weight-700 font-16">${closestUrgentDateString}&lt;/span> &lt;br>
+                    &lt;span class="font-16">Upcoming Deadline&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+  
+  
+        &lt;section class="row">
+            &lt;div onclick="renderBoard()" class="card-row-3">
+                &lt;div>
+                    &lt;img src="./assets/img/pen.png" />
+                &lt;/div>
+                &lt;div class="amount">
+                    &lt;span class="font-64 ">${numberOfTasksToDo.length}&lt;/span>
+                    &lt;span class="font-21">To-do&lt;/span>
+                &lt;/div>
+            &lt;/div>
+            &lt;div onclick="renderBoard()" class="card-row-3">
+                &lt;div>
+                    &lt;img src="./assets/img/check.png" />
+                &lt;/div>
+                &lt;div class="amount">
+                    &lt;span class="font-64">${numberOfTasksDone.length}&lt;/span>
+                    &lt;span class="font-21">Done&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+    &lt;/div>
+  
+    &lt;aside id="greeting">
+        &lt;span class="font-weight-500 font-47">${getTime()},&lt;/span>
+        &lt;h1 id="userGreetingName" class="font-weight-700 font-64">&lt;/h1>
+    &lt;/aside>
+  &lt;/div>
+    `;
+}
+
+/**
+ * Returns the current date in the format "DD.MM.YYYY".
+ *
+ * @return {string} The current date in the format "DD.MM.YYYY".
+ */
+function getDate() {
+  const now = new Date(); // Erstellt ein neues Date-Objekt, das das aktuelle Datum und die aktuelle Uhrzeit repräsentiert
+  const date = now.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+  // Verwendet die toLocaleDateString-Methode, um das Datum im britischen Format mit Tag, Monat und Jahr zurückzugeben
+  return date;
+}
+
+/**
+ * Returns the current date in the format "YYYYMMDD".
+ *
+ * @return {string} The current date in the format "YYYYMMDD".
+ */
+function getDate1() {
+  const now = new Date();
+  const date = now
+    .toLocaleDateString("en-GB", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    })
+    .replace(/-/g, "");
+  // Verwendet die toLocaleDateString-Methode, um das Datum im britischen Format mit Jahr, Monat und Tag zurückzugeben
+  // Anschließend wird der Bindestrich entfernt, um das gewünschte Format "YYYYMMDD" zu erhalten
+  return date;
+}
+
+/**
+ * Returns a greeting based on the current time of day.
+ *
+ * @return {string} A greeting string ("Good morning", "Good afternoon", "Good evening", or "Good night").
+ */
+function getTime() {
+  const now = new Date();
+  const hour = now.getHours(); // Holt die aktuelle Stunde aus dem Date-Objekt
+  let greeting = "Good ";
+
+  if (hour >= 4 &amp;&amp; hour &lt; 12) {
+    greeting += "morning"; // Fügt "morning" zur Begrüßung hinzu, wenn es zwischen 4 und 12 Uhr ist
+  } else if (hour >= 12 &amp;&amp; hour &lt; 18) {
+    greeting += "afternoon"; // Fügt "afternoon" zur Begrüßung hinzu, wenn es zwischen 12 und 18 Uhr ist
+  } else if (hour >= 18 &amp;&amp; hour &lt; 22) {
+    greeting += "evening"; // Fügt "evening" zur Begrüßung hinzu, wenn es zwischen 18 und 22 Uhr ist
+  } else {
+    greeting += "night"; // Fügt "night" zur Begrüßung hinzu, für alle anderen Zeiten
+  }
+
+  return greeting;
+}
+
+
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#currentSubtasks">currentSubtasks</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#expanded">expanded</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 15 2023 16:38:27 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
