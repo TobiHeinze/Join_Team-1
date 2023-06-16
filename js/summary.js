@@ -94,9 +94,9 @@ function renderSummaryHTML() {
   <span class="kanban">Kanban Project Management Tool</span>
 
   <div class= "headlines">
-  <h1>Summary</h1>
+  <h1 class="summary-h1">Summary</h1>
   <img class="blue-line-vertical" src="./assets/img/blue-line-vertical.png">
-  <span class="font-21">Everything in a nutshell!</span> 
+  <span style="margin-top: -10px;" class="font-21">Everything in a nutshell!</span> 
   </div>
   <br> <br>
   <img class="summary-line-horizontal" src="./assets/img/blue-line-horizontal.png">
@@ -128,7 +128,7 @@ function renderSummaryHTML() {
                         <img style="padding-top: 10px" src="./assets/img/urgent.png" />
                     </div>
                     <div class="amount">
-                        <span class="font-47">${urgentCounter.length}</span>
+                        <span class="font-61">${urgentCounter.length}</span>
                         <span class="font-21">Urgent</span>
                     </div>
                 </div>
