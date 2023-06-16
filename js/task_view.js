@@ -2,7 +2,7 @@ function openTaskView(i) {
 	document.getElementById('taskViewContainer').classList.remove('d-none');
 	document.getElementById('taskViewContainer').innerHTML = generateTaskViewHTML(i);
 
-	changeStyleOfTask(i);
+	changeStyleOfTaskView(i);
 	renderAssignedToAtTaskView(i);
 	generateSubtaskSectionInTaskView(i);
 }
@@ -14,9 +14,9 @@ function generateTaskViewHTML(index) {
 
 	<div class="task-view-container" onclick="doNotClose(event)">
 		<div class="task-view-space-between">
-			<span id="taskCategoryName${index}"
+			<span id="taskViewCategoryName${index}"
 				class="task-view-category-name">${contentArray['tasks']['categoryName'][index]}</span>
-				<img class="" src="./assets/img/task-view-close-btn.svg" alt="" onclick="clickToClose()">	
+				<img class="" src="./assets/img/task-view-close-btn.svg" alt="" onclick="clickToCloseTaskView()">	
 		</div>
 		<span id="taskTitle${index}" class="task-view-title">${contentArray['tasks']['title'][index]}</span>
 		<span id="taskDescription${index}"
@@ -35,14 +35,19 @@ function generateTaskViewHTML(index) {
 			<div id="taskAssignedTo${index}"><b>Assigned to:</b></div>
 			<div class="task-view-change-img">
 				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" alt="" onclick="">
-				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="">
+				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="openEditTask(index)">
 			</div>
 		</div>
 		
 	</div>
 
-</div>
+	</div>
 	`;
+}
+
+
+function changeStyleOfTaskView(i) {
+	document.getElementById(`taskViewCategoryName${i}`).style.background = contentArray['tasks']['categoryBgColor'][i];
 }
 
 
@@ -75,7 +80,7 @@ function generateSubtaskSectionInTaskView(i) {
 }
 
 
-function clickToClose() {
+function clickToCloseTaskView() {
 	document.getElementById('taskViewContainer').classList.add('d-none');
 }
 
