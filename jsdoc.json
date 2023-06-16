@@ -1,0 +1,22 @@
+{
+    "source": {
+        "include": [
+            "./js/board.js",
+            "./js/contactHTML.js",
+            "./js/contacts.js",
+            "./js/help.js",
+            "./js/login.js",
+            "./js/password.js",
+            "./js/signUp.js",
+            "./js/summary.js",
+            "./js/task_view.js",
+            "./js/task.js",
+            "./js/taskHTML.js",
+            "./storage.js",
+            "./script.js"
+        ]
+    },
+    "opts": {
+        "destination": "./out"
+    }
+}

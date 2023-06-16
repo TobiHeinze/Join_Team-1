@@ -28,16 +28,16 @@ function renderAddTaskHTML() {
       <div class="prio">
         <span class="mt-11 mb-11">Priority</span>
         <div class="prio-row">
-          <div onclick="addPrio('urgent')" class="prio-class">
-            <span id="addPrioUrgent">Urgent</span>
-            <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
-          </div>
-          <div onclick="addPrio('medium')" class="prio-class">
-            <span>Medium</span>
-            <img src="./assets/img/task-prio-medium.png" alt="medium-img">
-          </div>
-          <div onclick="addPrio('low')" class="prio-class">
-            <span>Low</span>
+            <div id="changePrioColorurgent" onclick="addPrio('urgent')" class="prio-class">
+              <span id="addPrioUrgent">Urgent</span>
+              <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
+            </div>
+            <div id="changePrioColormedium" onclick="addPrio('medium')" class="prio-class">
+              <span>Medium</span>
+              <img src="./assets/img/task-prio-medium.png" alt="medium-img">
+            </div>
+            <div id="changePrioColorlow" onclick="addPrio('low')" class="prio-class">
+              <span>Low</span>
             <img src="./assets/img/task-prio-low.png" alt="low-img">
           </div>
         </div>
@@ -85,6 +85,7 @@ function renderAddTaskHTML() {
         <div id="checkboxes2" class="flex-checkboxes">
         </div>
       </div>
+      <div id="renderAddContactInitials"></div>
       <div class="subtask">
         <span class="mt-11">Subtasks</span>
         <div class="subtask-box">
@@ -123,7 +124,7 @@ function renderAddTaskHTML() {
 function addTaskFloatHTML() {
     return /*html*/`
 <div id="hideFloatAddTask" class="border">
-  <div onclick="renderContacts()" class="add-task-x-position-float">
+  <div onclick="goBackToPreviousPage()" class="add-task-x-position-float">
     <img src="./assets/img/x-button-black.png" alt="x-button-img">
   </div>
   <div class="mt-11 responsive-hide">
@@ -146,20 +147,20 @@ function addTaskFloatHTML() {
         <div class="prio">
           <span class="mt-11 mb-11">Priority</span>
           <div class="prio-row">
-            <div onclick="addPrio('urgent')" class="prio-class">
+            <div id="changePrioColorurgent" onclick="addPrio('urgent')" class="prio-class">
               <span id="addPrioUrgent">Urgent</span>
               <img src="./assets/img/task-prio-urgent.png" alt="urgent-img">
             </div>
-            <div onclick="addPrio('medium')" class="prio-class">
+            <div id="changePrioColormedium" onclick="addPrio('medium')" class="prio-class">
               <span>Medium</span>
               <img src="./assets/img/task-prio-medium.png" alt="medium-img">
             </div>
-            <div onclick="addPrio('low')" class="prio-class">
+            <div id="changePrioColorlow" onclick="addPrio('low')" class="prio-class">
               <span>Low</span>
-              <img src="./assets/img/task-prio-low.png" alt="low-img">
-            </div>
+            <img src="./assets/img/task-prio-low.png" alt="low-img">
           </div>
         </div>
+      </div>
         <div class="add-task-date">
           <span class="mt-11">Due date</span>
           <div class="date-box-add-task">

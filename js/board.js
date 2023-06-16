@@ -140,7 +140,7 @@ function renderBoard() {
 <div class="board-header-section">
 	<div class="board-header-mobile">
 		<span class="font-47">Board</span>
-		<img src="./assets/img/plus-add-task-mobile.svg" alt="" onclick="">
+		<img src="./assets/img/plus-add-task-mobile.svg" alt="" onclick="renderFloatAddTask('board')">
 	</div>
 
 	<div class="board-find-section">

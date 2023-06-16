@@ -32,16 +32,33 @@
     padding-left: 20px;
 }
 
+
 .assigned {
     display: flex;
     align-items: center;
+    margin-right: 20px;
     padding: 10px;
     flex-direction: row;
+    transition: background-color 0.3s; 
+    border-radius: 10px; 
+    cursor: pointer;
 }
 
-.assigned a {
-    text-decoration: none;
+.assigned:hover {
+    background-color: #f2f2f2; 
 }
+
+
+/* for click event on contacts*/
+.assigned.clicked {
+    background-color: #091931;
+    color: #fff;
+  }
+  
+
+  .assigned.clicked a {
+    color: #7dacf9;/* Farbe des <a>-Elements im .assigned.clicked-Zustand */
+  }
 
 #marginLeftContact {
     margin-left: 3%;

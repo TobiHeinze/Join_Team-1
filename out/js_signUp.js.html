@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: script.js</title>
+    <title>JSDoc: Source: js/signUp.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: script.js</h1>
+    <h1 class="page-title">Source: js/signUp.js</h1>
 
     
 
@@ -27,104 +27,97 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>/**
- * This function resets all divs we fill content in
+ * This function renders the sign up area
  *
  */
-function resetContent() {
-  document.getElementById('content').classList.remove('d-none');
-  document.getElementById("content").innerHTML = "";
-  document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
-  document.getElementById("contactsDescriptionContent").innerHTML = "";
-  document.getElementById("contactsContent").innerHTML = "";
-  document.getElementById("popUpDiv").classList.add("d-none");
-  document.getElementById("popUpDiv").classList.remove("d-flex");
-  document.getElementById("popUpDiv").innerHTML = "";
-  document.getElementById("loginContainer").innerHTML = "";
-  document.getElementById("contactsChangeDescriptionContent").style.display = "none";
+function renderSignUp() {
+  resetContent();
+  document.getElementById("loginContainer").innerHTML = renderSignUpHTML();
+  updateGoBackArrow();
 }
 
-/**
- *
- *
- * This function animate a slide from the right to the left
- *
- * @returns the animation effect
- */
-function slideInPopUp() {
-  return popUpDiv.animate(
-    [
-      { transform: "translateX(1000px)" }, // Startposition des Popups
-      { transform: "translateX(0)" }, // Endposition des Popups
-    ],
-    {
-      duration: 250, // Animationsdauer in Millisekunden
-      easing: "ease", // Easing-Funktion für den Übergangseffekt
+// Event listener for window resize
+window.addEventListener("resize", updateGoBackArrow);
+
+async function loadUsers() {
+    try {
+        contentArray = await getItem(key);
+    } catch(e){
+        console.error('Loading error:', e);
     }
-  );
 }
 
-
-let isMiniMenuOpen = false;
-
 /**
- * open Tooltip 'Log Out' by Click on Image Profile
+ * This function adds a new user
+ *
  */
-function openMiniMenu(clickedMiniMenu) {
-  if (!isMiniMenuOpen) {
-    let miniMenu = clickedMiniMenu.closest('body').querySelector('.mini-menu');
-    miniMenu.classList.add('mini-menu-toggle');
-    miniMenu.style.display = 'flex';
-    isMiniMenuOpen = true;
-  } else {
-    closeMiniMenu(clickedMiniMenu);
+async function register() {
+  let registerButton = document.getElementById("registerButton");
+  registerButton.disabled = true;
+  let name = document.getElementById("registerName").value;
+  let email = document.getElementById("registerEmail").value;
+  let password = document.getElementById("registerPassword").value;
+
+  // Add the new user to the contentArray
+  contentArray.users.name.push(name);
+  contentArray.users.email.push(email);
+  contentArray.users.password.push(password);
+  contentArray.users.photo.push('guest');
+
+  try {
+    // Save the updated contentArray to the server
+    await setItem(key, contentArray);
+
+    // Show a success message
+    alert("Registration successful!");
+
+    // Call the renderLogin function
+    renderLogin();
+  } catch (error) {
+    // If there is an error, show an error message
+    console.error("Error registering:", error);
+    alert("Error registering. Please try again.");
   }
+
+  registerButton.disabled = false;
 }
 
+function renderSignUpHTML() {
+  return /*html*/ `
+    &lt;img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
+    &lt;div class="big-container">
+        &lt;form onsubmit="register(); return false;" class="password-container">
+            &lt;a href="#">&lt;img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" alt="go back"
+                    onclick="renderLogin()">&lt;/a>
+            &lt;h1 class="font-61">Sign Up&lt;/h1>
+            &lt;img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+            &lt;div class="input-container">
+                &lt;div class="name">
+                    &lt;div class="sign-up-input-field">
+                        &lt;input id="registerName" class="input" type="text" placeholder="Name" required>
+                        &lt;img src="./assets/img/charakter-icon.png" alt="character-img">
+                    &lt;/div>
 
-/**
-* close MiniMenu 'Log Out' by Click on Image Profile
-* 
-*/
-function closeMiniMenu(clickedMiniMenu) {
-  miniMenu.closest('body').querySelector('.mini-menu').classList.remove('mini-menu-toggle');
-  miniMenu.style.display = 'none';
-  isMiniMenuOpen = false;
+                    &lt;div class="sign-up-input-field">
+                        &lt;input id="registerEmail" required class="input" type="email" name="email" placeholder="E-Mail">
+                        &lt;img src="./assets/img/email-icon.png">
+                    &lt;/div>
+
+                    &lt;div class="sign-up-input-field">
+                        &lt;input id="registerPassword" required class="input togglePassword" type="password"
+                            name="password" placeholder="Password">
+                        &lt;img class="toggleImage" src="./assets/img/password-icon.png">
+                    &lt;/div>
+
+                    &lt;button id="registerButton" type="submit" 
+                        class="button-dark login-button">Sign Up&lt;/button>
+                &lt;/div>
+            &lt;/div>
+        &lt;/form>
+    &lt;/div>
+`;
 }
-
-
-
-/**
- * Holds the reference to the currently selected element.
- * @type {HTMLElement}
- */
-let selectedElement = null;
-
-/**
- * Handles the click event on menu items.
- * Adds or removes the 'selected' class based on the clicked element.
- * @param {HTMLElement} element - The clicked element.
- */
-function handleClick(element) {
-  if (selectedElement === element) {
-    // If the previously selected element is clicked again,
-    // remove the 'selected' class and set selectedElement to null.
-    element.classList.remove('selected');
-    selectedElement = null;
-  } else {
-    // Remove the 'selected' class from the previously selected element (if any).
-    if (selectedElement) {
-      selectedElement.classList.remove('selected');
-    }
-
-    // Add the 'selected' class to the current element and set it as selectedElement.
-    element.classList.add('selected');
-    selectedElement = element;
-  }
-}
-
-
-
 </code></pre>
         </article>
     </section>
