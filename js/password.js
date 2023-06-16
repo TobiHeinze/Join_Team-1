@@ -3,7 +3,8 @@
  */
 function renderForgotPassword() {
   resetContent();
-  document.getElementById("loginContainer").innerHTML = renderForgotPasswordHTML();
+  document.getElementById("loginContainer").innerHTML =
+    renderForgotPasswordHTML();
 }
 
 /**
@@ -18,7 +19,7 @@ function renderForgotPasswordHTML() {
   return /*html*/ `<img class="${imageClass}" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
   <div class="big-container">
-       <form class="password-container">
+       <form onsubmit="showEmailSentMessage(); return false"  class="password-container" >
            <a href="index.html"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" onclick="history.back()"></a>
            <h1 class="${titleClass}">I forgot my password</h1>
            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
@@ -27,10 +28,10 @@ function renderForgotPasswordHTML() {
            </span>
            <div class="input-container">
                <div class="input-field">
-                   <input required class="input" type="email" name="email" placeholder="E-Mail">
+                   <input  class="input" type="email" name="email" placeholder="E-Mail" required>
                    <img src="./assets/img/email-icon.png">
                </div>
-               <button onclick="showEmailSentMessage()" type="button" class="button-dark login-btn">Send me the email</button>
+               <button type="submit" class="button-dark login-btn">Send me the email</button>
            </div>
        </form>
    </div>
@@ -72,7 +73,8 @@ function showEmailSentMessage() {
  */
 function renderResetPassword() {
   resetContent();
-  document.getElementById("loginContainer").innerHTML = renderResetPasswordHTML();
+  document.getElementById("loginContainer").innerHTML =
+    renderResetPasswordHTML();
 }
 
 /**
@@ -87,19 +89,19 @@ function renderResetPasswordHTML() {
   return /*html*/ `<img class="${imageClass}" src="./assets/img/LogoJoinBig.png" alt="Logo">
 
    <div class="big-container">
-       <form class="password-container">
+       <form onsubmit="showResetPasswordMessage(); return false" class="password-container">
            <a href="#"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" alt="go back" onclick="renderForgotPassword()"></a>
            <h1 class="${titleClass}">Reset your password</h1>
            <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
            <span class="font-21 font-weight-400">Change your account password here.</span> <br>
            <div style="width: 80%" class="input-field">
-               <input class="input" type="password" name="password" placeholder="New password">
+               <input class="input" type="password" name="password" placeholder="New password" minlength="3"  required>
            </div>
            <div style="margin-top: -20px; width: 80%" class="input-field">
-               <input class="input" type="password" name="password" placeholder="Confirm password">
+               <input class="input" type="password" name="password" placeholder="Confirm password" minlength="3"  required>
            </div>
 
-           <button type="submit" class="button-dark login-btn" onclick="showResetPasswordMessage()">Continue</button>
+           <button type="submit" class="button-dark login-btn">Continue</button>
        </form>
    </div>
    <div id="resetPasswordDiv" class="email-sent d-none">
@@ -132,7 +134,7 @@ function showResetPasswordMessage() {
       renderLogin();
     }, 2000);
   }
-} 
+}
 
 /**
  * Checks if the screen size is smaller than 800px.
@@ -142,10 +144,9 @@ function isSmallScreen() {
   return window.innerWidth < 800;
 }
 
-
 // Function to update the "Go Back" arrow image
 function updateGoBackArrow() {
-    let goBackArrow = document.getElementById("goBackArrow");
+  let goBackArrow = document.getElementById("goBackArrow");
   if (goBackArrow) {
     // Check the screen width
     if (window.innerWidth < 800) {
@@ -155,7 +156,6 @@ function updateGoBackArrow() {
     }
   }
 }
-  
-  // Event listener for window resize
-  window.addEventListener("resize", updateGoBackArrow);
-  
+
+// Event listener for window resize
+window.addEventListener("resize", updateGoBackArrow);
