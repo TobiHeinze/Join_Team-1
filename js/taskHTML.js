@@ -3,7 +3,7 @@
  * 
  * @returns html code
  */
-function renderAddTaskHTML() {
+function renderAddTaskHTML(param) {
     return /*html*/ `
 <div onclick="renderContacts()" id="addXButtonTask" class="add-task-x-position d-none">
   <img src="./assets/img/x-button-black.png" alt="x-button-img">
@@ -12,6 +12,9 @@ function renderAddTaskHTML() {
   <span>Kanban Project Management Tool</span>
 </div>
 <h2 class="font-47 add-task-h2">Add Task</h2>
+<div id="contactCreatedDiv" class="contact-created">
+    Contact successfully created
+</div>
 <form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;">
   <button class="create-button2"><img class="create-button" src="./assets/img/create-button.png"
       alt="create task"></button>
@@ -121,16 +124,19 @@ function renderAddTaskHTML() {
  * 
  * @returns html code
  */
-function addTaskFloatHTML() {
+function addTaskFloatHTML(param) {
     return /*html*/`
 <div id="hideFloatAddTask" class="border">
-  <div onclick="goBackToPreviousPage()" class="add-task-x-position-float">
+  <div onclick="closeEditContact()" class="add-task-x-position-float">
     <img src="./assets/img/x-button-black.png" alt="x-button-img">
   </div>
   <div class="mt-11 responsive-hide">
     <span>Kanban Project Management Tool</span>
   </div>
   <h2 class="font-47 add-task-h2">Add Task</h2>
+  <div id="contactCreatedDiv" class="contact-created">
+    Contact successfully created
+  </div>
   <form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;">
     <button class="create-button2"><img class="create-button" src="./assets/img/create-button.png"
         alt="create task"></button>
@@ -204,6 +210,7 @@ function addTaskFloatHTML() {
           <div id="checkboxes2" class="flex-checkboxes-float">
           </div>
         </div>
+        <div id="renderAddContactInitials"></div>
         <div class="subtask">
           <span class="mt-11">Subtasks</span>
           <div class="subtask-box">

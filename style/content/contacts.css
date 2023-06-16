@@ -123,11 +123,20 @@
     border-radius: 3px;
 }
 
+@media (max-height: 741px) {
+    .overflow-scroll {
+        margin-left: 5%;
+        margin-right: 2%;
+        height: 65vh;
+        overflow-y: scroll;
+    }
+}
+
 @media (max-height: 650px) {
     .overflow-scroll {
         margin-left: 5%;
         margin-right: 2%;
-        height: 61vh;
+        height: 60vh;
         overflow-y: scroll;
     }
 }
