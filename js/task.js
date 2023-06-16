@@ -216,14 +216,22 @@ function toggleCheckboxColor(index) {
     if (!document.getElementById(`colorAlreadyAdded${index}`)) {
     document.getElementById('renderAddContactInitials').innerHTML += /*html*/`
     <div id="clearColorAlreadyAdded${index}">
-    <div id="colorAlreadyAdded${index}" class="circle" style="background-color: ${contentArray['contacts']['contactImageBgColor'][index]}">
+    <div id="colorAlreadyAdded${index}" class="circle-add-task" style="background-color: ${contentArray['contacts']['contactImageBgColor'][index]}">
+    ${contentArray['contacts']['nameInitials'][index]}
     </div>
     `;
     } else if (document.getElementById(`clearColorAlreadyAdded${index}`)) {
-        document.getElementById(`clearColorAlreadyAdded${index}`).innerHTML = ``;
+        removeDivById(`clearColorAlreadyAdded${index}`);
     }
 }
 
+
+function removeDivById(divId) {
+    let div = document.getElementById(divId);
+    if (div) {
+        div.remove();
+    }
+}
 
 /**
  * This function gives back a random color from the given colors in the array
