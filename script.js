@@ -39,6 +39,19 @@ function slideInPopUp() {
   );
 }
 
+function slideInPopUp2() {
+  return popUpDiv2.animate(
+    [
+      { transform: "translateX(1000px)" }, // Startposition des Popups
+      { transform: "translateX(0)" }, // Endposition des Popups
+    ],
+    {
+      duration: 250, // Animationsdauer in Millisekunden
+      easing: "ease", // Easing-Funktion für den Übergangseffekt
+    }
+  );
+}
+
 
 let isMiniMenuOpen = false;
 

@@ -110,7 +110,7 @@ function addNewContact(param) {
     document.getElementById('popUpDiv2').classList.remove('d-none');
     document.getElementById('popUpDiv2').classList.add('d-flex');
     document.getElementById('popUpDiv2').classList.add('show-popup');
-    slideInPopUp();
+    slideInPopUp2();
     document.getElementById('popUpDiv2').innerHTML = addNewContactHTML(param);
 }
 
