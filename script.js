@@ -11,9 +11,13 @@ function resetContent() {
   document.getElementById("popUpDiv").classList.add("d-none");
   document.getElementById("popUpDiv").classList.remove("d-flex");
   document.getElementById("popUpDiv").innerHTML = "";
+  document.getElementById("popUpDiv2").classList.add("d-none");
+  document.getElementById("popUpDiv2").classList.remove("d-flex");
+  document.getElementById("popUpDiv2").innerHTML = "";
   document.getElementById("loginContainer").innerHTML = "";
   document.getElementById("contactsChangeDescriptionContent").style.display = "none";
 }
+
 
 /**
  *
