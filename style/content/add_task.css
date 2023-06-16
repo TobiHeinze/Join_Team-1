@@ -496,6 +496,24 @@
         overflow-y: scroll;
         padding-right: 3px;
     }
+    
+    .create-button2 {
+        top: 1%;
+    }
+
+    .add-task-x-position {
+        top: 26%;
+    }
+}
+
+@media (max-width: 800px) and (max-height: 741px) {
+    .add-task-scroll {
+        height: 52vh;
+    }
+
+    .create-button2 {
+        top: 2%;
+    }
 }
 
 @media (max-width: 800px) and (max-height: 650px) {
