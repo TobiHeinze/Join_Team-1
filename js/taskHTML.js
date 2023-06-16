@@ -6,7 +6,7 @@
  */
 function renderAddTaskHTML(param) {
     return /*html*/ `
-<div onclick="renderContacts()" id="addXButtonTask" class="add-task-x-position d-none">
+<div onclick="checkIfParam('${param}')" id="addXButtonTask" class="add-task-x-position d-none">
   <img src="./assets/img/x-button-black.png" alt="x-button-img">
 </div>
 <div class="mt-11 responsive-hide">

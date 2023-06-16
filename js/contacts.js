@@ -160,14 +160,15 @@ async function updateNewContact(param) {
 }
 
 
-// oh die funktion scheint das selbe zu tun in allen if abfragen, ggf. kann die aufgelöst werden also nur ein if stehen lassen...
-// war mal anders geplant aber klappt so wohl ...
 /**
- * This function checks if the param is matching then different actions
+ * This function checks if the param is matching then different actions and then redirect to the pages
  * 
  * @param {*} param this param is a string that should match the string in the if else question then do something
  */
 async function checkIfParam(param) {
+    if (param < contentArray['contacts']['name'].length) {
+        renderContactDescription(param);
+    }
     if (param === 'newAssignedToContact') {
         await getItem(key);
         document.getElementById('checkboxes2').innerHTML = ``;
@@ -176,17 +177,9 @@ async function checkIfParam(param) {
         closeAddContact();
     }
     else if (param === 'contacts') {
-        await getItem(key);
-        document.getElementById('checkboxes2').innerHTML = ``;
-        renderAddTaskAssignedToOptions();
-        showContactCreatedMessage();
-        closeAddContact();
-    } else if (param = 'board') {
-        await getItem(key);
-        document.getElementById('checkboxes2').innerHTML = ``;
-        renderAddTaskAssignedToOptions();
-        showContactCreatedMessage();
-        closeAddContact();
+        renderContacts();
+    } else if (param === 'board') {
+        renderBoard();
     }
 }
 

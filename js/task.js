@@ -19,8 +19,7 @@ async function renderAddTask(param) {
  * 
  * @param {*} page this parameter is the opened page
  */
-async function renderFloatAddTask(page) {
-    previousPage = page;
+async function renderFloatAddTask(param) {
     contentArray = await getItem(key);
     if (window.innerWidth > 800) {
         document.getElementById('popUpDiv').classList.remove('d-none');
@@ -30,9 +29,9 @@ async function renderFloatAddTask(page) {
         currentSubtaskStatus = [];
         document.getElementById('popUpDiv').innerHTML = addTaskFloatHTML();
         renderAddTaskCategoryOptions();
-        renderAddTaskAssignedToOptions(page);
+        renderAddTaskAssignedToOptions();
     } else {
-        document.getElementById("popUpDiv").innerHTML = await renderAddTask();
+        document.getElementById("popUpDiv").innerHTML = await renderAddTask(param);
         document.getElementById('addXButtonTask').classList.remove('d-none');
     }
 }
