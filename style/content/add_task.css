@@ -29,10 +29,6 @@
     margin-top: 11px;
 }
 
-.mb-11 {
-    margin-bottom: 11px;
-}
-
 .title {
     display: flex;
     flex-direction: column;
@@ -205,6 +201,9 @@
     gap: 25px;
     margin-top: auto;
     justify-content: end;
+    height: 55px;
+    align-items: end;
+    margin-top: 10px;
 }
 
 .add-task-button {
@@ -220,6 +219,7 @@
     width: 140px;
     cursor: pointer;
     z-index: 1;
+    height: 53px;
 }
 
 
@@ -406,6 +406,12 @@
 
 .new-category-float img {
     margin-left: 5px;
+}
+
+@media (max-width: 950px) {
+    .date-box-add-task {
+        margin-bottom: 11px;
+    }
 }
 
 @media (min-width: 951px) {
