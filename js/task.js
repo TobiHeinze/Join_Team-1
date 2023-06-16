@@ -1,6 +1,7 @@
 /**
- * This function renders the AddTask area
+ * This function renders the addtask area
  * 
+ * @param {*} param this parameter is where addtask is opended and give it to the next pages to handle the page
  */
 async function renderAddTask(param) {
     contentArray = await getItem(key);
@@ -16,6 +17,7 @@ async function renderAddTask(param) {
 /**
  * This function renders the add task popup when klick in the contact area to give a special contact a task
  * 
+ * @param {*} page this parameter is the opened page
  */
 async function renderFloatAddTask(page) {
     previousPage = page;
@@ -36,24 +38,13 @@ async function renderFloatAddTask(page) {
 }
 
 
-let previousPage; // Variable zum Speichern der vorherigen Seite wird in render float task gemacht
-// Funktion, um beim abbrechen von add task zur vorherigen Seite zurückzugehen
-function goBackToPreviousPage() {
-  // Hier kannst du basierend auf dem Wert von previousPage zur entsprechenden Seite navigieren
-  if (previousPage === 'contacts') {
-    renderContacts(); // Beispiel: Zurück zur Kontakte-Seite
-  } else if (previousPage === 'board') {
-    renderBoard(); // Beispiel: Zurück zur Board-Seite
-  }
-}
 
-
+let expanded = [false, false];
 /**
  * This function shows or hide the dropwdown menus
  * 
+ * @param {*} index  is the number in the array
  */
-let expanded = [false, false];
-
 function showCheckboxes(index) {
     let checkboxes = document.getElementById("checkboxes" + index);
     document.getElementById(`selectBox${index}`).style.borderBottomLeftRadius = "0";
@@ -90,6 +81,10 @@ function renderAddTaskCategoryOptions() {
 }
 
 
+/**
+ * This function modify the dropdown category menu to add a new category
+ * 
+ */
 function addNewCategory() {
     document.getElementById('selectBox1').classList.add('d-none');
     document.getElementById('checkboxes1').classList.add('d-none');
@@ -114,6 +109,10 @@ function addNewCategory() {
 }
 
 
+/**
+ * This function close the add new category inputfield and go back to the dropdown menu
+ * 
+ */
 function closeNewCategory() {
     document.getElementById('renderAddNewCategory').innerHTML = ``;
     document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
@@ -124,6 +123,10 @@ function closeNewCategory() {
 
 
 let category = [];
+/**
+ * This function add a new category to the array with a random color
+ * 
+ */
 function addNewCategoryToArray() {
     category = [];
     category = document.getElementById('newCategoryValue').value;
@@ -144,6 +147,7 @@ function addNewCategoryToArray() {
 /**
  * This function renders the category in the header of the drowdown menu
  * 
+ * @param {*} index  this is the position in the array
  */
 function categoryOption(index) {
     document.getElementById('addNewCategoryOption').innerHTML = ``;
@@ -162,6 +166,10 @@ function categoryOption(index) {
 
 
 let randomBgColor = [];
+/**
+ * This function is a help function that added the name and a random color to show in the category dropdown menu
+ * 
+ */
 function categoryOption2() {
     randomBgColor = addRandomBackgroundColorToNewCategory();
     console.log('hier wird die randombg color gespcihert categoryoption2 function:', randomBgColor);
@@ -204,6 +212,11 @@ function renderAddTaskAssignedToOptions(param) {
 }
 
 
+/**
+ * This function mark the checkboxes with a hook when toogle
+ * 
+ * @param {*} index 
+ */
 function toggleCheckbox(index) {
     let checkbox = document.getElementById(`assignedToOptions${index}`);
     checkbox.checked = !checkbox.checked;
@@ -211,8 +224,12 @@ function toggleCheckbox(index) {
 }
 
 
+/**
+ * This function is a help function that renders a div with name initials and colors when name is toggled
+ * 
+ * @param {*} index is the position in the array
+ */
 function toggleCheckboxColor(index) {
-
     if (!document.getElementById(`colorAlreadyAdded${index}`)) {
     document.getElementById('renderAddContactInitials').innerHTML += /*html*/`
     <div id="clearColorAlreadyAdded${index}">
@@ -226,12 +243,18 @@ function toggleCheckboxColor(index) {
 }
 
 
+/**
+ * This function is a help function that delete a div with a special id
+ * 
+ * @param {*} divId this is the special id that should be deleted
+ */
 function removeDivById(divId) {
     let div = document.getElementById(divId);
     if (div) {
         div.remove();
     }
 }
+
 
 /**
  * This function gives back a random color from the given colors in the array
@@ -244,7 +267,10 @@ function addRandomBackgroundColorToNewCategory() {
 }
 
 
-// ausgelagerte funktionen von der updatetaskarray funktion um diese klein zu halten
+/**
+ * This is a help function for adding a task to get the title
+ * 
+ */
 function processTitle() {
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
@@ -252,6 +278,10 @@ function processTitle() {
 }
 
 
+/**
+ * This is a help function for adding a task to get the description
+ * 
+ */
 function processDescription() {
     let addDescription = document.getElementById('addDescription').value;
     contentArray['tasks']['description'].push(addDescription);
@@ -259,6 +289,10 @@ function processDescription() {
 }
 
 
+/**
+ * This is a help function for adding a task to get the due date
+ * 
+ */
 function processDueDate() {
     let addDueDate = document.getElementById('addDueDate').value;
     contentArray['tasks']['dueDate'].push(addDueDate);
@@ -266,6 +300,10 @@ function processDueDate() {
 }
 
 
+/**
+ * This is a help function for adding a task to get the category with the color special: there is a difference between new added categorys and existing categorys
+ * 
+ */
 function processCategory() {
     //  zur add new category wird eine random color hinzugefügt noch!
     if (document.getElementById('categoryOptionShowSelected').textContent.trim() === "Select task category") {
@@ -297,12 +335,20 @@ function processCategory() {
 }
 
 
+/**
+ * This is a help function for adding a task to set the task option 
+ * 
+ */
 function processTaskOption() {
     // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
     contentArray['tasks']['taskStatus'].push('0');
 }
 
 
+/**
+ * This is a help function for adding a task to get the assigned to persons with their name initials and their color
+ * 
+ */
 function processAssignedTo() {
     // assigned to selector 
     let selectedNames = [];
@@ -318,7 +364,6 @@ function processAssignedTo() {
             let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
             let initials = contentArray['contacts']['nameInitials'][contactIndex];
             let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
-
             nameInitials.push(initials);
             contactImageBgColor.push(bgColor);
         });
@@ -340,6 +385,10 @@ function processAssignedTo() {
 }
 
 
+/**
+ * This is a help function for adding a task to get the added subtask if there are some
+ * 
+ */
 function processSubtasks() {
     // subtask
     if (currentSubtasks.length > 0) {
@@ -358,8 +407,11 @@ function processSubtasks() {
 }
 
 
+/**
+ * This is a help function for adding a task to get the choosen priority
+ * 
+ */
 function processPriority() {
-    // prio
     if (addPriority.length === 0) {
         addPriority = "low";
         contentArray['tasks']['priority'].push(addPriority);
@@ -371,6 +423,10 @@ function processPriority() {
 }
 
 
+/**
+ * This is a help function to set a timeout in a async function where we can use await with
+ * 
+ */
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -399,12 +455,12 @@ async function updateTaskArray() {
 }
 
 
-/**
- * This function added subtasks to the subtask add area
- * 
- */
 currentSubtasks = [];
 currentSubtaskStatus = [];
+/**
+ * This function add subtasks to the subtask add area
+ * 
+ */
 function addSubtask() {
     let subtask = document.getElementById('inputAddSubtaskContent').value;
     if (subtask === '') {
@@ -428,7 +484,7 @@ let addPriority = [];
 /**
  * This function select the choosen priority status to the addPriority array
  * 
- * @param {string} priority this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low
+ * @param {string} priority this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low with color and a changed image
  */
 function addPrio(priority) {
     addPriority = priority;
@@ -452,6 +508,10 @@ function addPrio(priority) {
 }
 
 
+/**
+ * This function is a helpfunction and reset the color of all prioritys before adding the new priority
+ * 
+ */
 function resetPrioColor() {
     document.getElementById(`changePrioColorurgent`).style.background = 'white';
     document.getElementById(`changePrioColorurgent`).style.color = 'black';

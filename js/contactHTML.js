@@ -4,7 +4,7 @@
  * @returns html code
  */
 function renderContactsHTML() {
-    return /*html*/ `
+  return /*html*/ `
 <section class="content-contact">
   <div class="add-new-contact">
     <img onclick="addNewContact()" src="./assets/img/contact-new.png" alt="new-contact-img">
@@ -26,7 +26,7 @@ function renderContactsHTML() {
  * @returns  html code
  */
 function renderContactDescriptionHTML(i) {
-    return /*html*/ `
+  return /*html*/ `
 <div id="contactPage">
 </div>
 <section class="content">
@@ -89,7 +89,7 @@ function renderContactDescriptionHTML(i) {
  * @returns html code
  */
 function addNewContactHTML(param) {
-    return /*html*/ `
+  return /*html*/ `
 <section class="border">
   <div class="top-bg">
     <div class="x-position">
@@ -138,13 +138,14 @@ function addNewContactHTML(param) {
 `;
 }
 
+
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
  * @returns html code
  */
 function editContactHTML(index) {
-    return /*html*/ `
+  return /*html*/ `
 <section class="border">
   <div class="top-bg">
     <div class="x-position">
@@ -203,7 +204,7 @@ function editContactHTML(index) {
  * @returns html code
  */
 function renderContactDescriptionHTMLHeader() {
-    return /*html*/ `
+  return /*html*/ `
 <section class="content">
   <span class="mt-11 responsive-hide">Kanban Project Management Tool</span>
   <div class="go-back-contact">
@@ -228,7 +229,7 @@ function renderContactDescriptionHTMLHeader() {
  * @returns a html code to smaller the code
  */
 function generateHeaderHTML(initial) {
-    return /*html*/`
+  return /*html*/`
 <div>
   <h3 class="font-21">${initial}</h3>
   <div class="line">
@@ -236,7 +237,7 @@ function generateHeaderHTML(initial) {
   </div>
 </div>
     `;
-  }
+}
 
 
 /**
@@ -246,7 +247,7 @@ function generateHeaderHTML(initial) {
  * @returns a html code to smaller the code
  */
 function generateContactsHTML(i) {
-    return /*html*/`
+  return /*html*/`
       <div class="assigned mt-11" onclick="handleAssignedClick(this); renderContactDescription(${i})" id="contact${i}">
         <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
         <div class="left-distance">
@@ -257,5 +258,4 @@ function generateContactsHTML(i) {
         </div>
       </div>
     `;
-  }
-  
+}

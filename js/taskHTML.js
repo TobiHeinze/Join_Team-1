@@ -1,6 +1,7 @@
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  * 
+ * @param {*} param is a string where opened the site
  * @returns html code
  */
 function renderAddTaskHTML(param) {
@@ -122,6 +123,7 @@ function renderAddTaskHTML(param) {
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  * 
+ * @param {*} param is a string where opened the site
  * @returns html code
  */
 function addTaskFloatHTML(param) {
