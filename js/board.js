@@ -134,7 +134,9 @@ function searchTasks() {
 function renderBoard() {
 	resetContent();
 	document.getElementById("content").innerHTML = /*html*/ `
-
+<div id="contactCreatedDiv" class="contact-created">
+    Contact successfully created
+</div>
 <span class="kanban-tool-text appear-mobile">Kanban Project Management Tool</span>
 
 <div class="board-header-section">

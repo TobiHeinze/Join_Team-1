@@ -88,12 +88,12 @@ function renderContactDescriptionHTML(i) {
  *
  * @returns html code
  */
-function addNewContactHTML() {
+function addNewContactHTML(param) {
     return /*html*/ `
 <section class="border">
   <div class="top-bg">
     <div class="x-position">
-      <img onclick="closeEditContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
+      <img onclick="closeAddContact()" src="./assets/img/x-button-white.png" alt="x-button-img">
     </div>
     <div>
       <div>
@@ -108,7 +108,7 @@ function addNewContactHTML() {
   <div class="big-initials">
     <img src="./assets/img/big-character.png" alt="big-character-img">
   </div>
-  <form class="form-box" onsubmit="updateNewContact(); return false;">
+  <form class="form-box" onsubmit="updateNewContact('${param}'); return false;">
     <div class="contact-box">
       <div class="name">
         <div class="name-box">

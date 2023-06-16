@@ -2,14 +2,14 @@
  * This function renders the AddTask area
  * 
  */
-async function renderAddTask() {
+async function renderAddTask(param) {
     contentArray = await getItem(key);
     resetContent();
     currentSubtasks = [];
     currentSubtaskStatus = [];
-    document.getElementById("content").innerHTML = renderAddTaskHTML();
+    document.getElementById("content").innerHTML = renderAddTaskHTML(param);
     renderAddTaskCategoryOptions();
-    renderAddTaskAssignedToOptions();
+    renderAddTaskAssignedToOptions(param);
 }
 
 
@@ -28,7 +28,7 @@ async function renderFloatAddTask(page) {
         currentSubtaskStatus = [];
         document.getElementById('popUpDiv').innerHTML = addTaskFloatHTML();
         renderAddTaskCategoryOptions();
-        renderAddTaskAssignedToOptions();
+        renderAddTaskAssignedToOptions(page);
     } else {
         document.getElementById("popUpDiv").innerHTML = await renderAddTask();
         document.getElementById('addXButtonTask').classList.remove('d-none');
@@ -184,9 +184,9 @@ function categoryOption2() {
  * This function renders the assigned to options inside the drowdown menu
  * 
  */
-function renderAddTaskAssignedToOptions() {
+function renderAddTaskAssignedToOptions(param) {
     document.getElementById('checkboxes2').innerHTML += /*html*/`
-    <div onclick="addNewContact()" class="option flex">
+    <div onclick="addNewContact('${param}')" class="option flex">
       <div class="width-100">Invite new Contact
       </div>
     </div>
