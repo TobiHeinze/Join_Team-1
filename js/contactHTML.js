@@ -247,14 +247,15 @@ function generateHeaderHTML(initial) {
  */
 function generateContactsHTML(i) {
     return /*html*/`
-<div class="assigned mt-11" onclick="renderContactDescription(${i})">
-  <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
-  <div class="left-distance">
-    <div class="font-21 contacts-span">
-      <span>${contentArray['contacts']['name'][i]}</span>
-    </div>
-    <a href="#">${contentArray['contacts']['email'][i]}</a>
-  </div>
-</div>
+      <div class="assigned mt-11" onclick="handleAssignedClick(this); renderContactDescription(${i})" id="contact${i}">
+        <div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}</div>
+        <div class="left-distance">
+          <div class="font-21 contacts-span">
+            <span>${contentArray['contacts']['name'][i]}</span>
+          </div>
+          <a href="#">${contentArray['contacts']['email'][i]}</a>
+        </div>
+      </div>
     `;
-}
+  }
+  

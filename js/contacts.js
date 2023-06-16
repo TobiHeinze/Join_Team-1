@@ -10,7 +10,40 @@ async function renderContacts() {
     updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
     resizeFunction();
-}
+  
+    // Hinzufügen des Event Listeners für den Klick auf Kontaktelemente
+    const contactElements = document.getElementsByClassName('contact');
+    for (let i = 0; i < contactElements.length; i++) {
+      const contactElement = contactElements[i];
+      contactElement.addEventListener('click', function() {
+        handleClick(contactElement);
+      });
+    }
+  }
+  
+  /**
+   * Handles the click event on menu items.
+   * Adds or removes the 'selected' class based on the clicked element.
+   * @param {HTMLElement} element - The clicked element.
+   */
+  function handleClick(element) {
+    if (selectedElement === element) {
+      // Wenn das zuvor ausgewählte Element erneut geklickt wurde,
+      // entferne die 'selected' Klasse und setze selectedElement auf null.
+      element.classList.remove('selected');
+      selectedElement = null;
+    } else {
+      // Entferne die 'selected' Klasse vom zuvor ausgewählten Element (falls vorhanden).
+      if (selectedElement) {
+        selectedElement.classList.remove('selected');
+      }
+  
+      // Füge die 'selected' Klasse zum aktuellen Element hinzu und setze es als selectedElement.
+      element.classList.add('selected');
+      selectedElement = element;
+    }
+  }
+  
 
 
 /**
@@ -254,4 +287,34 @@ function groupContactsByInitial() {
         contactsByInitial[initial].push(i);
     }
     return contactsByInitial;
+}
+
+
+/**
+ * Holds the reference to the currently selected assigned element.
+ * @type {HTMLElement}
+ */
+let selectedAssignedElement = null;
+
+/**
+ * Handles the click event on assigned elements.
+ * Adds or removes the 'clicked' class based on the clicked element.
+ * @param {HTMLElement} element - The clicked element.
+ */
+function handleAssignedClick(element) {
+  if (selectedAssignedElement === element) {
+    // If the previously selected assigned element is clicked again,
+    // remove the 'clicked' class and set selectedAssignedElement to null.
+    element.classList.remove('clicked');
+    selectedAssignedElement = null;
+  } else {
+    // Remove the 'clicked' class from the previously selected assigned element (if any).
+    if (selectedAssignedElement) {
+      selectedAssignedElement.classList.remove('clicked');
+    }
+
+    // Add the 'clicked' class to the current assigned element and set it as selectedAssignedElement.
+    element.classList.add('clicked');
+    selectedAssignedElement = element;
+  }
 }
