@@ -149,6 +149,7 @@ async function updateNewContact() {
     processContactName();
     processContactEmailPhoneBgColor();
     await setItem(key, contentArray);
+    // hier muss eine if abfrage rein wenn ich von add task einen kontakt erstelle dann wird was anderes ausgeführt mit parameter
     await renderContacts();
     showContactCreatedMessage();
 }

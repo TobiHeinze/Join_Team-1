@@ -204,6 +204,7 @@ function addTaskFloatHTML() {
           <div id="checkboxes2" class="flex-checkboxes-float">
           </div>
         </div>
+        <div id="renderAddContactInitials"></div>
         <div class="subtask">
           <span class="mt-11">Subtasks</span>
           <div class="subtask-box">
