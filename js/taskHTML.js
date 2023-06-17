@@ -16,8 +16,7 @@ function renderAddTaskHTML(param) {
     Contact successfully created
 </div>
 <form id="myAddForm" class="add-task-scroll" onsubmit="updateTaskArray(); return false;">
-  <button class="create-button2"><img class="create-button" src="./assets/img/create-button.png"
-      alt="create task"></button>
+  <button class="create-button"> Create <img src="./assets/img/hook.png" alt="create task"></button>
   <div class="desktop-size">
     <div class="add-task-responsive-left">
       <div class="title">

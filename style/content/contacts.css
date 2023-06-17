@@ -17,6 +17,7 @@
     justify-content: end;
 }
 
+
 .add-new-contact img {
     height: 50px;
     margin-top: 10px;
@@ -114,14 +115,67 @@
     overflow-y: scroll;
 }
 
+
 .overflow-scroll::-webkit-scrollbar {
     width: 5px;
 }
+
 
 .overflow-scroll::-webkit-scrollbar-thumb {
     border: 7px solid #A8A8A8;
     border-radius: 3px;
 }
+
+
+.contact-dude-button {
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    height: 51px;
+    /* Höhe des Elements */
+    padding: 0px 16px;
+    margin-top: 10px;
+    margin-right: 10px;
+    color: white;
+    background: #2A3647;
+    border: none;
+    /* Kein Rand */
+    border-radius: 8px;
+    /* Abrundung der Ecken des Elements */
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.125s ease !important;
+    /* Übergangseffekt bei Hover */
+    letter-spacing: 0.3px;
+    /*sieht besser so aus bei den buttons*/
+    display: flex;
+}
+
+.contact-dude-button img {
+    height: 25px;
+    margin-left: 10px;
+    margin-right: -7px;
+}
+
+
+.contact-dude-button:hover {
+    border: none;
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.125s ease;
+}
+
+
+
+.headlines-contacts {
+    width: 420px;
+    display: flex;
+    justify-content: space-between;
+
+}
+    
+
+
 
 @media (max-height: 741px) {
     .overflow-scroll {
@@ -145,4 +199,26 @@
     .overflow-scroll {
         height: 84vh;
     }
+
+    
+.contact-dude-button {
+   position: absolute;
+   bottom: 70px;
+   right: 50px;
 }
+}
+
+@media (max-width: 960px){
+    
+.headlines-contacts {
+    transform: scale(0.7);
+    /*Verkleinerung um 30%*/
+   margin-left: -80px;
+   margin-right: -50px;
+}
+}
+
+
+
+
+

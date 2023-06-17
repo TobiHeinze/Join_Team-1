@@ -1,11 +1,41 @@
 .create-button {
-    width: 110px;
-    height: 60px;
-    position: absolute;
-    top: 1%;
-    right: 5%;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    width: 140px;
+    /* Höhe des Elements */
+    padding: 0px 16px;
+    color: white;
+    background: #2A3647;
+    border: none;
+    /* Kein Rand */
+    border-radius: 8px;
+    /* Abrundung der Ecken des Elements */
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color 0.125s ease !important;
+    /* Übergangseffekt bei Hover */
+    letter-spacing: 0.3px;
+    /*sieht besser so aus bei den buttons*/
+    position: absolute;
+    top: 10px;
+    right: 10px;
     display: none;
+}
+
+.create-button img {
+    margin-left: 10px;
+}
+
+
+.create-button:hover {
+    border: none;
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.125s ease;
 }
 
 .create-button2 {

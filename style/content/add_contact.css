@@ -85,18 +85,37 @@
 .create-contact {
     display: flex;
     justify-content: center;
-    background: #2A3647;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
-    border: 1px solid #2A3647;
-    border-radius: 10px;
-    padding: 10px;
-    color: white;
-    width: 140px;
+    cursor: pointer;
+    display: flex;
     align-items: center;
-    margin-top: 25px;
+    height: 51px;
+    /* Höhe des Elements */
+    padding: 0px 10px;
+    color: white;
+    background: #2A3647;
+    border: none;
+    /* Kein Rand */
+    border-radius: 8px;
+    /* Abrundung der Ecken des Elements */
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.125s ease !important;
+    /* Übergangseffekt bei Hover */
+    letter-spacing: 0.5px;
+    /*sieht besser so aus bei den buttons*/
 }
+
 
 .create-contact img {
     padding-left: 10px;
     height: 14px;
+}
+
+
+
+.create-contact:hover {
+    border: none;
+    background-color: #29ABE2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.125s ease;
 }

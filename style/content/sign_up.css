@@ -41,6 +41,7 @@
 
 .name-box {
     display: flex;
+    width: 300px;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
     border-radius: 10px;
