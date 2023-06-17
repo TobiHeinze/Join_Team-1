@@ -1,6 +1,7 @@
 /**
  * This function renders the summary area
- *
+ * 
+ * @param {*} i this parameter is the position in the array
  */
 async function renderSummary(i) {
   contentArray = await getItem(key);
@@ -15,7 +16,8 @@ async function renderSummary(i) {
 
 /**
  * This function greets the logged in person or guest on the summary page
- *
+ * 
+ * @param {*} i this parameter is the position in the array
  */
 function updateGreetingName(i) {
   var loggedInName = contentArray['users']['name'][i];
@@ -35,7 +37,10 @@ let numberOfTasksToDo = [];
 let numberOfTasksInProgress = [];
 let numberOfTasksAwaiting = [];
 let numberOfTasksDone = [];
-
+/**
+ * This function is counting the tasks and push them into the arrays to show them later
+ * 
+ */
 function countTasks() {
   numberOfTasksToDo = [];
   numberOfTasksInProgress = [];
@@ -60,7 +65,10 @@ function countTasks() {
 let closestUrgentDate;
 let urgentCounter = [];
 let closestUrgentDateString;
-
+/**
+ * This function compare all dates from the urgent priority and the closest date near today  will be shown
+ * 
+ */
 function searchUrgendDate() {
   urgentCounter = [];
   const today = new Date();
@@ -171,6 +179,7 @@ function renderSummaryHTML() {
     `;
 }
 
+
 /**
  * Returns the current date in the format "DD.MM.YYYY".
  *
@@ -186,6 +195,7 @@ function getDate() {
   // Verwendet die toLocaleDateString-Methode, um das Datum im britischen Format mit Tag, Monat und Jahr zurückzugeben
   return date;
 }
+
 
 /**
  * Returns the current date in the format "YYYYMMDD".
@@ -206,6 +216,7 @@ function getDate1() {
   return date;
 }
 
+
 /**
  * Returns a greeting based on the current time of day.
  *
@@ -215,7 +226,6 @@ function getTime() {
   const now = new Date();
   const hour = now.getHours(); // Holt die aktuelle Stunde aus dem Date-Objekt
   let greeting = "Good ";
-
   if (hour >= 4 && hour < 12) {
     greeting += "morning"; // Fügt "morning" zur Begrüßung hinzu, wenn es zwischen 4 und 12 Uhr ist
   } else if (hour >= 12 && hour < 18) {
@@ -225,8 +235,5 @@ function getTime() {
   } else {
     greeting += "night"; // Fügt "night" zur Begrüßung hinzu, für alle anderen Zeiten
   }
-
   return greeting;
 }
-
-

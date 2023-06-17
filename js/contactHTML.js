@@ -4,7 +4,7 @@
  * @returns html code
  */
 function renderContactsHTML() {
-  return /*html*/ `
+    return /*html*/ `
 <section class="content-contact">
   <div class="add-new-contact">
     <button onclick="addNewContact()" class="contact-dude-button"> New contact <img src="./assets/img/add-contact-dude.png" alt="add contact"> </button>
@@ -25,7 +25,7 @@ function renderContactsHTML() {
  * @returns  html code
  */
 function renderContactDescriptionHTML(i) {
-  return /*html*/ `
+  return /*html*/  `
 <div id="contactPage">
 </div>
 <section class="content">
@@ -136,6 +136,7 @@ function addNewContactHTML(param) {
 </section>
 `;
 }
+
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -250,4 +251,5 @@ function generateContactsHTML(i) {
         </div>
       </div>
     `;
-}
+  }
+  

@@ -234,6 +234,7 @@
     height: 55px;
     align-items: end;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .add-task-button {
@@ -277,7 +278,7 @@
     align-items: center;
     width: 80px;
     cursor: pointer;
-    z-index: 999;
+    z-index: 100;
 }
 
 
@@ -484,9 +485,9 @@
 
     .add-task-vertical-line {
         border: 1px solid #D1D1D1;
-        margin: 32px;
-        min-height: 200px;
-        height: 33vh;
+        margin-left: 32px;
+        margin-right: 32px;
+        height: auto;
     }
 
     .add-task-responsive-left {
