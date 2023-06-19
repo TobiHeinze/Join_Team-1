@@ -59,16 +59,20 @@ function renderContactDescriptionHTML(i) {
     </div>
     <div class="mobile-edit">
     <div class="mb-11"><h4 class="font-21">Contact Information</h4></div>
-    <div onclick="editContact(${i})" class="edit-button-contact-desktop"> <img  src="./assets/img/edit-pen.png" alt="edit"> <p> Edit contact </p></div>
+    <div onclick="editContact(${i})" class="edit-button-contact-desktop"> 
+      <img src="./assets/img/edit-pen.png" alt="edit">
+      <img src="./assets/img/edit-blue-pen.png" alt="edit" class="hover-image">
+      <p> Edit contact </p>
+    </div>
     </div>
     <div class="mail-mobil">
       <div>
         <span><b>Email</b></span>
-        <a href="#">${contentArray["contacts"]["email"][i]}</a>
+        <a href="mailto:${contentArray["contacts"]["email"][i]}">${contentArray["contacts"]["email"][i]}</a>
       </div>
       <div>
         <span><b>Mobile</b></span>
-        <a href="#">${contentArray["contacts"]["phoneNumber"][i]}</a>
+        <a href="tel:${contentArray["contacts"]["phoneNumber"][i]}">${contentArray["contacts"]["phoneNumber"][i]}</a>
       </div>
     </div>
   </div>

@@ -19,6 +19,7 @@
 
 .board-header-mobile img {
 	display: none;
+	cursor: pointer;
 }
 
 .btn-dark:hover {
@@ -93,6 +94,10 @@
 	align-items: center;
 	justify-content: space-between;
 	padding-bottom: 3vh;
+}
+
+.header-task-status img {
+	cursor: pointer;
 }
 
 .task-status-description {
@@ -229,6 +234,16 @@
 	border-radius: 30px;
 	padding-top: 15px;
 	padding-right: 15px;
+}
+
+.all-task-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+.all-task-container::-webkit-scrollbar-thumb {
+    border: 7px solid #A8A8A8;
+    border-radius: 3px;
 }
 
 .task-section-container {
