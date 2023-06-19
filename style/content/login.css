@@ -188,53 +188,23 @@
 .remember-check span {
     margin-left: 16px;
     margin-right: 32px;
+    padding-top: 3px;
 }
 
+
 .check {
-    width: 135px;
+    width: 150px;
     height: 20px;
+    margin-left: -20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: context-menu;
 }
 
 
-.checkbox {
-    display: inline-block;
-    position: relative;
-    width: 20px;
-    height: 20px;
-    margin-top: 3px;
-}
 
-.checkbox input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.checkbox label {
-    position: absolute;
-    top: -7px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1.5px solid #000;
-    border-radius: 5px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    /* Passe die Größe des Häkchens an */
-    transition: background-color 0.3s ease;
-    cursor: pointer !important;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.497);
-}
-
-.checkbox input[type="checkbox"]:checked+label {
-    background-image: url("/assets/img/black-hook.png");
-    /* Passe den Pfad zur SVG-Datei an */
+#myCheckbox {
+    margin-top: -7px;
 }
 
 

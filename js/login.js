@@ -153,7 +153,6 @@ function renderLoginHTML() {
           <div class="check">
             <div class="checkbox">
               <input type="checkbox" id="myCheckbox">
-              <label for="myCheckbox"></label>
             </div>
             Remember me
           </div>
