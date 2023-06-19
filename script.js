@@ -84,7 +84,7 @@ function closeMiniMenu(clickedMiniMenu) {
 
 
 /**
- * Holds the reference to the currently selected element.
+ * Holds the reference to the currently selected element on.
  * @type {HTMLElement}
  */
 let selectedElement = null;
