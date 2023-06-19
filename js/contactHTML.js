@@ -22,7 +22,7 @@ function renderContactsHTML() {
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
  * @param {*} i gives the i as the position for every contact to this function
- * @returns  html code
+ * @returns  html codename-box
  */
 function renderContactDescriptionHTML(i) {
   return /*html*/  `
@@ -51,7 +51,7 @@ function renderContactDescriptionHTML(i) {
         <div>
           <h3 class="font-27">${contentArray["contacts"]["name"][i]}</h3>
         </div>
-        <div onclick="renderFloatAddTask('contacts')" class="add-task">
+        <div onclick="renderFloatAddTask('${i}')" class="add-task">
           
           <span> <span style="margin-right:5px" class="font-32">+</span> Add Task</span>
         </div>
@@ -110,19 +110,19 @@ function addNewContactHTML(param) {
   <form class="form-box" onsubmit="updateNewContact('${param}'); return false;">
     <div class="contact-box">
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="addNewContactName" class="input-name" type="text" placeholder="Name" required>
           <img src="./assets/img/charakter-icon.png" alt="charakter-img">
         </div>
       </div>
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="addNewContactEmail" class="input-name" type="email" placeholder="Email" required>
           <img src="./assets/img/email-icon.png" alt="email-img">
         </div>
       </div>
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="addNewContactPhone" class="input-name" type="tel" placeholder="Phone" required>
           <img src="./assets/img/phone-icon.png" alt="phone-img">
         </div>

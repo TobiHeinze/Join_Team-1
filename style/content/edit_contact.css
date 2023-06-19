@@ -60,7 +60,7 @@
     margin-bottom: 16px;
 }
 
-.name-box {
+.name-box2 {
     display: flex;
     background: #FFFFFF;
     border: 1px solid #D1D1D1;
@@ -69,7 +69,7 @@
     justify-content: space-between;
 }
 
-.name-box img {
+.name-box2 img {
     height: 15px;
 }
 

@@ -205,6 +205,10 @@
     justify-content: space-between;
 }
 
+.subtask-box img:hover {
+    cursor: pointer;
+}
+
 .input-subtask {
     border: none;
     outline: none;
@@ -216,6 +220,7 @@
     top: 17%;
     position: absolute;
     right: 5%;
+    cursor: pointer;
 }
 
 .add-task-x-position-float {
@@ -538,7 +543,7 @@
     }
 
     .add-task-x-position {
-        top: 26%;
+        top: 17%;
     }
 }
 

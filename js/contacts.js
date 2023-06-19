@@ -177,10 +177,19 @@ async function checkIfParam(param) {
         closeAddContact();
     }
     else if (param === 'contacts') {
-        renderContacts();
+        await getItem(key);
+        document.getElementById('checkboxes2').innerHTML = ``;
+        renderAddTaskAssignedToOptions();
+        showContactCreatedMessage();
+        closeAddContact();
     } else if (param === 'board') {
-        renderBoard();
+        await getItem(key);
+        document.getElementById('checkboxes2').innerHTML = ``;
+        renderAddTaskAssignedToOptions();
+        showContactCreatedMessage();
+        closeAddContact();
     }
+    console.log('nix param')
 }
 
 

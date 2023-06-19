@@ -29,7 +29,7 @@ async function renderFloatAddTask(param) {
         currentSubtaskStatus = [];
         document.getElementById('popUpDiv').innerHTML = addTaskFloatHTML();
         renderAddTaskCategoryOptions();
-        renderAddTaskAssignedToOptions();
+        renderAddTaskAssignedToOptions(param);
     } else {
         document.getElementById("popUpDiv").innerHTML = await renderAddTask(param);
         document.getElementById('addXButtonTask').classList.remove('d-none');
@@ -114,7 +114,7 @@ function addNewCategory() {
  */
 function closeNewCategory() {
     document.getElementById('renderAddNewCategory').innerHTML = ``;
-    document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
+    // document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
     document.getElementById('selectBox1').classList.remove('d-none');
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
