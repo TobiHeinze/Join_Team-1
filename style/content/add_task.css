@@ -492,9 +492,16 @@
     margin-left: 5px;
 }
 
+.responsive-header-width-add-task {
+    width: 614px;
+}
+
 @media (max-width: 950px) {
     .date-box-add-task {
         margin-bottom: 11px;
+    }
+    .responsive-header-width-add-task {
+        width: 345px;
     }
 }
 
@@ -533,6 +540,9 @@
     .create-button {
         display: block;
     }
+    .responsive-hide {
+        display: none;
+    }
 }
 
 @media (min-width: 801px) {
@@ -564,7 +574,7 @@
     }
 
     .add-task-x-position {
-        top: 17%;
+        top: 14%;
     }
 }
 

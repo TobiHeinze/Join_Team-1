@@ -169,7 +169,7 @@ async function checkIfParam(param) {
     if (param < contentArray['contacts']['name'].length) {
         renderContactDescription(param);
     }
-    if (param === 'newAssignedToContact' || param === 'contacts' || param === 'board' || param === 'undefined') {
+    if (param === 'newAssignedToContact' || param === 'contacts' || param === 'undefined') {
         console.log('param undefined');
         await getItem(key);
         document.getElementById('checkboxes2').innerHTML = ``;
@@ -182,6 +182,8 @@ async function checkIfParam(param) {
         showContactCreatedMessage();
         closeAddContact();
         updateContactsHTML();
+    } if (param === 'board') {
+        renderBoard();
     }
 }
 
