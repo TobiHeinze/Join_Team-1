@@ -134,7 +134,9 @@ function addTaskFloatHTML(param) {
   <div class="mt-11 responsive-hide">
     <span>Kanban Project Management Tool</span>
   </div>
-  <h2 class="font-47 add-task-h2">Add Task</h2>
+  <div style="width: 614px;" class="flex">
+    <h2 class="font-47 add-task-h2">Add Task</h2>
+  </div>
   <div id="contactCreatedDiv" class="contact-created">
     Contact successfully created
   </div>
