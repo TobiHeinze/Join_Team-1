@@ -40,9 +40,6 @@ async function register() {
     // Save the updated contentArray to the server
     await setItem(key, contentArray);
 
-    // Show a success message
-    alert("Registration successful!");
-
     // Call the renderLogin function
     renderLogin();
   } catch (error) {
@@ -54,6 +51,12 @@ async function register() {
   registerButton.disabled = false;
 }
 
+
+
+/**
+ * This function renders the HTML for the Sign Up page
+ *
+ */
 function renderSignUpHTML() {
   return /*html*/ `
     <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">

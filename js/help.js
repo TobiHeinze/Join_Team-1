@@ -24,7 +24,7 @@ function renderLegalNoticeHTML() {
 <b>Responsible for Content:</b>
 
 <p>Annika Rothe <br>
-   Bei der Kirche, 9 <br>
+   Bei der Kirche 9 <br>
    23749 Grube</p>
 
 
@@ -33,14 +33,14 @@ function renderLegalNoticeHTML() {
   04299 Leipzig</p>
 
 
-<p>Albert W..hat ever^^ <br>
-   <br>
-</p>
+<p>Albert Wissigkeit <br>
+   Amorbacherstraße 3<br>
+   68549 Ilvesheim</p> <br>
 
 
 <b>Contact:</b> <br> <br>
-Phone: <br>
-E-Mail:
+Phone: 0152/09479495 <br>
+E-Mail: rothe.annika@yahoo.com
 
 
 
@@ -94,7 +94,7 @@ particular, third-party content is marked as such. Should you become aware of a 
 inform us
 accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br>
 
-Last Updated: [05/30/2023]
+Last Updated: [06/19/2023]
 </div>
 </div> `;
 }

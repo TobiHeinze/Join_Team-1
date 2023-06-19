@@ -8,41 +8,49 @@ function renderLogin() {
   loadUsers();
 }
 
+
+/**
+ * Attempts to log in the user.
+ * If the password is incorrect, clears the password input field,
+ * displays an error message, and updates the placeholder.
+ */
 async function login() {
-  try {
-    let email = document.getElementById("loginEmail").value;
-    let password = document.getElementById("loginPassword").value;
-    let contentArray = await getItem(key);
+  /**
+   * Get the email and password entered by the user.
+   * @type {string}
+   */
+  let email = document.getElementById("loginEmail").value;
+  let password = document.getElementById("loginPassword").value;
 
-    // Überprüfe, ob das contentArray und die users-Eigenschaft vorhanden sind
-    if (contentArray && contentArray.users) {
-      let users = contentArray.users;
+  /**
+   * Retrieve the content array from storage.
+   */
+  let contentArray = await getItem(key);
 
-      // Finde den Index der E-Mail-Adresse im users-Array
-      let userIndex = users.email.indexOf(email);
+  // Check if the contentArray and users property exist
+  if (contentArray && contentArray.users) {
+    let users = contentArray.users;
 
-      // Überprüfe, ob die E-Mail-Adresse im users-Array vorhanden ist und das Passwort übereinstimmt
-      if (userIndex !== -1 && users.password[userIndex] === password) {
-        // Zeige eine Erfolgsmeldung an
-        showSuccessMessage(users.name[userIndex]);
+    // Find the index of the email in the users array
+    let userIndex = users.email.indexOf(email);
 
-        // Rufe die renderSummary-Funktion auf
-        setTimeout(() => {
-          renderSummary(userIndex);
-        }, 2000);
-      } else {
-        throw new Error("Ungültige E-Mail-Adresse oder Passwort.");
-      }
+    // Check if the email exists in the users array and the password matches
+    if (userIndex !== -1 && users.password[userIndex] === password) {
+      // Display a success message
+      showSuccessMessage(users.name[userIndex]);
+      renderSummary(userIndex);
+      
     } else {
-      throw new Error(
-        "Das contentArray oder die users-Eigenschaft ist nicht definiert."
-      );
+      // Clear the password input field
+      document.getElementById("loginPassword").value = "";
+
+      // Update the placeholder and display the error message
+      document.getElementById("loginPassword").placeholder = "Please try again";
+      document.getElementById("passwordError").innerText = "Wrong password";
     }
-  } catch (error) {
-    console.error("Fehler beim Login:", error);
-    alert("Fehler beim Login. Bitte überprüfe deine Eingaben.");
-  }
+  } 
 }
+
 
 /**
  * Creates the message container element.
@@ -64,6 +72,7 @@ function createMessageContainer() {
   return messageContainer;
 }
 
+
 /**
  * Creates and returns the message text element.
  * @param {string} name - The name to be displayed in the message.
@@ -77,14 +86,15 @@ function showMessageText(name) {
 
   const greetingText = document.createElement("span");
   greetingText.innerText = getTime() + ",";
-  greetingText.style.fontWeight = "700";
-  greetingText.style.fontSize = "45px";
+  greetingText.style.fontWeight = "500";
+  greetingText.style.fontSize = "30px";
 
   const nameText = document.createElement("span");
   nameText.innerText = name;
   nameText.style.color = "rgb(41, 171, 226)";
-  nameText.style.fontWeight = "700";
-  nameText.style.fontSize = "64px";
+  nameText.style.fontWeight = "600";
+  nameText.style.fontSize = "50px";
+  nameText.style.textAlign = "center"; 
 
   messageText.appendChild(greetingText);
   messageText.appendChild(nameText);
@@ -92,67 +102,78 @@ function showMessageText(name) {
   return messageText;
 }
 
+
 /**
  * Shows a success message with the given name.
  * @param {string} name - The name to be displayed in the success message.
  */
 function showSuccessMessage(name) {
-  const messageContainer = createMessageContainer();
-  const messageText = showMessageText(name);
+  // Check the screen width
+  if (window.innerWidth <= 800) {
+    const messageContainer = createMessageContainer();
+    const messageText = showMessageText(name);
 
-  messageContainer.appendChild(messageText);
-  document.body.appendChild(messageContainer);
+    messageContainer.appendChild(messageText);
+    document.body.appendChild(messageContainer);
 
-  setTimeout(() => {
-    document.body.removeChild(messageContainer);
-  }, 3000);
+    setTimeout(() => {
+      document.body.removeChild(messageContainer);
+    }, 2000);
+  }
 }
 
+
+
+/**
+ * Renders the login HTML content.
+ * @returns {string} The HTML content for the login page.
+ */
 function renderLoginHTML() {
   return /*html*/ `
- <div class="logo-container" id="login-container">
+    <div class="logo-container" id="login-container">
+      <form class="login-container">
+        <h1 class="font-61">Log in</h1>
+        <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
+        <!-- Input fields for email and password -->
+        <div class="input-container">
+          <div class="input-field">
+            <input id="loginEmail" required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
+            <img src="./assets/img/email-icon.png">
+          </div>
+          <div class="input-field">
+            <input id="loginPassword" required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
+            <img class="toogleImage"  src="./assets/img/password-icon.png">
+          </div>
+          <!-- Display error message for wrong password -->
+          <div id="passwordError" class="error-message"></div>
+        </div>
 
-<form class="login-container" >
- <h1 class="font-61">Log in</h1>
- <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
- <!-- Eingabefelder für E-Mail und Passwort -->
- <div class="input-container">
-     <div class="input-field">
-         <input id="loginEmail" required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
-         <img src="./assets/img/email-icon.png">
-     </div>
-     
-     <div class="input-field">
-         <input id="loginPassword" required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
-         <img class="toogleImage"  src="./assets/img/password-icon.png">
+        <!-- Checkbox for "Remember me" and link for password recovery -->
+        <div class="remember-check">
+          <div class="check">
+            <div class="checkbox">
+              <input type="checkbox" id="myCheckbox">
+              <label for="myCheckbox"></label>
+            </div>
+            Remember me
+          </div>
+          <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
+        </div>
+        
+        <!-- Buttons for login and guest login -->
+        <div class="login-buttons">
+          <button onclick="login(); return false;" class="btn-dark login-btn">Log in</button>
+          <div onclick="renderSummary()" class="btn-bright guest-login">Guest Log in</div>
+        </div>
+      </form>
     </div>
- </div>
-
- <!-- Checkbox für "Angemeldet bleiben" und Link zur Passwortwiederherstellung -->
- <div class="remember-check">
-     <div class="check"><div class="checkbox">
-  <input  type="checkbox" id="myCheckbox">
-  <label  for="myCheckbox"></label>
-</div>
-  Remember me</div>
-     <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
- </div>
- 
- <!-- Buttons für Einloggen und Gast-Einloggen -->
- <div class="login-buttons">
- <button onclick="login(); return false;" class="btn-dark login-btn">Log in</button>
-
-     <div onclick="renderSummary()" class="btn-bright guest-login">Guest Log in</div>
- </div>
-</form>
-</div>
-<div>
-<div id="not-a-join " class="not-a-join ">
- <span>Not a Join user?</span>
- <div onclick="renderSignUp()" class="btn-dark ">Sign up</div>
-</div>
-</div>
-<img class="animate-logo moving-logo " src="./assets/img/LogoJoinBig.png ">
-<div class="background animate-background "></div>
- `;
+    <div>
+      <div id="not-a-join" class="not-a-join">
+        <span>Not a Join user?</span>
+        <div onclick="renderSignUp()" class="btn-dark">Sign up</div>
+      </div>
+    </div>
+    <img class="animate-logo moving-logo" src="./assets/img/LogoJoinBig.png">
+    <div class="background animate-background"></div>
+  `;
 }
