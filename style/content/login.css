@@ -233,7 +233,7 @@
 }
 
 .checkbox input[type="checkbox"]:checked+label {
-    background-image: url("/assets/img/black-hook.png");
+    background-image: url("./assets/img/black-hook.png");
     /* Passe den Pfad zur SVG-Datei an */
 }
 
