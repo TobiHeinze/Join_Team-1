@@ -19,6 +19,7 @@
 
 .board-header-mobile img {
 	display: none;
+	cursor: pointer;
 }
 
 .textarea-find-task {
@@ -82,6 +83,10 @@
 	align-items: center;
 	justify-content: space-between;
 	padding-bottom: 3vh;
+}
+
+.header-task-status img {
+	cursor: pointer;
 }
 
 .task-status-description {
