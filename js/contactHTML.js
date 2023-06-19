@@ -7,7 +7,7 @@ function renderContactsHTML() {
     return /*html*/ `
 <section class="content-contact">
   <div class="add-new-contact">
-    <button onclick="addNewContact()" class="contact-dude-button"> New contact <img src="./assets/img/add-contact-dude.png" alt="add contact"> </button>
+    <button onclick="addNewContact('addNormal')" class="contact-dude-button"> New contact <img src="./assets/img/add-contact-dude.png" alt="add contact"> </button>
   </div>
   <div id="contactsList" class="overflow-scroll">
   </div>
@@ -59,7 +59,7 @@ function renderContactDescriptionHTML(i) {
     </div>
     <div class="mobile-edit">
     <div class="mb-11"><h4 class="font-21">Contact Information</h4></div>
-    <div onclick="editContact(${i})" style="display:flex"> <img  src="./assets/img/edit-pen.png" alt="edit"> <p> Edit contact </p></div>
+    <div onclick="editContact(${i})" class="edit-button-contact-desktop"> <img  src="./assets/img/edit-pen.png" alt="edit"> <p> Edit contact </p></div>
     </div>
     <div class="mail-mobil">
       <div>
@@ -165,19 +165,19 @@ function editContactHTML(index) {
   <form onsubmit="updateEditedContact(${index}); return false;">
     <div class="contact-box">
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="editContactName" class="input-name" type="text" placeholder="Name" required>
           <img src="./assets/img/charakter-icon.png" alt="charakter-img">
         </div>
       </div>
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="editContactEmail" class="input-name" type="text" placeholder="Email" required>
           <img src="./assets/img/email-icon.png" alt="email-img">
         </div>
       </div>
       <div class="name">
-        <div class="name-box">
+        <div class="name-box2">
           <input id="editContactPhone" class="input-name" type="text" placeholder="Phone" required>
           <img src="./assets/img/phone-icon.png" alt="phone-img">
         </div>
@@ -209,8 +209,9 @@ function renderContactDescriptionHTMLHeader() {
   </div>
   <div class= "headlines-contacts">
   <h1 class="summary-h1">Contacts</h1>
-  <img class="blue-line-vertical" src="./assets/img/blue-line-vertical.png">
+  <img class="blue-line-vertical-contact" src="./assets/img/blue-line-vertical.png">
   <span style="margin-top: 20px;" class="font-21">Better with a team</span> 
+  <img class="blue-line-horizontal-contact" src="./assets/img/blue-line-horizontal.png">
   </div>
 </section>
     `;

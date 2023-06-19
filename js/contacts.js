@@ -169,27 +169,20 @@ async function checkIfParam(param) {
     if (param < contentArray['contacts']['name'].length) {
         renderContactDescription(param);
     }
-    if (param === 'newAssignedToContact') {
+    if (param === 'newAssignedToContact' || param === 'contacts' || param === 'board' || param === 'undefined') {
+        console.log('param undefined');
         await getItem(key);
         document.getElementById('checkboxes2').innerHTML = ``;
+        document.getElementById('renderAddContactInitials').innerHTML = ``;
         renderAddTaskAssignedToOptions();
         showContactCreatedMessage();
         closeAddContact();
+    } if (param === 'addNormal'){
+        await getItem(key);
+        showContactCreatedMessage();
+        closeAddContact();
+        updateContactsHTML();
     }
-    else if (param === 'contacts') {
-        await getItem(key);
-        document.getElementById('checkboxes2').innerHTML = ``;
-        renderAddTaskAssignedToOptions();
-        showContactCreatedMessage();
-        closeAddContact();
-    } else if (param === 'board') {
-        await getItem(key);
-        document.getElementById('checkboxes2').innerHTML = ``;
-        renderAddTaskAssignedToOptions();
-        showContactCreatedMessage();
-        closeAddContact();
-    }
-    console.log('nix param')
 }
 
 

@@ -10,6 +10,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    min-width: 294px;
 }
 
 .add-new-contact {
@@ -40,13 +41,13 @@
     margin-right: 20px;
     padding: 10px;
     flex-direction: row;
-    transition: background-color 0.3s; 
-    border-radius: 10px; 
+    transition: background-color 0.3s;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 .assigned:hover {
-    background-color: #f2f2f2; 
+    background-color: #f2f2f2;
 }
 
 
@@ -54,12 +55,13 @@
 .assigned.clicked {
     background-color: #091931;
     color: #fff;
-  }
-  
+}
 
-  .assigned.clicked a {
-    color: #7dacf9;/* Farbe des <a>-Elements im .assigned.clicked-Zustand */
-  }
+
+.assigned.clicked a {
+    color: #7dacf9;
+    /* Farbe des <a>-Elements im .assigned.clicked-Zustand */
+}
 
 #marginLeftContact {
     margin-left: 3%;
@@ -169,13 +171,28 @@
 
 
 .headlines-contacts {
-    width: 420px;
+    width: 400px;
     display: flex;
     justify-content: space-between;
 
 }
-    
 
+.blue-line-vertical-contact {
+    height: 59px;
+    width: 3px;
+}
+
+.blue-line-horizontal-contact {
+    height: 5px;
+    width: 100px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.edit-button-contact-desktop {
+    display: flex;
+    min-width: 121px;
+}
 
 
 @media (max-height: 741px) {
@@ -196,30 +213,61 @@
     }
 }
 
-@media (min-width: 800px) {
+@media (min-width: 801px) {
     .overflow-scroll {
         height: 91vh;
     }
 
-    
-.contact-dude-button {
-   position: absolute;
-   bottom: 70px;
-   right: 50px;
-}
+
+    .contact-dude-button {
+        position: absolute;
+        bottom: 70px;
+        right: 50px;
+    }
 }
 
-@media (max-width: 960px){
-    
+@media (min-width: 1000px) {
+
+    .headlines-contacts {
+        transform: scale(0.7);
+        margin-left: -44px;
+        margin-right: -50px;
+    }
+}
+
+@media (min-width: 1000px) {
+
+    .headlines-contacts {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+
 .headlines-contacts {
-    transform: scale(0.7);
-    /*Verkleinerung um 30%*/
-   margin-left: -80px;
-   margin-right: -50px;
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+}
+
+.blue-line-vertical-contact {
+    display: none;
 }
 }
 
+@media (min-width: 1001px) {
+    .blue-line-horizontal-contact {
+        display: none;
+    }
+    .headlines-contacts {
+        margin-left: 0;
+        transform: scale(1);
+        margin-right: -50px;
+    }
+}
 
-
-
-
+/* @media (min-width: 959px) {
+    .headlines-contacts {
+        margin-left: -55px;
+    }
+} */
