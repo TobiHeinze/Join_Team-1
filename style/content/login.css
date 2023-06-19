@@ -218,14 +218,14 @@
     position: absolute;
     top: -7px;
     left: 0;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
     border: 1.5px solid #000;
     border-radius: 5px;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 80% 80%;
+    background-size: 100% 100%;
     /* Passe die Größe des Häkchens an */
     transition: background-color 0.3s ease;
     cursor: pointer !important;
@@ -233,7 +233,7 @@
 }
 
 .checkbox input[type="checkbox"]:checked+label {
-    background-image: url("./assets/img/black-hook.png");
+    background-image: url("/assets/img/black-hook.png");
     /* Passe den Pfad zur SVG-Datei an */
 }
 
