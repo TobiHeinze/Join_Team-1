@@ -112,7 +112,7 @@
 .overflow-scroll {
     margin-left: 5%;
     margin-right: 2%;
-    height: 77vh;
+    height: 78vh;
     overflow-y: scroll;
 }
 
@@ -198,7 +198,7 @@
 
 @media (min-width: 800px) {
     .overflow-scroll {
-        height: 84vh;
+        height: 91vh;
     }
 
     
