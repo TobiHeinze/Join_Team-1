@@ -1,6 +1,5 @@
 /**
  * This function loads the login page
- *
  */
 function renderLogin() {
   resetContent();
@@ -12,39 +11,23 @@ function renderLogin() {
 /**
  * Attempts to log in the user.
  * If the password is incorrect, clears the password input field,
- * displays an error message, and updates the placeholder.
+ * Displays an error message, and updates the placeholder.
  */
 async function login() {
-  /**
-   * Get the email and password entered by the user.
-   * @type {string}
-   */
   let email = document.getElementById("loginEmail").value;
   let password = document.getElementById("loginPassword").value;
-
-  /**
-   * Retrieve the content array from storage.
-   */
   let contentArray = await getItem(key);
 
-  // Check if the contentArray and users property exist
   if (contentArray && contentArray.users) {
     let users = contentArray.users;
-
-    // Find the index of the email in the users array
     let userIndex = users.email.indexOf(email);
 
-    // Check if the email exists in the users array and the password matches
     if (userIndex !== -1 && users.password[userIndex] === password) {
-      // Display a success message
       showSuccessMessage(users.name[userIndex]);
       renderSummary(userIndex);
       
     } else {
-      // Clear the password input field
       document.getElementById("loginPassword").value = "";
-
-      // Update the placeholder and display the error message
       document.getElementById("loginPassword").placeholder = "Please try again";
       document.getElementById("passwordError").innerText = "Wrong password";
     }
@@ -58,17 +41,18 @@ async function login() {
  */
 function createMessageContainer() {
   const messageContainer = document.createElement("div");
-  messageContainer.style.position = "fixed";
-  messageContainer.style.top = "0";
-  messageContainer.style.left = "0";
-  messageContainer.style.width = "100%";
-  messageContainer.style.height = "100vh";
-  messageContainer.style.backgroundColor = "white";
-  messageContainer.style.display = "flex";
-  messageContainer.style.justifyContent = "center";
-  messageContainer.style.alignItems = "center";
-  messageContainer.style.zIndex = "9999";
-
+  Object.assign(messageContainer.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100vh",
+    backgroundColor: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: "9999"
+  });
   return messageContainer;
 }
 
@@ -79,27 +63,63 @@ function createMessageContainer() {
  * @returns {HTMLDivElement} The created message text element.
  */
 function showMessageText(name) {
+  const messageText = createMessageText(name);
+  return messageText;
+}
+
+/**
+ * Creates and returns the message text element with the greeting and name.
+ * @param {string} name - The name to be displayed in the message.
+ * @returns {HTMLDivElement} The created message text element.
+ */
+function createMessageText(name) {
   const messageText = document.createElement("div");
-  messageText.style.display = "flex";
-  messageText.style.flexDirection = "column";
-  messageText.style.alignItems = "center";
+  Object.assign(messageText.style, {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center"
+  });
 
-  const greetingText = document.createElement("span");
-  greetingText.innerText = getTime() + ",";
-  greetingText.style.fontWeight = "500";
-  greetingText.style.fontSize = "30px";
-
-  const nameText = document.createElement("span");
-  nameText.innerText = name;
-  nameText.style.color = "rgb(41, 171, 226)";
-  nameText.style.fontWeight = "600";
-  nameText.style.fontSize = "50px";
-  nameText.style.textAlign = "center"; 
+  const greetingText = createGreetingText();
+  const nameText = createNameText(name);
 
   messageText.appendChild(greetingText);
   messageText.appendChild(nameText);
 
   return messageText;
+}
+
+/**
+ * Creates and returns the greeting text element.
+ * @returns {HTMLSpanElement} The created greeting text element.
+ */
+function createGreetingText() {
+  const greetingText = document.createElement("span");
+  Object.assign(greetingText.style, {
+    fontWeight: "500",
+    fontSize: "30px"
+  });
+  greetingText.innerText = getTime() + ",";
+
+  return greetingText;
+}
+
+/**
+ * Creates and returns the name text element.
+ * @param {string} name - The name to be displayed in the message.
+ * @returns {HTMLSpanElement} The created name text element.
+ */
+function createNameText(name) {
+  const nameText = document.createElement("span");
+  Object.assign(nameText.style, {
+    color: "rgb(41, 171, 226)",
+    fontWeight: "600",
+    fontSize: "50px",
+    textAlign: "center"
+  });
+  nameText.innerText = name;
+
+  return nameText;
 }
 
 
@@ -121,7 +141,6 @@ function showSuccessMessage(name) {
     }, 2000);
   }
 }
-
 
 
 /**
@@ -151,10 +170,9 @@ function renderLoginHTML() {
         <!-- Checkbox for "Remember me" and link for password recovery -->
         <div class="remember-check">
           <div class="check">
-            <div class="checkbox">
+            
               <input type="checkbox" id="myCheckbox">
-              <label for="myCheckbox"></label>
-            </div>
+            
             Remember me
           </div>
           <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
