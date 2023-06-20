@@ -13,10 +13,10 @@ body {
     background: #F6F7F8;
 }
 
-/* hides scrollbar from bottom */
-/* body::-webkit-scrollbar {
+/* hides basic scrollbar  */
+body::-webkit-scrollbar {
     display: none;
-  } */
+  }
 
 textarea {
     font-family: 'Inter', sans-serif;
@@ -27,7 +27,7 @@ textarea {
 }
 
 .d-flex {
-    display: flex ;
+    display: flex;
 }
 
 .align-center {
@@ -64,7 +64,7 @@ textarea {
 
 
 #contactsContent {
-    min-width: 280px;
+    min-width: 294px;
     width: 35%;
 }
 

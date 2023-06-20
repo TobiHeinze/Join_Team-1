@@ -13,7 +13,8 @@
             "./js/task.js",
             "./js/taskHTML.js",
             "./storage.js",
-            "./script.js"
+            "./script.js",
+            "./js/edit_task.js"
         ]
     },
     "opts": {

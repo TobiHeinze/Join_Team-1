@@ -10,40 +10,37 @@ async function renderContacts() {
     updateContactsHTML();
     document.getElementById('contactsDescriptionContent').innerHTML = renderContactDescriptionHTMLHeader();
     resizeFunction();
-  
-    // Hinzufügen des Event Listeners für den Klick auf Kontaktelemente
     const contactElements = document.getElementsByClassName('contact');
     for (let i = 0; i < contactElements.length; i++) {
-      const contactElement = contactElements[i];
-      contactElement.addEventListener('click', function() {
-        handleClick(contactElement);
-      });
+        const contactElement = contactElements[i];
+        contactElement.addEventListener('click', function () {
+            handleClick(contactElement);
+        });
     }
-  }
-  
-  /**
-   * Handles the click event on menu items.
-   * Adds or removes the 'selected' class based on the clicked element.
-   * @param {HTMLElement} element - The clicked element.
-   */
-  function handleClick(element) {
+}
+
+
+/**
+ * Handles the click event on menu items.
+ * Adds or removes the 'selected' class based on the clicked element.
+ * @param {HTMLElement} element - The clicked element.
+ */
+function handleClick(element) {
     if (selectedElement === element) {
-      // Wenn das zuvor ausgewählte Element erneut geklickt wurde,
-      // entferne die 'selected' Klasse und setze selectedElement auf null.
-      element.classList.remove('selected');
-      selectedElement = null;
+        // Wenn das zuvor ausgewählte Element erneut geklickt wurde,
+        // entferne die 'selected' Klasse und setze selectedElement auf null.
+        element.classList.remove('selected');
+        selectedElement = null;
     } else {
-      // Entferne die 'selected' Klasse vom zuvor ausgewählten Element (falls vorhanden).
-      if (selectedElement) {
-        selectedElement.classList.remove('selected');
-      }
-  
-      // Füge die 'selected' Klasse zum aktuellen Element hinzu und setze es als selectedElement.
-      element.classList.add('selected');
-      selectedElement = element;
+        // Entferne die 'selected' Klasse vom zuvor ausgewählten Element (falls vorhanden).
+        if (selectedElement) {
+            selectedElement.classList.remove('selected');
+        }
+        // Füge die 'selected' Klasse zum aktuellen Element hinzu und setze es als selectedElement.
+        element.classList.add('selected');
+        selectedElement = element;
     }
-  }
-  
+}
 
 
 /**
@@ -66,6 +63,7 @@ function resizeFunction() {
 /**
  * This function renders the contact decriptions
  * 
+ * @param {*} i the param is the point in the array where we want to grab something
  */
 function renderContactDescription(i) {
     if (window.innerWidth > 800) {
@@ -105,17 +103,21 @@ function slideInContact() {
 /**
  * This function opens the add contact area to add a new contact
  * 
+ * @param {*} param this parameter gives the side from where you open the add contact
  */
-function addNewContact() {
-    document.getElementById('popUpDiv').classList.remove('d-none');
-    document.getElementById('popUpDiv').classList.add('d-flex');
-    document.getElementById('popUpDiv').classList.add('show-popup');
-    slideInPopUp();
-    document.getElementById('popUpDiv').innerHTML = addNewContactHTML();
+function addNewContact(param) {
+    document.getElementById('popUpDiv2').classList.remove('d-none');
+    document.getElementById('popUpDiv2').classList.add('d-flex');
+    document.getElementById('popUpDiv2').classList.add('show-popup');
+    slideInPopUp2();
+    document.getElementById('popUpDiv2').innerHTML = addNewContactHTML(param);
 }
 
 
-// ausgelagerte funktionen für updatenewcontact funktion
+/**
+ * This function is a help function to get name and name initials when add a new contact
+ * 
+ */
 function processContactName() {
     let addNewContactName = document.getElementById('addNewContactName').value.trim().replace(/\s+/g, ' ');;
     contentArray['contacts']['name'].push(addNewContactName);
@@ -128,6 +130,10 @@ function processContactName() {
 }
 
 
+/**
+ * This function is a help function to get  new e-mail and phone number and a random color when add a contact
+ * 
+ */
 function processContactEmailPhoneBgColor() {
     let addNewContactEmail = document.getElementById('addNewContactEmail').value;
     contentArray['contacts']['email'].push(addNewContactEmail);
@@ -141,16 +147,44 @@ function processContactEmailPhoneBgColor() {
 
 
 /**
- * This function can add a new contact to the contact list
+ * This function adds new contact 
  * 
+ * @param {*} param this param gives the startpoint of adding a new contact
  */
-async function updateNewContact() {
+async function updateNewContact(param) {
     await getItem(key);
     processContactName();
     processContactEmailPhoneBgColor();
     await setItem(key, contentArray);
-    await renderContacts();
-    showContactCreatedMessage();
+    checkIfParam(param);
+}
+
+
+/**
+ * This function checks if the param is matching then different actions and then redirect to the pages
+ * 
+ * @param {*} param this param is a string that should match the string in the if else question then do something
+ */
+async function checkIfParam(param) {
+    if (param < contentArray['contacts']['name'].length) {
+        renderContactDescription(param);
+    }
+    if (param === 'newAssignedToContact' || param === 'contacts' || param === 'undefined') {
+        console.log('param undefined');
+        await getItem(key);
+        document.getElementById('checkboxes2').innerHTML = ``;
+        document.getElementById('renderAddContactInitials').innerHTML = ``;
+        renderAddTaskAssignedToOptions();
+        showContactCreatedMessage();
+        closeAddContact();
+    } if (param === 'addNormal'){
+        await getItem(key);
+        showContactCreatedMessage();
+        closeAddContact();
+        updateContactsHTML();
+    } if (param === 'board') {
+        renderBoard();
+    }
 }
 
 
@@ -170,7 +204,11 @@ async function editContact(index) {
 }
 
 
-// hier sind die ausgelagerten funktionen für die updateeditedcontact funktion
+/**
+ * This function is a help function that gives back the name and the name initials when editing a contact
+ * 
+ * @param {*} index is the position in the array
+ */
 function processEditedContactName(index) {
     let updatedContactName = document.getElementById('editContactName').value;
     contentArray['contacts']['name'][index] = updatedContactName;
@@ -182,6 +220,11 @@ function processEditedContactName(index) {
 }
 
 
+/**
+ * This function is a help function that gives back the email and phone number when editing a contact
+ * 
+ * @param {*} index is the position in the array
+ */
 function processEditedContactEmailPhone(index) {
     let updatedContactEmail = document.getElementById('editContactEmail').value;
     contentArray['contacts']['email'][index] = updatedContactEmail;
@@ -246,6 +289,17 @@ function getRandomBackgroundColor() {
 
 
 /**
+ * This function close the add contact window
+ * 
+ */
+function closeAddContact() {
+    document.getElementById('popUpDiv2').classList.add('d-none');
+    document.getElementById('popUpDiv2').classList.remove('d-flex');
+    document.getElementById('popUpDiv2').innerHTML = ``;
+}
+
+
+/**
  * This function close the edit contact window
  * 
  */
@@ -257,7 +311,7 @@ function closeEditContact() {
 
 
 /**
- * This function filters the names with the same beginning letter and then shows them together in the specific groups for letters
+ * This function get the filtered names and then added a letter for existing initial letters to show the contacts grouped together
  * 
  */
 function updateContactsHTML() {
@@ -276,6 +330,11 @@ function updateContactsHTML() {
 }
 
 
+/**
+ * this function  filters the names with the same beginning letter and push them into a variable together in arrays
+ * 
+ * @returns 
+ */
 function groupContactsByInitial() {
     const contactsByInitial = {};
     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
@@ -296,25 +355,25 @@ function groupContactsByInitial() {
  */
 let selectedAssignedElement = null;
 
+
 /**
  * Handles the click event on assigned elements.
  * Adds or removes the 'clicked' class based on the clicked element.
  * @param {HTMLElement} element - The clicked element.
  */
 function handleAssignedClick(element) {
-  if (selectedAssignedElement === element) {
-    // If the previously selected assigned element is clicked again,
-    // remove the 'clicked' class and set selectedAssignedElement to null.
-    element.classList.remove('clicked');
-    selectedAssignedElement = null;
-  } else {
-    // Remove the 'clicked' class from the previously selected assigned element (if any).
-    if (selectedAssignedElement) {
-      selectedAssignedElement.classList.remove('clicked');
+    if (selectedAssignedElement === element) {
+        // If the previously selected assigned element is clicked again,
+        // remove the 'clicked' class and set selectedAssignedElement to null.
+        element.classList.remove('clicked');
+        selectedAssignedElement = null;
+    } else {
+        // Remove the 'clicked' class from the previously selected assigned element (if any).
+        if (selectedAssignedElement) {
+            selectedAssignedElement.classList.remove('clicked');
+        }
+        // Add the 'clicked' class to the current assigned element and set it as selectedAssignedElement.
+        element.classList.add('clicked');
+        selectedAssignedElement = element;
     }
-
-    // Add the 'clicked' class to the current assigned element and set it as selectedAssignedElement.
-    element.classList.add('clicked');
-    selectedAssignedElement = element;
-  }
 }

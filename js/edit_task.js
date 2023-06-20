@@ -23,6 +23,7 @@ async function renderEditTaskContent(i) {
 	changedSubtaskStatus = contentArray['tasks']['subtasks'][i]['subtaskStatus'];
 	changePrioInEditTask(priority);
 	generateSubtaskSectionInEditTask(i);
+	renderAssignedToInEditTask(i);
 }
 
 
@@ -96,21 +97,65 @@ function addNewSubtask(i) {
 	let editNewSubtask = document.getElementById('addNewSubtaskInEditTask').value;
 	contentArray['tasks']['subtasks'][i]['subtask'].push(editNewSubtask);
 	contentArray['tasks']['subtasks'][i]['subtaskStatus'].push('open');
-	renderEditTaskContent(i);
+	generateSubtaskSectionInEditTask(i);
 	document.getElementById('addNewSubtaskInEditTask').value = '';
 }
 
 
 
 
-// function renderAssignedToAtEditTask(i) {
-// 	for (let j = 0; j < contentArray['tasks']['assignedTo'][i]['nameInitials'].length; j++) {
-// 		document.getElementById('editTaskAssignedTo').innerHTML += `
-// 			<div id="assignedToImageBgColor${i}${j}" class="task-assigned-to-icon">${contentArray['tasks']['assignedTo'][i]['nameInitials'][j]}</div>
-// 	`;
-// 		document.getElementById(`assignedToImageBgColor${i}${j}`).style.background = contentArray['tasks']['assignedTo'][i]['contactImageBgColor'][j];
-// 	}
-// }
+
+
+function renderAssignedToInEditTask(param) {
+    document.getElementById('checkboxes3').innerHTML += /*html*/`
+    <div onclick="addNewContact('${param}')" class="option flex">
+      <div class="width-100">Invite new Contact
+      </div>
+    </div>
+  `;
+    for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
+        document.getElementById('checkboxes3').innerHTML += /*html*/`
+      <div class="option flex">
+        <input type="checkbox" id="assignedToOptionsEditTask${i}" value="${contentArray['contacts']['name'][i]}" />
+        <div onclick="toggleCheckboxEditTask(${i})" class="width-100">
+          ${contentArray['contacts']['name'][i]}
+        </div>
+      </div>
+      `;
+    }
+}
+
+
+
+function toggleCheckboxEditTask(index) {
+    let checkbox = document.getElementById(`assignedToOptionsEditTask${index}`);
+    checkbox.checked = !checkbox.checked;
+    toggleCheckboxColorEditTask(index);
+}
+
+
+function toggleCheckboxColorEditTask(index) {
+    if (!document.getElementById(`colorAlreadyAddedEditTask${index}`)) {
+    document.getElementById('renderAddContactInitialsEditTask').innerHTML += /*html*/`
+    <div id="clearColorAlreadyAddedEditTask${index}">
+    <div id="colorAlreadyAddedEditTask${index}" class="circle-add-task" style="background-color: ${contentArray['contacts']['contactImageBgColor'][index]}">
+    ${contentArray['contacts']['nameInitials'][index]}
+    </div>
+    `;
+    } else if (document.getElementById(`clearColorAlreadyAddedEditTask${index}`)) {
+        removeDivByIdEditTask(`clearColorAlreadyAddedEditTask${index}`);
+    }
+}
+
+
+function removeDivByIdEditTask(divId) {
+    let div = document.getElementById(divId);
+    if (div) {
+        div.remove();
+    }
+}
+
+
 
 
 function generateEditTaskHTML(i) {
@@ -165,7 +210,18 @@ function generateEditTaskHTML(i) {
 
 					<div class="edit-task-header">
 						<div>Assigned to</div>
-						<input class="edit-task-header-input" type="text">
+						<div class="multiselect">
+        					<div class="select-box-edit-task" onclick="showCheckboxes(3)" id="selectBox3">
+          					<div class="flex">
+            				<div>Select contacts to assign</div>
+            				<div class="arrow">&#9660;</div>
+          				</div>
+          				<div class="overSelect"></div>
+       					 </div>
+        				<div id="checkboxes3" class="flex-checkboxes">
+        				</div>
+      					</div>
+      					<div id="renderAddContactInitialsEditTask"></div>
 					</div>
 
 					<div id=""></div>

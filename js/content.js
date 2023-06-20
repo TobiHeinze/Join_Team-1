@@ -19,9 +19,9 @@ let contentArray =
 	  ,
 	  "contacts": 
 		{
-		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze", "David Eisenberg", "Bendikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
+		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze", "David Eisenberg", "Benedikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
 		  "nameInitials": ["AR", "AW", "TH", "DE", "BZ", "MB", "SF"],
-		  "email": ["annika@test.de", "albert@test.de", "tobias@test.de", "david@test.de", "bendikt@test.de", "marcel@test.de", "stefanie@test.de"],
+		  "email": ["annika@test.de", "albert@test.de", "tobias@test.de", "david@test.de", "benedikt@test.de", "marcel@test.de", "stefanie@test.de"],
 		  "phoneNumber": [190666666, 1111111111, 3411234567, 84949433994, 1424242345, 4242342342, 3112335567],
 		  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 		}

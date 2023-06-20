@@ -98,78 +98,26 @@
 
         
             
-<h4 class="name" id="currentSubtasks"><span class="type-signature"></span>currentSubtasks<span class="type-signature"></span></h4>
+<h4 class="name" id="selectedAssignedElement"><span class="type-signature"></span>selectedAssignedElement<span class="type-signature"> :HTMLElement</span></h4>
 
 
 
 
 <div class="description">
-    This function added subtasks to the subtask add area
+    Holds the reference to the currently selected assigned element.
 </div>
 
 
 
-
-
-
-
-<dl class="details">
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line383">line 383</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-        
+    <h5>Type:</h5>
+    <ul>
+        <li>
             
-<h4 class="name" id="expanded"><span class="type-signature"></span>expanded<span class="type-signature"></span></h4>
+<span class="param-type">HTMLElement</span>
 
 
-
-
-<div class="description">
-    This function shows or hide the dropwdown menus
-</div>
-
-
+        </li>
+    </ul>
 
 
 
@@ -204,7 +152,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line55">line 55</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line359">line 359</a>
     </li></ul></dd>
     
 
@@ -276,7 +224,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line73">line 73</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line90">line 90</a>
     </li></ul></dd>
     
 
@@ -304,7 +252,7 @@
     
 
     
-    <h4 class="name" id="addNewContact"><span class="type-signature"></span>addNewContact<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addNewCategory"><span class="type-signature"></span>addNewCategory<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -312,7 +260,7 @@
 
 
 <div class="description">
-    This function opens the add contact area to add a new contact
+    This function modify the dropdown category menu to add a new category
 </div>
 
 
@@ -356,7 +304,232 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line76">line 76</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line88">line 88</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addNewCategoryToArray"><span class="type-signature"></span>addNewCategoryToArray<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function add a new category to the array with a random color
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line130">line 130</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addNewContact"><span class="type-signature"></span>addNewContact<span class="signature">(param)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function opens the add contact area to add a new contact
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this parameter gives the side from where you open the add contact</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line108">line 108</a>
     </li></ul></dd>
     
 
@@ -550,7 +723,7 @@
 
             
 
-            <td class="description last">this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low</td>
+            <td class="description last">this parameter comes from the three diffrent priority types when klick on them to select and give a name, urgent, medium, low with color and a changed image</td>
         </tr>
 
     
@@ -591,7 +764,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line410">line 410</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line489">line 489</a>
     </li></ul></dd>
     
 
@@ -679,7 +852,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line217">line 217</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line263">line 263</a>
     </li></ul></dd>
     
 
@@ -715,7 +888,7 @@
     
 
     
-    <h4 class="name" id="addTaskFloatHTML"><span class="type-signature"></span>addTaskFloatHTML<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="addSubtask"><span class="type-signature"></span>addSubtask<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
     
@@ -723,7 +896,7 @@
 
 
 <div class="description">
-    This is a help function thats olny sources out the HTML code to smaller the code
+    This function add subtasks to the subtask add area
 </div>
 
 
@@ -767,7 +940,144 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_taskHTML.js.html">js/taskHTML.js</a>, <a href="js_taskHTML.js.html#line123">line 123</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line464">line 464</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="addTaskFloatHTML"><span class="type-signature"></span>addTaskFloatHTML<span class="signature">(param)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function thats olny sources out the HTML code to smaller the code
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is a string where opened the site</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_taskHTML.js.html">js/taskHTML.js</a>, <a href="js_taskHTML.js.html#line129">line 129</a>
     </li></ul></dd>
     
 
@@ -813,7 +1123,7 @@
     
 
     
-    <h4 class="name" id="categoryOption"><span class="type-signature"></span>categoryOption<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="categoryOption"><span class="type-signature"></span>categoryOption<span class="signature">(index)</span><span class="type-signature"></span></h4>
     
 
     
@@ -822,6 +1132,143 @@
 
 <div class="description">
     This function renders the category in the header of the drowdown menu
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line152">line 152</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="categoryOption2"><span class="type-signature"></span>categoryOption2<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function that added the name and a random color to show in the category dropdown menu
 </div>
 
 
@@ -865,7 +1312,232 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line148">line 148</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line173">line 173</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="checkIfParam"><span class="type-signature">(async) </span>checkIfParam<span class="signature">(param)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function checks if the param is matching then different actions
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this param is a string that should match the string in the if else question then do something</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line170">line 170</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="closeAddContact"><span class="type-signature"></span>closeAddContact<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function close the add contact window
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line298">line 298</a>
     </li></ul></dd>
     
 
@@ -953,7 +1625,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line219">line 219</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line309">line 309</a>
     </li></ul></dd>
     
 
@@ -1041,7 +1713,183 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line61">line 61</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="closeNewCategory"><span class="type-signature"></span>closeNewCategory<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function close the add new category inputfield and go back to the dropdown menu
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line116">line 116</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="countTasks"><span class="type-signature"></span>countTasks<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is counting the tasks and push them into the arrays to show them later
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line44">line 44</a>
     </li></ul></dd>
     
 
@@ -1187,6 +2035,94 @@
     
 
     
+    <h4 class="name" id="delay"><span class="type-signature"></span>delay<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function to set a timeout in a async function where we can use await with
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line430">line 430</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="deleteContact"><span class="type-signature">(async) </span>deleteContact<span class="signature">(index)</span><span class="type-signature"></span></h4>
     
 
@@ -1288,7 +2224,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line179">line 179</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line258">line 258</a>
     </li></ul></dd>
     
 
@@ -1425,7 +2361,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line129">line 129</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line199">line 199</a>
     </li></ul></dd>
     
 
@@ -1513,7 +2449,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line146">line 146</a>
+        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line147">line 147</a>
     </li></ul></dd>
     
 
@@ -1660,7 +2596,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line248">line 248</a>
+        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line249">line 249</a>
     </li></ul></dd>
     
 
@@ -1807,7 +2743,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line230">line 230</a>
+        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line231">line 231</a>
     </li></ul></dd>
     
 
@@ -1905,7 +2841,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line179">line 179</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line188">line 188</a>
     </li></ul></dd>
     
 
@@ -2015,7 +2951,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line195">line 195</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line205">line 205</a>
     </li></ul></dd>
     
 
@@ -2125,7 +3061,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line209">line 209</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line288">line 288</a>
     </li></ul></dd>
     
 
@@ -2213,7 +3149,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line214">line 214</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line225">line 225</a>
     </li></ul></dd>
     
 
@@ -2260,6 +3196,237 @@
 </dl>
 
     
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="groupContactsByInitial"><span class="type-signature"></span>groupContactsByInitial<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    this function  filters the names with the same beginning letter and push them into a variable together in arrays
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line341">line 341</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleAssignedClick"><span class="type-signature"></span>handleAssignedClick<span class="signature">(element)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handles the click event on assigned elements.Adds or removes the 'clicked' class based on the clicked element.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The clicked element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line367">line 367</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2372,7 +3539,144 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line80">line 80</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line28">line 28</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="handleClick"><span class="type-signature"></span>handleClick<span class="signature">(element)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Handles the click event on menu items.Adds or removes the 'selected' class based on the clicked element.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>element</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The clicked element.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line97">line 97</a>
     </li></ul></dd>
     
 
@@ -2570,7 +3874,1161 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line44">line 44</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line61">line 61</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processAssignedTo"><span class="type-signature"></span>processAssignedTo<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the assigned to persons with their name initials and their color
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line352">line 352</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processCategory"><span class="type-signature"></span>processCategory<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the category with the color special: there is a difference between new added categorys and existing categorys
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line307">line 307</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processContactEmailPhoneBgColor"><span class="type-signature"></span>processContactEmailPhoneBgColor<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function to get  new e-mail and phone number and a random color when add a contact
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line137">line 137</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processContactName"><span class="type-signature"></span>processContactName<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function to get name and name initials when add a new contact
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line121">line 121</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processDescription"><span class="type-signature"></span>processDescription<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the description
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line285">line 285</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processDueDate"><span class="type-signature"></span>processDueDate<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the due date
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line296">line 296</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processEditedContactEmailPhone"><span class="type-signature"></span>processEditedContactEmailPhone<span class="signature">(index)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function that gives back the email and phone number when editing a contact
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line231">line 231</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processEditedContactName"><span class="type-signature"></span>processEditedContactName<span class="signature">(index)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function that gives back the name and the name initials when editing a contact
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line215">line 215</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processPriority"><span class="type-signature"></span>processPriority<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the choosen priority
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line414">line 414</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processSubtasks"><span class="type-signature"></span>processSubtasks<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the added subtask if there are some
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line392">line 392</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processTaskOption"><span class="type-signature"></span>processTaskOption<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to set the task option
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line342">line 342</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="processTitle"><span class="type-signature"></span>processTitle<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This is a help function for adding a task to get the title
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line274">line 274</a>
     </li></ul></dd>
     
 
@@ -2694,7 +5152,7 @@
     
 
     
-    <h4 class="name" id="renderAddTask"><span class="type-signature">(async) </span>renderAddTask<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="removeDivById"><span class="type-signature"></span>removeDivById<span class="signature">(divId)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2702,7 +5160,7 @@
 
 
 <div class="description">
-    This function renders the AddTask area
+    This function is a help function that delete a div with a special id
 </div>
 
 
@@ -2711,6 +5169,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>divId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this is the special id that should be deleted</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -2746,7 +5253,144 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line5">line 5</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line251">line 251</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="renderAddTask"><span class="type-signature">(async) </span>renderAddTask<span class="signature">(param)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function renders the addtask area
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this parameter is where addtask is opended and give it to the next pages to handle the page</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -2834,7 +5478,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line187">line 187</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -2922,7 +5566,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line76">line 76</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line67">line 67</a>
     </li></ul></dd>
     
 
@@ -2958,7 +5602,7 @@
     
 
     
-    <h4 class="name" id="renderAddTaskHTML"><span class="type-signature"></span>renderAddTaskHTML<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="renderAddTaskHTML"><span class="type-signature"></span>renderAddTaskHTML<span class="signature">(param)</span><span class="type-signature"></span></h4>
     
 
     
@@ -2975,6 +5619,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is a string where opened the site</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -3010,7 +5703,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_taskHTML.js.html">js/taskHTML.js</a>, <a href="js_taskHTML.js.html#line6">line 6</a>
+        <a href="js_taskHTML.js.html">js/taskHTML.js</a>, <a href="js_taskHTML.js.html#line7">line 7</a>
     </li></ul></dd>
     
 
@@ -3056,7 +5749,7 @@
     
 
     
-    <h4 class="name" id="renderContactDescription"><span class="type-signature"></span>renderContactDescription<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="renderContactDescription"><span class="type-signature"></span>renderContactDescription<span class="signature">(i)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3073,6 +5766,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">the param is the point in the array where we want to grab something</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -3108,7 +5850,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line37">line 37</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line68">line 68</a>
     </li></ul></dd>
     
 
@@ -3343,7 +6085,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line205">line 205</a>
+        <a href="js_contactHTML.js.html">js/contactHTML.js</a>, <a href="js_contactHTML.js.html#line206">line 206</a>
     </li></ul></dd>
     
 
@@ -3575,7 +6317,7 @@
     
 
     
-    <h4 class="name" id="renderFloatAddTask"><span class="type-signature">(async) </span>renderFloatAddTask<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="renderFloatAddTask"><span class="type-signature">(async) </span>renderFloatAddTask<span class="signature">(page)</span><span class="type-signature"></span></h4>
     
 
     
@@ -3592,6 +6334,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>page</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this parameter is the opened page</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -3627,7 +6418,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line20">line 20</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -4235,7 +7026,7 @@
     
 
     
-    <h4 class="name" id="renderSummary"><span class="type-signature">(async) </span>renderSummary<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="renderSummary"><span class="type-signature">(async) </span>renderSummary<span class="signature">(i)</span><span class="type-signature"></span></h4>
     
 
     
@@ -4252,6 +7043,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this parameter is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -4287,7 +7127,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line5">line 5</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line6">line 6</a>
     </li></ul></dd>
     
 
@@ -4375,7 +7215,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line92">line 92</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line100">line 100</a>
     </li></ul></dd>
     
 
@@ -4509,6 +7349,319 @@
     
 
     
+    <h4 class="name" id="resetPrioColor"><span class="type-signature"></span>resetPrioColor<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a helpfunction and reset the color of all prioritys before adding the new priority
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line515">line 515</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="searchUrgendDate"><span class="type-signature"></span>searchUrgendDate<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function compare all dates from the urgent priority and the closest date near today  will be shown
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line72">line 72</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="showCheckboxes"><span class="type-signature"></span>showCheckboxes<span class="signature">(index)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function shows or hide the dropwdown menus
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is the number in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line48">line 48</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="showContactCreatedMessage"><span class="type-signature"></span>showContactCreatedMessage<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -4561,7 +7714,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line196">line 196</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line275">line 275</a>
     </li></ul></dd>
     
 
@@ -5121,7 +8274,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line58">line 58</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line89">line 89</a>
     </li></ul></dd>
     
 
@@ -5219,7 +8372,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="script.js.html">script.js</a>, <a href="script.js.html#line25">line 25</a>
+        <a href="script.js.html">script.js</a>, <a href="script.js.html#line29">line 29</a>
     </li></ul></dd>
     
 
@@ -5265,6 +8418,280 @@
     
 
     
+    <h4 class="name" id="toggleCheckbox"><span class="type-signature"></span>toggleCheckbox<span class="signature">(index)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function mark the checkboxes with a hook when toogle
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line220">line 220</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="toggleCheckboxColor"><span class="type-signature"></span>toggleCheckboxColor<span class="signature">(index)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    This function is a help function that renders a div with name initials and colors when name is toggled
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>index</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line232">line 232</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="updateContactsHTML"><span class="type-signature"></span>updateContactsHTML<span class="signature">()</span><span class="type-signature"></span></h4>
     
 
@@ -5273,7 +8700,7 @@
 
 
 <div class="description">
-    This function filters the names with the same beginning letter and then shows them together in the specific groups for letters
+    This function get the filtered names and then added a letter for existing initial letters to show the contacts grouped together
 </div>
 
 
@@ -5317,7 +8744,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line230">line 230</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line320">line 320</a>
     </li></ul></dd>
     
 
@@ -5454,7 +8881,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line165">line 165</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line244">line 244</a>
     </li></ul></dd>
     
 
@@ -5490,7 +8917,7 @@
     
 
     
-    <h4 class="name" id="updateGreetingName"><span class="type-signature"></span>updateGreetingName<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateGreetingName"><span class="type-signature"></span>updateGreetingName<span class="signature">(i)</span><span class="type-signature"></span></h4>
     
 
     
@@ -5509,6 +8936,55 @@
 
 
 
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>i</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this parameter is the position in the array</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
 
 
 
@@ -5542,7 +9018,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line20">line 20</a>
+        <a href="js_summary.js.html">js/summary.js</a>, <a href="js_summary.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -5578,7 +9054,7 @@
     
 
     
-    <h4 class="name" id="updateNewContact"><span class="type-signature">(async) </span>updateNewContact<span class="signature">()</span><span class="type-signature"></span></h4>
+    <h4 class="name" id="updateNewContact"><span class="type-signature">(async) </span>updateNewContact<span class="signature">(param)</span><span class="type-signature"></span></h4>
     
 
     
@@ -5586,7 +9062,7 @@
 
 
 <div class="description">
-    This function can add a new contact to the contact list
+    This function adds new contact
 </div>
 
 
@@ -5595,6 +9071,55 @@
 
 
 
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>param</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">this param gives the startpoint of adding a new contact</td>
+        </tr>
+
+    
+    </tbody>
+</table>
 
 
 
@@ -5630,7 +9155,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line114">line 114</a>
+        <a href="js_contacts.js.html">js/contacts.js</a>, <a href="js_contacts.js.html#line154">line 154</a>
     </li></ul></dd>
     
 
@@ -5718,7 +9243,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line360">line 360</a>
+        <a href="js_task.js.html">js/task.js</a>, <a href="js_task.js.html#line439">line 439</a>
     </li></ul></dd>
     
 
@@ -5764,13 +9289,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#closeMiniMenu">closeMiniMenu</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#currentSubtasks">currentSubtasks</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#expanded">expanded</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#handleClick">handleClick</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#openMiniMenu">openMiniMenu</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#selectedElement">selectedElement</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewCategory">addNewCategory</a></li><li><a href="global.html#addNewCategoryToArray">addNewCategoryToArray</a></li><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addSubtask">addSubtask</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#categoryOption2">categoryOption2</a></li><li><a href="global.html#checkIfParam">checkIfParam</a></li><li><a href="global.html#closeAddContact">closeAddContact</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#closeMiniMenu">closeMiniMenu</a></li><li><a href="global.html#closeNewCategory">closeNewCategory</a></li><li><a href="global.html#countTasks">countTasks</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#groupContactsByInitial">groupContactsByInitial</a></li><li><a href="global.html#handleAssignedClick">handleAssignedClick</a></li><li><a href="global.html#handleClick">handleClick</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#openMiniMenu">openMiniMenu</a></li><li><a href="global.html#processAssignedTo">processAssignedTo</a></li><li><a href="global.html#processCategory">processCategory</a></li><li><a href="global.html#processContactEmailPhoneBgColor">processContactEmailPhoneBgColor</a></li><li><a href="global.html#processContactName">processContactName</a></li><li><a href="global.html#processDescription">processDescription</a></li><li><a href="global.html#processDueDate">processDueDate</a></li><li><a href="global.html#processEditedContactEmailPhone">processEditedContactEmailPhone</a></li><li><a href="global.html#processEditedContactName">processEditedContactName</a></li><li><a href="global.html#processPriority">processPriority</a></li><li><a href="global.html#processSubtasks">processSubtasks</a></li><li><a href="global.html#processTaskOption">processTaskOption</a></li><li><a href="global.html#processTitle">processTitle</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#removeDivById">removeDivById</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#resetPrioColor">resetPrioColor</a></li><li><a href="global.html#searchUrgendDate">searchUrgendDate</a></li><li><a href="global.html#selectedAssignedElement">selectedAssignedElement</a></li><li><a href="global.html#selectedElement">selectedElement</a></li><li><a href="global.html#showCheckboxes">showCheckboxes</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li><li><a href="global.html#toggleCheckbox">toggleCheckbox</a></li><li><a href="global.html#toggleCheckboxColor">toggleCheckboxColor</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Thu Jun 15 2023 16:39:40 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 16 2023 16:43:25 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>
