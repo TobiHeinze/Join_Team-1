@@ -108,7 +108,6 @@ function renderHelp() {
 
 function renderHelpHTML () {
     return /*html*/ `
-     <div class="overflow-scroll" style= "margin-left: -10px">
     <div class="help-container">
  
  <div class="over-headline">
@@ -126,7 +125,7 @@ function renderHelpHTML () {
  <b class= "font-27">1.</b>  You have the option to either create an account or use guest access to log in. Follow the instructions provided on the homepage. <br>Once logged in, you will be directed to the "Summary" page, where you can find an overview of all tasks. Click on the overview to access the board or use the navigation on the left. <br> <br>
  <b class= "font-27">2.</b> There are multiple ways to add new tasks. For instance, you can utilize the "Add Task" option in the menu or use the "Add Task" button located at the top right of the "Board" interface. To modify or delete a task, simply click on it. <br> <br>
  <b class= "font-27">3.</b> You can view all existing contacts. Click on a name to access further information. Additionally, you can directly assign tasks to contacts by clicking on "+ Add Task." For editing or deleting contacts, use the "Edit" option, and to create a new contact, select "New Contact."
- </div> </div> `;
+ </div> `;
 }
 
 

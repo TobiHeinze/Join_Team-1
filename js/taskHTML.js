@@ -6,6 +6,7 @@
  */
 function renderAddTaskHTML(param) {
     return /*html*/ `
+<div id="smallAddTaskDoNotCloseWhenThisId"></div>
 <div onclick="checkIfParam('${param}')" id="addXButtonTask" class="add-task-x-position d-none">
   <img src="./assets/img/x-button-black.png" alt="x-button-img">
 </div>
@@ -134,7 +135,7 @@ function addTaskFloatHTML(param) {
   <div class="mt-11 responsive-hide">
     <span>Kanban Project Management Tool</span>
   </div>
-  <div class="responsive-header-width-add-task flex">
+  <div style="width: 614px;" class="flex">
     <h2 class="font-47 add-task-h2">Add Task</h2>
   </div>
   <div id="contactCreatedDiv" class="contact-created">

@@ -72,7 +72,7 @@ function renderContactDescription(i) {
         slideInContact();
         document.getElementById("contactsChangeDescriptionContent").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
-    } else if (window.innerWidth < 800) {
+    } else if (window.innerWidth <= 800) {
         resetContent();
         document.getElementById("content").innerHTML = renderContactDescriptionHTML(i);
         document.getElementById(`clickedContactBgColor${i}`).style.background = contentArray['contacts']['contactImageBgColor'][i];
@@ -156,7 +156,16 @@ async function updateNewContact(param) {
     processContactName();
     processContactEmailPhoneBgColor();
     await setItem(key, contentArray);
-    checkIfParam(param);
+    if (document.getElementById('smallAddTaskDoNotCloseWhenThisId')) {
+        await getItem(key);
+        document.getElementById('checkboxes2').innerHTML = ``;
+        document.getElementById('renderAddContactInitials').innerHTML = ``;
+        renderAddTaskAssignedToOptions();
+        showContactCreatedMessage();
+        closeAddContact();
+    } else {
+        checkIfParam(param);
+    }
 }
 
 
@@ -166,11 +175,10 @@ async function updateNewContact(param) {
  * @param {*} param this param is a string that should match the string in the if else question then do something
  */
 async function checkIfParam(param) {
-    if (param < contentArray['contacts']['name'].length) {
+    if (param < contentArray['contacts']['name'].length && window.innerWidth <= 800) {
         renderContactDescription(param);
     }
-    if (param === 'newAssignedToContact' || param === 'contacts' || param === 'undefined') {
-        console.log('param undefined');
+    if ((param >= 0 && param <= 1000) && window.innerWidth > 800 || param === 'newAssignedToContact' || param === 'contacts' || param === 'undefined') {
         await getItem(key);
         document.getElementById('checkboxes2').innerHTML = ``;
         document.getElementById('renderAddContactInitials').innerHTML = ``;

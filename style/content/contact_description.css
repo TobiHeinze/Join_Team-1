@@ -84,7 +84,6 @@
     align-items: center;
     flex-direction: row;
     gap: 10%;
-    cursor: pointer;
 }
 
 .mobile-edit img {
@@ -138,6 +137,12 @@
     top: 85%;
     right: 5%;
     border-radius: 10px;
+}
+
+.center-add-task-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* responsive */
