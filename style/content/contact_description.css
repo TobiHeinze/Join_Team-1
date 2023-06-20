@@ -40,7 +40,6 @@
     margin-top: 10px;
 }
 
-
 .initials {
     min-width: 80px;
     height: 80px;
@@ -56,7 +55,6 @@
     color: white;
 }
 
-
 .add-task {
     display: flex;
     align-items: center;
@@ -70,13 +68,9 @@
     font-weight: bold;
 }
 
-
-
 .add-task img {
     height: 13px;
 }
-
-
 
 .mobile-edit {
     display: flex;
@@ -93,20 +87,17 @@
     cursor: pointer;
 }
 
-
 .mobile-edit p:hover {
     color: #29ABE2;
     filter: drop-shadow(0px 4px 4px rgba(13, 114, 114, 0.25));
     font-weight: bold;
 }
 
-
 .mobile-edit img:hover {
     color: #29ABE2;
     filter: drop-shadow(0px 4px 4px rgba(9, 208, 208, 0.25));
     font-weight: bold;
 }
-
 
 .contact-info {
     display: flex;
@@ -145,41 +136,37 @@
     align-items: center;
 }
 
-/* responsive */
 @media (max-width: 800px) {
     #contactsDescriptionContent {
         display: none;
         width: 0;
     }
+
     #contactsContent {
         width: 100%;
-    } 
+    }
 
-    
-.delete-button-contact {
-    display: flex;
-    cursor: pointer;
-}
+    .delete-button-contact {
+        display: flex;
+        cursor: pointer;
+    }
 
+    .edit-button-contact {
+        display: flex;
+        cursor: pointer;
+    }
 
-.edit-button-contact {
-    display: flex;
-    cursor: pointer;
-}
+    .mobile-edit {
+        display: none;
+    }
 
-.mobile-edit {
-    display: none;
-}
-
-
-.go-back-contact img {
-    display: flex;
+    .go-back-contact img {
+        display: flex;
+    }
 }
 
 @media (min-width: 801px) {
     .go-back-contact img {
         display: none;
     }
-}
-
 }
