@@ -1,4 +1,3 @@
-/* globale einstellungen */
 html {
     scroll-behavior: smooth;
 }
@@ -13,10 +12,9 @@ body {
     background: #F6F7F8;
 }
 
-/* hides basic scrollbar  */
 body::-webkit-scrollbar {
     display: none;
-  }
+}
 
 textarea {
     font-family: 'Inter', sans-serif;
@@ -47,21 +45,14 @@ textarea {
     flex: 1;
     display: flex;
     flex-direction: column;
-    /* width: 85vw; */
-    /* min-width: 270px; */
     background: #F6F7F8;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* border: 2px solid black; */
     padding-top: 30px;
-    /* padding-bottom: 45px; */
 }
 
 .contacts-content-box {
     display: flex;
     word-break: break-word;
 }
-
 
 #contactsContent {
     min-width: 294px;
@@ -78,10 +69,6 @@ textarea {
     width: auto;
 }
 
-/* globale einstellungen ende */
-
-
-/* schriftarten einstellungen für mobil-version */
 .font-16 {
     font-size: 16px;
 }
@@ -102,7 +89,6 @@ textarea {
     font-size: 47px;
     font-weight: bold;
 }
-
 
 .font-61 {
     font-size: 61px;
@@ -126,11 +112,6 @@ textarea {
     font-weight: 700;
 }
 
-/* schriftarten mobil ende */
-
-
-/* Mini Menu */
-
 .mini-menu {
     position: fixed;
     top: 89px;
@@ -145,7 +126,6 @@ textarea {
     cursor: pointer;
 }
 
-
 @keyframes slideIn {
     0% {
         transform: translateX(100%);
@@ -156,13 +136,10 @@ textarea {
     }
 }
 
-
-
 .mini-menu-toggle {
     justify-content: center;
     align-items: center;
 }
-
 
 .mini-menu-text {
     color: #CDCDCD;
@@ -170,16 +147,13 @@ textarea {
     font-size: 18px;
 }
 
-
 .help-mini {
     display: none;
 }
 
-
 .legal-notice-mini {
     display: none;
 }
-
 
 @media (max-width: 800px) {
     .mini-menu {
@@ -196,7 +170,6 @@ textarea {
         animation: slideIn 0.5s forwards;
     }
 
-
     .help-mini,
     .legal-notice-mini {
         display: flex;
@@ -206,6 +179,3 @@ textarea {
         font-size: 18px;
     }
 }
-
-/* Mini Menu Ende*/
-
