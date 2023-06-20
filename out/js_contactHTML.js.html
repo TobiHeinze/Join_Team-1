@@ -32,10 +32,10 @@
  * @returns html code
  */
 function renderContactsHTML() {
-  return /*html*/ `
+    return /*html*/ `
 &lt;section class="content-contact">
   &lt;div class="add-new-contact">
-    &lt;img onclick="addNewContact()" src="./assets/img/contact-new.png" alt="new-contact-img">
+    &lt;button onclick="addNewContact('addNormal')" class="contact-dude-button"> New contact &lt;img src="./assets/img/add-contact-dude.png" alt="add contact"> &lt;/button>
   &lt;/div>
   &lt;div id="contactsList" class="overflow-scroll">
   &lt;/div>
@@ -46,15 +46,14 @@ function renderContactsHTML() {
 `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
  * @param {*} i gives the i as the position for every contact to this function
- * @returns  html code
+ * @returns  html codename-box
  */
 function renderContactDescriptionHTML(i) {
-  return /*html*/ `
+  return /*html*/  `
 &lt;div id="contactPage">
 &lt;/div>
 &lt;section class="content">
@@ -63,7 +62,7 @@ function renderContactDescriptionHTML(i) {
     &lt;div class="go-back-contact">
       &lt;div>
         &lt;h2 class="font-47 contact-description-h2">Contacts&lt;/h2>
-        &lt;span class="font-21">Better with a team&lt;/span>
+        &lt;span style="margin-bottom: 20px" class="font-21">Better with a team&lt;/span>
       &lt;/div>
       &lt;img onclick="renderContacts()" src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
     &lt;/div>
@@ -80,23 +79,28 @@ function renderContactDescriptionHTML(i) {
         &lt;div>
           &lt;h3 class="font-27">${contentArray["contacts"]["name"][i]}&lt;/h3>
         &lt;/div>
-        &lt;div onclick="renderFloatAddTask('contacts')" class="add-task">
-          &lt;img src="./assets/img/contact-plus.png" alt="plus-img">
-          &lt;span>Add Task&lt;/span>
+        &lt;div onclick="renderFloatAddTask('${i}')" class="add-task">
+          
+          &lt;span class="center-add-task-span"> &lt;span style="margin-right:5px" class="font-32">+&lt;/span> &lt;span>Add Task&lt;/span>&lt;/span>
         &lt;/div>
       &lt;/div>
     &lt;/div>
-    &lt;div class="mb-11">
-      &lt;h4 class="font-21">Contact Information&lt;/h4>
+    &lt;div class="mobile-edit">
+    &lt;div class="mb-11">&lt;h4 class="font-21">Contact Information&lt;/h4>&lt;/div>
+    &lt;div onclick="editContact(${i})" class="edit-button-contact-desktop"> 
+      &lt;img src="./assets/img/edit-pen.png" alt="edit">
+      &lt;img src="./assets/img/edit-blue-pen.png" alt="edit" class="hover-image">
+      &lt;p> Edit contact &lt;/p>
+    &lt;/div>
     &lt;/div>
     &lt;div class="mail-mobil">
       &lt;div>
         &lt;span>&lt;b>Email&lt;/b>&lt;/span>
-        &lt;a href="#">${contentArray["contacts"]["email"][i]}&lt;/a>
+        &lt;a href="mailto:${contentArray["contacts"]["email"][i]}">${contentArray["contacts"]["email"][i]}&lt;/a>
       &lt;/div>
       &lt;div>
         &lt;span>&lt;b>Mobile&lt;/b>&lt;/span>
-        &lt;a href="#">${contentArray["contacts"]["phoneNumber"][i]}&lt;/a>
+        &lt;a href="tel:${contentArray["contacts"]["phoneNumber"][i]}">${contentArray["contacts"]["phoneNumber"][i]}&lt;/a>
       &lt;/div>
     &lt;/div>
   &lt;/div>
@@ -109,7 +113,6 @@ function renderContactDescriptionHTML(i) {
 &lt;/section>
     `;
 }
-
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -138,21 +141,21 @@ function addNewContactHTML(param) {
   &lt;/div>
   &lt;form class="form-box" onsubmit="updateNewContact('${param}'); return false;">
     &lt;div class="contact-box">
-      &lt;div class="name">
-        &lt;div class="name-box">
-          &lt;input id="addNewContactName" class="input-name" type="text" placeholder="Name" required>
+      &lt;div class="name2">
+        &lt;div class="name-box2">
+          &lt;input id="addNewContactName" class="input-name" type="text" pattern="[a-zA-Z]{2,} [a-zA-Z]{2,}" placeholder="First Name / Last Name " required>
           &lt;img src="./assets/img/charakter-icon.png" alt="charakter-img">
         &lt;/div>
       &lt;/div>
       &lt;div class="name">
-        &lt;div class="name-box">
+        &lt;div class="name-box2">
           &lt;input id="addNewContactEmail" class="input-name" type="email" placeholder="Email" required>
           &lt;img src="./assets/img/email-icon.png" alt="email-img">
         &lt;/div>
       &lt;/div>
       &lt;div class="name">
-        &lt;div class="name-box">
-          &lt;input id="addNewContactPhone" class="input-name" type="tel" placeholder="Phone" required>
+        &lt;div class="name-box2">
+          &lt;input id="addNewContactPhone" class="input-name" type="tel" pattern="[0-9]{3,15}" placeholder="Phone" required>
           &lt;img src="./assets/img/phone-icon.png" alt="phone-img">
         &lt;/div>
       &lt;/div>
@@ -189,30 +192,30 @@ function editContactHTML(index) {
     &lt;/div>
   &lt;/div>
   &lt;div class="big-initials font-27" id="editContactInitials">
-    ${contentArray['contacts']['nameInitials'][index]}
+    ${contentArray["contacts"]["nameInitials"][index]}
   &lt;/div>
   &lt;form onsubmit="updateEditedContact(${index}); return false;">
     &lt;div class="contact-box">
-      &lt;div class="name">
-        &lt;div class="name-box">
-          &lt;input id="editContactName" class="input-name" type="text" placeholder="Name" required>
+      &lt;div class="name2">
+        &lt;div class="name-box2">
+          &lt;input id="editContactName" class="input-name" type="text" pattern="[a-zA-Z]{2,} [a-zA-Z]{2,}" placeholder="First Name / Last Name " required>
           &lt;img src="./assets/img/charakter-icon.png" alt="charakter-img">
         &lt;/div>
       &lt;/div>
       &lt;div class="name">
-        &lt;div class="name-box">
-          &lt;input id="editContactEmail" class="input-name" type="text" placeholder="Email" required>
+        &lt;div class="name-box2">
+          &lt;input id="editContactEmail" class="input-name" type="email" placeholder="Email" required>
           &lt;img src="./assets/img/email-icon.png" alt="email-img">
         &lt;/div>
       &lt;/div>
       &lt;div class="name">
-        &lt;div class="name-box">
-          &lt;input id="editContactPhone" class="input-name" type="text" placeholder="Phone" required>
+        &lt;div class="name-box2">
+          &lt;input id="editContactPhone" class="input-name" type="tel" pattern="[0-9]{3,15}" placeholder="Phone" required>
           &lt;img src="./assets/img/phone-icon.png" alt="phone-img">
         &lt;/div>
       &lt;/div>
     &lt;/div>
-    &lt;div class="del-save">
+    &lt;div class="del-save-box">
       &lt;div class="del" onclick="deleteContact(${index})">
         Delete
       &lt;/div>
@@ -225,7 +228,6 @@ function editContactHTML(index) {
   `;
 }
 
-
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
@@ -235,29 +237,26 @@ function renderContactDescriptionHTMLHeader() {
   return /*html*/ `
 &lt;section class="content">
   &lt;span class="mt-11 responsive-hide">Kanban Project Management Tool&lt;/span>
-  &lt;div class="go-back-contact">
-    &lt;div>
-      &lt;h2 class="font-47 contact-description-h2">Contacts&lt;/h2>
-      &lt;span class="font-21">Better with a team&lt;/span>
-    &lt;/div>
-    &lt;img src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
+  &lt;div class="go-back-contact"> &lt;img src="./assets/img/task-left-arrow.png" alt="left-arrow-img">
   &lt;/div>
-  &lt;div class="blue-line">
-    &lt;img src="./assets/img/blue-line-horizontal.png" alt="blue-line-img">
+  &lt;div class= "headlines-contacts">
+  &lt;h1 class="summary-h1">Contacts&lt;/h1>
+  &lt;img class="blue-line-vertical-contact" src="./assets/img/blue-line-vertical.png">
+  &lt;span style="margin-top: 20px;" class="font-21">Better with a team&lt;/span> 
+  &lt;img class="blue-line-horizontal-contact" src="./assets/img/blue-line-horizontal.png">
   &lt;/div>
 &lt;/section>
     `;
 }
 
-
 /**
  * This function generates the header for the Letters where all contacts are listed under
- * 
+ *
  * @param {*} initial this are the two initials from the name of the persons
  * @returns a html code to smaller the code
  */
 function generateHeaderHTML(initial) {
-  return /*html*/`
+  return /*html*/ `
 &lt;div>
   &lt;h3 class="font-21">${initial}&lt;/h3>
   &lt;div class="line">
@@ -267,26 +266,26 @@ function generateHeaderHTML(initial) {
     `;
 }
 
-
 /**
  * This function is rendering the contact information from the specific contacts into the list from the letters
- * 
+ *
  * @param {*} i is the number of the contact, the specific position in the array
  * @returns a html code to smaller the code
  */
 function generateContactsHTML(i) {
-  return /*html*/`
+  return /*html*/ `
       &lt;div class="assigned mt-11" onclick="handleAssignedClick(this); renderContactDescription(${i})" id="contact${i}">
-        &lt;div class="name-border" id="contactBgColor${i}">${contentArray['contacts']['nameInitials'][i]}&lt;/div>
+        &lt;div class="name-border" id="contactBgColor${i}">${contentArray["contacts"]["nameInitials"][i]}&lt;/div>
         &lt;div class="left-distance">
           &lt;div class="font-21 contacts-span">
-            &lt;span>${contentArray['contacts']['name'][i]}&lt;/span>
+            &lt;span>${contentArray["contacts"]["name"][i]}&lt;/span>
           &lt;/div>
-          &lt;a href="#">${contentArray['contacts']['email'][i]}&lt;/a>
+          &lt;a href="#">${contentArray["contacts"]["email"][i]}&lt;/a>
         &lt;/div>
       &lt;/div>
     `;
-}</code></pre>
+  }
+  </code></pre>
         </article>
     </section>
 
@@ -296,13 +295,13 @@ function generateContactsHTML(i) {
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewCategory">addNewCategory</a></li><li><a href="global.html#addNewCategoryToArray">addNewCategoryToArray</a></li><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addSubtask">addSubtask</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#categoryOption2">categoryOption2</a></li><li><a href="global.html#checkIfParam">checkIfParam</a></li><li><a href="global.html#closeAddContact">closeAddContact</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#closeMiniMenu">closeMiniMenu</a></li><li><a href="global.html#closeNewCategory">closeNewCategory</a></li><li><a href="global.html#countTasks">countTasks</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#groupContactsByInitial">groupContactsByInitial</a></li><li><a href="global.html#handleAssignedClick">handleAssignedClick</a></li><li><a href="global.html#handleClick">handleClick</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#openMiniMenu">openMiniMenu</a></li><li><a href="global.html#processAssignedTo">processAssignedTo</a></li><li><a href="global.html#processCategory">processCategory</a></li><li><a href="global.html#processContactEmailPhoneBgColor">processContactEmailPhoneBgColor</a></li><li><a href="global.html#processContactName">processContactName</a></li><li><a href="global.html#processDescription">processDescription</a></li><li><a href="global.html#processDueDate">processDueDate</a></li><li><a href="global.html#processEditedContactEmailPhone">processEditedContactEmailPhone</a></li><li><a href="global.html#processEditedContactName">processEditedContactName</a></li><li><a href="global.html#processPriority">processPriority</a></li><li><a href="global.html#processSubtasks">processSubtasks</a></li><li><a href="global.html#processTaskOption">processTaskOption</a></li><li><a href="global.html#processTitle">processTitle</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#removeDivById">removeDivById</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#resetPrioColor">resetPrioColor</a></li><li><a href="global.html#searchUrgendDate">searchUrgendDate</a></li><li><a href="global.html#selectedAssignedElement">selectedAssignedElement</a></li><li><a href="global.html#selectedElement">selectedElement</a></li><li><a href="global.html#showCheckboxes">showCheckboxes</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li><li><a href="global.html#toggleCheckbox">toggleCheckbox</a></li><li><a href="global.html#toggleCheckboxColor">toggleCheckboxColor</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#addNewCategory">addNewCategory</a></li><li><a href="global.html#addNewCategoryToArray">addNewCategoryToArray</a></li><li><a href="global.html#addNewContact">addNewContact</a></li><li><a href="global.html#addNewContactHTML">addNewContactHTML</a></li><li><a href="global.html#addPrio">addPrio</a></li><li><a href="global.html#addRandomBackgroundColorToNewCategory">addRandomBackgroundColorToNewCategory</a></li><li><a href="global.html#addSubtask">addSubtask</a></li><li><a href="global.html#addTaskFloatHTML">addTaskFloatHTML</a></li><li><a href="global.html#categoryOption">categoryOption</a></li><li><a href="global.html#categoryOption2">categoryOption2</a></li><li><a href="global.html#checkIfParam">checkIfParam</a></li><li><a href="global.html#closeAddContact">closeAddContact</a></li><li><a href="global.html#closeEditContact">closeEditContact</a></li><li><a href="global.html#closeMiniMenu">closeMiniMenu</a></li><li><a href="global.html#closeNewCategory">closeNewCategory</a></li><li><a href="global.html#countTasks">countTasks</a></li><li><a href="global.html#createGreetingText">createGreetingText</a></li><li><a href="global.html#createMessageContainer">createMessageContainer</a></li><li><a href="global.html#createMessageText">createMessageText</a></li><li><a href="global.html#createNameText">createNameText</a></li><li><a href="global.html#delay">delay</a></li><li><a href="global.html#deleteContact">deleteContact</a></li><li><a href="global.html#editContact">editContact</a></li><li><a href="global.html#editContactHTML">editContactHTML</a></li><li><a href="global.html#generateContactsHTML">generateContactsHTML</a></li><li><a href="global.html#generateHeaderHTML">generateHeaderHTML</a></li><li><a href="global.html#getDate">getDate</a></li><li><a href="global.html#getDate1">getDate1</a></li><li><a href="global.html#getItem">getItem</a></li><li><a href="global.html#getRandomBackgroundColor">getRandomBackgroundColor</a></li><li><a href="global.html#getTime">getTime</a></li><li><a href="global.html#grayBackgroundForCurrentPage">grayBackgroundForCurrentPage</a></li><li><a href="global.html#groupContactsByInitial">groupContactsByInitial</a></li><li><a href="global.html#handleAssignedClick">handleAssignedClick</a></li><li><a href="global.html#handleClick">handleClick</a></li><li><a href="global.html#isMiniMenuOpen">isMiniMenuOpen</a></li><li><a href="global.html#isSmallScreen">isSmallScreen</a></li><li><a href="global.html#loadUsers">loadUsers</a></li><li><a href="global.html#login">login</a></li><li><a href="global.html#openMiniMenu">openMiniMenu</a></li><li><a href="global.html#processAssignedTo">processAssignedTo</a></li><li><a href="global.html#processCategory">processCategory</a></li><li><a href="global.html#processContactEmailPhoneBgColor">processContactEmailPhoneBgColor</a></li><li><a href="global.html#processContactName">processContactName</a></li><li><a href="global.html#processDescription">processDescription</a></li><li><a href="global.html#processDueDate">processDueDate</a></li><li><a href="global.html#processEditedContactEmailPhone">processEditedContactEmailPhone</a></li><li><a href="global.html#processEditedContactName">processEditedContactName</a></li><li><a href="global.html#processPriority">processPriority</a></li><li><a href="global.html#processSubtasks">processSubtasks</a></li><li><a href="global.html#processTaskOption">processTaskOption</a></li><li><a href="global.html#processTitle">processTitle</a></li><li><a href="global.html#register">register</a></li><li><a href="global.html#removeDivById">removeDivById</a></li><li><a href="global.html#renderAddTask">renderAddTask</a></li><li><a href="global.html#renderAddTaskAssignedToOptions">renderAddTaskAssignedToOptions</a></li><li><a href="global.html#renderAddTaskCategoryOptions">renderAddTaskCategoryOptions</a></li><li><a href="global.html#renderAddTaskHTML">renderAddTaskHTML</a></li><li><a href="global.html#renderContactDescription">renderContactDescription</a></li><li><a href="global.html#renderContactDescriptionHTML">renderContactDescriptionHTML</a></li><li><a href="global.html#renderContactDescriptionHTMLHeader">renderContactDescriptionHTMLHeader</a></li><li><a href="global.html#renderContacts">renderContacts</a></li><li><a href="global.html#renderContactsHTML">renderContactsHTML</a></li><li><a href="global.html#renderFloatAddTask">renderFloatAddTask</a></li><li><a href="global.html#renderForgotPassword">renderForgotPassword</a></li><li><a href="global.html#renderForgotPasswordHTML">renderForgotPasswordHTML</a></li><li><a href="global.html#renderLogin">renderLogin</a></li><li><a href="global.html#renderLoginHTML">renderLoginHTML</a></li><li><a href="global.html#renderResetPassword">renderResetPassword</a></li><li><a href="global.html#renderResetPasswordHTML">renderResetPasswordHTML</a></li><li><a href="global.html#renderSignUp">renderSignUp</a></li><li><a href="global.html#renderSignUpHTML">renderSignUpHTML</a></li><li><a href="global.html#renderSummary">renderSummary</a></li><li><a href="global.html#renderSummaryHTML">renderSummaryHTML</a></li><li><a href="global.html#resetContent">resetContent</a></li><li><a href="global.html#resetInnerHtml">resetInnerHtml</a></li><li><a href="global.html#resetPrioColor">resetPrioColor</a></li><li><a href="global.html#searchUrgentDate">searchUrgentDate</a></li><li><a href="global.html#selectedAssignedElement">selectedAssignedElement</a></li><li><a href="global.html#selectedElement">selectedElement</a></li><li><a href="global.html#setItem">setItem</a></li><li><a href="global.html#showCheckboxes">showCheckboxes</a></li><li><a href="global.html#showContactCreatedMessage">showContactCreatedMessage</a></li><li><a href="global.html#showEmailSentMessage">showEmailSentMessage</a></li><li><a href="global.html#showEmailSentMessageLargeScreen">showEmailSentMessageLargeScreen</a></li><li><a href="global.html#showEmailSentMessageSmallScreen">showEmailSentMessageSmallScreen</a></li><li><a href="global.html#showMessageText">showMessageText</a></li><li><a href="global.html#showResetPasswordMessage">showResetPasswordMessage</a></li><li><a href="global.html#showResetPasswordMessageLargeScreen">showResetPasswordMessageLargeScreen</a></li><li><a href="global.html#showResetPasswordMessageSmallScreen">showResetPasswordMessageSmallScreen</a></li><li><a href="global.html#showSuccessMessage">showSuccessMessage</a></li><li><a href="global.html#slideInContact">slideInContact</a></li><li><a href="global.html#slideInPopUp">slideInPopUp</a></li><li><a href="global.html#slideInPopUp2">slideInPopUp2</a></li><li><a href="global.html#toggleCheckbox">toggleCheckbox</a></li><li><a href="global.html#toggleCheckboxColor">toggleCheckboxColor</a></li><li><a href="global.html#updateContactsHTML">updateContactsHTML</a></li><li><a href="global.html#updateEditedContact">updateEditedContact</a></li><li><a href="global.html#updateGoBackArrow">updateGoBackArrow</a></li><li><a href="global.html#updateGreetingName">updateGreetingName</a></li><li><a href="global.html#updateNewContact">updateNewContact</a></li><li><a href="global.html#updateTaskArray">updateTaskArray</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Fri Jun 16 2023 16:43:25 GMT+0200 (Mitteleuropäische Sommerzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Jun 20 2023 15:07:17 GMT+0200 (Mitteleuropäische Sommerzeit)
 </footer>
 
 <script> prettyPrint(); </script>

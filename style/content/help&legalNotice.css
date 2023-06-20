@@ -10,9 +10,8 @@
 .over-headline {
     display: flex;
     justify-content: space-between;
-    visibility: hidden;          /*in dem Fall besser als display:none, damit sich der Pfeil(go-back) nicht verschiebt*/
+    visibility: hidden;       
 }
-
 
 
 
@@ -23,14 +22,30 @@
 
 
 
+.help-overflow-scroll {
+    margin-left: 5%;
+    margin-right: 2%;
+    height: 78vh;
+    overflow-y: scroll;
+}
+
+.help-overflow-scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.help-overflow-scroll::-webkit-scrollbar-thumb {
+    border: 7px solid #A8A8A8;
+    border-radius: 3px;
+}
+
+
+
 
 @media (max-width: 800px) {
     .go-back {
         width: 15px;
         height: 15px;
     }
-
-
 
     .over-headline {
         font-size: 13px;

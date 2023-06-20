@@ -153,7 +153,6 @@ function renderLoginHTML() {
       <form class="login-container">
         <h1 class="font-61">Log in</h1>
         <img class="blue-line-horizontal" src="./assets/img/blue-line-horizontal.png">
-        <!-- Input fields for email and password -->
         <div class="input-container">
           <div class="input-field">
             <input id="loginEmail" required class="input" type="email" name="email" id="login-email-input" placeholder="E-Mail">
@@ -163,22 +162,14 @@ function renderLoginHTML() {
             <input id="loginPassword" required class="input togglePassword" type="password" name="password" id="loginPasswordInput" placeholder="Password">
             <img class="toogleImage"  src="./assets/img/password-icon.png">
           </div>
-          <!-- Display error message for wrong password -->
           <div id="passwordError" class="error-message"></div>
         </div>
-
-        <!-- Checkbox for "Remember me" and link for password recovery -->
         <div class="remember-check">
           <div class="check">
-            
-              <input type="checkbox" id="myCheckbox">
-            
-            Remember me
+              <input type="checkbox" id="myCheckbox">Remember me
           </div>
           <a onclick="renderForgotPassword()"  href="#">Forgot my password</a>
         </div>
-        
-        <!-- Buttons for login and guest login -->
         <div class="login-buttons">
           <button onclick="login(); return false;" class="btn-dark login-btn">Log in</button>
           <div onclick="renderSummary()" class="btn-bright guest-login">Guest Log in</div>

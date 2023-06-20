@@ -1,6 +1,5 @@
 /**
  * This function renders the sign up area
- *
  */
 function renderSignUp() {
   resetContent();
@@ -8,59 +7,51 @@ function renderSignUp() {
   updateGoBackArrow();
 }
 
-// Event listener for window resize
-window.addEventListener("resize", updateGoBackArrow);
-
-async function loadUsers() {
-    try {
-        contentArray = await getItem(key);
-    } catch(e){
-        console.error('Loading error:', e);
-    }
-}
 
 /**
- * This function adds a new user
- *
+ * Asynchronously loads user data from storage.
+ * @returns {Promise<void>} A Promise that resolves once the user data is loaded.
+ */
+async function loadUsers() {
+  try {
+    contentArray = await getItem(key);
+  } catch (error) {
+    console.error("Loading error:", error);
+  }
+}
+
+
+/**
+ * Adds a new user.
  */
 async function register() {
-  let registerButton = document.getElementById("registerButton");
+  const registerButton = document.getElementById("registerButton");
   registerButton.disabled = true;
-  let name = document.getElementById("registerName").value;
-  let email = document.getElementById("registerEmail").value;
-  let password = document.getElementById("registerPassword").value;
 
-  // Add the new user to the contentArray
+  const name = document.getElementById("registerName").value;
+  const email = document.getElementById("registerEmail").value;
+  const password = document.getElementById("registerPassword").value;
+
   contentArray.users.name.push(name);
   contentArray.users.email.push(email);
   contentArray.users.password.push(password);
-  contentArray.users.photo.push('guest');
+  contentArray.users.photo.push("guest");
 
   try {
-    // Save the updated contentArray to the server
     await setItem(key, contentArray);
-
-    // Call the renderLogin function
     renderLogin();
-  } catch (error) {
-    // If there is an error, show an error message
-    console.error("Error registering:", error);
-    alert("Error registering. Please try again.");
+  } finally {
+    registerButton.disabled = false;
   }
-
-  registerButton.disabled = false;
 }
-
 
 
 /**
  * This function renders the HTML for the Sign Up page
- *
  */
 function renderSignUpHTML() {
   return /*html*/ `
     <img class="logo" src="./assets/img/LogoJoinBig.png" alt="Logo">
-
     <div class="big-container">
         <form onsubmit="register(); return false;" class="password-container">
             <a href="#"><img id="goBackArrow" class="go-back-arrow" src="./assets/img/go-back-arrow-blue.png" alt="go back"
@@ -73,18 +64,15 @@ function renderSignUpHTML() {
                         <input id="registerName" class="input" type="text" placeholder="Name" required>
                         <img src="./assets/img/charakter-icon.png" alt="character-img">
                     </div>
-
                     <div class="sign-up-input-field">
                         <input id="registerEmail" required class="input" type="email" name="email" placeholder="E-Mail">
                         <img src="./assets/img/email-icon.png">
                     </div>
-
                     <div class="sign-up-input-field">
                         <input id="registerPassword" required class="input togglePassword" type="password"
                             name="password" placeholder="Password">
                         <img class="toggleImage" src="./assets/img/password-icon.png">
                     </div>
-
                     <button id="registerButton" type="submit" 
                         class="button-dark login-button">Sign Up</button>
                 </div>
