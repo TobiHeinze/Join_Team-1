@@ -5,6 +5,7 @@
 async function renderContacts() {
     contentArray = await getItem(key);
     resetContent();
+    grayBackgroundForCurrentPage('contactsBackgroundSidebar');
     document.getElementById('content').classList.add('d-none');
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();

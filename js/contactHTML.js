@@ -187,7 +187,7 @@ function editContactHTML(index) {
         </div>
       </div>
     </div>
-    <div class="del-save">
+    <div class="del-save-box">
       <div class="del" onclick="deleteContact(${index})">
         Delete
       </div>

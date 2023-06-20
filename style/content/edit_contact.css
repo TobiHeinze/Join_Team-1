@@ -79,10 +79,11 @@
     width: 100%;
 }
 
-.del-save {
+.del-save-box {
     display: flex;
     gap: 20px;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .del {
@@ -93,6 +94,7 @@
     padding: 10px 18px;
     margin-top: 25px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 
 .del:hover {

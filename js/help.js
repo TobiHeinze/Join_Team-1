@@ -1,6 +1,7 @@
 function renderLegalNotice() {
     resetContent();
     document.getElementById("content").innerHTML = renderLegalNoticeHTML(); 
+    grayBackgroundForCurrentPage('legalBackgroundSidebar');
 }
 
 

@@ -197,4 +197,5 @@ function renderBoard() {
 </div>
     `;
 	renderBoardContent();
+	grayBackgroundForCurrentPage('boardBackgroundSidebar');
 }
