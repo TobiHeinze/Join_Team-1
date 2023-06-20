@@ -11,6 +11,7 @@ async function renderSummary(i) {
   countTasks();
   document.getElementById("content").innerHTML = renderSummaryHTML();
   updateGreetingName(i);
+  grayBackgroundForCurrentPage('summaryBackgroundSidebar');
 }
 
 

@@ -11,6 +11,7 @@ async function renderAddTask(param) {
     document.getElementById("content").innerHTML = renderAddTaskHTML(param);
     renderAddTaskCategoryOptions();
     renderAddTaskAssignedToOptions(param);
+    grayBackgroundForCurrentPage('addTaskBackgroundSidebar');
 }
 
 

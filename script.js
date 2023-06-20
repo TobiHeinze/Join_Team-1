@@ -111,23 +111,15 @@ function closeMiniMenu(clickedMiniMenu) {
 
 
 /**
- * Handles the click event on menu items.
- * Adds or removes the 'selected' class based on the clicked element.
- * @param {HTMLElement} element - The clicked element.
+ * This function removes the selected class from all and give it to the current opened page
+ * 
+ * @param {*} site its a given id we need to remove the selected class
  */
-function handleClick(element) {
-  if (selectedElement === element) {
-    // If the previously selected element is clicked again,
-    // remove the 'selected' class and set selectedElement to null.
-    element.classList.remove('selected');
-    selectedElement = null;
-  } else {
-    // Remove the 'selected' class from the previously selected element (if any).
-    if (selectedElement) {
-      selectedElement.classList.remove('selected');
-    }
-    // Add the 'selected' class to the current element and set it as selectedElement.
-    element.classList.add('selected');
-    selectedElement = element;
-  }
+function grayBackgroundForCurrentPage(site) {
+  document.getElementById('summaryBackgroundSidebar').classList.remove('selected');
+  document.getElementById('addTaskBackgroundSidebar').classList.remove('selected');
+  document.getElementById('boardBackgroundSidebar').classList.remove('selected');
+  document.getElementById('contactsBackgroundSidebar').classList.remove('selected');
+  document.getElementById('legalBackgroundSidebar').classList.remove('selected');
+  document.getElementById(site).classList.add('selected');
 }
