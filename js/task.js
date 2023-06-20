@@ -201,7 +201,7 @@ function renderAddTaskAssignedToOptions(param) {
     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
         document.getElementById('checkboxes2').innerHTML += /*html*/`
       <div class="option flex">
-        <input type="checkbox" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
+        <input type="checkbox" onclick="toggleCheckboxColor(${i})" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
         <div onclick="toggleCheckbox(${i})" class="width-100">
           ${contentArray['contacts']['name'][i]}
         </div>
@@ -219,6 +219,7 @@ function renderAddTaskAssignedToOptions(param) {
 function toggleCheckbox(index) {
     let checkbox = document.getElementById(`assignedToOptions${index}`);
     checkbox.checked = !checkbox.checked;
+    checkbox.setAttribute("checked", checkbox.checked);
     toggleCheckboxColor(index);
 }
 
