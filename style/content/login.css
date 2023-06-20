@@ -36,7 +36,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    height: 51px;
+    height: 55px;
     /* Höhe des Elements */
     padding: 0px 16px;
     color: white;
@@ -45,7 +45,7 @@
     /* Kein Rand */
     border-radius: 8px;
     /* Abrundung der Ecken des Elements */
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     transition: background-color 0.125s ease !important;
     /* Übergangseffekt bei Hover */
@@ -68,6 +68,7 @@
     height: 51px;
     padding: 0px 16px;
     gap: 10px;
+    transition: background-color 0.125s ease !important;
     border: 1px solid #2A3647;
     border-radius: 8px;
 }
@@ -75,9 +76,11 @@
 .btn-bright:hover {
     box-sizing: border-box;
     cursor: pointer;
-    border: 2px solid #29ABE2;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 1px solid #29ABE2;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     color: #29ABE2;
+    transform: translate(0, -2px);
+    /* Ändere die Y-Translationsbewegung auf -2px, um die Bewegung zu verringern */
 }
 
 .not-a-join {
@@ -102,7 +105,7 @@
     justify-content: space-between;
     align-items: center;
     width: 330px;
-    height: 55px;
+    height: 70px;
 }
 
 .login-btn {
@@ -169,7 +172,7 @@
 .remember-check {
     display: flex;
     margin-bottom: 15px;
-    margin-left: 15px;
+    margin-left: -13px;
     width: 330px;
     gap: 35px;
 }
@@ -191,11 +194,15 @@
 }
 
 .check {
-    width: 135px;
+    width: 150px;
     height: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: context-menu;
+}
+
+#myCheckbox {
+    margin-top: 0px;
 }
 
 
@@ -377,19 +384,18 @@ aside {
     }
 
     .check {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .font-61 {
         font-size: 47px;
     }
 
-    
-.not-a-join {
-    gap: 5px;
-    margin-top: -70px;
-    z-index: 2000;
-}
+    .not-a-join {
+        gap: 5px;
+        margin-top: -70px;
+        z-index: 2000;
+    }
 }
 
 @media(max-width:450px) {
@@ -413,7 +419,7 @@ aside {
 
     .login-btn {
         width: 180px;
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .login-buttons {
@@ -426,7 +432,7 @@ aside {
     .btn-bright {
         padding: unset;
         width: 180px;
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .moving-logo {
@@ -452,12 +458,12 @@ aside {
         font-size: 16px;
     }
 
-     
-#passwordError {
-    width: 100%;
-    margin-top:-50px;
-    margin-bottom: 30px;
-    margin-left: 20px;
-    font-size: smaller;
-}
+
+    #passwordError {
+        width: 100%;
+        margin-top: -50px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        font-size: smaller;
+    }
 }

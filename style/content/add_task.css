@@ -26,10 +26,12 @@
 }
 
 .create-button:hover {
-    border: none;
-    background-color: #29ABE2;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.125s ease;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid #29ABE2;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
+    color: #29ABE2;
+    transform: translate(0, -2px); /* Ändere die Y-Translationsbewegung auf -2px, um die Bewegung zu verringern */
 }
 
 .create-button2 {
