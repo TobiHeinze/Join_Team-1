@@ -1,11 +1,7 @@
 let category = [];
-
 let randomBgColor = [];
-
 currentSubtasks = [];
-
 currentSubtaskStatus = [];
-
 let addPriority = [];
 
 
@@ -392,18 +388,7 @@ function processAssignedTo() {
     let nameInitials = [];
     let contactImageBgColor = [];
     if (selectedNames.length > 0) {
-        selectedNames.forEach(selectedName => {
-            let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
-            let initials = contentArray['contacts']['nameInitials'][contactIndex];
-            let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
-            nameInitials.push(initials);
-            contactImageBgColor.push(bgColor);
-        });
-        contentArray['tasks']['assignedTo'].push({
-            "name": selectedNames,
-            "nameInitials": nameInitials,
-            "contactImageBgColor": contactImageBgColor
-        });
+        processSelectedNames(selectedNames, nameInitials, contactImageBgColor);
     } else {
         contentArray['tasks']['assignedTo'].push({
             "name": [],
@@ -411,6 +396,29 @@ function processAssignedTo() {
             "contactImageBgColor": [],
         });
     }
+}
+
+
+/**
+ * This function is a help function and sources out the getting of the name and pushing it into the array
+ * 
+ * @param {*} selectedNames all names for specific contact
+ * @param {*} nameInitials the name initials list for specific contact
+ * @param {*} contactImageBgColor the background color list for specific contact
+ */
+function processSelectedNames(selectedNames, nameInitials, contactImageBgColor) {
+    selectedNames.forEach(selectedName => {
+        let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
+        let initials = contentArray['contacts']['nameInitials'][contactIndex];
+        let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
+        nameInitials.push(initials);
+        contactImageBgColor.push(bgColor);
+    });
+    contentArray['tasks']['assignedTo'].push({
+        "name": selectedNames,
+        "nameInitials": nameInitials,
+        "contactImageBgColor": contactImageBgColor
+    });
 }
 
 

@@ -18,6 +18,7 @@ function renderContactsHTML() {
 `;
 }
 
+
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
@@ -85,6 +86,7 @@ function renderContactDescriptionHTML(i) {
 </section>
     `;
 }
+
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -200,6 +202,7 @@ function editContactHTML(index) {
   `;
 }
 
+
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
@@ -221,6 +224,7 @@ function renderContactDescriptionHTMLHeader() {
     `;
 }
 
+
 /**
  * This function generates the header for the Letters where all contacts are listed under
  *
@@ -237,6 +241,7 @@ function generateHeaderHTML(initial) {
 </div>
     `;
 }
+
 
 /**
  * This function is rendering the contact information from the specific contacts into the list from the letters
@@ -257,4 +262,3 @@ function generateContactsHTML(i) {
       </div>
     `;
   }
-  
