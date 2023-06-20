@@ -32,10 +32,10 @@ function generateTaskViewHTML(index) {
 		</div>
 
 		<div class="task-view-change-section">
-			<div id="taskAssignedTo${index}"><b>Assigned to:</b></div>
+			<div id="taskAssignedToTaskView${index}"><b>Assigned to:</b></div>
 			<div class="task-view-change-img">
 				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" alt="" onclick="">
-				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="openEditTask(index)">
+				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="openEditTask(${index})">
 			</div>
 		</div>
 		
@@ -53,13 +53,13 @@ function changeStyleOfTaskView(i) {
 
 function renderAssignedToAtTaskView(i) {
 	for (let j = 0; j < contentArray['tasks']['assignedTo'][i]['nameInitials'].length; j++) {
-		document.getElementById(`taskAssignedTo${i}`).innerHTML += `
+		document.getElementById(`taskAssignedToTaskView${i}`).innerHTML += `
 			<div class="assigned-to-task-view">
-			<div id="assignedToImageBgColor${i}${j}" class="task-assigned-to-icon task-view-icon">${contentArray['tasks']['assignedTo'][i]['nameInitials'][j]}</div>
+			<div id="assignedToImageBgColorTaskView${i}${j}" class="task-assigned-to-icon task-view-icon">${contentArray['tasks']['assignedTo'][i]['nameInitials'][j]}</div>
 			<div id="assignedToName${i}" ">${contentArray['tasks']['assignedTo'][i]['name'][j]}</div>
 			</div>
 		`;
-		document.getElementById(`assignedToImageBgColor${i}${j}`).style.background = contentArray['tasks']['assignedTo'][i]['contactImageBgColor'][j];
+		document.getElementById(`assignedToImageBgColorTaskView${i}${j}`).style.background = contentArray['tasks']['assignedTo'][i]['contactImageBgColor'][j];
 	}
 }
 
