@@ -1,21 +1,44 @@
 /**
+ * Indicates whether the mini menu is currently open or closed.
+ * @type {boolean}
+ */
+let isMiniMenuOpen = false;
+
+
+/**
+ * Holds the reference to the currently selected element on.
+ * @type {HTMLElement}
+ */
+let selectedElement = null;
+
+
+/**
  * This function resets all divs we fill content in
  *
  */
 function resetContent() {
+  resetInnerHtml();
   document.getElementById('content').classList.remove('d-none');
+  document.getElementById("popUpDiv").classList.add("d-none");
+  document.getElementById("popUpDiv").classList.remove("d-flex");
+  document.getElementById("popUpDiv2").classList.add("d-none");
+  document.getElementById("popUpDiv2").classList.remove("d-flex");
+  document.getElementById("contactsChangeDescriptionContent").style.display = "none";
+}
+
+
+/**
+ * This function smallers the code in the resetContent function and just clears a lot innerhtml content
+ * 
+ */
+function resetInnerHtml() {
   document.getElementById("content").innerHTML = "";
   document.getElementById("contactsChangeDescriptionContent").innerHTML = "";
   document.getElementById("contactsDescriptionContent").innerHTML = "";
   document.getElementById("contactsContent").innerHTML = "";
-  document.getElementById("popUpDiv").classList.add("d-none");
-  document.getElementById("popUpDiv").classList.remove("d-flex");
   document.getElementById("popUpDiv").innerHTML = "";
-  document.getElementById("popUpDiv2").classList.add("d-none");
-  document.getElementById("popUpDiv2").classList.remove("d-flex");
   document.getElementById("popUpDiv2").innerHTML = "";
   document.getElementById("loginContainer").innerHTML = "";
-  document.getElementById("contactsChangeDescriptionContent").style.display = "none";
 }
 
 
@@ -39,6 +62,14 @@ function slideInPopUp() {
   );
 }
 
+
+/**
+ *
+ *
+ * This function animate a slide from the right to the left
+ *
+ * @returns the animation effect
+ */
 function slideInPopUp2() {
   return popUpDiv2.animate(
     [
@@ -52,8 +83,6 @@ function slideInPopUp2() {
   );
 }
 
-
-let isMiniMenuOpen = false;
 
 /**
  * open Tooltip 'Log Out' by Click on Image Profile
@@ -70,7 +99,6 @@ function openMiniMenu(clickedMiniMenu) {
 }
 
 
-
 /**
 * close MiniMenu 'Log Out' by Click on Image Profile
 * 
@@ -81,13 +109,6 @@ function closeMiniMenu(clickedMiniMenu) {
   isMiniMenuOpen = false;
 }
 
-
-
-/**
- * Holds the reference to the currently selected element on.
- * @type {HTMLElement}
- */
-let selectedElement = null;
 
 /**
  * Handles the click event on menu items.
@@ -105,12 +126,8 @@ function handleClick(element) {
     if (selectedElement) {
       selectedElement.classList.remove('selected');
     }
-
     // Add the 'selected' class to the current element and set it as selectedElement.
     element.classList.add('selected');
     selectedElement = element;
   }
 }
-
-
-

@@ -53,7 +53,7 @@ function renderContactDescriptionHTML(i) {
         </div>
         <div onclick="renderFloatAddTask('${i}')" class="add-task">
           
-          <span> <span style="margin-right:5px" class="font-32">+</span> Add Task</span>
+          <span class="center-add-task-span"> <span style="margin-right:5px" class="font-32">+</span> <span>Add Task</span></span>
         </div>
       </div>
     </div>
@@ -113,9 +113,9 @@ function addNewContactHTML(param) {
   </div>
   <form class="form-box" onsubmit="updateNewContact('${param}'); return false;">
     <div class="contact-box">
-      <div class="name">
+      <div class="name2">
         <div class="name-box2">
-          <input id="addNewContactName" class="input-name" type="text" placeholder="Name" required>
+          <input id="addNewContactName" class="input-name" type="text" pattern="[a-zA-Z]{2,} [a-zA-Z]{2,}" placeholder="First Name / Last Name " required>
           <img src="./assets/img/charakter-icon.png" alt="charakter-img">
         </div>
       </div>
@@ -127,7 +127,7 @@ function addNewContactHTML(param) {
       </div>
       <div class="name">
         <div class="name-box2">
-          <input id="addNewContactPhone" class="input-name" type="tel" placeholder="Phone" required>
+          <input id="addNewContactPhone" class="input-name" type="tel" pattern="[0-9]{3,15}" placeholder="Phone" required>
           <img src="./assets/img/phone-icon.png" alt="phone-img">
         </div>
       </div>
@@ -168,21 +168,21 @@ function editContactHTML(index) {
   </div>
   <form onsubmit="updateEditedContact(${index}); return false;">
     <div class="contact-box">
-      <div class="name">
+      <div class="name2">
         <div class="name-box2">
-          <input id="editContactName" class="input-name" type="text" placeholder="Name" required>
+          <input id="editContactName" class="input-name" type="text" pattern="[a-zA-Z]{2,} [a-zA-Z]{2,}" placeholder="First Name / Last Name " required>
           <img src="./assets/img/charakter-icon.png" alt="charakter-img">
         </div>
       </div>
       <div class="name">
         <div class="name-box2">
-          <input id="editContactEmail" class="input-name" type="text" placeholder="Email" required>
+          <input id="editContactEmail" class="input-name" type="email" placeholder="Email" required>
           <img src="./assets/img/email-icon.png" alt="email-img">
         </div>
       </div>
       <div class="name">
         <div class="name-box2">
-          <input id="editContactPhone" class="input-name" type="text" placeholder="Phone" required>
+          <input id="editContactPhone" class="input-name" type="tel" pattern="[0-9]{3,15}" placeholder="Phone" required>
           <img src="./assets/img/phone-icon.png" alt="phone-img">
         </div>
       </div>

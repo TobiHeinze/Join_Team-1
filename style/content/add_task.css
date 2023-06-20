@@ -6,20 +6,15 @@
     align-items: center;
     height: 60px;
     width: 140px;
-    /* Höhe des Elements */
     padding: 0px 16px;
     color: white;
     background: #2A3647;
     border: none;
-    /* Kein Rand */
     border-radius: 8px;
-    /* Abrundung der Ecken des Elements */
     font-size: 20px;
     font-weight: 700;
     transition: background-color 0.125s ease !important;
-    /* Übergangseffekt bei Hover */
     letter-spacing: 0.3px;
-    /*sieht besser so aus bei den buttons*/
     position: absolute;
     top: 10px;
     right: 10px;
@@ -29,7 +24,6 @@
 .create-button img {
     margin-left: 10px;
 }
-
 
 .create-button:hover {
     border: none;
@@ -91,7 +85,6 @@
     display: flex;
     flex-direction: column;
 }
-
 
 .prio-class {
     display: flex;
@@ -260,10 +253,9 @@
     height: 53px;
 }
 
-.add-task-button img{
+.add-task-button img {
     margin-right: -5px;
 }
-
 
 .add-task-button:hover {
     border: none;
@@ -293,11 +285,9 @@
     border: 2px solid #29ABE2;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     color: #29ABE2;
-    transform: translate(0, 0); /* Hinzugefügt: Deaktiviert die Übersetzung */
-  }
-  
+    transform: translate(0, 0);
+}
 
-/* task-added wird nur angezeigt wenn der task hinzugefügt wurde, sonst nicht */
 .task-added {
     display: flex;
     position: fixed;
@@ -313,7 +303,6 @@
     width: 85%;
 }
 
-/* dropdown menu */
 .width-100 {
     width: 100%;
 }
@@ -402,8 +391,6 @@
 }
 
 .flex-checkboxes {
-    /* display: flex;
-    flex-direction: column; */
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 1px solid #dadada;
@@ -495,16 +482,13 @@
     margin-left: 5px;
 }
 
-.responsive-header-width-add-task {
-    width: 614px;
+#addTitle {
+    outline: none;
 }
 
 @media (max-width: 950px) {
     .date-box-add-task {
         margin-bottom: 11px;
-    }
-    .responsive-header-width-add-task {
-        width: 345px;
     }
 }
 
@@ -543,9 +527,6 @@
     .create-button {
         display: block;
     }
-    .responsive-hide {
-        display: none;
-    }
 }
 
 @media (min-width: 801px) {
@@ -558,7 +539,7 @@
     }
 }
 
-/* css scrollbar für add task page */
+/* css scrollbar for add task page */
 .add-task-scroll {
     height: 72vh;
     overflow-y: scroll;
@@ -571,13 +552,13 @@
         overflow-y: scroll;
         padding-right: 3px;
     }
-    
+
     .create-button2 {
         top: 1%;
     }
 
     .add-task-x-position {
-        top: 14%;
+        top: 17%;
     }
 }
 
