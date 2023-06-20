@@ -27,7 +27,7 @@ function renderLegalNoticeHTML() {
    68549 Ilvesheim</p> <br>
 <b>Contact:</b> <br> <br>
 Phone: 0152/09479495 <br>
-E-Mail: rothe.annika@yahoo.com
+E-Mail: rothe.annika@yahoo.com <br> <br>
 <h2>Liability for Content</h2>
 The contents of our website have been created with the greatest possible care. However, we cannot guarantee the
 contents' accuracy, completeness, or topicality. According to Section 7, paragraph 1 of the TMG <br>
@@ -35,20 +35,20 @@ contents' accuracy, completeness, or topicality. According to Section 7, paragra
 However, according to Sections 8 to 10 of the TMG, we service providers are not <br> obliged to monitor external
 information transmitted or stored or investigate circumstances pointing to illegal activity. Obligations to remove or block
 the use of information under general laws remain unaffected. <br> However, a liability in this regard is only possible from the moment of knowledge of a specific infringement. Upon notification of such violations, we will remove the content
-immediately.
+immediately. <br> <br>
 <h2>Liability for Links</h2>
 Our website contains links to external websites, over whose contents we have no control. Therefore, we cannot accept any liability for these external contents. The respective provider or operator of the websites <br> is always
 responsible for the contents of the linked pages. The linked pages were checked for possible legal violations at the time of
 linking. Illegal contents were not identified at the time of linking. <br> However, permanent monitoring of the contents
 of the linked pages is not reasonable without specific indications of a violation. Upon notification of violations, we will
-remove such links immediately.
+remove such links immediately. <br> <br>
 <h2>Copyright</h2>
 The contents and works on these pages created by the site operator are subject to German copyright law. The duplication,
 processing, distribution, and any kind of utilization outside the limits of copyright require <br> the written consent of
 the respective author or creator. Downloads and copies of these pages are only permitted for private, non-commercial
 use. In so far as the contents on this site were not created by the operator, <br> the copyrights of third parties are
 respected. In particular, third-party content is marked as such. Should you become aware of a copyright infringement, please
-inform us accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br>
+inform us accordingly. Upon notification of violations, <br> we will remove such contents immediately. <br> <br>
 Last Updated: [06/19/2023]
 </div>
 </div> `;

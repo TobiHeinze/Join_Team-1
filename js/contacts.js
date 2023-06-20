@@ -341,8 +341,6 @@ function updateContactsHTML() {
 
 /**
  * this function  filters the names with the same beginning letter and push them into a variable together in arrays
- * 
- * @returns 
  */
 function groupContactsByInitial() {
     const contactsByInitial = {};

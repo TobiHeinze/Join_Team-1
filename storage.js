@@ -7,8 +7,7 @@ const key = 'content';
  * This function sends and save the data on the backend
  * 
  * @param {*} key its the key to find the right data on the backend with this key
- * @param {*} contentArray this is the array with the first information for this website, it will update when on the backend
- * @returns 
+ * @param {*} contentArray this is the array with the first information for this website, it will update when on the backend 
  */
 async function setItem(key, contentArray) {
     const payload = { key, value: contentArray, token: STORAGE_TOKEN };
