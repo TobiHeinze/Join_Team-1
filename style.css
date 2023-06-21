@@ -28,6 +28,21 @@ textarea {
     display: flex;
 }
 
+.between {
+    justify-content: space-between;
+    width: 100%;
+}
+
+.between img {
+    z-index: 250;
+}
+
+@media (min-width: 1351px) {
+    .between img {
+        display: none;
+    }
+}
+
 .align-center {
     align-items: center;
 }
