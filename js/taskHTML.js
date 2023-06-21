@@ -102,9 +102,9 @@ function renderAddTaskHTML(param) {
     </div>
   </div>
   <div class="task-button-box">
-    <div onclick="renderAddTask()" class="clear-task-button">
+    <div onmouseover="changeImage(true)" onmouseout="changeImage(false)" onclick="renderAddTask()" class="clear-task-button">
       <span>Clear</span>
-      <img src="./assets/img/x-button-black.png" alt="x-img">
+      <img id="myImgX" src="./assets/img/x-button-black2.png" alt="x-img">
     </div>
     <button class="add-task-button">
       <span>Create Task</span>
@@ -227,9 +227,9 @@ function addTaskFloatHTML(param) {
       </div>
     </div>
     <div class="task-button-box">
-      <div onclick="renderFloatAddTask()" class="clear-task-button">
+      <div onmouseover="changeImage(true)" onmouseout="changeImage(false)" onclick="renderFloatAddTask()" class="clear-task-button">
         <span>Clear</span>
-        <img src="./assets/img/x-button-black.png" alt="x-img">
+        <img id="myImgX" src="./assets/img/x-button-black2.png" alt="x-img">
       </div>
       <button class="add-task-button">
         <span>Create Task</span>

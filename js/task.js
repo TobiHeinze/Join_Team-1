@@ -553,3 +553,18 @@ function resetPrioColor() {
     document.getElementById(`changePrioColorlow`).style.color = 'black';
     document.querySelector(`#changePrioColorlow img`).src = './assets/img/task-prio-low.png';
 }
+
+
+/**
+ * This function changes the image from the X button in the add task area from balck to blue and back
+ * 
+ * @param {boolean} isHovered showed if the mouse is over the element (true or false)
+ */
+function changeImage(isHovered) {
+    let img = document.getElementById('myImgX');
+    if (isHovered) {
+      img.src = './assets/img/x-button-blue.png';
+    } else {
+      img.src = './assets/img/x-button-black2.png';
+    }
+  }
