@@ -488,6 +488,16 @@
     outline: none;
 }
 
+.center-basket-subtask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-basket-subtask img {
+    height: 24px;
+}
+
 @media (max-width: 950px) {
     .date-box-add-task {
         margin-bottom: 11px;

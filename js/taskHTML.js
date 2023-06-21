@@ -244,3 +244,35 @@ function addTaskFloatHTML(param) {
 </div>
     `;
 }
+
+
+/**
+ * This function outsources html code
+ * 
+ * @returns html code
+ */
+function renderAddNewCategoryHTML() {
+  return document.getElementById(`renderAddNewCategory`).innerHTML = /*html*/`
+  <div class="new-category">
+    <input id="newCategoryValue" type="text" placeholder="New category name">
+    <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
+    <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+  </div>
+`;
+}
+
+
+/**
+ * This function outsources html code
+ * 
+ * @returns html code
+ */
+function renderAddNewCategoryHTMLFloat() {
+  return document.getElementById('renderAddNewCategoryFloat').innerHTML = /*html*/`
+  <div class="new-category-float">
+    <input id="newCategoryValue" type="text" placeholder="New category name">
+    <img onclick="closeNewCategoryFloat()" src="./assets/img/black-x-button.png" alt="x-img">
+    <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+  </div>
+`;
+}
