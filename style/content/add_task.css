@@ -451,6 +451,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid #00000038;
 }
 
 .new-category input {
@@ -470,7 +471,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    border: 1px solid #00000038;
 }
 
 .new-category-float input {

@@ -1,3 +1,7 @@
+/**
+ * This array is filled with basic informations and the first tasks and contacts to show how the website is working
+ * 
+ */
 let contentArray = 
 	{
 	  "users": 
@@ -64,12 +68,12 @@ let contentArray =
 			  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF"]
 			},
 			{
-			  "name": ["David Eisenberg", "Bendikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
+			  "name": ["David Eisenberg", "Benedikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
 			  "nameInitials": ["DE", "BZ", "AR", "AW"],
 			  "contactImageBgColor": ["#CB02CF", "#FF7A00","#9327FF", "#FFA800"]
 			},
 			{
-			  "name": ["Tobias Heinze", "David Eisenberg", "Bendikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
+			  "name": ["Tobias Heinze", "David Eisenberg", "Benedikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
 			  "nameInitials": ["TH", "DE", "BZ", "MB", "SF"],
 			  "contactImageBgColor": ["#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 			},
@@ -87,111 +91,3 @@ let contentArray =
 		}
 	}
   ;
-  
-
-
-
-
-// let contentArraySaved = [];
-
-
-// async function init(){
-//     loadUsers();
-// }
-
-// async function loadUsers(){
-//     try {
-//         users = JSON.parse(await getItem('users'));
-//     } catch(e){
-//         console.error('Loading error:', e);
-//     }
-// }
-
-
-// async function saveArray() {
-//     contentArraySaved.push(contentArray);
-//     await setItem('contentArraySaved', JSON.stringify(contentArraySaved));
-//     resetForm();
-// }
-
-// function resetForm() {
-//     email.value = '';
-//     password.value = '';
-//     registerBtn.disabled = false;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// das selbe array in leer, wenn man die seite man leer sehen möchte kann man das nutzen.
-// let contentArray = [
-// 	{
-// 		'users': [
-// 			{
-// 				'name': [],
-// 				'email': [],
-// 				'password': [],
-// 				'photo': [],
-// 			}
-// 		],
-
-// 		'settings': [     // Das Array ist immer befüllt mit statischem Inhalt, der bei Neuerstellungen mit in die dynamischen Arrays gerendert wird.
-// 			{
-// 				'taskStatus': [],
-// 				'categoryName': [],
-// 				'categoryBgColor': [],
-// 				'priority': [],
-// 				'contactImageBgColor': [],
-// 			}
-// 		],
-
-// 		'contacts': [
-// 			{
-// 				'name': [],
-// 				'nameInitials': [],
-// 				'email': [],
-// 				'phoneNumber': [],
-// 				'contactImageBgColor': [],
-// 			}
-// 		],
-
-// 		'tasks': [
-// 			{
-// 				'taskStatus': [],
-// 				'title': [],
-// 				'description': [],
-// 				'priority': [],
-// 				'dueDate': [],
-// 				'categoryName': [],
-// 				'categoryBgColor': [],
-// 				'assignedTo': [
-// 					{
-// 						'name': [],
-// 						'nameInitials': [],
-// 						'contactImageBgColor': [],
-// 					}
-// 				],
-// 			}
-// 		],
-
-// 	}
-
-// ]

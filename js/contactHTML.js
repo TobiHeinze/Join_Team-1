@@ -18,6 +18,7 @@ function renderContactsHTML() {
 `;
 }
 
+
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
  *
@@ -85,6 +86,7 @@ function renderContactDescriptionHTML(i) {
 </section>
     `;
 }
+
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -187,18 +189,19 @@ function editContactHTML(index) {
         </div>
       </div>
     </div>
-    <div class="del-save-box">
-      <div class="del" onclick="deleteContact(${index})">
+    <div class="delete-save-box2">
+      <div class="delete2" onclick="deleteContact(${index})">
         Delete
       </div>
-      <button class="save">
-        <b>Save</b>
+      <button class="save2">
+        Save
       </button>
     </div>
   </form>
 </section>
   `;
 }
+
 
 /**
  * This is a help function thats olny sources out the HTML code to smaller the code
@@ -221,6 +224,7 @@ function renderContactDescriptionHTMLHeader() {
     `;
 }
 
+
 /**
  * This function generates the header for the Letters where all contacts are listed under
  *
@@ -237,6 +241,7 @@ function generateHeaderHTML(initial) {
 </div>
     `;
 }
+
 
 /**
  * This function is rendering the contact information from the specific contacts into the list from the letters
@@ -257,4 +262,3 @@ function generateContactsHTML(i) {
       </div>
     `;
   }
-  
