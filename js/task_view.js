@@ -90,18 +90,20 @@ function doNotClose(event) {
 }
 
 async function deleteCurrentTask(i) {
-	contentArray['tasks']['taskStatus'].splice(i, 1);
-	contentArray['tasks']['title'].splice(i, 1);
-	contentArray['tasks']['description'].splice(i, 1);
-	contentArray['tasks']['priority'].splice(i, 1);
-	contentArray['tasks']['dueDate'].splice(i, 1);
-	contentArray['tasks']['categoryName'].splice(i, 1);
-	contentArray['tasks']['categoryBgColor'].splice(i, 1);
-	contentArray['tasks']['subtasks'].splice(i, 1);
-	contentArray['tasks']['assignedTo'].splice(i, 1);
+	if (confirm('Delete This Task?') == true) {
+		contentArray['tasks']['taskStatus'].splice(i, 1);
+		contentArray['tasks']['title'].splice(i, 1);
+		contentArray['tasks']['description'].splice(i, 1);
+		contentArray['tasks']['priority'].splice(i, 1);
+		contentArray['tasks']['dueDate'].splice(i, 1);
+		contentArray['tasks']['categoryName'].splice(i, 1);
+		contentArray['tasks']['categoryBgColor'].splice(i, 1);
+		contentArray['tasks']['subtasks'].splice(i, 1);
+		contentArray['tasks']['assignedTo'].splice(i, 1);
 
-	await setItem(key, contentArray);
-	await getItem(key);
-	clickToCloseTaskView();
-	renderBoard();
+		await setItem(key, contentArray);
+		await getItem(key);
+		clickToCloseTaskView();
+		renderBoard();
+	}
 }

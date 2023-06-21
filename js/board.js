@@ -195,7 +195,7 @@ function renderBoard() {
 <div class="board-header-section">
 	<div class="board-header-mobile">
 		<span class="font-47">Board</span>
-		<img  src="./assets/img/plus-add-task-mobile.svg" alt="add task" onclick="renderFloatAddTask('board')">
+		<img  src="./assets/img/plus-add-task-mobile.svg" alt="add task" onclick="renderFloatAddTask('board')" onmouseover="this.src='./assets/img/big-plus-blue.svg'"  onmouseout="this.src='./assets/img/plus-add-task-mobile.svg'">
 	</div>
 
 	<div class="board-find-section">
@@ -216,7 +216,7 @@ function renderBoard() {
 	<div class="task-section-container" ondrop="moveTo('0')" ondragover="allowDrop(event)">
 		<div class="header-task-status">
 			<span class="task-status-description">To do</span>
-			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'" >
+			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'"  onmouseout="this.src='./assets/img/add-task-button-mobile.svg'">
 		</div>
 		<div id="taskStatus0"></div>
 		<div id="taskStatusEmpty0" class="task-container-mobile-empty">No tasks To do</div>
@@ -225,7 +225,7 @@ function renderBoard() {
 	<div class="task-section-container" ondrop="moveTo('1')" ondragover="allowDrop(event)">
 		<div class="header-task-status">
 			<span class="task-status-description">In progress</span>
-			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'" >
+			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'" onmouseout="this.src='./assets/img/add-task-button-mobile.svg'">
 		</div>
 		<div id="taskStatus1"></div>
 		<div id="taskStatusEmpty1" class="task-container-mobile-empty">No tasks In progress</div>
@@ -234,7 +234,7 @@ function renderBoard() {
 	<div class="task-section-container" ondrop="moveTo('2')" ondragover="allowDrop(event)">
 		<div class="header-task-status">
 			<span class="task-status-description">Awaiting feedback</span>
-			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'">
+			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'" onmouseout="this.src='./assets/img/add-task-button-mobile.svg'">
 		</div>
 		<div id="taskStatus2"></div>
 		<div id="taskStatusEmpty2" class="task-container-mobile-empty">No tasks Awaiting feedback</div>
@@ -243,7 +243,7 @@ function renderBoard() {
 	<div class="task-section-container" ondrop="moveTo('3')" ondragover="allowDrop(event)">
 		<div class="header-task-status">
 			<span class="task-status-description">Done</span>
-			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'">
+			<img onclick="renderFloatAddTask('board')" src="./assets/img/add-task-button-mobile.svg" alt="add" onmouseover="this.src='./assets/img/plus-blue.png'" onmouseout="this.src='./assets/img/add-task-button-mobile.svg'">
 		</div>
 		<div id="taskStatus3"></div>
 		<div id="taskStatusEmpty3" class="task-container-mobile-empty">No tasks Done</div>
