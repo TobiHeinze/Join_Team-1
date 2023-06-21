@@ -34,8 +34,8 @@ function generateTaskViewHTML(index) {
 		<div class="task-view-change-section">
 			<div id="taskAssignedToTaskView${index}"><b>Assigned to:</b></div>
 			<div class="task-view-change-img">
-				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" alt="" onclick="deleteCurrentTask(${index})">
-				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="openEditTask(${index})">
+				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" onmouseover="this.src='./assets/img/task-view-desktop-delete-btn-hover.svg'" onmouseout="this.src='./assets/img/task-view-desktop-delete-btn.svg'" alt="" onclick="deleteCurrentTask(${index})">
+				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" onmouseover="this.src='./assets/img/task-view-desktop-edit-btn-hover.svg'" onmouseout="this.src='./assets/img/task-view-desktop-edit-btn.svg'" alt="" onclick="openEditTask(${index})">
 			</div>
 		</div>
 		

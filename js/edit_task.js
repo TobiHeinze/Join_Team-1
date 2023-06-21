@@ -287,7 +287,7 @@ function generateEditTaskHTML(i) {
 
 				<div class="edit-task-btn-section">
 					<img class="" src="./assets/img/task-view-close-btn.svg" alt="" onclick="clickToCloseEditTask()">
-					<img class="" src="./assets/img/edit-task-okay-btn.svg" alt="" onclick="submitEditTask(${i})">
+					<img class="" src="./assets/img/edit-task-okay-btn.svg" onmouseover="this.src='./assets/img/edit-task-okay-btn-hover.svg'" onmouseout="this.src='./assets/img/edit-task-okay-btn.svg'" alt="" onclick="submitEditTask(${i})">
 				</div>
 			</div>
 		</div>
