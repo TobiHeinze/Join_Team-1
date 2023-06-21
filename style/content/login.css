@@ -1,34 +1,27 @@
 .login-container {
     position: relative;
-    /* Relative Positionierung */
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 80px;
     padding: 12px 5%;
     padding-bottom: 30px;
-    /* Innenabstand oben und unten: 32px, links und rechts: 5% */
     gap: 10px;
-    /* Abstand zwischen den Elementen in der Flexbox: 20px */
     width: clamp(500px, 40vw, 652px);
-    /* Breite der Flexbox abhängig von der Bildschirmbreite, mit Mindest- und Maximalwerten */
     background: white;
-    /* Hintergrundfarbe der Flexbox */
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
-    /* Schatten um die Flexbox */
     border-radius: 30px;
-    /* Abrundung der Ecken der Flexbox */
     z-index: 1;
-    /* Z-Index des Elements auf 1 setzen */
 }
+
 
 .go-back-arrow {
     height: 16px;
     position: absolute;
     top: 50px;
     left: 50px;
-
 }
+
 
 .btn-dark {
     display: flex;
@@ -56,6 +49,7 @@
     transition: background-color 0.125s ease;
 }
 
+
 .btn-bright {
     display: flex;
     justify-content: center;
@@ -68,12 +62,14 @@
     border-radius: 8px;
 }
 
+
 .btn-bright:hover {
     cursor: pointer;
     border: 1px solid #29ABE2;
     filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     color: #29ABE2;
 }
+
 
 .not-a-join {
     position: absolute;
@@ -87,10 +83,12 @@
     z-index: 1;
 }
 
+
 .guest-login {
     font-size: 21px;
     font-weight: 700;
 }
+
 
 .login-buttons {
     display: flex;
@@ -100,9 +98,11 @@
     height: 70px;
 }
 
+
 .login-btn {
     width: 120px;
 }
+
 
 .logo-container {
     display: flex;
@@ -114,6 +114,7 @@
     height: 99vh;
 }
 
+
 .background {
     position: absolute;
     top: 0;
@@ -124,6 +125,7 @@
     background-color: #F6F7F8;
 }
 
+
 .line-login {
     width: 150px;
     height: 0px;
@@ -131,6 +133,7 @@
     margin-bottom: 10px;
     border-radius: 10px;
 }
+
 
 .input-field {
     display: flex;
@@ -145,6 +148,7 @@
     margin-bottom: 50px;
 }
 
+
 .input-container {
     width: clamp(320px, 26vw, 600px);
     display: flex;
@@ -152,6 +156,7 @@
     justify-content: center;
     align-items: center;
 }
+
 
 .input {
     width: 100%;
@@ -161,6 +166,7 @@
     outline: none;
 }
 
+
 .remember-check {
     display: flex;
     margin-bottom: 15px;
@@ -169,21 +175,25 @@
     gap: 35px;
 }
 
+
 .remember-check input {
     width: 16px;
     height: 16px;
     cursor: pointer;
 }
 
+
 .remember-check a {
     color: #29ABE2;
     text-decoration: none;
 }
 
+
 .remember-check span {
     margin-left: 16px;
     margin-right: 32px;
 }
+
 
 .check {
     width: 150px;
@@ -192,6 +202,7 @@
     justify-content: space-around;
     cursor: context-menu;
 }
+
 
 #myCheckbox {
     margin-top: 0px;
@@ -206,36 +217,6 @@
     margin-top: 3px;
 }
 
-.checkbox input[type="checkbox"] {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.checkbox label {
-    position: absolute;
-    top: -7px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 1.5px solid #000;
-    border-radius: 5px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
-    /* Passe die Größe des Häkchens an */
-    transition: background-color 0.3s ease;
-    cursor: pointer !important;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.497);
-}
-
-.checkbox input[type="checkbox"]:checked+label {
-    background-image: url("/assets/img/black-hook.png");
-    /* Passe den Pfad zur SVG-Datei an */
-}
-
 
 
 #passwordError {
@@ -243,101 +224,64 @@
     margin-top: -50px;
     margin-bottom: 20px;
     color: red;
-
 }
 
 
-
-/* Definiert eine Klasse mit dem Namen .animate-background */
-
 .animate-background {
-    /* Definiert eine Animation mit dem Namen bg-transparent, die 1000 Millisekunden dauert und eine Ein- und Ausblendung (ease-in-out) aufweist */
     animation: bg-transparent 1000ms ease-in-out;
-    /* Verzögert den Start der Animation um 1 Sekunde */
     animation-delay: 1s;
-    /* Stellt sicher, dass das Element den Zustand nach Abschluss der Animation beibehält */
     animation-fill-mode: forwards;
 }
 
 
-/* Definiert eine benannte Schlüsselbildanimation mit dem Namen bg-transparent */
-
 @keyframes bg-transparent {
 
-    /* Der Anfangszustand der Animation */
+    
     from {
-        /* Die Anfangsopazität ist 1, was bedeutet, dass das Element vollständig sichtbar ist */
         opacity: 1;
-        /* Der Anfangswert für den z-Index ist 1, was die Stapelreihenfolge des Elements bestimmt */
         z-index: 1;
     }
 
-    /* Der Endzustand der Animation */
     to {
-        /* Die Endopazität ist 0, was bedeutet, dass das Element vollständig transparent ist */
         opacity: 0;
-        /* Der Endwert für den z-Index ist 0, was bedeutet, dass das Element hinter anderen Elementen in der Stapelreihenfolge liegt */
         z-index: 0;
     }
 }
 
 
-/* Definiert eine Klasse mit dem Namen .moving-logo */
-
 .moving-logo {
-    /* Positioniert das Element absolut im Verhältnis zum nächsten positionierten Elternelement */
     position: absolute;
-    /* Bestimmt die Stapelreihenfolge des Elements */
     z-index: 999;
-    /* Positioniert das Element horizontal mit einer Berechnung basierend auf der Breite des Viewports und der Elementgröße */
     left: calc(100vw - 50% - 101px);
-    /* Positioniert das Element vertikal mit einer Berechnung basierend auf der Höhe des Viewports und der Elementgröße */
     top: calc(100vh - 50% - 122px);
-    /* Legt die Breite des Elements fest */
     width: 202px;
-    /* Legt die Höhe des Elements fest */
     height: 244px;
 }
 
 
-/* Definiert eine Klasse mit dem Namen .animate-logo */
-
 .animate-logo {
-    /* Definiert eine Animation mit dem Namen moveJoinLogo, die 500 Millisekunden dauert und eine Ein- und Ausblendung (ease-in-out) aufweist */
     animation: moveJoinLogo 500ms ease-in-out;
-    /* Verzögert den Start der Animation um 1 Sekunde */
     animation-delay: 1s;
-    /* Stellt sicher, dass das Element den Zustand nach Abschluss der Animation beibehält */
     animation-fill-mode: forwards;
 }
 
 
-/* Definiert eine benannte Schlüsselbildanimation mit dem Namen moveJoinLogo */
-
 @keyframes moveJoinLogo {
-
-    /* Der Anfangszustand der Animation */
     from {
-        /* Die anfängliche Position des Elements basierend auf dem Viewport */
         left: calc(100vw - 50% - 101px);
         top: calc(100vh - 50% - 122px);
-        /* Die anfängliche Breite und Höhe des Elements */
         width: 202px;
         height: 244px;
     }
 
-    /* Der Endzustand der Animation */
     to {
-        /* Die endgültige Position des Elements */
         left: 50px;
         top: 50px;
-        /* Die endgültige Breite und Höhe des Elements */
         width: 101px;
         height: 122px;
     }
 }
 
-/*Begrüßung*/
 
 aside {
     display: flex;
@@ -350,9 +294,6 @@ aside {
     color: rgb(41, 171, 226);
 }
 
-
-
-/*responsive*/
 
 @media(max-width:1200px) {
     .login-container {
@@ -389,6 +330,7 @@ aside {
         z-index: 2000;
     }
 }
+
 
 @media(max-width:450px) {
     .remember-check {

@@ -6,7 +6,6 @@
 }
 
 
-
 .over-headline {
     display: flex;
     justify-content: space-between;
@@ -14,12 +13,10 @@
 }
 
 
-
 .help-container {
     min-width: 200px;
     margin: 15px;
 }
-
 
 
 .help-overflow-scroll {
@@ -29,16 +26,16 @@
     overflow-y: scroll;
 }
 
+
 .help-overflow-scroll::-webkit-scrollbar {
     width: 5px;
 }
+
 
 .help-overflow-scroll::-webkit-scrollbar-thumb {
     border: 7px solid #A8A8A8;
     border-radius: 3px;
 }
-
-
 
 
 @media (max-width: 800px) {

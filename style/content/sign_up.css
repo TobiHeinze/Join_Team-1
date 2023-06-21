@@ -1,4 +1,3 @@
-
 .sign-in-box {
     background: #FFFFFF;
     box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.04);
@@ -11,9 +10,11 @@
     margin-bottom: auto;
 }
 
+
 .contact-box {
     margin-top: 20px;
 }
+
 
 .name {
     display: flex;
@@ -37,6 +38,7 @@
     cursor: pointer;
 }
 
+
 .name-box {
     display: flex;
     width: 300px;
@@ -47,10 +49,11 @@
     justify-content: space-between;
 }
 
+
 .name-box img {
     height: 15px;
-    /* width: 18px; */
 }
+
 
 .input-name {
     border: none;
@@ -58,11 +61,13 @@
     width: 100%;
 }
 
+
 .sign-up-box {
     display: flex;
     gap: 20px;
     justify-content: center;
 }
+
 
 .sign-up {
     width: 100px;
@@ -79,13 +84,14 @@
     margin-top: 15px;
 }
 
+
 .go-back-sign-up {
     width: 300px;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
-   
 }
+
 
 .go-back img {
     height: 14px;
@@ -94,9 +100,6 @@
     position: absolute;
     left: calc(50% - 115px);
 }
-
-
-
 
 
 @media (max-width: 800px) {

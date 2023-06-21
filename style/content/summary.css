@@ -4,8 +4,8 @@
     margin-bottom: 22px;
     margin-top: -15px;
     display: none;
-    
 }
+
 
 .summary-h1 {
     font-size: 47px;
@@ -13,13 +13,14 @@
     font-weight: bolder;
 }
 
+
 .blue-line-horizontal {
     width: 200px;
     height: 3px;
     margin-bottom: 15px;
     margin-top: 15px;
-    
 }
+
 
 .blue-line-vertical {
     height: 59px;
@@ -44,6 +45,7 @@
     display: none;
 }
 
+
 .summary-content {
     display: flex;
     max-height: 600px;
@@ -57,10 +59,10 @@ aside {
     padding-left: 70px;
 }
 
+
 #userGreetingName {
     color: rgb(41, 171, 226);
 }
-
 
 
 .row {
@@ -72,7 +74,6 @@ aside {
     align-items: center;
     justify-content: space-between;
 }
-
 
 
 .card-row-1 {
@@ -173,12 +174,9 @@ aside {
 }
 
 
-
 .card-row-3:hover img {
     filter: invert(100%) brightness(200%);
-    /* damit das Bild beim Hovern Hintergrund und Hauptfarbe ändert (danke ChatGPT)*/
 }
-
 
 
 @media (max-width: 1275px) {
@@ -233,11 +231,9 @@ aside {
 }
 
 
-
 @media (max-width: 750px) {
     .summary-content {
         transform: scale(0.8);
-        /*Verkleinerung um 20%*/
     }
 
     .summary-content {
@@ -245,20 +241,17 @@ aside {
     }
 }
 
+
 @media (max-width: 520px) {
     .summary-content {
         transform: scale(0.75);
-        /*Verkleinerung um 25%*/
     }
 
 }
 
-
-
 @media (max-width: 425px) {
     .summary-content {
         transform: scale(0.6);
-        /*Verkleinerung um 40%*/
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -282,5 +275,4 @@ aside {
         align-items: center;
         justify-content: space-between;
     }
-
 }
