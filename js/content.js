@@ -1,3 +1,7 @@
+/**
+ * This array is filled with basic informations and the first tasks and contacts to show how the website is working
+ * 
+ */
 let contentArray = 
 	{
 	  "users": 
@@ -87,111 +91,3 @@ let contentArray =
 		}
 	}
   ;
-  
-
-
-
-
-// let contentArraySaved = [];
-
-
-// async function init(){
-//     loadUsers();
-// }
-
-// async function loadUsers(){
-//     try {
-//         users = JSON.parse(await getItem('users'));
-//     } catch(e){
-//         console.error('Loading error:', e);
-//     }
-// }
-
-
-// async function saveArray() {
-//     contentArraySaved.push(contentArray);
-//     await setItem('contentArraySaved', JSON.stringify(contentArraySaved));
-//     resetForm();
-// }
-
-// function resetForm() {
-//     email.value = '';
-//     password.value = '';
-//     registerBtn.disabled = false;
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// das selbe array in leer, wenn man die seite man leer sehen möchte kann man das nutzen.
-// let contentArray = [
-// 	{
-// 		'users': [
-// 			{
-// 				'name': [],
-// 				'email': [],
-// 				'password': [],
-// 				'photo': [],
-// 			}
-// 		],
-
-// 		'settings': [     // Das Array ist immer befüllt mit statischem Inhalt, der bei Neuerstellungen mit in die dynamischen Arrays gerendert wird.
-// 			{
-// 				'taskStatus': [],
-// 				'categoryName': [],
-// 				'categoryBgColor': [],
-// 				'priority': [],
-// 				'contactImageBgColor': [],
-// 			}
-// 		],
-
-// 		'contacts': [
-// 			{
-// 				'name': [],
-// 				'nameInitials': [],
-// 				'email': [],
-// 				'phoneNumber': [],
-// 				'contactImageBgColor': [],
-// 			}
-// 		],
-
-// 		'tasks': [
-// 			{
-// 				'taskStatus': [],
-// 				'title': [],
-// 				'description': [],
-// 				'priority': [],
-// 				'dueDate': [],
-// 				'categoryName': [],
-// 				'categoryBgColor': [],
-// 				'assignedTo': [
-// 					{
-// 						'name': [],
-// 						'nameInitials': [],
-// 						'contactImageBgColor': [],
-// 					}
-// 				],
-// 			}
-// 		],
-
-// 	}
-
-// ]

@@ -306,3 +306,39 @@
 		height: calc(100vh - 395px);
 	}
 }
+
+
+
+
+
+
+.drag-mini-menu {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+    padding: 12px 11px 12px 11px;
+    width: 140px;
+    height: 140px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 21px 0px 21px 21px;
+	color: white;
+	gap: 15px;
+}
+
+.drag-mini-menu-box {
+	display: flex;
+    margin-left: 69%;
+}
+
+@media (min-width: 500px) {
+	.drag-mini-menu-box {
+		margin-left: 50%;
+	}
+}
+
+@media (min-width: 310px) {
+	.drag-mini-menu-box {
+		margin-left: 20%;
+	}
+}

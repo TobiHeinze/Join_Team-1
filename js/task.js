@@ -1,3 +1,10 @@
+let category = [];
+let randomBgColor = [];
+currentSubtasks = [];
+currentSubtaskStatus = [];
+let addPriority = [];
+
+
 /**
  * This function renders the addtask area
  * 
@@ -11,6 +18,7 @@ async function renderAddTask(param) {
     document.getElementById("content").innerHTML = renderAddTaskHTML(param);
     renderAddTaskCategoryOptions();
     renderAddTaskAssignedToOptions(param);
+    grayBackgroundForCurrentPage('addTaskBackgroundSidebar');
 }
 
 
@@ -35,7 +43,6 @@ async function renderFloatAddTask(param) {
         document.getElementById('addXButtonTask').classList.remove('d-none');
     }
 }
-
 
 
 let expanded = [false, false];
@@ -88,23 +95,43 @@ function addNewCategory() {
     document.getElementById('selectBox1').classList.add('d-none');
     document.getElementById('checkboxes1').classList.add('d-none');
     if (document.getElementById('renderAddNewCategory') !== null) {
-        document.getElementById('renderAddNewCategory').innerHTML = /*html*/`
-          <div class="new-category">
-            <input id="newCategoryValue" type="text" placeholder="New category name">
-            <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
-            <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
-          </div>
-        `;
+        renderAddNewCategoryHTML();
     }
     if (document.getElementById('renderAddNewCategoryFloat') !== null) {
-        document.getElementById('renderAddNewCategoryFloat').innerHTML = /*html*/`
-          <div class="new-category-float">
-            <input id="newCategoryValue" type="text" placeholder="New category name">
-            <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
-            <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
-          </div>
-        `;
+        renderAddNewCategoryHTMLFloat();
     }
+}
+
+
+/**
+ * This function outsources html code
+ * 
+ * @returns html code
+ */
+function renderAddNewCategoryHTML() {
+    return document.getElementById(`renderAddNewCategory`).innerHTML = /*html*/`
+    <div class="new-category">
+      <input id="newCategoryValue" type="text" placeholder="New category name">
+      <img onclick="closeNewCategory()" src="./assets/img/black-x-button.png" alt="x-img">
+      <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+    </div>
+  `;
+}
+
+
+/**
+ * This function outsources html code
+ * 
+ * @returns html code
+ */
+function renderAddNewCategoryHTMLFloat() {
+    return  document.getElementById('renderAddNewCategoryFloat').innerHTML = /*html*/`
+    <div class="new-category-float">
+      <input id="newCategoryValue" type="text" placeholder="New category name">
+      <img onclick="closeNewCategoryFloat()" src="./assets/img/black-x-button.png" alt="x-img">
+      <img onclick="addNewCategoryToArray()" src="./assets/img/black-hook.png" alt="hook-img">
+    </div>
+  `;
 }
 
 
@@ -114,14 +141,24 @@ function addNewCategory() {
  */
 function closeNewCategory() {
     document.getElementById('renderAddNewCategory').innerHTML = ``;
-    // document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
     document.getElementById('selectBox1').classList.remove('d-none');
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
 }
 
 
-let category = [];
+/**
+ * This function close the add new category inputfield and go back to the dropdown menu
+ * 
+ */
+function closeNewCategoryFloat() {
+    document.getElementById('renderAddNewCategoryFloat').innerHTML = ``;
+    document.getElementById('selectBox1').classList.remove('d-none');
+    document.getElementById('checkboxes1').classList.remove('d-none');
+    document.getElementById('addColorToNewCategory').innerHTML = ``;
+}
+
+
 /**
  * This function add a new category to the array with a random color
  * 
@@ -129,6 +166,10 @@ let category = [];
 function addNewCategoryToArray() {
     category = [];
     category = document.getElementById('newCategoryValue').value;
+    if (category.length < 2) {
+        alert("The category must contain at least 2 characters.");
+        return;
+      }
     if (document.getElementById('renderAddNewCategory') !== null) {
         document.getElementById('renderAddNewCategory').innerHTML = ``;
     }
@@ -138,7 +179,6 @@ function addNewCategoryToArray() {
     document.getElementById('selectBox1').classList.remove('d-none');
     document.getElementById('checkboxes1').classList.remove('d-none');
     document.getElementById('addColorToNewCategory').innerHTML = ``;
-    console.log('das ist die neue kategorie:', category);
     categoryOption2();
 }
 
@@ -164,14 +204,12 @@ function categoryOption(index) {
 }
 
 
-let randomBgColor = [];
 /**
  * This function is a help function that added the name and a random color to show in the category dropdown menu
  * 
  */
 function categoryOption2() {
     randomBgColor = addRandomBackgroundColorToNewCategory();
-    console.log('hier wird die randombg color gespcihert categoryoption2 function:', randomBgColor);
     document.getElementById('categoryOptionShowSelected').innerHTML = ``;
     document.getElementById('addNewCategoryOption').innerHTML = /*html*/`
     <div class="flex align-center">
@@ -188,7 +226,7 @@ function categoryOption2() {
 
 
 /**
- * This function renders the assigned to options inside the drowdown menu
+ * This function renders the assigned to options inside the drop down menu
  * 
  */
 function renderAddTaskAssignedToOptions(param) {
@@ -201,7 +239,7 @@ function renderAddTaskAssignedToOptions(param) {
     for (let i = 0; i < contentArray['contacts']['name'].length; i++) {
         document.getElementById('checkboxes2').innerHTML += /*html*/`
       <div class="option flex">
-        <input type="checkbox" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
+        <input type="checkbox" onclick="toggleCheckboxColor(${i})" id="assignedToOptions${i}" value="${contentArray['contacts']['name'][i]}" />
         <div onclick="toggleCheckbox(${i})" class="width-100">
           ${contentArray['contacts']['name'][i]}
         </div>
@@ -219,6 +257,7 @@ function renderAddTaskAssignedToOptions(param) {
 function toggleCheckbox(index) {
     let checkbox = document.getElementById(`assignedToOptions${index}`);
     checkbox.checked = !checkbox.checked;
+    checkbox.setAttribute("checked", checkbox.checked);
     toggleCheckboxColor(index);
 }
 
@@ -273,7 +312,6 @@ function addRandomBackgroundColorToNewCategory() {
 function processTitle() {
     let addTitle = document.getElementById('addTitle').value;
     contentArray['tasks']['title'].push(addTitle);
-    console.log(addTitle);
 }
 
 
@@ -284,7 +322,6 @@ function processTitle() {
 function processDescription() {
     let addDescription = document.getElementById('addDescription').value;
     contentArray['tasks']['description'].push(addDescription);
-    console.log(addDescription);
 }
 
 
@@ -295,7 +332,6 @@ function processDescription() {
 function processDueDate() {
     let addDueDate = document.getElementById('addDueDate').value;
     contentArray['tasks']['dueDate'].push(addDueDate);
-    console.log(addDueDate);
 }
 
 
@@ -304,32 +340,26 @@ function processDueDate() {
  * 
  */
 function processCategory() {
-    //  zur add new category wird eine random color hinzugefügt noch!
     if (document.getElementById('categoryOptionShowSelected').textContent.trim() === "Select task category") {
-        contentArray['tasks']['categoryName'].push(""); // Leerer String übergeben für keine kategorie
-        contentArray['tasks']['categoryBgColor'].push(""); //leerer string für keine farbe übergeben
+        contentArray['tasks']['categoryName'].push(""); //adding empty string when select task category is still selected
+        contentArray['tasks']['categoryBgColor'].push("");
     } else {
         if (document.getElementById('categoryOptionShowSelected').innerHTML == "") {
             //add new category to settings and push to category task 
             let addNewCategory = document.getElementById('newCategoryName').innerHTML;
-            // let addNewCategory = addNewCategory1.trim();
             contentArray['tasks']['categoryName'].push(addNewCategory.trim());
             contentArray['settings']['categoryName'].push(addNewCategory.trim());
-            contentArray['settings']['categoryBgColor'].push(randomBgColor); // hier wird die random background color gespeichert
-            console.log('add new category name:', addNewCategory);
+            contentArray['settings']['categoryBgColor'].push(randomBgColor); // add random background color
         } else {
             //add only task category option from given options
             let addTaskStatus = document.getElementById('categoryOptionShowSelected2').innerHTML;
             contentArray['tasks']['categoryName'].push(addTaskStatus.trim());
-            console.log('add given category:', addTaskStatus);
-            // hier wird auch die farbe zur jeweiligen kategorie hinzugefügt
         }
-        // zieht die farbe der kategorie raus
+        //takes the color from the category
         let colorId = document.getElementById('addNewCategoryColor');
         let styleColor = window.getComputedStyle(colorId);
         let backgroundColor = styleColor.getPropertyValue('background-color');
         contentArray['tasks']['categoryBgColor'].push(backgroundColor);
-        console.log('das ist die farbe die mitgegeben wird:', backgroundColor);
     }
 }
 
@@ -339,7 +369,7 @@ function processCategory() {
  * 
  */
 function processTaskOption() {
-    // task option ( in progress/ done / awainting feedback) eine null ist immer To Do (feld  0 )
+    // task option is where the task is shown (to do, in progess, awaiting feedback, done) the 0 is for the to do area
     contentArray['tasks']['taskStatus'].push('0');
 }
 
@@ -349,7 +379,6 @@ function processTaskOption() {
  * 
  */
 function processAssignedTo() {
-    // assigned to selector 
     let selectedNames = [];
     let checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
     checkboxes.forEach(checkbox => {
@@ -359,18 +388,7 @@ function processAssignedTo() {
     let nameInitials = [];
     let contactImageBgColor = [];
     if (selectedNames.length > 0) {
-        selectedNames.forEach(selectedName => {
-            let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
-            let initials = contentArray['contacts']['nameInitials'][contactIndex];
-            let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
-            nameInitials.push(initials);
-            contactImageBgColor.push(bgColor);
-        });
-        contentArray['tasks']['assignedTo'].push({
-            "name": selectedNames,
-            "nameInitials": nameInitials,
-            "contactImageBgColor": contactImageBgColor
-        });
+        processSelectedNames(selectedNames, nameInitials, contactImageBgColor);
     } else {
         contentArray['tasks']['assignedTo'].push({
             "name": [],
@@ -378,9 +396,29 @@ function processAssignedTo() {
             "contactImageBgColor": [],
         });
     }
-    console.log(selectedNames);
-    console.log(nameInitials);
-    console.log(contactImageBgColor);
+}
+
+
+/**
+ * This function is a help function and sources out the getting of the name and pushing it into the array
+ * 
+ * @param {*} selectedNames all names for specific contact
+ * @param {*} nameInitials the name initials list for specific contact
+ * @param {*} contactImageBgColor the background color list for specific contact
+ */
+function processSelectedNames(selectedNames, nameInitials, contactImageBgColor) {
+    selectedNames.forEach(selectedName => {
+        let contactIndex = contentArray['contacts']['name'].indexOf(selectedName);
+        let initials = contentArray['contacts']['nameInitials'][contactIndex];
+        let bgColor = contentArray['contacts']['contactImageBgColor'][contactIndex];
+        nameInitials.push(initials);
+        contactImageBgColor.push(bgColor);
+    });
+    contentArray['tasks']['assignedTo'].push({
+        "name": selectedNames,
+        "nameInitials": nameInitials,
+        "contactImageBgColor": contactImageBgColor
+    });
 }
 
 
@@ -389,14 +427,11 @@ function processAssignedTo() {
  * 
  */
 function processSubtasks() {
-    // subtask
     if (currentSubtasks.length > 0) {
         contentArray['tasks']['subtasks'].push({
             "subtask": currentSubtasks,
-            "subtaskStatus": currentSubtaskStatus, //automatisch auf open bei hinzufügen
+            "subtaskStatus": currentSubtaskStatus,
         });
-        console.log(currentSubtasks);
-        console.log(currentSubtaskStatus);
     } else {
         contentArray['tasks']['subtasks'].push({
             "subtask": [],
@@ -414,10 +449,8 @@ function processPriority() {
     if (addPriority.length === 0) {
         addPriority = "low";
         contentArray['tasks']['priority'].push(addPriority);
-        console.log("ohne ausgewählte prio immer low: ", addPriority);
     } else {
         contentArray['tasks']['priority'].push(addPriority);
-        console.log("standart mit ausgewählert prio: ", addPriority);
     }
 }
 
@@ -454,8 +487,6 @@ async function updateTaskArray() {
 }
 
 
-currentSubtasks = [];
-currentSubtaskStatus = [];
 /**
  * This function add subtasks to the subtask add area
  * 
@@ -463,7 +494,7 @@ currentSubtaskStatus = [];
 function addSubtask() {
     let subtask = document.getElementById('inputAddSubtaskContent').value;
     if (subtask === '') {
-        return console.log('gib einen subtask ein'); // Beendet die Funktion, wenn der Wert leer ist
+        return;
     }
     document.getElementById('addSubtaskContent').innerHTML = ``;
     document.getElementById('inputAddSubtaskContent').value = ``;
@@ -479,7 +510,6 @@ function addSubtask() {
 }
 
 
-let addPriority = [];
 /**
  * This function select the choosen priority status to the addPriority array
  * 
@@ -503,7 +533,6 @@ function addPrio(priority) {
         document.getElementById(`changePrioColor${priority}`).style.color = 'white';
         document.querySelector(`#changePrioColor${priority} img`).src = './assets/img/add-task-prio-low-white.png';
     }    
-    console.log(addPriority);
 }
 
 

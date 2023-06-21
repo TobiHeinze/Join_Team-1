@@ -55,7 +55,7 @@
 	<div id="editTaskContainer" class="d-none" onclick="clickToCloseEditTask()">
 	</div>
 
-	<div id="mainContainer" class="main-container " >
+	<div id="mainContainer" class="main-container" >
 
 		<div class="header-with-content">
 			<div class="header padding">
@@ -96,24 +96,24 @@
 		<div class="menu-bar">
 			<img class="hide-mobile" src="./assets/img/logo-menu-bar.svg" alt="help">
 			<div class="menu-bar-nav-section">
-				<div class="menu-bar-nav-button" onclick="handleClick(this); renderSummary()">
+				<div id="summaryBackgroundSidebar" class="menu-bar-nav-button" onclick="renderSummary()">
 					<img src="./assets/img/summary-menu-bar.svg" alt="summary">
 					<span class="p-menu-bar">Summary</span>
 				</div>
-				<div class="menu-bar-nav-button" onclick="handleClick(this); renderBoard()">
+				<div id="boardBackgroundSidebar" class="menu-bar-nav-button" onclick=" renderBoard()">
 					<img src="./assets/img/board-menu-bar.svg" alt="board">
 					<span class="p-menu-bar">Board</span>
 				</div>
-				<div class="menu-bar-nav-button" onclick="handleClick(this); renderAddTask('newAssignedToContact')">
+				<div id="addTaskBackgroundSidebar" class="menu-bar-nav-button" onclick=" renderAddTask('newAssignedToContact')">
 					<img src="./assets/img/add task-menu-bar.svg" alt="add task">
 					<span class="p-menu-bar">Add Task</span>
 				</div>
-				<div class="menu-bar-nav-button" onclick="handleClick(this); renderContacts()">
+				<div id="contactsBackgroundSidebar" class="menu-bar-nav-button" onclick=" renderContacts()">
 					<img src="./assets/img/contacts-menu-bar.svg" alt="contacts">
 					<span class="p-menu-bar">Contacts</span>
 				</div>
-				<div class="menu-bar-nav-button menu-bar-legal-button hide-mobile"
-					onclick="handleClick(this); renderLegalNotice()">
+				<div id="legalBackgroundSidebar" class="menu-bar-nav-button menu-bar-legal-button hide-mobile"
+					onclick=" renderLegalNotice()">
 					<img src="./assets/img/info-legal-notice.svg" alt="legal notice">
 					<span class="p-menu-bar">Legal notice</span>
 				</div>

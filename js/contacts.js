@@ -5,6 +5,7 @@
 async function renderContacts() {
     contentArray = await getItem(key);
     resetContent();
+    grayBackgroundForCurrentPage('contactsBackgroundSidebar');
     document.getElementById('content').classList.add('d-none');
     document.getElementById("contactsContent").innerHTML = renderContactsHTML();
     updateContactsHTML();
@@ -340,8 +341,6 @@ function updateContactsHTML() {
 
 /**
  * this function  filters the names with the same beginning letter and push them into a variable together in arrays
- * 
- * @returns 
  */
 function groupContactsByInitial() {
     const contactsByInitial = {};

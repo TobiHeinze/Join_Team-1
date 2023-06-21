@@ -19,11 +19,45 @@ async function renderBoardContent() {
 	}
 }
 
+let dragMiniMenu = 'close';
+function openDragMiniMenu(index) {
+	if (dragMiniMenu === 'open') {
+		document.getElementById(`dragMiniMenu${index}`).classList.add('d-none');
+		dragMiniMenu = 'close';
+	} else {
+		document.getElementById(`dragMiniMenu${index}`).classList.remove('d-none');
+		dragMiniMenu = 'open';
+	}
+}
+
+function doOpenMiniMenu(event) {
+	event.stopPropagation();
+}
+
+async function changeTaskStatusMobil(index, i) {
+	contentArray['tasks']['taskStatus'][index] = i;
+	dragMiniMenu = 'close';
+	await setItem(key, contentArray);
+	await getItem(key);
+	renderBoard();
+}
 
 function generateBoardHTML(index) {
-	return `
+	return /*html*/`
 	<div id="taskNumber${index}" onclick="openTaskView(${index})" class="task-container-mobile hover" draggable="true" ondrag="animateDraggedElement(${index})" ondragstart="startDragging(${index})">
-		<span id="taskCategoryName${index}" class="task-category-name">${contentArray['tasks']['categoryName'][index]}</span>
+		<div class="flex between">
+		  <span id="taskCategoryName${index}" class="task-category-name">${contentArray['tasks']['categoryName'][index]}</span>
+		  <img onclick="openDragMiniMenu(${index}); doOpenMiniMenu(event)" src="./assets/img/go-back-arrow-blue.png" alt="change-category">
+		</div>
+		<div onclick="doOpenMiniMenu(event)" id="dragMiniMenu${index}" class="drag-mini-menu-box d-none">
+		  <div id="showedDragMiniMenu" class="drag-mini-menu">
+			<b>Move to:</b>
+			<a onclick="changeTaskStatusMobil(${index},'0')">To Do</a>
+			<a onclick="changeTaskStatusMobil(${index},'1')">In Progress</a>
+			<a onclick="changeTaskStatusMobil(${index},'2')">Awaiting Feedback</a>
+			<a onclick="changeTaskStatusMobil(${index},'3')">Done</a>
+		  </div>
+		</div>
 		<span id="taskTitle${index}" class="task-title">${contentArray['tasks']['title'][index]}</span>
 		<span id="taskDescription${index}" class="task-description">${contentArray['tasks']['description'][index]}</span>
 		<div id="taskProgressBarContainer${index}" class="progress-bar-container">
@@ -206,4 +240,5 @@ function renderBoard() {
 </div>
     `;
 	renderBoardContent();
+	grayBackgroundForCurrentPage('boardBackgroundSidebar');
 }
