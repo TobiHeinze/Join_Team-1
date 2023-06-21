@@ -97,6 +97,7 @@
     height: 30px;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .delete2:hover {
