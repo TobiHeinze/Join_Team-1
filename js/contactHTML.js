@@ -189,12 +189,12 @@ function editContactHTML(index) {
         </div>
       </div>
     </div>
-    <div class="del-save-box">
-      <div class="del" onclick="deleteContact(${index})">
+    <div class="delete-save-box2">
+      <div class="delete2" onclick="deleteContact(${index})">
         Delete
       </div>
-      <button class="save">
-        <b>Save</b>
+      <button class="save2">
+        Save
       </button>
     </div>
   </form>

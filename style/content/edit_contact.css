@@ -79,48 +79,62 @@
     width: 100%;
 }
 
-.del-save-box {
+.delete-save-box2 {
     display: flex;
-    gap: 20px;
-    justify-content: center;
-    box-sizing: border-box;
+    justify-content: space-between;
+    height: 55px;
+    align-items: center;
 }
 
-.del {
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+.delete2 {
     border: 1px solid #2A3647;
-    border-radius: 10px;
-    padding: 10px 18px;
-    margin-top: 25px;
-    cursor: pointer;
-    box-sizing: border-box;
+    border-radius: 8px;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 18px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
-.del:hover {
-    box-sizing: border-box;
-    cursor: pointer;
+.delete2:hover {
     border: 2px solid #29ABE2;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 8px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transform: scale(1.02);
     color: #29ABE2;
 }
 
-.save {
+.save2 {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
     background: #2A3647;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border: 1px solid #2A3647;
-    border-radius: 10px;
-    padding: 10px 18px;
+    border-radius: 8px;
+    padding: 4px 18px;
+    height: 40px;
     color: white;
-    margin-top: 25px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-.save:hover {
+.save2:hover {
     border: none;
     background-color: #29ABE2;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: background-color 0.125s ease;
+    transform: scale(1.02);
+
 }
 
 .x-position {
@@ -136,7 +150,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(184,185,186,0.4);
+    background-color: rgba(184, 185, 186, 0.4);
     z-index: 100;
     justify-content: center;
     align-items: center;
@@ -147,7 +161,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(184,185,186,0.4);
+    background-color: rgba(184, 185, 186, 0.4);
     z-index: 200;
     justify-content: center;
     align-items: center;
