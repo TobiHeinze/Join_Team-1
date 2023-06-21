@@ -34,7 +34,7 @@ function generateTaskViewHTML(index) {
 		<div class="task-view-change-section">
 			<div id="taskAssignedToTaskView${index}"><b>Assigned to:</b></div>
 			<div class="task-view-change-img">
-				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" alt="" onclick="">
+				<img class="" src="./assets/img/task-view-desktop-delete-btn.svg" alt="" onclick="deleteCurrentTask(${index})">
 				<img class="" src="./assets/img/task-view-desktop-edit-btn.svg" alt="" onclick="openEditTask(${index})">
 			</div>
 		</div>
@@ -89,3 +89,19 @@ function doNotClose(event) {
 	event.stopPropagation();
 }
 
+async function deleteCurrentTask(i) {
+	contentArray['tasks']['taskStatus'].splice(i, 1);
+	contentArray['tasks']['title'].splice(i, 1);
+	contentArray['tasks']['description'].splice(i, 1);
+	contentArray['tasks']['priority'].splice(i, 1);
+	contentArray['tasks']['dueDate'].splice(i, 1);
+	contentArray['tasks']['categoryName'].splice(i, 1);
+	contentArray['tasks']['categoryBgColor'].splice(i, 1);
+	contentArray['tasks']['subtasks'].splice(i, 1);
+	contentArray['tasks']['assignedTo'].splice(i, 1);
+
+	await setItem(key, contentArray);
+	await getItem(key);
+	clickToCloseTaskView();
+	renderBoard();
+}

@@ -117,6 +117,8 @@ function animateDraggedElement(id) {
 
 
 function searchTasks() {
+	document.getElementById('searchTasksLens').classList.add('d-none');
+	document.getElementById('searchTasksResetBtn').classList.remove('d-none');
 	let searchTerm = document.getElementById('searchField').value.toLowerCase();
 	for (let i = 0; i < contentArray['tasks']['title'].length; i++) {
 		document.getElementById(`taskNumber${i}`).classList.add('d-none');
@@ -127,7 +129,13 @@ function searchTasks() {
 			document.getElementById(`taskNumber${i}`).classList.remove('d-none');
 		}
 	}
+}
+
+function resetSearchTasks() {
+	document.getElementById('searchTasksLens').classList.remove('d-none');
+	document.getElementById('searchTasksResetBtn').classList.add('d-none');
 	document.getElementById('searchField').value = ``;
+	renderBoard();
 }
 
 
@@ -146,10 +154,11 @@ function renderBoard() {
 	</div>
 
 	<div class="board-find-section">
-		<form class="form-find-task" onsubmit="searchTasks(); return false;"  action="">
+		<form class="form-find-task" onkeyup="searchTasks(); return false;"  action="">
 			<textarea id="searchField" required class="textarea-find-task" minlength="2" name="" id="" cols="" rows="1"
 			placeholder="Find Task"></textarea>
-			<input type="image" src="./assets/img/find-task-lens.svg" alt="">
+			<input type="image" src="./assets/img/find-task-lens.svg" alt="" id="searchTasksLens">
+			<img class="d-none" src="./assets/img/task-view-close-btn.svg" alt="" id="searchTasksResetBtn" onclick="resetSearchTasks()">
 		</form>
 		<div onclick="renderFloatAddTask('board')" id="boardFindSectionImage" onclick="">
 			<span>Add task</span>

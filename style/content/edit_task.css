@@ -1,10 +1,3 @@
-/* div {
-	border: 1px solid black;
-}
-
-span {
-	border: 1px solid black;
-} */
 
 .task-background {
 	background-color: rgba(0, 0, 0, 0.3);
@@ -28,6 +21,7 @@ span {
 	align-items: start;
 	margin: 3%;
 	max-width: 620px;
+	/* overflow-y: scroll; */
 }
 
 .edit-task-btn-section {
@@ -197,119 +191,6 @@ span {
     flex-wrap: wrap;
 }
 
-
-
-
-/* .overSelect-edit-task {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    cursor: pointer;
-} */
-
-
-
-
-/* .task-assigned-to-icon {
-	font-size: 12px;
-	font-weight: 400;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 8px 8px;
-	color: white;
-	max-width: 35px;
-	max-height: 35px;
-	width: 3.5vh;
-	height: 3.5vh;
-	border: 1px solid #ffffff;
-	border-radius: 50%;
-	margin-right: -5%;
-	background-color: #2a3647;
-} */
-
-/* 
-.task-view-title {
-	font-size: 36px;
-	font-weight: 700;
-	color: #2a3647;
-	padding: 3% 0;
-}
-
-.task-view-description {
-	font-size: 16px;
-	font-weight: 400;
-	color: black;
-	padding-bottom: 2%;
-	word-break: keep-all;
-}
-
-.task-view-due-date {
-	padding: 2% 0;
-}
-
-.assigned-to-task-view {
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	padding: 1% 0;
-	margin-top: 4%;
-	font-weight: 400;
-}
-
-.task-view-priority {
-	padding: 2% 0;
-	display: flex;
-	align-items: center;
-	margin-bottom: 1vh;
-}
-
-.task-view-priority img {
-	padding-left: 16px;
-}
-
-.task-view-icon {
-	margin-right: 3vw;
-	font-size: 16px;
-	width: 3.5vh;
-	height: 3.5vh;
-	max-width: 40px;
-	max-height: 40px;
-}
-
-.task-view-prio-image {
-	height: 35px;
-}
-
-.subtask-task-view {
-	display: flex;
-	justify-content: start;
-	align-items: center;
-	padding: 1vh 0;
-	padding-right: 3vw;
-}
-
-.subtask-task-view img {
-	padding-right: 1vw;
-}
-
-.task-view-subtask-container {
-	display: flex;
-	font-weight: 400;
-	flex-wrap: wrap;
-	margin-bottom: 2vh;
-}
-
-.task-view-space-between {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: start;
-}
-
-.task-view-space-between img:hover {
+.edit-task-btn-section img:hover {
 	cursor: pointer;
-} */
+}

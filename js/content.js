@@ -64,12 +64,12 @@ let contentArray =
 			  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF"]
 			},
 			{
-			  "name": ["David Eisenberg", "Bendikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
+			  "name": ["David Eisenberg", "Benedikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
 			  "nameInitials": ["DE", "BZ", "AR", "AW"],
 			  "contactImageBgColor": ["#CB02CF", "#FF7A00","#9327FF", "#FFA800"]
 			},
 			{
-			  "name": ["Tobias Heinze", "David Eisenberg", "Bendikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
+			  "name": ["Tobias Heinze", "David Eisenberg", "Benedikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
 			  "nameInitials": ["TH", "DE", "BZ", "MB", "SF"],
 			  "contactImageBgColor": ["#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 			},
