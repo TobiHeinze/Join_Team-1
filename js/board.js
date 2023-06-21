@@ -27,7 +27,6 @@ function openDragMiniMenu(index) {
 	} else {
 		document.getElementById(`dragMiniMenu${index}`).classList.remove('d-none');
 		dragMiniMenu = 'open';
-		console.log('id ist:', index)
 	}
 }
 
@@ -36,7 +35,6 @@ function doOpenMiniMenu(event) {
 }
 
 async function changeTaskStatusMobil(index, i) {
-	console.log('wert von index und i :', index, i)
 	contentArray['tasks']['taskStatus'][index] = i;
 	dragMiniMenu = 'close';
 	await setItem(key, contentArray);
