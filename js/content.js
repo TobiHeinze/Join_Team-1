@@ -23,11 +23,11 @@ let contentArray =
 	  ,
 	  "contacts": 
 		{
-		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze", "David Eisenberg", "Benedikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
-		  "nameInitials": ["AR", "AW", "TH", "DE", "BZ", "MB", "SF"],
-		  "email": ["annika@test.de", "albert@test.de", "tobias@test.de", "david@test.de", "benedikt@test.de", "marcel@test.de", "stefanie@test.de"],
-		  "phoneNumber": [190666666, 1111111111, 3411234567, 84949433994, 1424242345, 4242342342, 3112335567],
-		  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
+		  "name": ["Annika Rothe", "Albert Wissigkeit", "Tobias Heinze", "David Eisenberg", "Barbara Ziegler", "Marcel Bauer", "Stefanie Farber", "Maja Mauer"],
+		  "nameInitials": ["AR", "AW", "TH", "DE", "BZ", "MB", "SF", "MM"],
+		  "email": ["annika@test.de", "albert@test.de", "tobias@test.de", "david@test.de", "barbara@test.de", "marcel@test.de", "stefanie@test.de", "maja@test.de"],
+		  "phoneNumber": [190666666, 1111111111, 3411234567, 84949433994, 1424242345, 4242342342, 3112335567, 234234432],
+		  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1", "#FFC701"]
 		}
 	  ,
 	  "tasks": 
@@ -68,12 +68,12 @@ let contentArray =
 			  "contactImageBgColor": ["#9327FF", "#FFA800", "#0223CF"]
 			},
 			{
-			  "name": ["David Eisenberg", "Benedikt Ziegler", "Annika Rothe", "Albert Wissigkeit"],
+			  "name": ["David Eisenberg", "Barbara Ziegler", "Annika Rothe", "Albert Wissigkeit"],
 			  "nameInitials": ["DE", "BZ", "AR", "AW"],
 			  "contactImageBgColor": ["#CB02CF", "#FF7A00","#9327FF", "#FFA800"]
 			},
 			{
-			  "name": ["Tobias Heinze", "David Eisenberg", "Benedikt Ziegler", "Marcel Bauer", "Stefanie Farber"],
+			  "name": ["Tobias Heinze", "David Eisenberg", "Barbara Ziegler", "Marcel Bauer", "Stefanie Farber"],
 			  "nameInitials": ["TH", "DE", "BZ", "MB", "SF"],
 			  "contactImageBgColor": ["#0223CF", "#CB02CF", "#FF7A00", "#FC71FF", "#1FD7C1"]
 			},
