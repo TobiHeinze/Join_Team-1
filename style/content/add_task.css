@@ -278,15 +278,15 @@
     width: 80px;
     cursor: pointer;
     z-index: 100;
+    height: 31px;
 }
 
 
 .clear-task-button:hover {
     cursor: pointer;
-    border: 2px solid #29ABE2;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: 1px solid #29ABE2;
+    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.25));
     color: #29ABE2;
-    transform: translate(0, 0);
 }
 
 .task-added {
@@ -486,6 +486,16 @@
 
 #addTitle {
     outline: none;
+}
+
+.center-basket-subtask {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.center-basket-subtask img {
+    height: 24px;
 }
 
 @media (max-width: 950px) {
