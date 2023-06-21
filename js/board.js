@@ -195,7 +195,7 @@ function renderBoard() {
 <div class="board-header-section">
 	<div class="board-header-mobile">
 		<span class="font-47">Board</span>
-		<img  src="./assets/img/plus-add-task-mobile.svg" alt="add task" onclick="renderFloatAddTask('board')">
+		<img  src="./assets/img/plus-add-task-mobile.svg" alt="add task" onclick="renderFloatAddTask('board')" onmouseover="this.src='./assets/img/big-plus-blue.svg'"  onmouseout="this.src='./assets/img/plus-add-task-mobile.svg'">
 	</div>
 
 	<div class="board-find-section">
